@@ -31,6 +31,8 @@ if (!cooldown)
 					.setTitle(`${target.displayName} has \`${currency[i + 1]}\` golden star(s)`)
 					.setTimestamp()
 					.setFooter('Yay shiny gold stars');
+			
+				channel.send(balEmbed);	
 
 			}
 		}
