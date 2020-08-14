@@ -17,13 +17,14 @@ if (Math.round(Math.random() * 2) + 1 === 2) {
     message.channel.send("Random event time woo!");
     message.channel.send(`${situationArray[situationchoose]}`);
     message.channel.send(`Type ${situationKeyword[situationchoose]}`);
-    if (message.content.includes($ {
-            situationKeyword[situationchoose]
-        })) {
+}
+    if (message.content.includes(`${situationKeyword[situationchoose]}`)) {
         for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {
-                let earn = Math.round(Math.random() * 19) + 1 currency[i + 1] += earn;
-	
+                let earn = Math.round(Math.random() * 19) + 1 
+		currency[i + 1] += earn;
+	    }
+	}
 	
 	
 	
