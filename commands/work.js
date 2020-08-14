@@ -12,7 +12,6 @@ if (!cooldown)
 {
 	let options = ["orange", "orange", "banana", "banana"];
 	let choice = options[Math.floor(Math.random() * options.length)];
-	let randomevent =  Math.round(Math.random() * 1) + 1
 	if (choice === "orange")
 	{
 		cooldowns.push(cmd + message.author.id);
@@ -69,10 +68,10 @@ if (!cooldown)
 		}, 2000);
 	}, 2000);
 }
-var situationArray= ["The apple has fallen from the tree!","Mr. Jenkison threw a grape in my garage!","I need to use the bathroom"]
-var situationKeyword=["grab apple","throw orange","fruit juice"]
+const situationArray= ["The apple has fallen from the tree!","Mr. Jenkison threw a grape in my garage!","I need to use the bathroom"]
+const situationKeyword=["grab apple","throw orange","fruit juice"]
 let situationchoose =  Math.round(Math.random() * 2) + 1
-if (randomevent === 2) {
+if (Math.round(Math.random() * 2) + 1 === 2) {
 message.channel.send("Random event time woo!");
 message.channel.send(`${situationArray[situationchoose]}`);	
 message.channel.send(`Type ${situationKeyword[situationchoose]}`);
