@@ -72,6 +72,7 @@ if (!cooldown)
 		}, 2000);
 	}, 2000);
 }
+<<<<<<< HEAD
 const situationArray = ["The apple has fallen from the tree!", "Mr. Jenkison threw a grape in my garage!", "I need to use the bathroom"]
 const situationKeyword = ["grab apple", "throw orange", "fruit juice"]
 let situationchoose = Math.round(Math.random() * 2) + 1
@@ -88,3 +89,5 @@ if (Math.round(Math.random() * 2) + 1 === 2) {
 	    }
 	}
 	
+=======
+>>>>>>> parent of 380f88e... Update work.js
