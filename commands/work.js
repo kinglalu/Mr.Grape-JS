@@ -45,7 +45,7 @@ if (!cooldown)
 							{
 								if (choice === "orange")
 								{
-									message.channel.send("Yay! you found my orange! Here's a golden star.");
+									message.channel.send("Yay! you found my orange! Here's some golden stars.");
 	
 									for(let i = 0; i < currency.length; i++)
 									{
