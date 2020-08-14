@@ -6,7 +6,7 @@ const config = require("./config.json");
 const commands = fs.readdirSync("./commands");
 let currency = fs.readFileSync("./storage/currency.txt").toString().split("\n");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
-bot.login(config.token);
+bot.login(process.env.BOT_TOKEN);
 
 setInterval(function()
 {
