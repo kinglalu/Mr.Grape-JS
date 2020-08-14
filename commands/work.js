@@ -56,6 +56,25 @@ if (!cooldown)
 										}
 									}
 								}
+const situationArray= ["The apple has fallen from the tree!","Mr. Jenkison threw a grape in my garage!","I need to use the bathroom"]
+const situationKeyword=["grab apple","throw orange","fruit juice"]
+let situationchoose =  Math.round(Math.random() * 2) + 1
+if (Math.round(Math.random() * 2) + 1 === 2) {
+message.channel.send("Random event time woo!");
+message.channel.send(`${situationArray[situationchoose]}`);	
+message.channel.send(`Type ${situationKeyword[situationchoose]}`);
+if (message.content.includes(${situationKeyword[situationchoose]})) {
+for(let i = 0; i < currency.length; i++)
+{
+if (currency[i] === message.author.id) {
+let earn = Math.round(Math.random() * 19) + 1
+currency[i + 1]+=earn;																		
+
+
+}
+	
+	
+}
 								else
 								{
 									message.channel.send("Sorry, but I want my orange. Please try and find it again.");
@@ -68,14 +87,4 @@ if (!cooldown)
 		}, 2000);
 	}, 2000);
 }
-const situationArray= ["The apple has fallen from the tree!","Mr. Jenkison threw a grape in my garage!","I need to use the bathroom"]
-const situationKeyword=["grab apple","throw orange","fruit juice"]
-let situationchoose =  Math.round(Math.random() * 2) + 1
-if (Math.round(Math.random() * 2) + 1 === 2) {
-message.channel.send("Random event time woo!");
-message.channel.send(`${situationArray[situationchoose]}`);	
-message.channel.send(`Type ${situationKeyword[situationchoose]}`);
 
-	
-	
-}
