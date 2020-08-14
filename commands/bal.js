@@ -1,4 +1,9 @@
 //Usage: `bal <user>`, returns the number of stars a user has
+// at the top of your file
+const Discord = require('discord.js');
+
+
+channel.send(exampleEmbed);
 let cooldown = false
 for(let i = 0; i < cooldowns.length; i++)
 {
@@ -20,6 +25,13 @@ if (!cooldown)
 			if (currency[i] === target.id)
 			{
 				message.channel.send(`${target.displayName} has \`${currency[i + 1]}\` golden star(s)`);
+				// inside a command, event listener, etc.
+				const balEmbed = new Discord.MessageEmbed()
+					.setColor('#ff00c3')
+					.setTitle(`${target.displayName} has \`${currency[i + 1]}\` golden star(s)`)
+					.setTimestamp()
+					.setFooter('Yay shiny gold stars');
+
 			}
 		}
 	}
