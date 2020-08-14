@@ -16,7 +16,7 @@ if (!cooldown)
 	{
 		cooldowns.push(cmd + message.author.id);
 		cooldowns.push("c77");
-	}
+	}										
 	else
 	{
 		cooldowns.push(cmd + message.author.id);
@@ -51,7 +51,8 @@ if (!cooldown)
 									{
 										if (currency[i] === message.author.id)
 										{
-											currency[i + 1]++;
+											let earn = Math.round(Math.random() * 19) + 1
+											currency[i + 1]+=earn;
 										}
 									}
 								}
