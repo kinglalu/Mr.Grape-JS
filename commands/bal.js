@@ -20,8 +20,8 @@ if (!cooldown)
 			if (currency[i] === target.id)
 			{
 				const exampleEmbed = new Discord.MessageEmbed()
-					.setColor('#0099ff')
-					.setTitle('Some title')
+					.setColor('#dd2de0')
+					.setTitle('$(target.displayName}s balance')
 					.addFields(
 						{ name: 'Regular field title', value: 'Some value here' },
 					)
