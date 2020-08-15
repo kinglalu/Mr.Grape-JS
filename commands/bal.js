@@ -1,5 +1,6 @@
 //Usage: `bal <user>`, returns the number of stars a user has
-// at the top of your file
+const Discord = require('discord.js');
+
 let cooldown = false
 for(let i = 0; i < cooldowns.length; i++)
 {
