@@ -32,15 +32,15 @@ if (!cooldown) {
                 name: '--------------',
                 value: 'you rolled a...'
             }, ))
-
             
+            message.channel.send(gambleEmbed).then(msg => {msg.delete(3000)})
             setTimeout(function() {
                 message.edit(gambleEmbed.addFields({
                     name: '--------------',
                     value: roll
                 }, ))
 
-             
+             message.channel.send(gambleEmbed).then(msg => {msg.delete(3000)})
                 setTimeout(function() {
                     if (roll / 2 === Math.floor(roll / 2)) {
 
