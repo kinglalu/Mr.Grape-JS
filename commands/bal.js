@@ -25,6 +25,7 @@ if (!cooldown)
 					.addFields(
 						{ name: 'Regular field title', value: 'Some value here' },
 					)
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Bank Inc.');
 
