@@ -27,46 +27,42 @@ if (!cooldown) {
 
         message.channel.send(gambleEmbed);
         setTimeout(function() {
-            message.edit(gambleEmbed.addFields({
-                name: '--------------',
-                value: 'you rolled a...'
-            }, ))
-            
-            message.channel.send(gambleEmbed);
-           
-            setTimeout(function() {
-                message.edit(gambleEmbed.addFields({
+            message.channel.send(gambleEmbed).then((m) =>
+                m.edit(gambleEmbed.addFields({
                     name: '--------------',
-                    value: roll
-                }, ))
-                
-                message.channel.send(gambleEmbed);
-             
+                    value: 'you rolled a...'
+                }, )))
+
+
+            setTimeout(function() {
+                message.channel.send(gambleEmbed).then((m) =>
+                    m.edit(gambleEmbed.addFields({
+                        name: '--------------',
+                        value: roll
+                    }, )))
+
+
+
+
                 setTimeout(function() {
                     if (roll / 2 === Math.floor(roll / 2)) {
-                  
-                        message.edit(gambleEmbed.addFields({
-                            name: '--------------',
-                            value: 'Congrats, you get ' + `${parseInt(args[1])}` + " :stars:s"
-                        }, ))
-                     
-               message.delete({timeout: 0});
-               message.delete({timeout: 0});
-               message.delete({timeout: 0});
-                        message.channel.send(gambleEmbed);
-                 
+                        message.channel.send(gambleEmbed).then((m) =>
+                            m.edit(gambleEmbed.addFields({
+                                name: '--------------',
+                                value: 'Congrats, you get ' + `${parseInt(args[1])}` + ' :stars:s'
+                            }, )))
+
+
+
+
                         currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
                     } else {
-                      
-                        message.edit(gambleEmbed.addFields({
-                            name: '--------------',
-                            value: 'You lost...'
-                        }, ))
-                       
-               message.delete({timeout: 0});
-               message.delete({timeout: 0});
-               message.delete({timeout: 0});
-                        message.channel.send(gambleEmbed);
+
+                        message.channel.send(gambleEmbed).then((m) =>
+                            m.edit(gambleEmbed.addFields({
+                                name: '--------------',
+                                value: 'You lost...'
+                            }, )))
                         currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[1]);
                     }
                 }, 1100)
