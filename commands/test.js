@@ -27,41 +27,41 @@ if (!cooldown) {
 
         message.channel.send(gambleEmbed);
         setTimeout(function() {
-            
+            message.delete({timeout: 0});
             message.edit(gambleEmbed.addFields({
                 name: '--------------',
                 value: 'you rolled a...'
             }, ))
-            message.delete({timeout: 0});
+            
             message.channel.send(gambleEmbed);
            
             setTimeout(function() {
-               
+               message.delete({timeout: 0});
                 message.edit(gambleEmbed.addFields({
                     name: '--------------',
                     value: roll
                 }, ))
-                message.delete.timeout({timeout: 0});
+                
                 message.channel.send(gambleEmbed);
              
                 setTimeout(function() {
                     if (roll / 2 === Math.floor(roll / 2)) {
-                      
+                      message.delete({timeout: 0});
                         message.edit(gambleEmbed.addFields({
                             name: '--------------',
                             value: 'Congrats, you get ' + `${parseInt(args[1])}` + " :stars:s"
                         }, ))
-                        message.delete.({timeout: 0});
+                     
                         message.channel.send(gambleEmbed);
                  
                         currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
                     } else {
-                      
+                      message.delete({timeout: 0});
                         message.edit(gambleEmbed.addFields({
                             name: '--------------',
                             value: 'You lost...'
                         }, ))
-                        message.delete.({timeout: 0});
+                       
                         message.channel.send(gambleEmbed);
                         currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[1]);
                     }
