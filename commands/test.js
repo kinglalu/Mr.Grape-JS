@@ -25,7 +25,9 @@ if (!cooldown) {
             .setTimestamp()
             .setFooter('Grape Gambling Club.');
 
-        message.channel.send(gambleEmbed);
+        message.channel.send(gambleEmbed).then(msg => {msg.delete({timeout: 3000})})
+            .catch(console.error);
+        
         setTimeout(function() {
 
             message.edit(gambleEmbed.addFields({
@@ -51,7 +53,7 @@ if (!cooldown) {
                             value: 'Congrats, you get ' + `${parseInt(args[1])}` + " :stars:s"
                         }, ))
 
-                   
+                        message.channel.send(gambleEmbed);
                         currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
                     } else {
 
@@ -59,7 +61,7 @@ if (!cooldown) {
                             name: '--------------',
                             value: 'You lost...'
                         }, ))
-
+                        message.channel.send(gambleEmbed);
                        
                         currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[1]);
                     }
