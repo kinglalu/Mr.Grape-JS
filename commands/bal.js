@@ -21,7 +21,7 @@ if (!cooldown)
 			{
 				const exampleEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(target.displayName)
+					.setTitle(target.displayName + 's balance')
 					.addFields(
 						{ name: 'Regular field title', value: 'Some value here' },
 					)
