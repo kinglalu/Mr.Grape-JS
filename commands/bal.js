@@ -22,12 +22,12 @@ if (!cooldown)
 			{
 				const balEmbed = new Discord.MessageEmbed()
 					.setColor('#0099ff')
-					.setTitle("${target.displayName}'s balance")
+					.setTitle(`${target.displayName}s balance`)
 				        .addFields(
-						{ name: 'Balance', value: "${target.displayName} has \`${currency[i + 1]}\` golden star(s)" },
+						{ name: 'Balance', value: `${target.displayName} has \`${currency[i + 1]}\` golden star(s)`},
 					)
 					.setTimestamp()
-					.setFooter('Grape Bank Inc.');
+					.setFooter(`Grape Bank Inc.`);
 				
 				channel.send(balEmbed);
 			}
