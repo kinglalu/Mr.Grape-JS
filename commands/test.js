@@ -27,11 +27,11 @@ if (!cooldown) {
 
         message.channel.send(gambleEmbed);
         setTimeout(function() {
-            gambleEmbed.addFields({
+            message.edit(gambleEmbed.addFields({
                 name: '--------------',
                 value: 'you rolled a...'
-            }, )
-            message.channel.send(gambleEmbed);
+            }, ))
+           
             setTimeout(function() {
                 gambleEmbed.addFields({
                     name: '--------------',
