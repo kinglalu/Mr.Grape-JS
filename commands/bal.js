@@ -21,16 +21,25 @@ if (!cooldown)
 		{
 			if (currency[i] === target.id)
 			{
-				const balEmbed = new Discord.MessageEmbed()
+				const exampleEmbed = new Discord.MessageEmbed()
 					.setColor('#0099ff')
-					.setTitle('This is static text.')
-				        .addFields(
-						{ name: 'Balance', value: 'very nice static text.'},
+					.setTitle('Some title')
+					.setURL('https://discord.js.org/')
+					.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+					.setDescription('Some description here')
+					.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+					.addFields(
+						{ name: 'Regular field title', value: 'Some value here' },
+						{ name: '\u200B', value: '\u200B' },
+						{ name: 'Inline field title', value: 'Some value here', inline: true },
+						{ name: 'Inline field title', value: 'Some value here', inline: true },
 					)
+					.addField('Inline field title', 'Some value here', true)
+					.setImage('https://i.imgur.com/wSTFkRM.png')
 					.setTimestamp()
-					.setFooter('Grape Bank Inc.');
-				
-				channel.send(balEmbed);
+					.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+				channel.send(exampleEmbed);
 			}
 		}
 	}
