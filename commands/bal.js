@@ -42,7 +42,7 @@ if (!cooldown)
 			{
 				const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(target.displayName + `'s balance`)
+					.setTitle(message.author + `'s balance`)
 					.addFields(
 						{ name: 'Balance', value:  'you have ' + ` ${currency[i + 1]} ` + ' :star:' },
 					)
