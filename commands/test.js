@@ -19,7 +19,8 @@ if (!cooldown)
 	else
 	{
 		let roll = Math.round(Math.random() * 5) + 1
-    const gambleEmbed = new Discord.MessageEmbed()
+		let starsWon = parseInt(args[1])
+    				const gambleEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s gambling table`)
 					.addFields(
@@ -28,6 +29,7 @@ if (!cooldown)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Gambling Club.');
+		
 		message.channel.send(gambleEmbed);
 		setTimeout(function()
 		{
@@ -44,14 +46,14 @@ if (!cooldown)
 					if (roll / 2 === Math.floor(roll / 2))
 					{
 						gambleEmbed.addFields(
-              {name: '', value: 'aw.. i lost'},
+              {name: '', value: 'Congrats, you get '+`${parseInt(args[1])}` + " :stars:s" },
               )
 						currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
 					}
 					else
 					{
 						gambleEmbed.addFields(
-              {name: '', value: 'ha... i win'},
+              {name: '', value: 'You lost...'},
               )
 						currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[1]);
 					}
