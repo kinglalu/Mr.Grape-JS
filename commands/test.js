@@ -32,7 +32,7 @@ if (!cooldown) {
                 name: '--------------',
                 value: 'you rolled a...'
             }, ))
-            message.delete(0);
+            message.delete.timeout(0);
             message.channel.send(gambleEmbed);
            
             setTimeout(function() {
@@ -41,7 +41,7 @@ if (!cooldown) {
                     name: '--------------',
                     value: roll
                 }, ))
-                message.delete(0);
+                message.delete.timeout(0);
                 message.channel.send(gambleEmbed);
              
                 setTimeout(function() {
@@ -51,7 +51,7 @@ if (!cooldown) {
                             name: '--------------',
                             value: 'Congrats, you get ' + `${parseInt(args[1])}` + " :stars:s"
                         }, ))
-                        message.delete(0);
+                        message.delete.timeout(0);
                         message.channel.send(gambleEmbed);
                  
                         currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
@@ -61,7 +61,7 @@ if (!cooldown) {
                             name: '--------------',
                             value: 'You lost...'
                         }, ))
-                        message.delete(0);
+                        message.delete.timeout(0);
                         message.channel.send(gambleEmbed);
                         currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[1]);
                     }
