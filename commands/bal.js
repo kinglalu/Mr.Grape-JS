@@ -21,15 +21,16 @@ if (!cooldown)
 			{
 				const exampleEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(target.displayName + 's balance')
+					.setTitle(target.displayName + `'s balance`)
 					.addFields(
-						{ name: 'Regular field title', value: 'Some value here' },
+						{ name: 'Balance', value: target.displayName + 'has' + `${currency[i + 1]}` + 'golden star(s)' },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Bank Inc.');
 
 				message.channel.send(exampleEmbed);
+				
 			}
 		}
 	}
