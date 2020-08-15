@@ -34,5 +34,16 @@ if (!cooldown)
 		currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[2]);
 		currency[currency.indexOf(target.id) + 1] = parseInt(currency[currency.indexOf(target.id) + 1]) + parseInt(args[2]);
 		message.channel.send(`ok you gave ${target.displayName} ${parseInt(args[2])} golden star(s)`);
+		const balsoloEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle(message.author.username + ` donation to ` + target.displayName)
+					.addFields(
+						{ name: 'Donation', value:  'you gave ' + `${target.displayName} `+ `${parseInt(args[2])} ` + ':star:s' },
+					)
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Charity Org.');
+
+				message.channel.send(balsoloEmbed);
 	}
 }
