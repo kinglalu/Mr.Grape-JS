@@ -22,9 +22,9 @@ if (!cooldown)
 			{
 				const balEmbed = new Discord.MessageEmbed()
 					.setColor('#0099ff')
-					.setTitle('${target.displayName}s balance')
+					.setTitle('This is static text.')
 				        .addFields(
-						{ name: 'Balance', value: '${target.displayName} has \`${currency[i + 1]}\` golden star(s)'},
+						{ name: 'Balance', value: 'very nice static text.'},
 					)
 					.setTimestamp()
 					.setFooter('Grape Bank Inc.');
