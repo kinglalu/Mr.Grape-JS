@@ -28,28 +28,29 @@ if (!cooldown)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Gambling Club.');
+		message.channel.send(gambleEmbed);
 		setTimeout(function()
 		{
-			const gambleEmbed = new Discord.MessageEmbed().addFields(
+			 gambleEmbed.addFields(
         { name: '', value: 'you rolled a...' },
         )
 			setTimeout(function()
 			{
-				const gambleEmbed = new Discord.MessageEmbed().addFields(
+			 gambleEmbed.addFields(
         {name: '', value: roll},
         )
 				setTimeout(function()
 				{
 					if (roll / 2 === Math.floor(roll / 2))
 					{
-						const gambleEmbed = new Discord.MessageEmbed().addFields(
+						gambleEmbed.addFields(
               {name: '', value: 'aw.. i lost'},
               )
 						currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
 					}
 					else
 					{
-							const gambleEmbed = new Discord.MessageEmbed().addFields(
+						gambleEmbed.addFields(
               {name: '', value: 'ha... i win'},
               )
 						currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[1]);
