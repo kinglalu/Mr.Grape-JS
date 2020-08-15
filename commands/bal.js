@@ -39,7 +39,7 @@ if (!cooldown)
 					.setTimestamp()
 					.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
-				channel.send(exampleEmbed);
+				message.channel.send(exampleEmbed);
 			}
 		}
 	}
