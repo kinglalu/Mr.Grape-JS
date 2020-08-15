@@ -20,8 +20,16 @@ if (!cooldown)
 		{
 			if (currency[i] === target.id)
 			{
-				message.channel.send(`${target.displayName} has \`${currency[i + 1]}\` golden star(s)`);
-		
+				const balEmbed = new Discord.MessageEmbed()
+					.setColor('#0099ff')
+					.setTitle("${target.displayName}'s balance")
+				        .addFields(
+						{ name: 'Balance', value: `${target.displayName} has \`${currency[i + 1]}\` golden star(s)` },
+					)
+					.setTimestamp()
+					.setFooter('Grape Bank Inc.');
+				
+				channel.send(balEmbed);
 			}
 		}
 	}
