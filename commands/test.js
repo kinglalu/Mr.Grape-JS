@@ -25,7 +25,7 @@ if (!cooldown) {
             .setTimestamp()
             .setFooter('Grape Gambling Club.');
 
-        message.channel.send(gambleEmbed).then(msg => {msg.delete({timeout: 3000})})
+        message.channel.send(gambleEmbed).then(msg => {msg.delete({timeout: 2500})})
             .catch(console.error);
         
         setTimeout(function() {
@@ -35,7 +35,7 @@ if (!cooldown) {
                 value: 'you rolled a...'
             }, ))
             
-            message.channel.send(gambleEmbed).then(msg => {msg.delete({timeout: 3000})})
+            message.channel.send(gambleEmbed).then(msg => {msg.delete({timeout: 2500})})
             .catch(console.error);
             setTimeout(function() {
                 message.edit(gambleEmbed.addFields({
@@ -43,7 +43,7 @@ if (!cooldown) {
                     value: roll
                 }, ))
 
-             message.channel.send(gambleEmbed).then(msg => {msg.delete({timeout: 3000})})
+             message.channel.send(gambleEmbed).then(msg => {msg.delete({timeout: 2500})})
                 .catch(console.error);
                 setTimeout(function() {
                     if (roll / 2 === Math.floor(roll / 2)) {
