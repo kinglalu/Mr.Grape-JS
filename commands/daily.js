@@ -11,7 +11,17 @@ for(let i = 0; i < cooldowns.length; i++)
 if (!cooldown)
 {
     let random = Math.floor(Math.random() * 25) + 25;
-    message.channel.send(`ok, here is your daily reward of \`${random}\` golden stars!`);
+    const dailystarEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle(message.author.username + `'s daily reward`)
+					.addFields(
+						{ name: 'Daily Reward', value: 'here is ' + ` ${random} ` + ' :star:s' },
+					)
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Bank Inc.');
+
+		message.channel.send(dailystarEmbed);
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c86400");
     for(let i = 0; i < currency.length; i++)
@@ -22,3 +32,4 @@ if (!cooldown)
         }
     }
 }
+				
