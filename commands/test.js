@@ -27,7 +27,8 @@ if (!cooldown) {
 
         message.channel.send(gambleEmbed);
         setTimeout(function() {
-            message.channel.send(gambleEmbed).then((m) =>
+            
+            gambleEmbed.then((m) =>
                 m.edit(gambleEmbed.addFields({
                     name: '--------------',
                     value: 'you rolled a...'
@@ -35,7 +36,7 @@ if (!cooldown) {
 
 
             setTimeout(function() {
-                message.channel.send(gambleEmbed).then((m) =>
+                gambleEmbed.then((m) =>
                     m.edit(gambleEmbed.addFields({
                         name: '--------------',
                         value: roll
@@ -46,7 +47,7 @@ if (!cooldown) {
 
                 setTimeout(function() {
                     if (roll / 2 === Math.floor(roll / 2)) {
-                        message.channel.send(gambleEmbed).then((m) =>
+                        gambleEmbed.then((m) =>
                             m.edit(gambleEmbed.addFields({
                                 name: '--------------',
                                 value: 'Congrats, you get ' + `${parseInt(args[1])}` + ' :stars:s'
@@ -58,7 +59,7 @@ if (!cooldown) {
                         currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
                     } else {
 
-                        message.channel.send(gambleEmbed).then((m) =>
+                     gambleEmbed.then((m) =>
                             m.edit(gambleEmbed.addFields({
                                 name: '--------------',
                                 value: 'You lost...'
