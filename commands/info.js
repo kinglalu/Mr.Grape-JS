@@ -30,5 +30,17 @@ if (!cooldown)
 		uptime /= 24;
 		unit = "day(s)";
 	}
-	message.channel.send(`Version: \`${config.version}\`\nUptime: \`${Math.floor(uptime)}\` ${unit}\nTodo list:\n${config.todo.join("\n")}`);
+	//message.channel.send(`Version: \`${config.version}\`\nUptime: \`${Math.floor(uptime)}\` ${unit}\nTodo list:\n${config.todo.join("\n")}`);
+	const balsoloEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle('Info')
+					.addFields(
+						{ name: 'Information', value: 'Version: '+ `${config.version}` +'\nUptime: ' + `${Math.floor(uptime)}` +`${unit}` '\nTodo list: '+'\n'+`${config.todo.join("\n")}` },
+					)
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Enterprises');
+
+				message.channel.send(balsoloEmbed);
+				
 }
