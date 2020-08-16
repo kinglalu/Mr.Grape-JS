@@ -22,7 +22,7 @@ if (!cooldown)
 	message.channel.send(commands);
 	const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(message.author.username + `'s balance`)
+					.setTitle('Help')
 					.addFields(
 						{ name: 'Commands', value:  commands },
 					)
