@@ -16,7 +16,7 @@ if (!cooldown) {
         .setTitle(message.author.username + `'s job`)
         .addFields({
             name: 'Find that orange!',
-            value: 'will you help me find my orange?/nit fell in a bush full of bananas over there, but i could not find it./nPlease go there and find my orange. '
+            value: 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange. '
         }, )
         .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
         .setTimestamp()
@@ -24,7 +24,8 @@ if (!cooldown) {
     if (workSituation === 1) {
         message.channel.send(orangeJobEmbed);
         let options = ["orange", "orange", "banana", "banana"];
-        let choice = options[Math.floor(Math.random() * options.length)];
+        //let choice = options[Math.floor(Math.random() * options.length)];
+        let choice = "orange"
         if (choice === "orange") {
             for (let i = 0; i < currency.length; i++) {
                 if (currency[i] === message.author.id) {
