@@ -35,12 +35,8 @@ if (!cooldown) {
                         value: '_____'
                     }, ))
 
-                    message.channel.send(orangeJobEmbed).then(msg => {
-                        msg.delete({
-                            timeout: 1000
-                        })
-                    })
-                    .catch(console.error);
+                    message.channel.send(orangeJobEmbed)
+                    
                 }
             }
         }
@@ -52,14 +48,7 @@ if (!cooldown) {
             value: '_____'
         }, ))
 
-        message.channel.send(jobEmbed).then(msg => {
-            msg.delete({
-                timeout: 1000
-            })
-        })
-        .catch(console.error);
-    }
-
+        message.channel.send(jobEmbed)
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c17");
 }
