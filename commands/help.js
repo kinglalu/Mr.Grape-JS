@@ -19,7 +19,7 @@ if (!cooldown)
 		let info = fs.readFileSync(`./commands/${commands[i]}`).toString().split("\n")[0]
 		commands[i] = `\`${config.prefix}${commands[i].slice(0, commands[i].length - 3)}\`: ${info.slice(2, info.length)}`;
 	}
-	message.channel.send(commands);
+	
 	const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle('Help')
