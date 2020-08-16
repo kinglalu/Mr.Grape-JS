@@ -32,7 +32,7 @@ if (!cooldown) {
                     currency[i + 1] += earn;
                     message.edit(orangeJobEmbed.addFields({
                         name: 'You got ' + earn + 'gold :star:s!',
-                        value: ''
+                        value: '_____'
                     }, ))
 
                     message.channel.send(orangeJobEmbed).then(msg => {
@@ -49,7 +49,7 @@ if (!cooldown) {
     } else {
         message.edit(jobEmbed.addFields({
             name: 'Sorry, you did not find it. please try to find my orange later.',
-            value: ''
+            value: '_____'
         }, ))
 
         message.channel.send(jobEmbed).then(msg => {
