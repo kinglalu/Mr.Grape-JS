@@ -53,7 +53,7 @@ if (!cooldown) {
 
                 message.channel.send(gambleEmbed).then(msg => {
                         msg.delete({
-                            timeout: 2500
+                            timeout: 2800
                         })
                     })
                     .catch(console.error);
