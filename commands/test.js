@@ -37,7 +37,7 @@ if (!cooldown) {
 
                     message.channel.send(orangeJobEmbed).then(msg => {
                         msg.delete({
-                            timeout: 500
+                            timeout: 1000
                         })
                     })
                     .catch(console.error);
@@ -54,7 +54,7 @@ if (!cooldown) {
 
         message.channel.send(jobEmbed).then(msg => {
             msg.delete({
-                timeout: 500
+                timeout: 1000
             })
         })
         .catch(console.error);
