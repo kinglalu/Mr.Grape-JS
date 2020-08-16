@@ -35,7 +35,9 @@ if (!cooldown)
 					.setColor('#dd2de0')
 					.setTitle('Info')
 					.addFields(
-						{ name: 'Information', value: 'Version: '+ `${config.version}` +'\nUptime: ' + `${Math.floor(uptime)}` +`${unit}` '\nTodo list: '+'\n'+`${config.todo.join("\n")}` },
+						{ name: 'Version:', value: `${config.version}`},
+						{ name: 'Uptime:', value: `${Math.floor(uptime)}` + ` ${unit}` },	
+						{ name: 'To-do list:', value: `${config.todo.join("\n")}`  },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
