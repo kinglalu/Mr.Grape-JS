@@ -22,6 +22,7 @@ if (!cooldown)
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Jobs Inc.');
+	message.channel.send(jobEmbed);
 	if (choice === "orange")
     
 	{
