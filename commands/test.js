@@ -48,7 +48,8 @@ if (!cooldown) {
             value: '_____'
         }, ))
 
-        message.channel.send(jobEmbed)
+        message.channel.send(orangeJobEmbed)
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c17");
+}
 }
