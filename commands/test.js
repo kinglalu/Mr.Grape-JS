@@ -9,9 +9,8 @@ for (let i = 0; i < cooldowns.length; i++) {
 if (!cooldown) {
    //what work will you have?
     let workSituation = Math.floor(Math.random() * 0) + 1
-   //program stuff for orange job 
-    let options = ["orange", "orange", "banana", "banana"];
-    let choice = options[Math.floor(Math.random() * options.length)];
+   //program embed for orange job 
+   
     const orangeJobEmbed = new Discord.MessageEmbed()
         .setColor('#dd2de0')
         .setTitle(message.author.username + `'s job`)
@@ -22,6 +21,9 @@ if (!cooldown) {
         .setTimestamp()
         .setFooter('Grape Jobs Inc.');
  if (workSituation === 1) {
+     message.channel.send(orangeJobEmbed);
+      let options = ["orange", "orange", "banana", "banana"];
+    let choice = options[Math.floor(Math.random() * options.length)];
     if (choice === "orange")
 
     {
@@ -31,7 +33,7 @@ if (!cooldown) {
         cooldowns.push(cmd + message.author.id);
         cooldowns.push("c17");
     }
-  
+                                if (choice === "orange") {
                                     for (let i = 0; i < currency.length; i++) {
                                         if (currency[i] === message.author.id) {
                                             let earn = Math.round(Math.random() * 19) + 1
@@ -48,7 +50,8 @@ if (!cooldown) {
                                             })
                                         }
                                     }
-                                } else {
+                                } 
+ }                              else {
                                     //message.channel.send("Sorry, but I want my orange. Please try and find it again.");
                                     message.edit(jobEmbed.addFields({
                                         name: 'Sorry, please try to find my orange later.',
@@ -61,3 +64,5 @@ if (!cooldown) {
                                         })
                                     })
                                 }                          
+
+
