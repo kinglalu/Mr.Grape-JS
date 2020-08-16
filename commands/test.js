@@ -25,13 +25,17 @@ if (!cooldown) {
         message.channel.send(orangeJobEmbed);
         let options = ["orange", "orange", "banana", "banana"];
         //let choice = options[Math.floor(Math.random() * options.length)];
-        let choice = "orange"
+        let choice = "orange";
+        let earn = Math.round(Math.random() * 19) + 1;
         if (choice === "orange") {
             for (let i = 0; i < currency.length; i++) {
                 if (currency[i] === message.author.id) {
-                    let earn = Math.round(Math.random() * 19) + 1
+                    
                     currency[i + 1] += earn;
-                    message.edit(orangeJobEmbed.addFields({
+                    
+                }
+        }
+              message.edit(orangeJobEmbed.addFields({
                         name: 'You got ' + earn + 'gold :star:s!',
                         value: ''
                     }, ))
@@ -43,7 +47,6 @@ if (!cooldown) {
                     })
                 }
             }
-        }
         cooldowns.push(cmd + message.author.id);
         cooldowns.push("c77");
     } else {
