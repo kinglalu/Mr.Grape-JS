@@ -22,10 +22,7 @@ if (!cooldown) {
 	     const dailystarEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s daily reward`)
-					.addFields(
-						{name: 'Find that orange!', value:'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange.'},
-						{name: 'Yay! You got ' + `${earn}` + ' :star:s!', value:'_____'},
-					)
+					
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Bank Inc.');
