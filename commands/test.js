@@ -38,3 +38,4 @@ if (!cooldown) {
     } else {
         message.channel.send("Sorry, but I want my orange. Please try and find it again.");
     }
+}
