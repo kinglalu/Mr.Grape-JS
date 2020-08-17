@@ -11,16 +11,7 @@ if (!cooldown) {
     let workSituation = Math.floor(Math.random() * 0) + 1
     //program embed for orange job 
 
-    const orangeJobEmbed = new Discord.MessageEmbed()
-        .setColor('#dd2de0')
-        .setTitle(message.author.username + `'s job`)
-        .addFields({
-            name: 'Find that orange!',
-            value: 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange. '
-        }, )
-        .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-        .setTimestamp()
-        .setFooter('Grape Jobs Inc.');
+    
     if (workSituation === 1) {
         message.channel.send(orangeJobEmbed);   
         let options = ["orange", "orange", "banana", "banana"];
@@ -48,12 +39,17 @@ if (!cooldown) {
         cooldowns.push(cmd + message.author.id);
         cooldowns.push("c77");
     } else {
-        message.edit(jobEmbed.addFields({
-            name: 'Sorry, you did not find it. please try to find my orange later.',
-            value: '_____'
-        }, ))
+       const orangeLoss = new Discord.MessageEmbed()
+            .setColor('#dd2de0')
+            .setTitle(message.author.username + `'s job`)
+            .addFields({name: 'Find that orange!', value: 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange. '}, 
+                       {name: 'That is not my orange.', value: '_____'},
+                      )
+            .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+            .setTimestamp()
+            .setFooter('Grape Jobs Inc.');
 
-        message.channel.send(orangeJobEmbed)
+        message.channel.send(orangeLoss)
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c17");
 }
