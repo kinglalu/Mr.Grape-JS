@@ -30,12 +30,17 @@ if (!cooldown) {
                 if (currency[i] === message.author.id) {
                     let earn = Math.round(Math.random() * 19) + 1
                     currency[i + 1] += earn;
-                    message.edit(orangeJobEmbed.addFields({
-                        name: 'You got ' + earn + 'gold :star:s!',
-                        value: '_____'
-                    }, ))
+         const orangeWin = new Discord.MessageEmbed()
+            .setColor('#dd2de0')
+            .setTitle(message.author.username + `'s job`)
+            .addFields({name: 'Find that orange!', value: 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange. '}, 
+                       {name: 'Yay, you got ' +earn+' :star:s', value: '_____'},
+                      )
+            .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+            .setTimestamp()
+            .setFooter('Grape Jobs Inc.');
 
-                    message.channel.send(orangeJobEmbed)
+                    message.channel.send(orangeWin)
                     
                 }
             }
