@@ -14,7 +14,7 @@ if (!cooldown) {
     
     if (workSituation === 1) {
          
-        let options = ["orange", "orange", "banana", "banana"];
+        let options = ["orange", "orange", "banana", "banana","banana"];
         let choice = options[Math.floor(Math.random() * options.length)];
         
         if (choice === "orange") {
@@ -33,7 +33,7 @@ if (!cooldown) {
             .setFooter('Grape Jobs Inc.');
 
                     message.channel.send(orangeWin);
-                    break;
+                   
                     
                 }
             }
