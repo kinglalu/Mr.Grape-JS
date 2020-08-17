@@ -19,7 +19,7 @@ if (!cooldown) {
     }
 
     if (choice === "orange") {
-	     const dailystarEmbed = new Discord.MessageEmbed()
+	     const orangeJobGood = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
 					.addFields (
@@ -30,14 +30,14 @@ if (!cooldown) {
 					.setTimestamp()
 					.setFooter('Grape Enterprises');
 
-		message.channel.send(dailystarEmbed);
+		message.channel.send(orangeJobGood);
         for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
                 currency[i + 1] += earn;		     
             }
         }
     } else {
-         const dailystarEmbed = new Discord.MessageEmbed()
+         const orangeJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
 					.addFields (
@@ -47,6 +47,7 @@ if (!cooldown) {
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Enterprises');
+	    message.channel.send(orangeJobBad);
 	    
     }
 }
