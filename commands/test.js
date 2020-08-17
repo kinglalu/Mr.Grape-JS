@@ -24,7 +24,7 @@ if (!cooldown) {
 					.setTitle(message.author.username + `'s daily reward`)
 					.addFields(
 						{ name: 'Find that orange!', value:'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange.'  },
-						{name: 'Yay! You found my orange! Here take ' + ` ${random} ` + ' :star:s!', value ''},
+						{name: 'Yay! You found my orange! Here take ' + ` ${random} ` + ' :star:s!', value '____'},
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
