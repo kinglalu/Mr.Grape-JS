@@ -21,21 +21,32 @@ if (!cooldown) {
     if (choice === "orange") {
 	     const dailystarEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(message.author.username + `'s daily reward`)
-					
+					.setTitle(message.author.username + `'s job`)
+					.addFields (
+						{name: 'Find that orange!' , value: 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange.'},
+						{name: 'Yay, you found my orange! Here take '+ `${earn}`+' :star:s!', value: ''},
+						)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
-					.setFooter('Grape Bank Inc.');
+					.setFooter('Grape Enterprises');
 
 		message.channel.send(dailystarEmbed);
         for (let i = 0; i < currency.length; i++) {
-            if (currency[i] === message.author.id) {
-                
-                currency[i + 1] += earn;
-		     
+            if (currency[i] === message.author.id) {           
+                currency[i + 1] += earn;		     
             }
         }
     } else {
-        message.channel.send("Sorry, but I want my orange. Please try and find it again.");
+         const dailystarEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle(message.author.username + `'s job`)
+					.addFields (
+						{name: 'You failed.' , value: 'That is not my orange, that is a banana! Please try again later.'},
+						
+						)
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Enterprises');
+	    
     }
 }
