@@ -26,7 +26,7 @@ if (!cooldown) {
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s daily reward`)
 					.addFields(
-						{ name: 'Daily Reward', value: 'here is ' + ` ${earn} ` + ' :star:s' },
+						{ name: 'Daily Reward', value: 'here is ' },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
