@@ -8,11 +8,11 @@ for (let i = 0; i < cooldowns.length; i++) {
 }
 if (!cooldown) {
     //what work will you have?
-    let workSituation = Math.floor(Math.random() * 0) + 1
+    
     //program embed for orange job 
 
     
-    if (workSituation === 1) {
+    if (true) {
          
         let options = ["orange", "orange", "banana", "banana","banana"];
         let choice = options[Math.floor(Math.random() * options.length)];
