@@ -16,16 +16,13 @@ if (!cooldown) {
          
         let options = ["orange", "orange", "banana", "banana"];
         let choice = options[Math.floor(Math.random() * options.length)];
-        let earn = Math.round(Math.random() * 19) + 1
+        
         if (choice === "orange") {
             for (let i = 0; i < currency.length; i++) {
                 if (currency[i] === message.author.id) {
+                    let earn = Math.round(Math.random() * 19) + 1
                     currency[i + 1] += earn;
-         
-                    
-                }
-            }
-            const orangeWin = new Discord.MessageEmbed()
+          const orangeWin = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s job`)
             .addFields({name: 'Find that orange!', value: 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange. '}, 
@@ -35,7 +32,12 @@ if (!cooldown) {
             .setTimestamp()
             .setFooter('Grape Jobs Inc.');
 
-                    message.channel.send(orangeWin)
+                    message.channel.send(orangeWin);
+                    break;
+                    
+                }
+            }
+           
         }
         cooldowns.push(cmd + message.author.id);
         cooldowns.push("c77");
@@ -50,7 +52,7 @@ if (!cooldown) {
             .setTimestamp()
             .setFooter('Grape Jobs Inc.');
 
-        message.channel.send(orangeLoss)
+        message.channel.send(orangeLoss);
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c17");
 }
