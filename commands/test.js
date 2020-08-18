@@ -52,3 +52,4 @@ if (!cooldown) {
     }
 	else {message.channel.send('Uh oh, some fruit juice spilled.')
 }
+}
