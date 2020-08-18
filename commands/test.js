@@ -36,7 +36,7 @@ if (!cooldown) {
                 currency[i + 1] += earn;		     
             }
         }
-    } else {
+    } else if (choice === "banana") {
          const orangeJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
@@ -50,4 +50,5 @@ if (!cooldown) {
 	    message.channel.send(orangeJobBad);
 	    
     }
+	else {message.channel.send('Uh oh, some fruit juice spilled.')
 }
