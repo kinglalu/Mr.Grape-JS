@@ -12,10 +12,10 @@ if (!cooldown) {
 	let earn = Math.round(Math.random() * 19) + 1
     if (choice === "orange") {
         cooldowns.push(cmd + message.author.id);
-        cooldowns.push("c77");
+        cooldowns.push("c1");
     } else {
         cooldowns.push(cmd + message.author.id);
-        cooldowns.push("c17");
+        cooldowns.push("c1");
     }
 
     if (choice === "orange") {
