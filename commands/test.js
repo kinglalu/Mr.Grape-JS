@@ -8,17 +8,17 @@ for (let i = 0; i < cooldowns.length; i++) {
 }
 if (!cooldown) {
     let options = ["orange", "orange", "banana", "banana"];
-    let choice = options[Math.floor(Math.random() * options.length)];
+    let choice = Math.floor(Math.random() * ((5 - 2) + 1)) + 2)
 	let earn = Math.round(Math.random() * 19) + 1
     if (choice === "orange") {
         cooldowns.push(cmd + message.author.id);
-        cooldowns.push("c1");
+        cooldowns.push("c77");
     } else {
         cooldowns.push(cmd + message.author.id);
-        cooldowns.push("c1");
+        cooldowns.push("c17");
     }
 
-    if (choice === "orange") {
+    if (choice % 2 === 0) {
 	     const orangeJobGood = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
@@ -36,7 +36,7 @@ if (!cooldown) {
                 currency[i + 1] += earn;		     
             }
         }
-    } else if (choice === "banana") {
+    } else if (choice % 2 === 1) {
          const orangeJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
@@ -50,6 +50,6 @@ if (!cooldown) {
 	    message.channel.send(orangeJobBad);
 	    
     }
-	else {message.channel.send('Uh oh, some fruit juice spilled.')
+	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')
 }
 }
