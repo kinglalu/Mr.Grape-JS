@@ -9,7 +9,7 @@ for (let i = 0; i < cooldowns.length; i++) {
 if (!cooldown) {
     let options = ["orange", "orange", "banana", "banana"];
     let choice = Math.floor(Math.random() * (100 - 1) ) + 1;
-	let earn = Math.round(Math.random() * 19) + 1;
+	let earn = Math.round(Math.random() * 7) + 1;
     if (choice === "orange") {
         cooldowns.push(cmd + message.author.id);
         cooldowns.push("c77");
@@ -41,7 +41,8 @@ if (!cooldown) {
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
 					.addFields (
-						{name: 'You failed.' , value: 'That is not my orange, that is a banana! Please try again later.'},
+						{name: 'Find that orange!' , value: 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange.'},
+						{name: 'That is not my orange, that is a banana! Please try again later.' , value: '_'},
 						
 						)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
