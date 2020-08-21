@@ -18,7 +18,7 @@ if (!cooldown) {
         cooldowns.push("c17");
     }
 
-    if (choice === 'orange') {
+    if (choice === 0 || choice === 3) {
 	     const orangeJobGood = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
@@ -36,7 +36,7 @@ if (!cooldown) {
                 currency[i + 1] += earn;		     
             }
         }
-    } else if (choice === 'orange') {
+    } else if (choice === 1 || choice === 2) {
          const orangeJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
