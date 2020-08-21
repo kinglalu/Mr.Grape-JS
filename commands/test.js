@@ -8,7 +8,7 @@ for (let i = 0; i < cooldowns.length; i++) {
 }
 if (!cooldown) {
     let options = ["orange", "orange", "banana", "banana"];
-    let choice = Math.floor(Math.random() * options.length);
+    let choice = Math.floor(Math.random() * (5 - 1) ) + 1;
 	let earn = Math.round(Math.random() * 19) + 1;
     if (choice === "orange") {
         cooldowns.push(cmd + message.author.id);
@@ -18,7 +18,7 @@ if (!cooldown) {
         cooldowns.push("c17");
     }
 
-    if (choice === 0 || choice === 3) {
+    if (choice % 2 === 0) {
 	     const orangeJobGood = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
@@ -36,7 +36,7 @@ if (!cooldown) {
                 currency[i + 1] += earn;		     
             }
         }
-    } else if (choice === 1 || choice === 2) {
+    } else if (choice % 2 === 1 || choice === 1) {
          const orangeJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
