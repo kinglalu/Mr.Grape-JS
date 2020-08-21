@@ -24,7 +24,7 @@ if (!cooldown) {
 					.setTitle(message.author.username + `'s job`)
 					.addFields (
 						{name: 'Find that orange!' , value: 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange.'},
-						{name: 'Yay, you found my orange! Here, take '+'some'+':star:s!', value: ''},
+						{name: 'Yay, you found my orange! Here, take '+'some'+':star:s!', value: '_'},
 						)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
