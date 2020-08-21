@@ -8,7 +8,7 @@ for (let i = 0; i < cooldowns.length; i++) {
 }
 if (!cooldown) {
     let options = ["orange", "orange", "banana", "banana"];
-    let choice = Math.floor(Math.random() * (100 - 1) ) + 1;
+    let choice = 2
 	let earn = Math.round(Math.random() * 19) + 1;
     if (choice === "orange") {
         cooldowns.push(cmd + message.author.id);
