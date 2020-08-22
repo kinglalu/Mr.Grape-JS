@@ -7,7 +7,7 @@ for (let i = 0; i < cooldowns.length; i++) {
     }
 }
 if (!cooldown) {
-  let chooseWork = Math.floor(Math.random() * (2 - 1) ) + 1;
+  let chooseWork = Math.floor(Math.random() * (3 - 1) ) + 1;
 	function orange() {
 	let options = ["orange", "orange", "banana", "banana"];
     let choice = Math.floor(Math.random() * (100 - 1) ) + 1;
