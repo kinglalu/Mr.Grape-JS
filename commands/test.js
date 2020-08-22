@@ -7,9 +7,18 @@ for (let i = 0; i < cooldowns.length; i++) {
     }
 }
 if (!cooldown) {
-  let chooseWork = Math.floor(Math.random() * (3 - 1) ) + 1;
-	function orange() {
-	let options = ["orange", "orange", "banana", "banana"];
+ let chooseWork = Math.floor(Math.random() * (3 - 1) ) + 1;
+function orange() {
+	//Usage: `work`, get golden stars by helping people, 60s cooldown
+let cooldown = false
+for (let i = 0; i < cooldowns.length; i++) {
+    if (cooldowns[i] === cmd + message.author.id) {
+        message.channel.send("Sorry, i dont have any jobs for you");
+        cooldown = true;
+    }
+}
+if (!cooldown) {
+    let options = ["orange", "orange", "banana", "banana"];
     let choice = Math.floor(Math.random() * (100 - 1) ) + 1;
 	let earn = Math.round(Math.random() * 7) + 1;
     if (choice === "orange") {
@@ -55,12 +64,20 @@ if (!cooldown) {
     }
 	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')
 }
-	}
-	
-
 }
-	if (chooseWork === 1) {orange();}
-	else if (chooseWork === 2) {mango();}
-	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')}
-	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+	
+}
