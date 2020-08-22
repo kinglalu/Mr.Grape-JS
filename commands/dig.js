@@ -7,7 +7,7 @@ for (let i = 0; i < cooldowns.length; i++) {
     }
 }
 if (!cooldown) {
-	let earn = let earn = Math.round(Math.random() * 6) + 1;
+	let earn = Math.round(Math.random() * 6) + 1;
 const mine = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s mine`)
