@@ -22,7 +22,7 @@ if (!cooldown) {
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
 					.addFields (
-						{name: 'Help Mr.Grape catch his mango!' , value: 'I'm trying to catch a flying mango, but it keeps disappearing.\nSo will you catch him and bring him to me?'},
+						{name: 'Help Mr.Grape catch his mango!' , value: 'I am trying to catch a flying mango, but it keeps disappearing.\nSo will you catch him and bring him to me?'},
 						{name: 'Yay, you found my mango! Here, take '+earn+' :star:s!', value: '_'},
 						)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
@@ -40,8 +40,8 @@ if (!cooldown) {
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
 					.addFields (
-          {name: 'Help Mr.Grape catch his mango!' , value: 'I'm trying to catch a flying mango, but it keeps disappearing.\nSo will you catch him and bring him to me?'},
-						{name: 'You didn't find my mango? Too bad. Try again next time.' , value: '_'},
+          {name: 'Help Mr.Grape catch his mango!' , value: 'I amm trying to catch a flying mango, but it keeps disappearing.\nSo will you catch him and bring him to me?'},
+						{name: 'You didnt find my mango? Too bad. Try again next time.' , value: '_'},
 						
 						)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
