@@ -57,8 +57,8 @@ if (!cooldown) {
 }
 	}
 	function mango() {
-		let Mangochoice = Math.floor(Math.random() * (100 - 1) ) + 1;
-	let Mangoearn = Math.round(Math.random() * 7) + 1;
+	let choices = Math.floor(Math.random() * (100 - 1) ) + 1;
+	let earns = Math.round(Math.random() * 7) + 1;
     if (choice === "orange") {
         cooldowns.push(cmd + message.author.id);
         cooldowns.push("c77");
@@ -67,13 +67,13 @@ if (!cooldown) {
         cooldowns.push("c17");
     }
 
-    if (Mangochoice % 2 === 0) {
+    if (choices % 2 === 0) {
 	     const mangoJobGood = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
 					.addFields (
 						{name: 'Help Mr.Grape catch his mango!' , value: 'I am trying to catch a flying mango, but it keeps disappearing.\nSo will you catch him and bring him to me?'},
-						{name: 'Yay, you found my mango! Here, take '+earn+' :star:s!', value: '_'},
+						{name: 'Yay, you found my mango! Here, take '+earns+' :star:s!', value: '_'},
 						)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
@@ -82,10 +82,10 @@ if (!cooldown) {
 		message.channel.send(mangoJobGood);
         for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
-                currency[i + 1] += Mangoearn;		     
+                currency[i + 1] += earns;		     
             }
         }
-    } else if (Mangochoice % 2 === 1 || Mangochoice === 1) {
+    } else if (choices % 2 === 1 || choices === 1) {
          const mangoJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
