@@ -7,7 +7,9 @@ for (let i = 0; i < cooldowns.length; i++) {
     }
 }
 if (!cooldown) {
-    let options = ["orange", "orange", "banana", "banana"];
+  let chooseWork = Math.floor(Math.random() * (2 - 1) ) + 1;
+	function orange() {
+	let options = ["orange", "orange", "banana", "banana"];
     let choice = Math.floor(Math.random() * (100 - 1) ) + 1;
 	let earn = Math.round(Math.random() * 7) + 1;
     if (choice === "orange") {
@@ -53,4 +55,10 @@ if (!cooldown) {
     }
 	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')
 }
+	}
+	
+	if (chooseWork === 1) {orange();}
+	else if (chooseWork === 2) {message.channel.send('idk some mango thing')}
+	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')}
+	
 }
