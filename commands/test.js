@@ -107,4 +107,4 @@ if (!cooldown) {
 	else if (chooseWork === 2) {mango();}
 	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')}
 	
-}
+
