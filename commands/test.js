@@ -97,8 +97,49 @@ if (!cooldown) {
 	    
     }
 	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')}}
-	let chooseWork = Math.round(Math.random() * 1) + 1;
+	function rabbit() {
+    let choicess = Math.floor(Math.random() * (100 - 1) ) + 1;
+	let earnss = Math.round(Math.random() * 7) + 1;
+  
+
+    if (choicess % 2 === 0) {
+	     const limeJobGood = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle(message.author.username + `'s job`)
+					.addFields (
+						{name: 'Help Mr.Grape find his rabbit.' , value: 'my pet rabbit has escaped!\nhe really like carrots\ncan you help lure him home?'},
+						{name: 'Yay, you found my rabbit! Here, take '+earnss+' :star:s!', value: '_'},
+						)
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Enterprises');
+
+		message.channel.send(limeJobGood);
+        for (let i = 0; i < currency.length; i++) {
+            if (currency[i] === message.author.id) {           
+                currency[i + 1] += earnss;		     
+            }
+        }
+    } else if (choicess % 2 === 1 || choicess === 1) {
+         const limeJobBad = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle(message.author.username + `'s job`)
+					.addFields (
+{name: 'Help Mr.Grape find his rabbit.' , value: 'my pet rabbit has escaped!\nhe really like carrots\ncan you help lure him home?'},
+						{name: 'Sorry, I was asking for a carrot, not a lime.' , value: '_'},
+						
+						)
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Enterprises');
+	    message.channel.send(limeJobBad);
+	    
+    }
+	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')
+}}
+	let chooseWork = Math.round(Math.random() * 2) + 1;
 	if (chooseWork === 1) {orange();}
 	else if (chooseWork === 2) {mango();}
-	else {message.channel.send("uh oh")}
+	else if (chooseWork === 3) {rabbit();}
+	else {message.channel.send('Big oof. (Unspecified Error)');}
 }
