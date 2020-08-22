@@ -1,4 +1,4 @@
-//Usage: `work`, get golden stars by helping people, 60s cooldown
+//Usage: `dig`, get golden stars by mining
 let cooldown = false
 for (let i = 0; i < cooldowns.length; i++) {
     if (cooldowns[i] === cmd + message.author.id) {
@@ -17,6 +17,7 @@ const mine = new Discord.MessageEmbed()
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Enterprises');
+	message.channel.send(mine);
 	for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
                 currency[i + 1] += earn;		     
