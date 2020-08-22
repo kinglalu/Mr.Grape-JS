@@ -56,8 +56,9 @@ if (!cooldown) {
 	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')
 }
 	}
-	function mango () {let choice = Math.floor(Math.random() * (100 - 1) ) + 1;
-	let earn = Math.round(Math.random() * 7) + 1;
+	function mango() {
+		let Mangochoice = Math.floor(Math.random() * (100 - 1) ) + 1;
+	let Mangoearn = Math.round(Math.random() * 7) + 1;
     if (choice === "orange") {
         cooldowns.push(cmd + message.author.id);
         cooldowns.push("c77");
@@ -66,7 +67,7 @@ if (!cooldown) {
         cooldowns.push("c17");
     }
 
-    if (choice % 2 === 0) {
+    if (Mangochoice % 2 === 0) {
 	     const mangoJobGood = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
@@ -81,11 +82,11 @@ if (!cooldown) {
 		message.channel.send(mangoJobGood);
         for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
-                currency[i + 1] += earn;		     
+                currency[i + 1] += Mangoearn;		     
             }
         }
-    } else if (choice % 2 === 1 || choice === 1) {
-         const orangeJobBad = new Discord.MessageEmbed()
+    } else if (Mangochoice % 2 === 1 || Mangochoice === 1) {
+         const mangoJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `'s job`)
 					.addFields (
@@ -96,7 +97,7 @@ if (!cooldown) {
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Enterprises');
-	    message.channel.send(orangeJobBad);
+	    message.channel.send(mangoJobBad);
 	    
     }
 	else {message.channel.send('Uh oh, some fruit juice spilled. (Unknown error)')
