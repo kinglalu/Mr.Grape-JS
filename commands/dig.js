@@ -2,7 +2,7 @@
 let cooldown = false
 for (let i = 0; i < cooldowns.length; i++) {
     if (cooldowns[i] === cmd + message.author.id) {
-        message.channel.send("Sorry, i dont have any jobs for you");
+        message.channel.send("No mine for you");
         cooldown = true;
     }
 }
