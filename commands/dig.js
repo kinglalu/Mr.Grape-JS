@@ -2,7 +2,15 @@
 let cooldown = false
 for (let i = 0; i < cooldowns.length; i++) {
     if (cooldowns[i] === cmd + message.author.id) {
-        message.channel.send("No mine for you");
+        const balnoEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle('No mine for you')
+					
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Bank Inc.');
+
+				message.channel.send(balnoEmbed);
         cooldown = true;
     }
 }
