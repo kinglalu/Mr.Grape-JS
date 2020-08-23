@@ -10,7 +10,7 @@ for (let i = 0; i < cooldowns.length; i++) {
 					.setTimestamp()
 					.setFooter('Grape Bank Inc.');
 
-				message.channel.send(balnoEmbed);message.channel.send("bro chill out and wait a bit");
+				message.channel.send(balnoEmbed);
         cooldown = true;
     }
 }
