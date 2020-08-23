@@ -32,12 +32,12 @@ let wordsOfWisdom = ['Better not tell you now.', 'Don’t count on it.',
  'Yes.',
  'Yes – definitely.',
  'You may rely on it.'];
- let random =  Math.round(Math.random() * wordsOfWisdom.length);
+ let randoms =  Math.round(Math.random() * wordsOfWisdom.length);
         const ballEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle('Info')
 					.addFields(
-						{ name: reject[random], value: '(Cooldown)'}
+						{ name: wordsOfWisdom[randoms], value: '_'}
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
