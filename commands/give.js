@@ -10,7 +10,7 @@ for(let i = 0; i < cooldowns.length; i++)
 					
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
-					.setFooter('Grape Bank Inc.');
+				
 
 				message.channel.send(balnoEmbed);
 		cooldown = true;
