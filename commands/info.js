@@ -4,7 +4,15 @@ for(let i = 0; i < cooldowns.length; i++)
 {
 	if (cooldowns[i] === cmd + message.author.id)
 	{
-		message.channel.send("bro chill out and wait a bit");
+		const balnoEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle('bro chill out and wait a bit')
+					
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Bank Inc.');
+
+				message.channel.send(balnoEmbed);
 		cooldown = true;
 	}
 }
