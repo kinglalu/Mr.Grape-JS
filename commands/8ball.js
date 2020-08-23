@@ -6,7 +6,7 @@ for (let i = 0; i < cooldowns.length; i++) {
         let random =  Math.round(Math.random() * reject.length);
         const rejectEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('Info')
+					.setTitle(message.author.username + `'s crystal ball`)
 					.addFields(
 						{ name: reject[random], value: '(Cooldown)'}
 					)
@@ -35,7 +35,7 @@ let wordsOfWisdom = ['Better not tell you now.', 'Don’t count on it.',
  let randoms =  Math.round(Math.random() * wordsOfWisdom.length);
         const ballEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('Info')
+					.setTitle(message.author.username + `'s crystal ball`)
 					.addFields(
 						{ name: wordsOfWisdom[randoms], value: '_'}
 					)
@@ -43,6 +43,8 @@ let wordsOfWisdom = ['Better not tell you now.', 'Don’t count on it.',
 					.setTimestamp()
 					.setFooter('Grape Fortune-Telling');
         message.channel.send(ballEmbed);
-
+ 
+cooldowns.push(cmd + message.author.id);
+ cooldowns.push("c47");
 }
  
