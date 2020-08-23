@@ -4,7 +4,15 @@ for(let i = 0; i < cooldowns.length; i++)
 {
 	if (cooldowns[i] === cmd + message.author.id)
 	{
-		message.channel.send(`it's called \`${args[0].toLowerCase()}\` for a reason smh`);
+		const balnoEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle(`it's called \`${args[0].toLowerCase()}\` for a reason smh`)
+					
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Bank Inc.');
+
+				message.channel.send(balnoEmbed);
 		cooldown = true;
 	}
 }
