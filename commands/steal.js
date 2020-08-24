@@ -43,7 +43,7 @@ if (!cooldown)
 	{
 		const ayazEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('do not steal from bots')
+					.setTitle('bruh dont steal from bots smh')
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 		message.channel.send(ayazEmbed);
