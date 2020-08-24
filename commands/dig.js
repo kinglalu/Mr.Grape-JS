@@ -26,6 +26,8 @@ const mine = new Discord.MessageEmbed()
 					.setTimestamp()
 					.setFooter('Grape Enterprises');
 	message.channel.send(mine);
+	cooldowns.push(cmd + message.author.id);
+    cooldowns.push("c30");
 	for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
                
