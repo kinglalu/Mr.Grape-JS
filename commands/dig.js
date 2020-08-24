@@ -28,7 +28,8 @@ const mine = new Discord.MessageEmbed()
 	message.channel.send(mine);
 	for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
-                currency[i + 1] += earn;		     
+               
+		  currency[i + 1] = parseInt(currency[i + 1]) + earn;		     
             }
         }
 
