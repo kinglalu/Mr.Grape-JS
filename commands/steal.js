@@ -7,7 +7,6 @@ for(let i = 0; i < cooldowns.length; i++)
 		const balnoEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle('bro chill out and wait a bit')
-					
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 				
@@ -20,30 +19,22 @@ if (!cooldown)
 {
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
-
+	let caught = Math.floor(Math.random()*99)+1;
 	if (!target)
 	{
 		const yEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('who u givin gold stars to?')
+					.setTitle('who u stealin from?')
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 		message.channel.send(yEmbed);
 	}
-	else if (!parseInt(args[2]) || parseInt(args[2]) < 1 || parseInt(args[2]) > parseInt(currency[currency.indexOf(message.author.id) + 1]))
-	{
-		const yzEmbed = new Discord.MessageEmbed()
-					.setColor('#dd2de0')
-					.setTitle('thats not a valid number of gold stars to give')
-			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-					.setTimestamp()
-		message.channel.send(yzEmbed);
-	}
+	
 	else if (target.id === message.author.id)
 	{
 		const yazEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('bruh you cant give gold stars to yourself')
+					.setTitle('imagine trying to steal from yourself')
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 		message.channel.send(yazEmbed);
@@ -52,26 +43,48 @@ if (!cooldown)
 	{
 		const ayazEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('bruh you cant give gold stars to a bot')
+					.setTitle('do not steal from bots')
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 		message.channel.send(ayazEmbed);
 	}
-	else
+	else if (caught >= 70)
 	{
-		currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[2]);
-		currency[currency.indexOf(target.id) + 1] = parseInt(currency[currency.indexOf(target.id) + 1]) + parseInt(args[2]);
+		currency[currency.indexOf(message.author.id) + 1] += parseInt(args[2]);
+		currency[currency.indexOf(target.id) + 1] = parseInt(currency[currency.indexOf(target.id) + 1]) - parseInt(args[2]);
 		message.channel.send(`ok you gave ${target.displayName} ${parseInt(args[2])} golden star(s)`);
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + ` donation to ` + target.displayName)
 					.addFields(
-						{ name: 'Donation', value:  'you gave ' + `${target.displayName} `+ `${parseInt(args[2])} ` + ':star:s' },
+						{ name: 'Theft', value:  'you stole from ' + `${target.displayName} `+' and got '+ `${parseInt(args[2])} ` + ':star:s' },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
-					.setFooter('Grape Charity Org.');
+					.setFooter('Shady Grape Org');
 
-				message.channel.send(balsoloEmbed);
+				message.channel.send(balsoloEmbed);}
+	else if (caught <= 30)
+	{
+		
+		let loss = Math.floor(Math.random()*14)+1;
+		const balsolooEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle(message.author.username + ` donation to ` + target.displayName)
+					.addFields(
+						{ name: 'You got caught!', value:  'You ended up paying' +loss+" :star:s\nThat's karma for ya." },
+					)
+			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Shady Grape Org');
+
+				message.channel.send(balsolooEmbed);
+		for (let i = 0; i < currency.length; i++) {
+            if (currency[i] === message.author.id) {           
+                
+		  currency[i + 1] = parseInt(currency[i + 1]) + loss;	     
+            }
+        }
 	}
-}
+	}
+
