@@ -21,7 +21,8 @@ client.on('message', msg => {
         if (message.content === 'wish') {
          for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
-                currency[i + 1] += earns;		     
+                
+		  currency[i + 1] = parseInt(currency[i + 1]) + earns;		     
             }
         }
         
