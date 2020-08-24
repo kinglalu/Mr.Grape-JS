@@ -1,4 +1,4 @@
-//Usage: `give <user> <amount>`, transfer golden stars from your account to anothers
+//Usage: `steal <user> <amount>`, steal stars from another user
 let cooldown = false
 for(let i = 0; i < cooldowns.length; i++)
 {
