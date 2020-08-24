@@ -18,6 +18,9 @@ client.on('message', msg => {
 					.setTimestamp()
 					.setFooter('Grape Enterprises');
         message.channel.send(randomEmbed);
+	     
+cooldowns.push(cmd + message.author.id);
+ cooldowns.push("c4700000000000000");
         if (message.content === 'wish') {
          for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
