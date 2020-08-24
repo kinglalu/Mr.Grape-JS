@@ -34,7 +34,7 @@ if (!cooldown)
 	{
 		const yazEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('imagine trying to steal from yourself')
+					.setTitle('imagine trying to steal from yourself smh')
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 		message.channel.send(yazEmbed);
