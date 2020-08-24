@@ -52,10 +52,10 @@ if (!cooldown)
 	{
 		currency[currency.indexOf(message.author.id) + 1] += parseInt(args[2]);
 		currency[currency.indexOf(target.id) + 1] = parseInt(currency[currency.indexOf(target.id) + 1]) - parseInt(args[2]);
-		message.channel.send(`ok you gave ${target.displayName} ${parseInt(args[2])} golden star(s)`);
+		
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(message.author.username + ` donation to ` + target.displayName)
+					.setTitle(message.author.username + `robbery of ` + target.displayName)
 					.addFields(
 						{ name: 'Theft', value:  'you stole from ' + `${target.displayName} `+' and got '+ `${parseInt(args[2])} ` + ':star:s' },
 					)
@@ -70,7 +70,7 @@ if (!cooldown)
 		let loss = Math.floor(Math.random()*14)+1;
 		const balsolooEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(message.author.username + ` donation to ` + target.displayName)
+					.setTitle(message.author.username + ` robbery of ` + target.displayName)
 					.addFields(
 						{ name: 'You got caught!', value:  'You ended up paying' +loss+" :star:s\nThat's karma for ya." },
 					)
