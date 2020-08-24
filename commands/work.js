@@ -41,7 +41,8 @@ if (!cooldown) {
 		message.channel.send(orangeJobGood);
         for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
-                currency[i + 1] += earn;		     
+                
+		  currency[i + 1] = parseInt(currency[i + 1]) + earn;		     
             }
         }
     } else if (choice % 2 === 1 || choice === 1) {
@@ -86,7 +87,8 @@ if (!cooldown) {
 		message.channel.send(mangoJobGood);
         for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
-                currency[i + 1] += earns;		     
+              
+		  currency[i + 1] = parseInt(currency[i + 1]) + earns;	     
             }
         }
     } else if (choices % 2 === 1 || choices === 1) {
@@ -125,7 +127,8 @@ if (!cooldown) {
 		message.channel.send(limeJobGood);
         for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
-                currency[i + 1] += earnss;		     
+                
+		  currency[i + 1] = parseInt(currency[i + 1]) + earnss;	     
             }
         }
     } else if (choicess % 2 === 1 || choicess === 1) {
