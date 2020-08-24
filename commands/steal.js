@@ -72,7 +72,7 @@ if (!cooldown)
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + ` robbery of ` + target.displayName)
 					.addFields(
-						{ name: 'You got caught!', value:  'You ended up paying' +loss+" :star:s\nThat's karma for ya." },
+						{ name: 'You got caught!', value:  'You ended up paying ' +loss+" :star:s\nThat's karma for ya." },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
