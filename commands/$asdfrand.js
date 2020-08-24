@@ -5,7 +5,7 @@ let earns = Math.floor(Math.random*99)+1;
 function sendrandomevent() {
 
 }
-
+//asdf
 client.on('message', msg => {
     if (random === 5) {
     const randomEmbed = new Discord.MessageEmbed()
