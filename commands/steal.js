@@ -82,7 +82,7 @@ if (!cooldown)
 		for (let i = 0; i < currency.length; i++) {
             if (currency[i] === message.author.id) {           
                 
-		  currency[i + 1] = parseInt(currency[i + 1]) + loss;	     
+		  currency[i + 1] = parseInt(currency[i + 1]) - loss;	     
             }
         }
 	}
