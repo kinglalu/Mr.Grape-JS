@@ -45,6 +45,6 @@ let wordsOfWisdom = ['Better not tell you now.', 'Don’t count on it.',
         message.channel.send(ballEmbed);
  
 cooldowns.push(cmd + message.author.id);
- cooldowns.push("c47");
+ cooldowns.push("c10");
 }
  
