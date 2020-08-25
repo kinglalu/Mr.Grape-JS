@@ -31,11 +31,11 @@ if (!cooldown)
 	}
 	else if (target.id === message.author.id)
 	{
-		message.channel.send("bruh you cant give golden stars to yourself")
+		message.channel.send("bruh you cant give golden stars to yourself smh")
 	}
 	else if (target.user.bot)
 	{
-		message.channel.send("bruh you cant give golden stars to a bot")
+		message.channel.send("bruh you cant give golden stars to a bot smh")
 	}
 	else
 	{
