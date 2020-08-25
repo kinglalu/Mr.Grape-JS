@@ -1,4 +1,4 @@
-// Usage: `8ball`, just a fortune-teller.
+// Usage: `8ball`, just a fun fortune-teller.
 let cooldown = false
 for (let i = 0; i < cooldowns.length; i++) {
     if (cooldowns[i] === cmd + message.author.id) {
