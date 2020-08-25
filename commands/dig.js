@@ -4,7 +4,7 @@ for (let i = 0; i < cooldowns.length; i++) {
     if (cooldowns[i] === cmd + message.author.id) {
         const balnoEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('No mine for you')
+					.setTitle('No digging for you lol')
 					
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
