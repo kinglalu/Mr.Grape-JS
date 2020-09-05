@@ -1,5 +1,5 @@
 //Usage: `server`, Returns some basic info about the server
-message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+//message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
 
 const serversoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
