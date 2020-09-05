@@ -7,7 +7,7 @@ const usersoloEmbed = new Discord.MessageEmbed()
 					.setTitle('User Info')
 					.addFields(
 						{ name: 'Username:', value: `${message.author.username}`},
-						{ name: 'Members:', value: `${message.author.id}`},	
+						{ name: 'User ID:', value: `${message.author.id}`},	
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
