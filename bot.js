@@ -38,7 +38,7 @@ bot.on("ready", async() =>
 	bot.user.setActivity(`for ${config.prefix}help`, {"type": "WATCHING"})
 })
 
-keyv.on('error', err => console.error('Keyv connection error:', err));
+
 
 bot.on("message", async(message) =>
 {
@@ -69,5 +69,5 @@ bot.on("message", async(message) =>
 		eval(fs.readFileSync(`./commands/${cmd}.js`).toString());
 	}
 	
-
+keyv.on('error', err => console.error('Keyv connection error:', err));
 })
