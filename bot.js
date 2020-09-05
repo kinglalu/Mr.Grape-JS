@@ -10,6 +10,7 @@ let currency = fs.readFileSync("./storage/currency.txt").toString().split("\n");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
 bot.login(process.env.BOT_TOKEN);
 
+
 setInterval(function()
 {
 	fs.writeFileSync("./storage/currency.txt", currency.join("\n"));
@@ -36,6 +37,8 @@ bot.on("ready", async() =>
 	console.log("Ready");
 	bot.user.setActivity(`for ${config.prefix}help`, {"type": "WATCHING"})
 })
+
+keyv.on('error', err => console.error('Keyv connection error:', err));
 
 bot.on("message", async(message) =>
 {
@@ -65,5 +68,6 @@ bot.on("message", async(message) =>
 	{
 		eval(fs.readFileSync(`./commands/${cmd}.js`).toString());
 	}
+	
 
 })
