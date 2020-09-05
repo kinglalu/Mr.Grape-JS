@@ -56,10 +56,7 @@ bot.on("message", async(message) =>
 	{
 		eval(fs.readFileSync(`./commands/${cmd}.js`).toString());
 	}
-	
-	if (cmd === 'yeet') {
-		message.channel.send('yoink');
-	}
+
 	
 keyv.on('error', err => console.error('Keyv connection error:', err));
 })
