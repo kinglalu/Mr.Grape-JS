@@ -13,7 +13,7 @@ bot.login(process.env.BOT_TOKEN);
 
 setInterval(function()
 {
-	fs.writeFileSync("./storage/currency.txt", currency.join("\n"));
+	
 	fs.writeFileSync("./storage/cooldowns.txt", cooldowns.join("\n"));
 
 	for(let i = 0; i < cooldowns.length; i++)
@@ -32,7 +32,7 @@ setInterval(function()
 	}
 }, 1000);
 
-bot.on("ready", async() =>
+bot.once("ready", async() =>
 {
 	console.log("Ready");
 	bot.user.setActivity(`for ${config.prefix}help`, {"type": "WATCHING"})
@@ -50,23 +50,15 @@ bot.on("message", async(message) =>
 	{
 		target = message.guild.members.cache.find(member => member.id === args[1].replace("<@", "").replace(">", ""));
 	}
-	if (!currency.includes(message.author.id))
-	{
-		currency.push(message.author.id);
-		currency.push(0);
-	}
-	if (target)
-	{
-		if (!currency.includes(target.id) && !target.user.bot)
-		{
-			currency.push(target.id);
-			currency.push(0);
-		}
-	}
+	
 
 	if (commands.includes(`${cmd}.js`))
 	{
 		eval(fs.readFileSync(`./commands/${cmd}.js`).toString());
+	}
+	
+	if (cmd === 'yeet') {
+		message.channel.send('yoink');
 	}
 	
 keyv.on('error', err => console.error('Keyv connection error:', err));
