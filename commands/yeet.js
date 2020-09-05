@@ -1,4 +1,4 @@
 if (true) {
 await keyv.set('e', 'j');
-return message.channel.send(`${await prefixes.get(message.guild.id)}`);
+return message.channel.send(`${await keyv.get('e')}`);
 }
