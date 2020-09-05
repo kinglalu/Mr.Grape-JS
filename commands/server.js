@@ -12,4 +12,4 @@ const serversoloEmbed = new Discord.MessageEmbed()
 					.setTimestamp()
 					.setFooter('Grape Databases');
 
-				message.channel.send(balsoloEmbed);
+				message.channel.send(serversoloEmbed);
