@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client();
 const config = require("./config.json");
+const Keyv = require('keyv');
+const keyv = new Keyv('postgres://eibdzlmxueqxmw:d58764287b325ef033188ce42d6463ec9ac2dc17968ab938d06cbb191c7187dc@ec2-54-160-120-28.compute-1.amazonaws.com:5432/dba24qcdg559kg');
 
 const commands = fs.readdirSync("./commands");
 let currency = fs.readFileSync("./storage/currency.txt").toString().split("\n");
