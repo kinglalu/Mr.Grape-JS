@@ -1,5 +1,5 @@
 
-//Usage: `server`, Returns some basic info about the server
+//Usage: `userinfo`, Returns some basic info about the user
 //message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
 
 const usersoloEmbed = new Discord.MessageEmbed()
