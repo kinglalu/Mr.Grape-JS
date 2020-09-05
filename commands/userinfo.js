@@ -1,6 +1,5 @@
 
 //Usage: `userinfo`, Returns some basic info about the user
-//message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
 
 const usersoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
