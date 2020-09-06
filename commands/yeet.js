@@ -1,14 +1,3 @@
-async function yoink() {
-await keyv.set('e','j');
+async function display() {
+return message.channel.send(`${await keyv.get(message.author.id)}`);
 }
-yoink();
-
-async function ree(param) {
-	await keyv.get(param);
-	}
-
-let es = ree('e');
-
-message.channel.send(es);
-
-
