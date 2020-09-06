@@ -20,9 +20,9 @@ if (!cooldown) {
     cooldowns.push("c5");
 
     if (target) {
-        async function Target() {
-           for(let i = 0; i < 2; i++) {
+        async function Target() {           
             if (await users.get(target.id) === undefined) {
+                for(let i = 0; i < 2; i++) {
                 users.set(target.id, 0);
             }
            }
@@ -47,12 +47,12 @@ if (!cooldown) {
         balTarg();
 
     } else {
-        async function Auth() {
-            for(let i = 0; i < 2; i++) {
+        async function Auth() {    
             if (await users.get(message.author.id) === undefined) {
+               for(let i = 0; i < 2; i++) {
                 users.set(message.author.id, 0);
             }
-            }
+        }
         }
 
         Auth();
