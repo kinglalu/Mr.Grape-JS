@@ -30,12 +30,13 @@ if (!cooldown) {
         const AsyncTarget = async function() {
             await users.get(target.id)
         }
+        
         const balEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(target.displayName + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: target.displayName + ' has ' + ` ${AsyncTarget} ` + ' :star:'
+                value: target.displayName + ' has ' + ` AsyncTarget() ` + ' :star:'
             })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
@@ -60,7 +61,7 @@ if (!cooldown) {
             .setTitle(message.author.username + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: 'you have ' + ` ${AsyncAuth} ` + ' :star:'
+                value: 'you have ' + ` AsyncAuth() ` + ' :star:'
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
