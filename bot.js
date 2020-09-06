@@ -3,7 +3,7 @@ const fs = require("fs");
 const bot = new Discord.Client();
 const config = require("./config.json");
 const Keyv = require('keyv');
-const keyv = new Keyv(config.dbURI);
+const users = new Keyv(config.dbURI, { namespace: 'users' });
 
 const commands = fs.readdirSync("./commands");
 let currency = fs.readFileSync("./storage/currency.txt").toString().split("\n");
@@ -51,10 +51,7 @@ bot.on("message", async(message) =>
 		target = message.guild.members.cache.find(member => member.id === args[1].replace("<@", "").replace(">", ""));
 	}
 	
-async function yeet() {if (true) {
-await keyv.set('e', 'j');
-return message.channel.send(`${await keyv.get('e')}`);
-}}
+
 	if (commands.includes(`${cmd}.js`))
 	{
 		eval(fs.readFileSync(`./commands/${cmd}.js`).toString());
