@@ -2,7 +2,7 @@
 	"token": "lol no token 4 u",
 	"prefix": "#",
 	"version": "0.7.4",
-	"dbURI": "postgres://eibdzlmxueqxmw:d58764287b325ef033188ce42d6463ec9ac2dc17968ab938d06cbb191c7187dc@ec2-54-160-120-28.compute-1.amazonaws.com:5432/dba24qcdg559kg",
+	"dbURI": "postgres://kykvplsgljispr:775167405ab211a9a4a64e8aa94620a2974c24afa79944ce8414dafce37d858c@ec2-184-72-162-198.compute-1.amazonaws.com:5432/dc3oln56iboca4",
 	"todo":
 		[
 			"Prestiging!",
