@@ -21,9 +21,11 @@ if (!cooldown) {
 
     if (target) {
         async function Target() {
+           for(let i = 0; i < 2; i++) {
             if (await users.get(target.id) === undefined) {
                 users.set(target.id, 0);
             }
+           }
         }
 
         Target();
@@ -46,8 +48,10 @@ if (!cooldown) {
 
     } else {
         async function Auth() {
+            for(let i = 0; i < 2; i++) {
             if (await users.get(message.author.id) === undefined) {
                 users.set(message.author.id, 0);
+            }
             }
         }
 
