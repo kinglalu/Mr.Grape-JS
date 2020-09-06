@@ -59,7 +59,8 @@ if (!cooldown) {
         async function Asyncauth() {
             await users.get(message.author.id);
         }
-        let snip = Asyncauth();
+        let snips = Asyncauth();
+        let snip = parseInt(snips);
         const balsoloEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s balance`)
