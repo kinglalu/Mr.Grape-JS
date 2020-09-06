@@ -1,4 +1,4 @@
-yeet();
+
 async function ree(param) {
 	await keyv.get(param);
 	}
