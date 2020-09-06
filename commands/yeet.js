@@ -5,6 +5,6 @@ async function ree(param) {
 
 let es = ree('e');
 
-message.channel.send();
+message.channel.send(es);
 
 
