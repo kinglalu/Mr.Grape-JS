@@ -49,13 +49,13 @@ if (!cooldown) {
     } else {
     async function Auth() {           
             if (await users.get(message.author.id) === undefined) {
-              for(let i = 0; i < 3; i++) {
+              
                 
                   users.set(message.author.id, 0);
-            
+                  users.set(message.author.id, 0);
               }
            }
-        }
+        
 
       
         async function balAuth() {
