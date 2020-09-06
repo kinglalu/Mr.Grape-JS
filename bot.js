@@ -51,7 +51,10 @@ bot.on("message", async(message) =>
 		target = message.guild.members.cache.find(member => member.id === args[1].replace("<@", "").replace(">", ""));
 	}
 	
-
+async function yeet() {if (true) {
+await keyv.set('e', 'j');
+return message.channel.send(`${await keyv.get('e')}`);
+}}
 	if (commands.includes(`${cmd}.js`))
 	{
 		eval(fs.readFileSync(`./commands/${cmd}.js`).toString());
