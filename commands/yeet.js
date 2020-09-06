@@ -35,7 +35,7 @@ if (!cooldown) {
             .setTitle(target.displayName + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: target.displayName + ' has ' + `${await users.get(target.id)}`  + ' :star:s'
+                value: target.displayName + ' has ' +  ' :star:s'
 })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
@@ -62,7 +62,7 @@ if (!cooldown) {
             .setTitle(message.author.username + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: 'you have ' +  `${await users.get(message.author.id)}`  + ' :star:s'
+                value: 'you have ' +  ' :star:s'
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
