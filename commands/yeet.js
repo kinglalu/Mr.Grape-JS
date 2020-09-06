@@ -54,6 +54,7 @@ if (!cooldown) {
             setTimeout(function(){ let mom = null; }, 2500);
         
         }
+        }
 
         Auth();
         async function balAuth() {
