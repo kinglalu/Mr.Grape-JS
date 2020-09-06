@@ -1,7 +1,10 @@
 yeet();
+async function ree(param) {
+	await keyv.get(param);
+	}
 
-let es = await keyv.get('e');
+let es = ree('e');
 
-message.channel.send(es);
+message.channel.send();
 
 
