@@ -45,7 +45,7 @@ if (!cooldown) {
             .setFooter('Grape Bank Inc.');
 
         message.channel.send(balEmbed);
-        message.channel.send(`${await users.get(target.id)}`);
+    
 
     } else {
         async function Auth() {
