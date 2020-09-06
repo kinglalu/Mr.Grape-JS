@@ -27,7 +27,7 @@ if (!cooldown) {
         }
 
         Target();
-        const AsyncTarget = async function() {
+        async function Asynctarget() {
             await users.get(target.id)
         }
         
@@ -36,8 +36,8 @@ if (!cooldown) {
             .setTitle(target.displayName + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: target.displayName + ' has ' + ` AsyncTarget() ` + ' :star:'
-            })
+                value: target.displayName + ' has ' + ` ${Asynctarget()} ` + ' :star:'
+})
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Bank Inc.');
@@ -53,7 +53,7 @@ if (!cooldown) {
 
         Auth();
 
-        const AsyncAuth = async function() {
+        async function Asyncauth() {
             await users.get(message.author.id)
         }
         const balsoloEmbed = new Discord.MessageEmbed()
@@ -61,7 +61,7 @@ if (!cooldown) {
             .setTitle(message.author.username + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: 'you have ' + ` AsyncAuth() ` + ' :star:'
+                value: 'you have ' + ` ${Asyncauth()} ` + ' :star:'
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
