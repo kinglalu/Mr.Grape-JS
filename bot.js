@@ -58,5 +58,5 @@ bot.on("message", async(message) =>
 	}
 
 	
-keyv.on('error', err => console.error('Keyv connection error:', err));
+users.on('error', err => console.error('Keyv connection error:', err));
 })
