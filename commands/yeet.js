@@ -27,17 +27,15 @@ if (!cooldown) {
         }
 
         Target();
-        async function Asynctarget() {
-            await users.get(target.id)
-        }
+     
         
-        let snoop = Asynctarget();
+    
         const balEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(target.displayName + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: target.displayName + ' has ' + ` ${snoop} ` + ' :star:'
+                value: target.displayName + ' has ' + `${await users.get(target.id)}`  + ' :star:s'
 })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
@@ -63,7 +61,7 @@ if (!cooldown) {
             .setTitle(message.author.username + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: 'you have ' + ` ${snip} ` + ' :star:'
+                value: 'you have ' +  `${await users.get(message.author.id)}`  + ' :star:s'
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
