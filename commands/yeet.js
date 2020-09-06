@@ -1,3 +1,7 @@
+async function yoink() {
+await keyv.set('e','j');
+}
+yoink();
 
 async function ree(param) {
 	await keyv.get(param);
