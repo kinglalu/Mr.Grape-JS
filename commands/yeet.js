@@ -47,11 +47,12 @@ if (!cooldown) {
         balTarg();
 
     } else {
-    async function Auth() {           
+    
+        async function Auth() {           
            
             if (await users.get(message.author.id) === undefined) {
-                for(let i = 0; i < 10; i++) {  
                 users.set(message.author.id, 0);
+                for(let i = 0; i < 10; i++) {  
                     if(await users.get(message.author.id) === 0) {
                         break;
                     }
