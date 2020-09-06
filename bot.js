@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const config = require("./config.json");
 const Keyv = require('keyv');
 const users = new Keyv(config.dbURI, { namespace: 'users' });
-
+//dec
 const commands = fs.readdirSync("./commands");
 let currency = fs.readFileSync("./storage/currency.txt").toString().split("\n");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
