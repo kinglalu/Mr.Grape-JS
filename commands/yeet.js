@@ -31,12 +31,13 @@ if (!cooldown) {
             await users.get(target.id)
         }
         
+        let snoop = Asynctarget();
         const balEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(target.displayName + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: target.displayName + ' has ' + ` ${Asynctarget()} ` + ' :star:'
+                value: target.displayName + ' has ' + ` ${snoop} ` + ' :star:'
 })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
@@ -56,23 +57,19 @@ if (!cooldown) {
         async function Asyncauth() {
             await users.get(message.author.id)
         }
+        let snip = Asyncauth();
         const balsoloEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: 'you have ' + ` ${Asyncauth()} ` + ' :star:'
+                value: 'you have ' + ` ${snip} ` + ' :star:'
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Bank Inc.');
 
         message.channel.send(balsoloEmbed);
-
-
-
-
-        //message.channel.send(`you have \`${currency[i + 1]}\` golden star(s)`);
 
     }
 }
