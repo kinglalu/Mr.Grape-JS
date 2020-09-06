@@ -1,4 +1,4 @@
-//Usage: `bal <user>`, returns the number of stars a user has
+//Usage: `bal <user>`, returns the number of stars a user has.
 let cooldown = false
 for (let i = 0; i < cooldowns.length; i++) {
     if (cooldowns[i] === cmd + message.author.id) {
