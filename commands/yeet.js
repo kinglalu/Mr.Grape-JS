@@ -51,7 +51,7 @@ if (!cooldown) {
             if (await users.get(message.author.id) === undefined) {
                
                 users.set(message.author.id, 0);
-            setTimeout(function(){ let mom = null; }, 1500);
+            setTimeout(function(){ let mom = null; }, 3000);
         }
         }
 
