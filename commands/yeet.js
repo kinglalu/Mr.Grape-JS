@@ -47,16 +47,7 @@ if (!cooldown) {
         balTarg();
 
     } else {
-        async function Auth() {    
-            if (await users.get(message.author.id) === undefined) {
-              
-                users.set(message.author.id, 0);
-            setTimeout(function(){ let mom = null; }, 2500);
-        
-        }
-        }
-
-        Auth();
+  
         async function balAuth() {
         const balsoloEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
