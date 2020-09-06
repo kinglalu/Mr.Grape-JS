@@ -28,24 +28,21 @@ if (!cooldown) {
 
         Target();
      
-         async function Asyncaauth() {
-            await users.get(target.id);
-        }
-        let snoop = Asyncaauth();
-    
+       async function balTarg() {
         const balEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(target.displayName + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: target.displayName + ' has ' + snoop +  ' :star:s'
+                value: target.displayName + ' has ' + `${await users.get(target.id)}` +  ' :star:s'
 })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Bank Inc.');
 
         message.channel.send(balEmbed);
-    
+       }
+        balTarg();
 
     } else {
         async function Auth() {
@@ -55,25 +52,21 @@ if (!cooldown) {
         }
 
         Auth();
-
-        async function Asyncauth() {
-            await users.get(message.author.id);
-        }
-        let snips = Asyncauth();
-        let snip = parseInt(snips);
+        async function balAuth() {
         const balsoloEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s balance`)
             .addFields({
                 name: 'Balance',
-                value: 'you have ' + snip +  ' :star:s'
+                value: 'you have ' + `${await users.get(message.author.id)}` +  ' :star:s'
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Bank Inc.');
 
         message.channel.send(balsoloEmbed);
-        
+        }
+        balAuth();        
 
     }
 }
