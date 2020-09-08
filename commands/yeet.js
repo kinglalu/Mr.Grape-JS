@@ -78,7 +78,7 @@ async function bal() {
             message.channel.send(balsoloEmbed);
             }
     }
-       
+   function noice() {    
     if (args[0]) {
 		const usery = getUserFromMention(args[0]);
 		if (!usery) {
@@ -90,5 +90,7 @@ async function bal() {
 
 	return bal();
 }
+   }
+	noice();
 }
 
