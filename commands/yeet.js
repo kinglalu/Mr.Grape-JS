@@ -45,7 +45,9 @@ if (!cooldown) {
                 }, )
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
-                .setFooter('Grape Bank Inc.');}
+                .setFooter('Grape Bank Inc.');
+            message.channel.send(balsoloEmbed);
+            }
     }
  bal(); 
     }
