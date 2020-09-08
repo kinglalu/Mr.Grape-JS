@@ -28,6 +28,7 @@ if (!cooldown) {
 }, 3000);
                 
             }
+            else {return false;}
         }
 
 
@@ -46,7 +47,7 @@ if (!cooldown) {
             message.channel.send(balsolooEmbed);
         }
         
-        Auth();
+        
         if (Auth() === true) {
             const balsoloEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
@@ -62,7 +63,7 @@ if (!cooldown) {
             message.channel.send('e')
         }
         
-        else {regularBal();}
-
+        else if (Auth() === false) {regularBal();}
+        else{message.channel.send('sad');}
     }
 }
