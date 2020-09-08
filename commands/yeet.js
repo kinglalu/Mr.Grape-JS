@@ -18,9 +18,7 @@ if (!cooldown) {
 
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c5");
-
-    if (true) {
-        async function bal() {
+async function bal() {
           if (await users.get(message.author.id) === undefined) {
                 users.set(message.author.id, 0);
                   const balsolooEmbed = new Discord.MessageEmbed()
@@ -49,8 +47,48 @@ if (!cooldown) {
             message.channel.send(balsoloEmbed);
             }
     }
- bal(); 
+    async function balt() {
+          const usery = getUserFromMention(args[0]);
+        if (await users.get(usery) === undefined) {
+                users.set(usery, 0);
+                  const balsolooEmbed = new Discord.MessageEmbed()
+                .setColor('#dd2de0')
+                .setTitle(usery.username + `'s balance`)
+                .addFields({
+                    name: 'Balance',
+                    value: 'they have 0 :star:s'
+                }, )
+                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+                .setTimestamp()
+                .setFooter('Grape Bank Inc.');
+                message.channel.send(balsolooEmbed);
+            }
+            else {  
+                
+                const balsoloEmbed = new Discord.MessageEmbed()
+                .setColor('#dd2de0')
+                .setTitle(usery.username + `'s balance`)
+                .addFields({
+                    name: 'Balance',
+                    value: 'they have '+`${await users.get(usery)}`+' :star:s'
+                }, )
+                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+                .setTimestamp()
+                .setFooter('Grape Bank Inc.');
+            message.channel.send(balsoloEmbed);
+            }
     }
+       
+    if (args[0]) {
+		const usery = getUserFromMention(args[0]);
+		if (!usery) {
+			return message.reply('My guy, use a proper mention.);
+		}
 
+		return balt();
+	}
+
+	return bal();
+}
 }
 
