@@ -48,14 +48,15 @@ if (!cooldown) {
 
 
     async function balTarg() {
-          if (await users.get(target) === undefined) {
-                users.set(target, 0);
+         target = message.mentions.members.first();	
+	    if (await users.get(targets) === undefined) {
+                users.set(targets, 0);
                   const balsolooEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(target.displayName + `'s balance`)
+                .setTitle(targets.displayName + `'s balance`)
                 .addFields({
                     name: 'Balance',
-                    value: 'you have 0 :star:s'
+                    value: 'they have 0 :star:s'
                 }, )
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
@@ -65,10 +66,10 @@ if (!cooldown) {
             else {  
                 const balsoloEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(target.displayName + `'s balance`)
+                .setTitle(targets.displayName + `'s balance`)
                 .addFields({
                     name: 'Balance',
-                    value: 'you have '+`${await users.get(target)}`+' :star:s'
+                    value: 'they have '+`${await users.get(targets)}`+' :star:s'
                 }, )
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
@@ -77,17 +78,12 @@ if (!cooldown) {
             }
     
     }
-	
-	if (args[0]) {
-		const usery = getUserFromMention(args[1]);
-		if (!usery) {
-			message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
-		}
-
-		message.channel.send(`${user.username}'s avatar: ${user.displayAvatarURL({ dynamic: true })}`);
+	var noice = args[0];
+	if (noice.includes("<@")) {
+		balTarg();
 	}
-
-	message.channel.send(`${message.author.username}, your avatar: ${message.author.displayAvatarURL({ dynamic: true })}`);
+	else {bal();}
+	
 }
     
 
