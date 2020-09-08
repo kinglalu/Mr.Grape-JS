@@ -79,10 +79,8 @@ if (!cooldown) {
     
     }
 	var noice = args[0];
-	if (noice.includes("<@")) {
-		balTarg();
-	}
-	else if (noice === undefined) {bal();}
+	if (noice === undefined) {bal();}
+	else if (noice.includes("<@")) {balTarg();}
 	else {message.channel.send("Unknown error my guy.");}
 }
     
