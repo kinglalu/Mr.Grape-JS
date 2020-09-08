@@ -1,6 +1,6 @@
 const asdfasdf = async () => {
 
-message.channel.send(`${await users.get(message.author.id}`)
+message.channel.send(`${await users.get(message.author.id)}`)
 
 
 
