@@ -81,13 +81,13 @@ if (!cooldown) {
 	if (!user) {
 		  message.channel.send('Proper mentions my guy.')
 		}
-
+	else if (args[1]){
 		balTarg();
 	}
-
+	else{
 	bal();
-
 }
+
     
     
     
