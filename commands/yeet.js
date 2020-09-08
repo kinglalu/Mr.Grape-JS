@@ -46,7 +46,7 @@ if (!cooldown) {
             }
     }
 
-}
+
     async function balTarg() {
           if (await users.get(target) === undefined) {
                 users.set(target, 0);
@@ -86,7 +86,7 @@ if (!cooldown) {
 	}
 
     
-    
+}
     
     
     
