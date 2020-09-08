@@ -79,14 +79,11 @@ if (!cooldown) {
     }
 	const user = getUserFromMention(args[0]);
 	if (!user) {
-		  message.channel.send('Proper mentions my guy.')
+		  bal();
 		}
-	else if (args[1]){
+	else {
 		balTarg();
 	}
-	else{
-	bal();
-}
 
     
     
