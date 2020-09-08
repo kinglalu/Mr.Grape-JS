@@ -50,8 +50,16 @@ bot.on("message", async(message) =>
 	{
 		target = message.guild.members.cache.find(member => member.id === args[1].replace("<@", "").replace(">", ""));
 	}
-
-
+	
+	async function getMoni(param) {await users.get(param)}
+	
+	async function addMoni(param1, param2) {
+		let current = getMoni(param1);
+		let newMoni = current + param2;
+		await users.set(param1,newMoni);
+		
+	}
+	
 	if (commands.includes(`${cmd}.js`))
 	{
 		eval(fs.readFileSync(`./commands/${cmd}.js`).toString());
