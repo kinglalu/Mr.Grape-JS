@@ -20,7 +20,7 @@ if (!cooldown) {
     cooldowns.push("c5");
 
     if (true) {
- async function bal() {
+        async function bal() {
           if (await users.get(message.author.id) === undefined) {
                 users.set(message.author.id, 0);
                   const balsolooEmbed = new Discord.MessageEmbed()
@@ -47,6 +47,8 @@ if (!cooldown) {
                 .setTimestamp()
                 .setFooter('Grape Bank Inc.');}
     }
+ bal(); 
+    }
+
 }
-    bal();
 }
