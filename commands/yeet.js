@@ -79,7 +79,7 @@ if (!cooldown) {
     }
 	
 	if (args[0]) {
-		const usery = getUserFromMention(args[0]);
+		const usery = getUserFromMention(args[1]);
 		if (!usery) {
 			message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
 		}
