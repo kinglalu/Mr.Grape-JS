@@ -55,10 +55,12 @@ bot.on("message", async(message) =>
 	
 	async function addMoni(param1, param2) {
 		let current = getMoni(param1);
-		message.channel.send(`${current}`+" current =")
+		let NewCurrent = parseInt(current);
+		message.channel.send(`${NewCurrent}`+" current =")
 		let newMoni = current + param2;
-		message.channel.send(`${newMoni}`+" new =")
-		await users.set(param1, newMoni);
+		let finalNewMoni = parseInt(newMoni);
+		message.channel.send(`${finalNewMoni}`+" new =")
+		await users.set(param1, finalNewMoni);
 		
 	}
 	
