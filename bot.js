@@ -43,7 +43,7 @@ bot.once("ready", async() =>
 bot.on("message", async(message) =>
 {
 	if (!message.content.startsWith(config.prefix) || message.author.bot || message.channel.type === "dm") return;
-	  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   	  const cmd = args.shift().toLowerCase();
 	let target;
 	if (args[1])
