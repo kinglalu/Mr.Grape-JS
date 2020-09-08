@@ -23,7 +23,9 @@ if (!cooldown) {
         async function Auth() {
             if (await users.get(message.author.id) === undefined) {
                 users.set(message.author.id, 0);
-                users.set(message.author.id, 0);
+                setTimeout(function(){ 
+    return true; 
+}, 3000);
                 return true;
             }
         }
@@ -56,6 +58,7 @@ if (!cooldown) {
                 .setTimestamp()
                 .setFooter('Grape Bank Inc.');
             message.channel.send(balsoloEmbed);
+            message.channel.send('e')
         }
         
         else {regularBal();}
