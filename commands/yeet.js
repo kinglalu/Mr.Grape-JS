@@ -20,36 +20,10 @@ if (!cooldown) {
     cooldowns.push("c5");
 
     if (true) {
-        async function Auth() {
-            if (await users.get(message.author.id) === undefined) {
+ async function bal() {
+          if (await users.get(message.author.id) === undefined) {
                 users.set(message.author.id, 0);
-                setTimeout(function(){ 
-    return true; 
-}, 3000);
-                
-            }
-            else {return false;}
-        }
-
-
-        async function regularBal() {
-            const balsolooEmbed = new Discord.MessageEmbed()
-                .setColor('#dd2de0')
-                .setTitle(message.author.username + `'s balance`)
-                .addFields({
-                    name: 'Balance',
-                    value: 'you have ' + `${await users.get(message.author.id)}` + ' :star:s'
-                }, )
-                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-                .setTimestamp()
-                .setFooter('Grape Bank Inc.');
-
-            message.channel.send(balsolooEmbed);
-        }
-        
-        
-        if (Auth() === true) {
-            const balsoloEmbed = new Discord.MessageEmbed()
+                  const balsolooEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
                 .setTitle(message.author.username + `'s balance`)
                 .addFields({
@@ -59,11 +33,20 @@ if (!cooldown) {
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
                 .setFooter('Grape Bank Inc.');
-            message.channel.send(balsoloEmbed);
-            message.channel.send('e')
-        }
-        
-        else if (Auth() === false) {regularBal();}
-        else{message.channel.send('sad');}
+                message.channel.send(balsolooEmbed);
+            }
+            else {  
+                const balsoloEmbed = new Discord.MessageEmbed()
+                .setColor('#dd2de0')
+                .setTitle(message.author.username + `'s balance`)
+                .addFields({
+                    name: 'Balance',
+                    value: 'you have '+`${await users.get(message.author.id)}`+' :star:s'
+                }, )
+                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+                .setTimestamp()
+                .setFooter('Grape Bank Inc.');}
     }
+}
+    bal();
 }
