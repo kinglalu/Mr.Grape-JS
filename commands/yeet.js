@@ -77,8 +77,8 @@ if (!cooldown) {
             }
     
     }
-	const user = getUserFromMention(args[0]);
-	if (!user) {
+	const usery = getUserFromMention(args[1]);
+	if (!usery) {
 		  bal();
 		}
 	else {
