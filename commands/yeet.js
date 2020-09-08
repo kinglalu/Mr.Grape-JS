@@ -26,7 +26,7 @@ if (!cooldown) {
                 setTimeout(function(){ 
     return true; 
 }, 3000);
-                return true;
+                
             }
         }
 
@@ -46,6 +46,7 @@ if (!cooldown) {
             message.channel.send(balsolooEmbed);
         }
         
+        Auth();
         if (Auth() === true) {
             const balsoloEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
