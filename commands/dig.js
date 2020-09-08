@@ -27,7 +27,7 @@ const mine = new Discord.MessageEmbed()
 					.setFooter('Grape Enterprises');
 	message.channel.send(mine);
 	cooldowns.push(cmd + message.author.id);
-    cooldowns.push("c30");
+    cooldowns.push("c0");
 	addMoni(message.author.id, earn);
 
 }
