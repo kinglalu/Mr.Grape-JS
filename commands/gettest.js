@@ -2,7 +2,8 @@ async function noice() {
 message.channel.send(`${await users.get(message.author.id)}`)
 let noicevar = await users.get(message.author.id)
 message.channel.send(noicevar);
-let anothervar = noicevar + 4;
+let rand = Math.floor(Math.random()*9)+1;
+let anothervar = noicevar + rand;
 message.channel.send(anothervar)
 }
 noice();
