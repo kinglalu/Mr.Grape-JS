@@ -20,64 +20,71 @@ if (!cooldown) {
     cooldowns.push("c5");
 
     if (target) {
-        async function Target() {           
+        async function Target() {
             if (await users.get(target.id) === undefined) {
-              
+
                 users.set(target.id, 0);
-            
-           }
+
+            }
         }
 
         Target();
-     
-       async function balTarg() {
-        const balEmbed = new Discord.MessageEmbed()
-            .setColor('#dd2de0')
-            .setTitle(target.displayName + `'s balance`)
-            .addFields({
-                name: 'Balance',
-                value: target.displayName + ' has ' + `${await users.get(target.id)}` +  ' :star:s'
-})
-            .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-            .setTimestamp()
-            .setFooter('Grape Bank Inc.');
 
-        message.channel.send(balEmbed);
-       }
+        async function balTarg() {
+            const balEmbed = new Discord.MessageEmbed()
+                .setColor('#dd2de0')
+                .setTitle(target.displayName + `'s balance`)
+                .addFields({
+                    name: 'Balance',
+                    value: target.displayName + ' has ' + `${await users.get(target.id)}` + ' :star:s'
+                })
+                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+                .setTimestamp()
+                .setFooter('Grape Bank Inc.');
+
+            message.channel.send(balEmbed);
+        }
         balTarg();
 
     } else {
-    
-        async function Auth() {           
-           
+        async function Auth() {
             if (await users.get(message.author.id) === undefined) {
                 users.set(message.author.id, 0);
-                for(let i = 0; i < 10; i++) {  
-                    if(await users.get(message.author.id) === 0) {
-                        break;
-                    }
-              }
-           }
-    }
-        
-
-      
-        async function balAuth() {
-        const balsoloEmbed = new Discord.MessageEmbed()
-            .setColor('#dd2de0')
-            .setTitle(message.author.username + `'s balance`)
-            .addFields({
-                name: 'Balance',
-                value: 'you have ' + `${await users.get(message.author.id)}` +  ' :star:s'
-            }, )
-            .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-            .setTimestamp()
-            .setFooter('Grape Bank Inc.');
-
-        message.channel.send(balsoloEmbed);
+                return true;
+            }
         }
-        Auth();
-        balAuth();        
+
+
+        async function regularBal() {
+            const balsolooEmbed = new Discord.MessageEmbed()
+                .setColor('#dd2de0')
+                .setTitle(message.author.username + `'s balance`)
+                .addFields({
+                    name: 'Balance',
+                    value: 'you have ' + `${await users.get(message.author.id)}` + ' :star:s'
+                }, )
+                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+                .setTimestamp()
+                .setFooter('Grape Bank Inc.');
+
+            message.channel.send(balsolooEmbed);
+        }
+        
+        if (Auth() === true) {
+            const balsoloEmbed = new Discord.MessageEmbed()
+                .setColor('#dd2de0')
+                .setTitle(message.author.username + `'s balance`)
+                .addFields({
+                    name: 'Balance',
+                    value: 'you have 0 :star:s'
+                }, )
+                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+                .setTimestamp()
+                .setFooter('Grape Bank Inc.');
+            message.channel.send(balsoloEmbed);
+        }
+        
+        else {regularBal();}
 
     }
 }
