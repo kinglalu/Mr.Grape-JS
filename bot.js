@@ -43,27 +43,15 @@ bot.once("ready", async() =>
 bot.on("message", async(message) =>
 {
 	if (!message.content.startsWith(config.prefix) || message.author.bot || message.channel.type === "dm") return;
-	let args = message.content.split(" ");
-	let cmd = args[0].toLowerCase().slice(config.prefix.length, message.content.length);
+	  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  	  const cmd = args.shift().toLowerCase();
 	let target;
 	if (args[1])
 	{
 		target = message.guild.members.cache.find(member => member.id === args[1].replace("<@", "").replace(">", ""));
 	}
 
-	function getUserFromMention(mention) {
-	if (!mention) return;
 
-	if (mention.startsWith('<@') && mention.endsWith('>')) {
-		mention = mention.slice(2, -1);
-
-		if (mention.startsWith('!')) {
-			mention = mention.slice(1);
-		}
-
-		return client.users.cache.get(mention);
-	}
-}
 	if (commands.includes(`${cmd}.js`))
 	{
 		eval(fs.readFileSync(`./commands/${cmd}.js`).toString());
