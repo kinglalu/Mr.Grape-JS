@@ -55,13 +55,13 @@ bot.on("message", async(message) =>
 	
 	async function addMoni(param1, param2) {
 		let current = getMoni(param1);
-		 current = current.replace("[object Promise]","")
-		let NewestCurrent = parseInt(current);
-		message.channel.send(`${NewestCurrent}`+" current =")
+		 current = current.replace("[object Promise]","");
+		let NewestCurrents = parseInt(current);
+		message.channel.send(`${NewestCurrents}`+" current =");
 		let newMoni = current + param2;
-		 newMoni = newMoni.replace("[object Promise]","")
+		 newMoni = newMoni.replace("[object Promise]","");
 		let finalNewMoni = parseInt(newMoni);
-		message.channel.send(`${finalNewMoni}`+" new =")
+		message.channel.send(`${finalNewMoni}`+" new =");
 		await users.set(param1, finalNewMoni);
 		
 	}
