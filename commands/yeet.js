@@ -15,7 +15,7 @@ for (let i = 0; i < cooldowns.length; i++) {
     }
 }
 if (!cooldown) {
-if (!target) {
+
     async function bal() {
           if (await users.get(message.author.id) === undefined) {
                 users.set(message.author.id, 0);
@@ -45,9 +45,8 @@ if (!target) {
             message.channel.send(balsoloEmbed);
             }
     }
-    bal();
+
 }
-    else {
     async function balTarg() {
           if (await users.get(target) === undefined) {
                 users.set(target, 0);
@@ -78,13 +77,22 @@ if (!target) {
             }
     
     }
-    
-  balTarg();
-    
-    
-    
-    
-    }
-    
+	const user = getUserFromMention(args[0]);
+	if (!user) {
+		  message.channel.send('Proper mentions my guy.')
+		}
+
+		balTarg();
+	}
+
+	bal();
+
 }
+    
+    
+    
+    
+    
+    
+
 
