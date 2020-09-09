@@ -20,7 +20,7 @@ if (!cooldown)
 {
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
-	async function getMoni() {if (await users.get(message.author.id) > parseInt(args[2])) {return true;}}
+	async function getMoni() {if (await users.get(message.author.id) > parseInt(args[2])) {message.channel.send("themoni: "+`${await users.get(message.author.id)}`); return true;}}
 	
 	let targets = message.mentions.members.first();
         let targetss = targets.id;
