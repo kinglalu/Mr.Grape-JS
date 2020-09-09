@@ -72,9 +72,10 @@ if (!cooldown) {
                             name: '--------------',
                             value: 'Congrats, you get ' + `${parseInt(args[1])}` + " :stars:s"
                         }, ))
-
+			
                         message.channel.send(gambleEmbed);
-                        currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
+                        let win = parseInt(args[1]);
+			    addMoni(message.author.id, win);
                     } else {
 
                         message.edit(gambleEmbed.addFields({
@@ -82,8 +83,10 @@ if (!cooldown) {
                             value: 'You lost...'
                         }, ))
                         message.channel.send(gambleEmbed);
-
-                        currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[1]);
+			let lose = parseInt(args[1]);
+			    let loss = -1 * lose;
+			    addMoni(message.author.id, loss);
+                        
                     }
                 }, 1100)
             }, 3100)
