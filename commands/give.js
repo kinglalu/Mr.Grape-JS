@@ -24,6 +24,7 @@ if (!cooldown)
 	await users.get(message.author.id);
 	}
 	let conf = getMoni();
+	message.channel.send(getMoni());
 	let targets = message.mentions.members.first();
         let targetss = targets.id;
 	if (!targets)
