@@ -27,7 +27,7 @@ if (!cooldown)
 		
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(message.author.username + `robbery of ` + target.displayName)
+					.setTitle(message.author.username + "'s robbery")
 					.addFields(
 						{ name: 'Theft', value:  'you stole ' +randSteal+ ' :star:s' },
 					)
@@ -43,7 +43,7 @@ if (!cooldown)
 		addMoni(message.author.id, loss);
 		const balsolooEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(message.author.username + ` robbery of ` + target.displayName)
+					.setTitle(message.author.username + "'s robbery")
 					.addFields(
 						{ name: 'You got caught!', value:  'You ended up paying ' +randSteal+" :star:s\nThat's karma for ya." },
 					)
