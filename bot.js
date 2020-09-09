@@ -51,8 +51,11 @@ bot.on("message", async(message) =>
 		target = message.guild.members.cache.find(member => member.id === args[1].replace("<@", "").replace(">", ""));
 	}
 	
-	async function getMoni(param) {await users.get(param)}
-	
+		async function addMoni(who, howmuch) {
+    		let rightnow = await users.get(who);
+    		let moremoni = rightnow + howmuch;
+    		await users.set(who, moremoni)
+		}
 	
 	if (commands.includes(`${cmd}.js`))
 	{
