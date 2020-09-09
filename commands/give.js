@@ -39,9 +39,10 @@ if (!cooldown)
 	}
 	else
 	{
-		currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[2]);
-		currency[currency.indexOf(target.id) + 1] = parseInt(currency[currency.indexOf(target.id) + 1]) + parseInt(args[2]);
-		
+		let give = parseInt(args[2]);
+		let subGive = -1 * give;
+		addMoni(message.author.id, subGive);
+		addMoni(target.id, give);
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + ` donation to ` + target.displayName)
