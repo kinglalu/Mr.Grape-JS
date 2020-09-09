@@ -8,36 +8,7 @@ let currency = fs.readFileSync("./storage/currency.txt").toString().split("\n");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
 bot.login(process.env.BOT_TOKEN);
 
-function randomEvent() {
-	let rand = Math.floor(Math.random()*199)+1;
-	let earn = Math.floor(Math.random()*49)+1;
-	if (rand === 1 || rand === 2) {
-		const randomEmbed = new Discord.MessageEmbed()
-					.setColor('#dd2de0')
-					.setTitle('Info')
-					.addFields(
-						{ name: 'Random Event', value: 'Quick, there is a flying orange in the night sky! Make a wish!\nThe first person to type `wish` in the chat gets '+earn+ ' :star:s' },			
-					)
-			     .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-					.setTimestamp()
-					.setFooter('Grape Enterprises');
-		message.channel.send(randomEmbed);
-	
-		if (message.content === 'wish') {
-		    const yayEmbed = new Discord.MessageEmbed()
-					.setColor('#dd2de0')
-					.setTitle('Info')
-					.addFields(
-						{ name: 'Random Event Winner', value: 'Congrats '+`${message.author.username}`+' you got '+earn+' :star:s for this event!' },			
-					)
-			     .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-					.setTimestamp()
-					.setFooter('Grape Enterprises');
-		message.channel.send(yayEmbed);
-		addMoni(message.author.id, earn);
-		    }
-	}
-}
+
 
 setInterval(function()
 {
@@ -89,7 +60,36 @@ bot.on("message", async(message) =>
 			currency.push(0);
 		}
 	}
-
+	function randomEvent() {
+	let rand = Math.floor(Math.random()*199)+1;
+	let earn = Math.floor(Math.random()*49)+1;
+	if (rand === 1 || rand === 2) {
+		const randomEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle('Info')
+					.addFields(
+						{ name: 'Random Event', value: 'Quick, there is a flying orange in the night sky! Make a wish!\nThe first person to type `wish` in the chat gets '+earn+ ' :star:s' },			
+					)
+			     .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Enterprises');
+		message.channel.send(randomEmbed);
+	
+		if (message.content === 'wish') {
+		    const yayEmbed = new Discord.MessageEmbed()
+					.setColor('#dd2de0')
+					.setTitle('Info')
+					.addFields(
+						{ name: 'Random Event Winner', value: 'Congrats '+`${message.author.username}`+' you got '+earn+' :star:s for this event!' },			
+					)
+			     .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+					.setTimestamp()
+					.setFooter('Grape Enterprises');
+		message.channel.send(yayEmbed);
+		addMoni(message.author.id, earn);
+		    }
+	}
+}
 	randomEvent();
 	
 	if (commands.includes(`${cmd}.js`))
