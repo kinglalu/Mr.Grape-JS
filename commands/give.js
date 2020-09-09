@@ -23,16 +23,17 @@ if (!cooldown)
 	async function get() {
 	await users.get(message.author.id)
 	}
-	
+	let conf = get();
 	let targets = message.mentions.members.first();
         let targetss = targets.id;
 	if (!targets)
 	{
 		message.channel.send("who u givin golden stars to");
 	}
-	else if (!parseInt(args[2]) || parseInt(args[2]) < 1 || parseInt(args[2]) > get())
+	else if (!parseInt(args[2]) || parseInt(args[2]) < 1 || parseInt(args[2]) > conf)
 	{
 		message.channel.send("thats not a valid number of golden stars to give")
+		message.channel.send(conf);
 	}
 	else if (targets.id === message.author.id)
 	{
