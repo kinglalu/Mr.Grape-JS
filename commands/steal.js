@@ -20,44 +20,16 @@ if (!cooldown)
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
 	let caught = Math.floor(Math.random()*99)+1;
-	if (!target)
+	let randSteal = Math.floor(Math.random()*19)+1;
+	 if (caught >= 70)
 	{
-		const yEmbed = new Discord.MessageEmbed()
-					.setColor('#dd2de0')
-					.setTitle('who u stealin from?')
-			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-					.setTimestamp()
-		message.channel.send(yEmbed);
-	}
-	
-	else if (target.id === message.author.id)
-	{
-		const yazEmbed = new Discord.MessageEmbed()
-					.setColor('#dd2de0')
-					.setTitle('imagine trying to steal from yourself smh')
-			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-					.setTimestamp()
-		message.channel.send(yazEmbed);
-	}
-	else if (target.user.bot)
-	{
-		const ayazEmbed = new Discord.MessageEmbed()
-					.setColor('#dd2de0')
-					.setTitle('bruh dont steal from bots smh')
-			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-					.setTimestamp()
-		message.channel.send(ayazEmbed);
-	}
-	else if (caught >= 70)
-	{
-		currency[currency.indexOf(message.author.id) + 1] += parseInt(args[2]);
-		currency[currency.indexOf(target.id) + 1] = parseInt(currency[currency.indexOf(target.id) + 1]) - parseInt(args[2]);
+		addMoni(message.author.id, randSteal);
 		
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + `robbery of ` + target.displayName)
 					.addFields(
-						{ name: 'Theft', value:  'you stole from ' + `${target.displayName} `+' and got '+ `${parseInt(args[2])} ` + ':star:s' },
+						{ name: 'Theft', value:  'you stole ' +randSteal+ ' :star:s' },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
@@ -67,24 +39,20 @@ if (!cooldown)
 	else if (caught <= 30)
 	{
 		
-		let loss = Math.floor(Math.random()*14)+1;
+		let loss = -1 * randSteal;
+		addMoni(message.author.id, loss);
 		const balsolooEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + ` robbery of ` + target.displayName)
 					.addFields(
-						{ name: 'You got caught!', value:  'You ended up paying ' +loss+" :star:s\nThat's karma for ya." },
+						{ name: 'You got caught!', value:  'You ended up paying ' +randSteal+" :star:s\nThat's karma for ya." },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Shady Grape Org');
 
 				message.channel.send(balsolooEmbed);
-		for (let i = 0; i < currency.length; i++) {
-            if (currency[i] === message.author.id) {           
-                
-		  currency[i + 1] = parseInt(currency[i + 1]) - loss;	     
-            }
-        }
+		
 	}
 	}
 
