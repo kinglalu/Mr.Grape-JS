@@ -50,9 +50,9 @@ if (!cooldown)
 		addMoni(target.id, give);
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(message.author.username + ` donation to ` + target.displayName)
+					.setTitle(message.author.username + ` donation to ` + targets.displayName)
 					.addFields(
-						{ name: 'Donation', value:  'you gave ' + `${target.displayName} `+ `${parseInt(args[2])} ` + ':star:s' },
+						{ name: 'Donation', value:  'you gave ' + `${targets.displayName} `+ `${parseInt(args[2])} ` + ':star:s' },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
