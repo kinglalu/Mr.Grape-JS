@@ -26,7 +26,7 @@ if (!cooldown)
 	 return conf;
 }
 	let check = getMoni();
-	getMoni();
+	message.channel.send("moni: " + check);
 	let targets = message.mentions.members.first();
         let targetss = targets.id;
 	if (!targets)
