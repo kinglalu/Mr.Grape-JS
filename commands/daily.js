@@ -32,12 +32,6 @@ if (!cooldown)
 		message.channel.send(dailystarEmbed);
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c86400");
-    for(let i = 0; i < currency.length; i++)
-    {
-        if (currency[i] === message.author.id)
-        {
-            currency[i + 1] = parseInt(currency[i + 1]) + random;
-        }
-    }
+    addMoni(message.author.id, random);
 }
 				
