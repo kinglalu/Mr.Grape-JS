@@ -47,7 +47,8 @@ if (!cooldown) {
 
 
     async function balTarg() {
-        let targets = message.mentions.members.first();
+        let targetss = message.mentions.members.first();
+        let targets = targetss.id;
         if (await users.get(targets) === undefined) {
             users.set(targets, 0);
             const balsolooEmbed = new Discord.MessageEmbed()
