@@ -21,7 +21,8 @@ if (!cooldown)
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
 	async function getMoni() {
-		message.channel.send(`${await users.get(message.author.id)}`);
+	 let now = `${await users.get(message.author.id)}`;
+		message.channel.send(now);
 }
 	getMoni();
 	let targets = message.mentions.members.first();
