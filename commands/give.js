@@ -24,9 +24,9 @@ if (!cooldown)
 	await users.get(message.author.id)
 	}
 	
-	let target = message.mentions.members.first();
-        let targets = target.id;
-	if (!target)
+	let targets = message.mentions.members.first();
+        let targetss = targets.id;
+	if (!targets)
 	{
 		message.channel.send("who u givin golden stars to");
 	}
@@ -34,11 +34,11 @@ if (!cooldown)
 	{
 		message.channel.send("thats not a valid number of golden stars to give")
 	}
-	else if (target.id === message.author.id)
+	else if (targets.id === message.author.id)
 	{
 		message.channel.send("bruh you cant give golden stars to yourself smh")
 	}
-	else if (target.user.bot)
+	else if (targets.user.bot)
 	{
 		message.channel.send("bruh you cant give golden stars to a bot smh")
 	}
