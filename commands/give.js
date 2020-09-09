@@ -20,10 +20,10 @@ if (!cooldown)
 {
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
-	async function get() {
-	await users.get(message.author.id)
+	async function getMoni() {
+	await users.get(message.author.id);
 	}
-	let conf = get();
+	let conf = getMoni();
 	let targets = message.mentions.members.first();
         let targetss = targets.id;
 	if (!targets)
