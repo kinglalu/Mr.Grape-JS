@@ -28,6 +28,11 @@ const mine = new Discord.MessageEmbed()
 	message.channel.send(mine);
 	cooldowns.push(cmd + message.author.id);
     cooldowns.push("c0");
+	async function get() {
+	message.channel.send(`${await users.get(message.author.id)}`);
+		message.channel.send(earn);
+	}
+	get();
 	addMoni(message.author.id, earn);
 
 }
