@@ -3,4 +3,5 @@ async function check() {
 	if (rightnow > parseInt(args[2])) {message.channel.send("moni: "+rightnow+" true");}
 	else {message.channel.send("moni: "+rightnow+" false");}
   
-  
+}
+check();
