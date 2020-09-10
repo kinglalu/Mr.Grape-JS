@@ -23,9 +23,10 @@ if (!cooldown)
 	async function check() {
 	let a = await users.get(message.author.id);
 	let b =  parseInt(args[1]);
+	const af = a;
 	message.channel.send(a);
 	message.channel.send(b);
-	if (a < b) {return true;}
+	if (af < b) {return true;}
 	}
 	let targets = message.mentions.members.first();
        
