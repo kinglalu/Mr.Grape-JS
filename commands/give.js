@@ -28,10 +28,10 @@ if (!cooldown)
 	message.channel.send(b);
 	message.channel.send(c);
 	if (c === -1) {
-		return true;
+		return false;
 		message.channel.send(c);
 		}
-		return false;
+		return true;
 	}
 	
        
