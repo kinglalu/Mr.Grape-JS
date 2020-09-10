@@ -47,13 +47,12 @@ if (!cooldown) {
 
 
     async function balTarg() {
-        let targetss = message.mentions.members.first();
-        let targets = targetss.id;
-        if (await users.get(targets) === undefined) {
+      
+        if (await users.get(targets.id) === undefined) {
             users.set(targets, 0);
             const balsolooEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(targetss.displayName + `'s balance`)
+                .setTitle(targets.displayName + `'s balance`)
                 .addFields({
                     name: 'Balance',
                     value: 'they have 0 :star:s'
@@ -65,10 +64,10 @@ if (!cooldown) {
         } else {
             const balsoloEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(targetss.displayName + `'s balance`)
+                .setTitle(targets.displayName + `'s balance`)
                 .addFields({
                     name: 'Balance',
-                    value: 'they have ' + `${await users.get(targets)}` + ' :star:s'
+                    value: 'they have ' + `${await users.get(targets.id)}` + ' :star:s'
                 }, )
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
