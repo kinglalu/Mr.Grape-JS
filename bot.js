@@ -8,7 +8,7 @@ const users = new Keyv(config.dbURI, { namespace: 'users' });
 const commands = fs.readdirSync("./commands");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
 bot.login(process.env.BOT_TOKEN);
-let targets = message.mentions.members.first();
+
 
 setInterval(function()
 {
@@ -45,6 +45,7 @@ bot.on("message", async(message) =>
 	  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   	  const cmd = args.shift().toLowerCase();
 	let target;
+	let targets = message.mentions.members.first();
 	if (args[1])
 	{
 		target = message.guild.members.cache.find(member => member.id === args[1].replace("<@", "").replace(">", ""));
