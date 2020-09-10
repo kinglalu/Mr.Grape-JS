@@ -23,9 +23,6 @@ if (!cooldown)
 	async function getDolla() {
 	let rightnow = await users.get(message.author.id);
 	return rightnow;}
-	
-	
-	message.channel.send("moni: " + check);
 	let targets = message.mentions.members.first();
         let targetss = targets.id;
 	if (!targets)
