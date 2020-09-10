@@ -28,7 +28,7 @@ if (!cooldown)
 	message.channel.send(b);
 	if (af < b) {return true;}
 	}
-	let targets = message.mentions.members.first();
+	
        
 	if (!targets)
 	{
