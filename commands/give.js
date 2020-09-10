@@ -21,11 +21,13 @@ if (!cooldown)
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
 	async function check() {
-	let a = parseInt(await users.get(message.author.id));
+	let a = await users.get(message.author.id)
 	let b =  parseInt(args[1]);
+	let c = Math.sign(a - b);
 	message.channel.send(a);
 	message.channel.send(b);
-	if (a < b) {return true;}
+	message.channel.send(c)
+	if (c === -1) {return true;}
 	}
 	
        
