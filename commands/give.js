@@ -21,9 +21,8 @@ if (!cooldown)
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
 	async function check() {
-	let rightnow = await users.get(message.author.id);
-	if (rightnow > parseInt(args[2])) {return true;}
-	else {return false;}
+	let a = await users.get(message.author.id);
+	if (a < parseInt(args[1])) {return true;}
 	}
 	let targets = message.mentions.members.first();
         let targetss = targets.id;
@@ -31,7 +30,7 @@ if (!cooldown)
 	{
 		message.channel.send("who u givin golden stars to");
 	}
-	else if (!parseInt(args[2]) || parseInt(args[2]) < 1 || check())
+	else if (!parseInt(args[1]) || parseInt(args[1]) < 1 || check())
 	{
 		message.channel.send("thats not a valid number of golden stars to give")
 		
@@ -46,7 +45,7 @@ if (!cooldown)
 	}
 	else
 	{
-		let give = parseInt(args[2]);
+		let give = parseInt(args[1]);
 		let subGive = -1 * give;
 		addMoni(message.author.id, subGive);
 		addMoni(target.id, give);
