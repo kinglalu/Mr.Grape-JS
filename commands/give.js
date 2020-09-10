@@ -23,7 +23,7 @@ if (!cooldown)
 	let getDolla() {
 	let rightnow = await users.get(message.author.id);
 	return rightnow;}
-	
+	let check = getDolla();
 	
 	message.channel.send("moni: " + check);
 	let targets = message.mentions.members.first();
@@ -32,7 +32,7 @@ if (!cooldown)
 	{
 		message.channel.send("who u givin golden stars to");
 	}
-	else if (!parseInt(args[2]) || parseInt(args[2]) < 1 || parseInt(args[2]) > getDolla())
+	else if (!parseInt(args[2]) || parseInt(args[2]) < 1 || parseInt(args[2]) > check)
 	{
 		message.channel.send("thats not a valid number of golden stars to give")
 		
