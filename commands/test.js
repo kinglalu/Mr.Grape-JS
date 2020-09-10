@@ -1,5 +1,7 @@
 async function check() {
-	message.channel.send(`${await users.get(message.author.id, false)}`);
-	}
-  
-check();
+	let a = await users.get(message.author.id, false)
+	message.channel.send(a);
+}
+
+
+if 
