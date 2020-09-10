@@ -3,5 +3,4 @@ async function check() {
 	message.channel.send(a);
 }
 
-
-//if 
+check();
