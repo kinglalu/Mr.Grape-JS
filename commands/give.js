@@ -24,14 +24,10 @@ if (!cooldown)
 	async function check() {
 	let a = await users.get(message.author.id)
 	let b =  parseInt(args[1]);
-	if (a<b) {return 1;}
-	else{return 0;}
+	if (a<b) {message.channel.send('Invalid #')}
+	return;
 	}
-       
-	let check = check();
-	message.channel.send(check);
-	
-	
+
 	if (!targets)
 	{
 		message.channel.send("who u givin golden stars to");
