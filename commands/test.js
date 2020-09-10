@@ -5,5 +5,4 @@ async function check() {
   
 }
 check();
-let hi = check();
-message.channel.send(hi);
+
