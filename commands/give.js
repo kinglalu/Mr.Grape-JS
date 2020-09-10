@@ -20,26 +20,14 @@ if (!cooldown)
 {
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
-	async function check() {
-	let a = await users.get(message.author.id)
-	let b =  parseInt(args[1]);
-	let c = Math.sign(a - b);
-	message.channel.send(a);
-	message.channel.send(b);
-	message.channel.send(c);
-	if (c === -1) {
-		return false;
-		message.channel.send(c);
-		}
-		return true;
-	}
+	
 	
        
 	if (!targets)
 	{
 		message.channel.send("who u givin golden stars to");
 	}
-	else if (!parseInt(args[1]) || parseInt(args[1]) < 1 || check())
+	else if (!parseInt(args[1]) || parseInt(args[1]) < 1)
 	{
 		message.channel.send("thats not a valid number of golden stars to give")
 		
