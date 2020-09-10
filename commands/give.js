@@ -26,10 +26,12 @@ if (!cooldown)
 	let c = Math.sign(a - b);
 	message.channel.send(a);
 	message.channel.send(b);
-	message.channel.send(c)
+	message.channel.send(c);
 	if (c === -1) {
+		return true;
 		message.channel.send(c);
 		}
+		return false;
 	}
 	
        
@@ -60,7 +62,7 @@ if (!cooldown)
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + ` donation to ` + targets.displayName)
 					.addFields(
-						{ name: 'Donation', value:  'you gave ' + `${targets.displayName} `+ `${parseInt(args[2])} ` + ':star:s' },
+						{ name: 'Donation', value:  'you gave ' + `${targets.displayName} `+ `${parseInt(args[1])} ` + ':star:s' },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
