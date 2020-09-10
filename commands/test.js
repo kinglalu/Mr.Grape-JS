@@ -1,7 +1,5 @@
 async function check() {
-	return parseInt(await users.get(message.author.id));
+	message.channel.send(`${await users.get(message.author.id, true)}`);
 	}
   
-  let es = check();
-  
-  message.channel.send("asdf "+es);
+check();
