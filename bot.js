@@ -57,6 +57,7 @@ bot.on("message", async(message) =>
     		let moremoni = rightnow + howmuch;
     		await users.set(who, moremoni)
 		}
+		
 	function randomEvent() {
 	let rand = Math.floor(Math.random()*199)+1;
 	let earn = Math.floor(Math.random()*49)+1;
