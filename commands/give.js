@@ -23,6 +23,7 @@ if (!cooldown)
 	async function check() {
 	let a = await users.get(message.author.id);
 	let b =  parseInt(args[1]);
+	message.channel.send(a);
 	message.channel.send(b);
 	if (a < b) {return true;}
 	}
