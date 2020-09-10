@@ -8,7 +8,7 @@ const users = new Keyv(config.dbURI, { namespace: 'users' });
 const commands = fs.readdirSync("./commands");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
 bot.login(process.env.BOT_TOKEN);
-
+let targets = message.mentions.members.first();
 
 setInterval(function()
 {
