@@ -27,7 +27,9 @@ if (!cooldown)
 	message.channel.send(a);
 	message.channel.send(b);
 	message.channel.send(c)
-	if (c === -1) {return true;}
+	if (c === -1) {
+		message.channel.send(c);
+		return true;}
 	}
 	
        
