@@ -1,5 +1,5 @@
 async function check() {
-	return await users.get(message.author.id);
+	return parseInt(await users.get(message.author.id));
 	}
   
   let es = check();
