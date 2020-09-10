@@ -22,10 +22,12 @@ if (!cooldown)
 	cooldowns.push("c5");
 	async function check() {
 	let a = await users.get(message.author.id);
-	if (a < parseInt(args[1])) {return true;}
+	let b =  parseInt(args[1]);
+	message.channel.send(b);
+	if (a < b) {return true;}
 	}
 	let targets = message.mentions.members.first();
-        let targetss = targets.id;
+       
 	if (!targets)
 	{
 		message.channel.send("who u givin golden stars to");
@@ -48,7 +50,7 @@ if (!cooldown)
 		let give = parseInt(args[1]);
 		let subGive = -1 * give;
 		addMoni(message.author.id, subGive);
-		addMoni(target.id, give);
+		addMoni(targets.id, give);
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + ` donation to ` + targets.displayName)
