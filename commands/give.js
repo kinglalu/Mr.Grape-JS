@@ -24,15 +24,19 @@ if (!cooldown)
 	async function check() {
 	let a = await users.get(message.author.id)
 	let b =  parseInt(args[1]);
-	if (a<b) {return true;}
-	else{return false;}
+	if (a<b) {return 1;}
+	else{return 0;}
 	}
        
+	let check = check();
+	message.channel.send(check);
+	
+	
 	if (!targets)
 	{
 		message.channel.send("who u givin golden stars to");
 	}
-	else if (!parseInt(args[1]) || parseInt(args[1]) < 1 || check())
+	else if (!parseInt(args[1]) || parseInt(args[1]) < 1 || check === 1)
 	{
 		message.channel.send("thats not a valid number of golden stars to give")
 		
