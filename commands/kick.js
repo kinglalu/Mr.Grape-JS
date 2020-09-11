@@ -1,5 +1,5 @@
 //Usage: `kick`, kicks a player if you have the perms
-if (msg.member.hasPermission("KICK_MEMBERS") {
+if (msg.member.hasPermission("KICK_MEMBERS")) {
     if (msg.members.mentions.first()) {
         try {
             msg.members.mentions.first().kick();
