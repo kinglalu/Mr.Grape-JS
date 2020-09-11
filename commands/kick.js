@@ -6,6 +6,9 @@ if (msg.member.hasPermission("KICK_MEMBERS")) {
             msg.channel.send(":wave: " + member.displayName + " has been kicked, what a noob lol ");
         } catch {
             msg.reply("I do not have permissions to kick people, how about you give me it? " + msg.members.mentions.first());
-    }else {
+    } 
+    }
+    else {
         msg.reply("bruh you dont event have permission to kick people, stop trying smh " + msg.members.mentions.first());
+}
 }
