@@ -6,9 +6,9 @@ if (param > git) {
   return true;}
 else {
   message.channel.send('not noice');
-  return false}
+  return false;}
   
 }
-test(89);
+
 
 if (test(89) === true) {message.channel.send('it works')}
