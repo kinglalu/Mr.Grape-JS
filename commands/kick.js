@@ -12,7 +12,7 @@ if (boolean) {
     }
 }
     else if (!boolean) {
-        message.reply("bruh you dont event have permission to kick people, stop trying smh " + target);
+        message.reply("bruh you dont event have permission to kick people, stop trying smh ");
 }
     else {message.channel.send("Cannot kick "+target.displayName);}
 
