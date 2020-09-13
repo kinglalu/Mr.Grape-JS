@@ -2,6 +2,6 @@
 async function test() {
 return await users.get(message.author.id)
 }
-let var = test();
+let noice = test();
 message.channel.send(test());
-message.channel.send(var);
+message.channel.send(noice);
