@@ -1,5 +1,5 @@
 //Usage: `kick`, kicks a player if you have the perms to kick that player
-let target =  message.mentions.members.first();
+let target =  message.mentions.first();
 let boolean = message.member.hasPermission("KICK_MEMBERS");
 if (boolean) {
     if (target) {
