@@ -9,6 +9,6 @@ else {
   return false;}
   
 }
+let a = test(89);
 
-
-if (test(89) === true) {message.channel.send('it works')}
+if (a === true) {message.channel.send('it works')}
