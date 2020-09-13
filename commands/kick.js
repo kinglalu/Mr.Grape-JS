@@ -10,8 +10,9 @@ if (boolean) {
             message.reply("I do not have permissions to kick people, how about you give me it? " +  target);
     } 
     }
+}
     else if (!boolean) {
         message.reply("bruh you dont event have permission to kick people, stop trying smh " + target);
 }
     else {message.channel.send("Cannot kick "+target.displayName);}
-}
+
