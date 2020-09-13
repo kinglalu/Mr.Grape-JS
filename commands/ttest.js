@@ -1,7 +1,7 @@
 
 async function test(param) {
 let git = await users.get(message.author.id);
-if (git < param) {
+if (param > git) {
  message.channel.send('noice')
   return true;}
 else {
