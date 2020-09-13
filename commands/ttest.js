@@ -1,7 +1,10 @@
 
 async function test() {
-return await users.get(message.author.id, true)
+let git = await users.get(message.author.id);
+let noice = git + 1;
+let cool = noice - 1
+return cool;
 }
-let noice = test();
+let okalright = test();
 message.channel.send(test());
-message.channel.send(noice);
+message.channel.send(okalright);
