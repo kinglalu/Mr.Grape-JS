@@ -1,6 +1,6 @@
 //Usage: `ban`, bans a player if you have the perms to ban that player
 let target =  message.mentions.users.first();
-let boolean = message.member.hasPermission("BAN_MEMBERS");
+let boolean = message.member.hasPermission('BAN_MEMBERS', 'ADMINISTRATOR');
 if (boolean) {
     if (target) {
         try {
