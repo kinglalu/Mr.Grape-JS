@@ -11,4 +11,4 @@ else {
 }
 test(89);
 
-if (test(89) === false) {message.channel.send('it works')}
+if (test(89) === true) {message.channel.send('it works')}
