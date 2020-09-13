@@ -7,7 +7,7 @@ if (boolean) {
              target.kick();
             message.channel.send(":wave: " + target.displayName + " has been kicked, what a noob lol ");
         } catch {
-            message.reply("I don't got permissions to kick people, how about you give me it? " +  target);
+            message.reply("I don't got permissions to kick people, how about you give me it? ");
     } 
     }
 }
