@@ -59,6 +59,7 @@ bot.on("message", async(message) =>
 		async function check(dolla) {
 		let git = await users.get(message.author.id);
 		if (dolla > git) {return true;}
+		return false;
 		}
 	function randomEvent() {
 	let rand = Math.floor(Math.random()*199)+1;
