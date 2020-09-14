@@ -46,6 +46,7 @@ if (!cooldown)
 						{ name: 'Version:', value: `${config.version}`},
 						{ name: 'Uptime:', value: `${Math.floor(uptime)}` + ` ${unit}` },	
 						{ name: 'To-do list:', value: `${config.todo.join("\n")}`  },
+						{ name: 'Servers Mr grape is in:', value: `${client.guilds.cache.size}`  },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
