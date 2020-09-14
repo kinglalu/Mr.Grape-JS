@@ -1,12 +1,13 @@
 
-async function test(param) {
-let git = await users.get(message.author.id);
+async function test() {
+let param = 89;
+ let git = await users.get(message.author.id);
 if (param > git) {
  message.channel.send('noice')
-  return message.channel.send('ok this part work, but does the next part work');
+  return true;
 }
 return false;
   }
 
 
-if (test(89) === true) {message.channel.send('it works')}
+if (test() === true) {message.channel.send('it works')}
