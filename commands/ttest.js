@@ -5,7 +5,7 @@ if (param > git) {
  message.channel.send('noice')
   return true;
 }
-
+return false;
   }
 
 
