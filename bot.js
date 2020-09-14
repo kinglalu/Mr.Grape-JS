@@ -4,7 +4,6 @@ const bot = new Discord.Client();
 const config = require("./config.json");
 const Keyv = require('keyv');
 const users = new Keyv(config.dbURI, { namespace: 'users' });
-//dec
 const commands = fs.readdirSync("./commands");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
 bot.login(process.env.BOT_TOKEN);
@@ -57,7 +56,10 @@ bot.on("message", async(message) =>
     		let moremoni = rightnow + howmuch;
     		await users.set(who, moremoni)
 		}
-		
+		async function check(dolla) {
+		let git = await users.get(message.author.id);
+		if (dolla > git) {return true;}
+		}
 	function randomEvent() {
 	let rand = Math.floor(Math.random()*199)+1;
 	let earn = Math.floor(Math.random()*49)+1;
