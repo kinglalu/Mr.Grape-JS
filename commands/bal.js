@@ -1,4 +1,5 @@
 //Usage: `bal <user>`, returns the number of stars that a user has
+
 let cooldown = false
 for (let i = 0; i < cooldowns.length; i++) {
     if (cooldowns[i] === cmd + message.author.id) {
@@ -15,73 +16,57 @@ for (let i = 0; i < cooldowns.length; i++) {
     }
 }
 if (!cooldown) {
-
-    async function bal() {
-        if (await users.get(message.author.id) === undefined) {
-            users.set(message.author.id, 0);
-            const balsolooEmbed = new Discord.MessageEmbed()
-                .setColor('#dd2de0')
-                .setTitle(message.author.username + `'s balance`)
-                .addFields({
-                    name: 'Balance',
-                    value: 'you have 0 :star:s'
-                }, )
-                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-                .setTimestamp()
-                .setFooter('Grape Bank Inc.');
-            message.channel.send(balsolooEmbed);
-        } else {
-            const balsoloEmbed = new Discord.MessageEmbed()
-                .setColor('#dd2de0')
-                .setTitle(message.author.username + `'s balance`)
-                .addFields({
-                    name: 'Balance',
-                    value: 'you have ' + `${await users.get(message.author.id)}` + ' :star:s'
-                }, )
-                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-                .setTimestamp()
-                .setFooter('Grape Bank Inc.');
-            message.channel.send(balsoloEmbed);
-        }
-    }
-
-
-    async function balTarg() {
-      
-        if (await users.get(targets.id) === undefined) {
-            users.set(targets, 0);
-            const balsolooEmbed = new Discord.MessageEmbed()
-                .setColor('#dd2de0')
-                .setTitle(targets.displayName + `'s balance`)
-                .addFields({
-                    name: 'Balance',
-                    value: 'they have 0 :star:s'
-                }, )
-                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-                .setTimestamp()
-                .setFooter('Grape Bank Inc.');
-            message.channel.send(balsolooEmbed);
-        } else {
-            const balsoloEmbed = new Discord.MessageEmbed()
-                .setColor('#dd2de0')
-                .setTitle(targets.displayName + `'s balance`)
-                .addFields({
-                    name: 'Balance',
-                    value: 'they have ' + `${await users.get(targets.id)}` + ' :star:s'
-                }, )
-                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-                .setTimestamp()
-                .setFooter('Grape Bank Inc.');
-            message.channel.send(balsoloEmbed);
-        }
-
-    }
-    var noice = args[0];
-    if (noice === undefined) {
-        bal();
-    } else if (noice.includes("<@")) {
-        balTarg();
-    } else {
-        message.channel.send("Unknown error my guy.");
-    }
+let person;
+let personName;
+let argu = args[0];
+if (argu === undefined) {
+    person = message.author;
+    personName = message.author.username;
 }
+else if (argu.includes("<@")) {
+    person = targets;
+    personName = targets.displayName;
+}
+else {message.channel.send('unknown error my guy');}
+
+  async function balTarg() {    
+        if (await users.get(person.id) === undefined) {
+            users.set(person.id, 0);
+            const balsolooEmbed = new Discord.MessageEmbed()
+                .setColor('#dd2de0')
+                .setTitle(personName + `'s balance`)
+                .addFields({
+                    name: 'Balance',
+                    value: '0 :star:s'
+                }, )
+                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+                .setTimestamp()
+                .setFooter('Grape Bank Inc.');
+            message.channel.send(balsolooEmbed);
+        } else {
+            const balsoloEmbed = new Discord.MessageEmbed()
+                .setColor('#dd2de0')
+                .setTitle(personName + `'s balance`)
+                .addFields({
+                    name: 'Balance',
+                    value:  `${await users.get(person.id)}` + ' :star:s'
+                }, )
+                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
+                .setTimestamp()
+                .setFooter('Grape Bank Inc.');
+            message.channel.send(balsoloEmbed);
+        }
+
+    }
+
+balTarg();
+
+
+
+
+
+
+
+
+}
+
