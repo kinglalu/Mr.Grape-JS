@@ -16,9 +16,16 @@ for (let i = 0; i < cooldowns.length; i++) {
 }
 if (!cooldown) {
 let person;
+let personName;
 let argu = args[0];
-if (argu === undefined) {person = message.author;}
-else if (argu.includes(mention)) {person = targets}
+if (argu === undefined) {
+    person = message.author;
+    personName = message.author.username;
+}
+else if (argu.includes("<@")) {
+    person = targets;
+    personName = targets.displayName;
+}
 else {message.channel.send('unknown error my guy');}
 
   async function balTarg() {    
@@ -26,10 +33,10 @@ else {message.channel.send('unknown error my guy');}
             users.set(person.id, 0);
             const balsolooEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(person.displayName + `'s balance`)
+                .setTitle(personName + `'s balance`)
                 .addFields({
                     name: 'Balance',
-                    value: 'they have 0 :star:s'
+                    value: '0 :star:s'
                 }, )
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
@@ -38,10 +45,10 @@ else {message.channel.send('unknown error my guy');}
         } else {
             const balsoloEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(person.displayName + `'s balance`)
+                .setTitle(personName + `'s balance`)
                 .addFields({
                     name: 'Balance',
-                    value: 'they have ' + `${await users.get(person.id)}` + ' :star:s'
+                    value:  `${await users.get(person.id)}` + ' :star:s'
                 }, )
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
