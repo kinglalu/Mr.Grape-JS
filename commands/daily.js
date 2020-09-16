@@ -6,7 +6,7 @@ for(let i = 0; i < cooldowns.length; i++)
 	{
 		const balnoEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(`it's called \`${args[0].toLowerCase()}\` for a reason smh`)
+					.setTitle(`it's called daily for a reason smh`)
 					
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
