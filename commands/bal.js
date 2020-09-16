@@ -29,7 +29,7 @@ else if (argu.includes("<@")) {
 }
 else {message.channel.send('unknown error my guy');}
 
-  async function balTarg() {    
+  const balance = async () => {    
         if (await users.get(person.id) === undefined) {
             users.set(person.id, 0);
             const balsolooEmbed = new Discord.MessageEmbed()
@@ -57,9 +57,8 @@ else {message.channel.send('unknown error my guy');}
             message.channel.send(balsoloEmbed);
         }
 
-    }
+    };
 
-balTarg();
 
 
 
