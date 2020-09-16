@@ -15,5 +15,5 @@ const shopEmbed =  Discord.MessageEmbed()
   	  
   message.channel.send(shopEmbed);
 				
-}
+
 
