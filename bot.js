@@ -4,6 +4,7 @@ const bot = new Discord.Client();
 const config = require("./config.json");
 const Keyv = require('keyv');
 const users = new Keyv(config.dbURI, { namespace: 'users' });
+const cooldown = new Keyv(config.dbURI, { namespace: 'cooldowns' });
 const commands = fs.readdirSync("./commands");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
 bot.login(process.env.BOT_TOKEN);
