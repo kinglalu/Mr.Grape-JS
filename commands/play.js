@@ -1,4 +1,5 @@
- const dispatcher = serverQueue.connection
+const serverQueue = queue.get(message.guild.id); 
+const dispatcher = serverQueue.connection
     	.play(ytdl(song.url))
     	.on("finish", () => {
       	serverQueue.songs.shift();
