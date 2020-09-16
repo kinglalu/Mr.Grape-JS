@@ -64,6 +64,8 @@ bot.on("message", async(message) =>
     		await users.set(who, moremoni)
 		}
 	
+	const serverQueue = queue.get(message.guild.id);
+
 	
 	if (commands.includes(`${cmd}.js`))
 	{
