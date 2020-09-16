@@ -3,7 +3,7 @@ let durationSeconds = duration * 1000;
 await keyv.set(command, message.author.id, durationSeconds);
 }
 
-chill(c, 15);
+chill('c', 15);
 
 async function check () {
 let chek = await keyv.get(command, message.author.id);
