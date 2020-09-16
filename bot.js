@@ -36,6 +36,13 @@ bot.once("ready", async() =>
 	bot.user.setActivity(`for ${config.prefix}help`, {"type": "WATCHING"})
 })
 
+bot.once("reconnecting", () => {
+  console.log("Reconnecting!");
+});
+
+bot.once("disconnect", () => {
+  console.log("Disconnect!");
+});
 
 
 bot.on("message", async(message) =>
@@ -56,42 +63,7 @@ bot.on("message", async(message) =>
     		let moremoni = rightnow + howmuch;
     		await users.set(who, moremoni)
 		}
-		async function check(dolla) {
-		let git = await users.get(message.author.id);
-		if (dolla > git) {return true;}
-		return false;
-		}
-	function randomEvent() {
-	let rand = Math.floor(Math.random()*199)+1;
-	let earn = Math.floor(Math.random()*49)+1;
-	if (rand === 1 || rand === 2) {
-		const randomEmbed = new Discord.MessageEmbed()
-					.setColor('#dd2de0')
-					.setTitle('Info')
-					.addFields(
-						{ name: 'Random Event', value: 'Quick, there is a flying orange in the night sky! Make a wish!\nThe first person to type `wish` in the chat gets '+earn+ ' :star:s' },			
-					)
-			     .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-					.setTimestamp()
-					.setFooter('Grape Enterprises');
-		message.channel.send(randomEmbed);
 	
-		if (message.content === 'wish') {
-		    const yayEmbed = new Discord.MessageEmbed()
-					.setColor('#dd2de0')
-					.setTitle('Info')
-					.addFields(
-						{ name: 'Random Event Winner', value: 'Congrats '+`${message.author.username}`+' you got '+earn+' :star:s for this event!' },			
-					)
-			     .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
-					.setTimestamp()
-					.setFooter('Grape Enterprises');
-		message.channel.send(yayEmbed);
-		addMoni(message.author.id, earn);
-		    }
-	}
-}
-	randomEvent();
 	
 	if (commands.includes(`${cmd}.js`))
 	{
