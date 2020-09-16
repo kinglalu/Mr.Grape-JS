@@ -1,5 +1,4 @@
 //Usage: `shop`, purchase cool items to gain more stars
-
 const usersoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle('The Shop')
