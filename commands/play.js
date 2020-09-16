@@ -63,6 +63,6 @@ async function execute(message, serverQueue) {
     return message.channel.send(`${song.title} has been added to the queue!`);
   }
 }
-
+}
 execute(message, serverQueue);
 
