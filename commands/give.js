@@ -20,33 +20,38 @@ if (!cooldown)
 {
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
-
-	if (!target)
+	
+	async function donate() {
+	let ask = parseInt(args[1]);
+	let check = await users.get(message.author.id)
+	if (!targets)
 	{
 		message.channel.send("who u givin golden stars to");
 	}
-	else if (!parseInt(args[2]) || parseInt(args[2]) < 1 || parseInt(args[2]) > parseInt(currency[currency.indexOf(message.author.id) + 1]))
+	else if (!ask || ask < 1 || ask > check)
 	{
 		message.channel.send("thats not a valid number of golden stars to give")
+		
 	}
-	else if (target.id === message.author.id)
+	else if (targets.id === message.author.id)
 	{
 		message.channel.send("bruh you cant give golden stars to yourself smh")
 	}
-	else if (target.user.bot)
+	else if (targets.user.bot)
 	{
 		message.channel.send("bruh you cant give golden stars to a bot smh")
 	}
 	else
 	{
-		currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[2]);
-		currency[currency.indexOf(target.id) + 1] = parseInt(currency[currency.indexOf(target.id) + 1]) + parseInt(args[2]);
-		
+		let give = parseInt(args[1]);
+		let subGive = -1 * give;
+		addMoni(message.author.id, subGive);
+		addMoni(targets.id, give);
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle(message.author.username + ` donation to ` + target.displayName)
+					.setTitle(message.author.username + ` donation to ` + targets.displayName)
 					.addFields(
-						{ name: 'Donation', value:  'you gave ' + `${target.displayName} `+ `${parseInt(args[2])} ` + ':star:s' },
+						{ name: 'Donation', value:  'you gave ' + `${targets.displayName} `+ `${parseInt(args[1])} ` + ':star:s' },
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
@@ -54,4 +59,8 @@ if (!cooldown)
 
 				message.channel.send(balsoloEmbed);
 	}
+	}
+	
+	donate();
+
 }

@@ -1,4 +1,3 @@
-
 //Usage: `userinfo`, Returns some basic info about the user
 
 const usersoloEmbed = new Discord.MessageEmbed()

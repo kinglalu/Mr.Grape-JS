@@ -17,11 +17,13 @@ for (let i = 0; i < cooldowns.length; i++) {
 if (!cooldown) {
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c5");
-    if (!parseInt(args[1]) || parseInt(args[1]) < 1 || parseInt(args[1]) > parseInt(currency[currency.indexOf(message.author.id) + 1])) {
+	async function gamble() {
+	let ask = parseInt(args[0]);
+	let check = await users.get(message.author.id);
+    if (!ask || ask < 1 || ask > check) {
         message.channel.send("thats not a valid number of stars to gamble");
     } else {
-        let roll = Math.round(Math.random() * 5) + 1
-        let starsWon = parseInt(args[1])
+        let roll = Math.floor(Math.random() * 5) + 1;
         const gambleEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s gambling table`)
@@ -66,15 +68,16 @@ if (!cooldown) {
                     })
                     .catch(console.error);
                 setTimeout(function() {
-                    if (roll / 2 === Math.floor(roll / 2)) {
+                    if (roll % 2 === 0) {
 
                         message.edit(gambleEmbed.addFields({
                             name: '--------------',
-                            value: 'Congrats, you get ' + `${parseInt(args[1])}` + " :stars:s"
+                            value: 'Congrats, you get ' + ask + " :stars:s"
                         }, ))
-
+			
                         message.channel.send(gambleEmbed);
-                        currency[currency.indexOf(message.author.id) + 1] = parseInt(currency[currency.indexOf(message.author.id) + 1]) + parseInt(args[1]);
+                        
+			    addMoni(message.author.id, ask);
                     } else {
 
                         message.edit(gambleEmbed.addFields({
@@ -82,11 +85,15 @@ if (!cooldown) {
                             value: 'You lost...'
                         }, ))
                         message.channel.send(gambleEmbed);
-
-                        currency[currency.indexOf(message.author.id) + 1] -= parseInt(args[1]);
+			let lose = parseInt(args[1]);
+			    let loss = -1 * ask;
+			    addMoni(message.author.id, loss);
+                        
                     }
                 }, 1100)
             }, 3100)
         }, 2100)
     }
+}
+gamble();
 }

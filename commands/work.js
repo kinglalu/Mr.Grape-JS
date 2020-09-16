@@ -39,12 +39,7 @@ if (!cooldown) {
 					.setFooter('Grape Enterprises');
 
 		message.channel.send(orangeJobGood);
-        for (let i = 0; i < currency.length; i++) {
-            if (currency[i] === message.author.id) {           
-                
-		  currency[i + 1] = parseInt(currency[i + 1]) + earn;		     
-            }
-        }
+        addMoni(message.author.id, earn)
     } else if (choice % 2 === 1 || choice === 1) {
          const orangeJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
@@ -85,12 +80,7 @@ if (!cooldown) {
 					.setFooter('Grape Enterprises');
 
 		message.channel.send(mangoJobGood);
-        for (let i = 0; i < currency.length; i++) {
-            if (currency[i] === message.author.id) {           
-              
-		  currency[i + 1] = parseInt(currency[i + 1]) + earns;	     
-            }
-        }
+       addMoni(message.author.id, earns)
     } else if (choices % 2 === 1 || choices === 1) {
          const orangeJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
@@ -125,12 +115,7 @@ if (!cooldown) {
 					.setFooter('Grape Enterprises');
 
 		message.channel.send(limeJobGood);
-        for (let i = 0; i < currency.length; i++) {
-            if (currency[i] === message.author.id) {           
-                
-		  currency[i + 1] = parseInt(currency[i + 1]) + earnss;	     
-            }
-        }
+       addMoni(message.author.id, earnss)
     } else if (choicess % 2 === 1 || choicess === 1) {
          const limeJobBad = new Discord.MessageEmbed()
 					.setColor('#dd2de0')

@@ -23,12 +23,7 @@ if (!cooldown)
 	let randSteal = Math.floor(Math.random()*19)+1;
 	 if (caught >= 70)
 	{
-		for (let i = 0; i < currency.length; i++) {
-            if (currency[i] === message.author.id) {           
-               
-		  currency[i + 1] = parseInt(currency[i + 1]) + randSteal;		     
-            }
-        }
+		addMoni(message.author.id, randSteal);
 		
 		const balsoloEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
@@ -44,12 +39,8 @@ if (!cooldown)
 	else if (caught <= 30)
 	{
 		
-		for (let i = 0; i < currency.length; i++) {
-            if (currency[i] === message.author.id) {           
-               
-		  currency[i + 1] = parseInt(currency[i + 1]) - randSteal;		     
-            }
-        }
+		let loss = -1 * randSteal;
+		addMoni(message.author.id, loss);
 		const balsolooEmbed = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle(message.author.username + "'s robbery")
@@ -64,3 +55,4 @@ if (!cooldown)
 		
 	}
 	}
+

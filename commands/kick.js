@@ -1,11 +1,10 @@
-//Usage: `kick`, kicks a player if you have the perms to kick that player
-let target =  message.mentions.users.first();
+//Usage: `kick`, kicks a member if you have the perms to kick that member
 let boolean = message.member.hasPermission("KICK_MEMBERS");
 if (boolean) {
-    if (target) {
+    if (targets) {
         try {
-             target.kick();
-            message.channel.send(":wave: " + target.displayName + " has been kicked, what a noob lol ");
+             targets.kick();
+            message.channel.send(":wave: " + targets.displayName + " has been kicked, what a noob lol ");
         } catch {
             message.reply("I don't got permissions to kick people, how about you give me it? ");
     } 
@@ -14,5 +13,4 @@ if (boolean) {
     else if (!boolean) {
         message.reply("bruh you dont even have permission to kick people, stop trying smh ");
 }
-    else {message.channel.send("Cannot kick "+target.displayName);}
-
+    else {message.channel.send("Cannot kick "+targets.displayName);}
