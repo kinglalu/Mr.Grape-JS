@@ -21,7 +21,7 @@ if (!cooldown)
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
 	let ask = parseInt(args[1]);
-
+	message.channel.send(ask);
 
 	if (!targets)
 	{
