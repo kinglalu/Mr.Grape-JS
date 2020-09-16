@@ -1,6 +1,6 @@
 {
 	"token": "lol no token 4 u",
-	"prefix": "^",
+	"prefix": "+",
 	"version": "1.0.0",
 	"dbURI": "postgres://nctrapefdevjvj:3c53aaad15af01f45468e8e8bb6eeb3ad4d45558650c5d0240c623a033b52ffb@ec2-34-235-62-201.compute-1.amazonaws.com:5432/d22rnqdpo7f13f",
 	"todo":
