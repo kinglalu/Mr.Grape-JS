@@ -7,7 +7,7 @@ chill(c, 15);
 
 async function check () {
 let chek = await keyv.get(command, message.author.id);
-if (chek === undefined) {message.channel.send('Cooldown complete!');
+if (chek === undefined) {message.channel.send('Cooldown complete!');}
 else {message.channel.send('Cooldown in progress bro');}
 }
 
