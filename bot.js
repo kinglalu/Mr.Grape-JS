@@ -4,8 +4,6 @@ const bot = new Discord.Client();
 const config = require("./config.json");
 const Keyv = require('keyv');
 const users = new Keyv(config.dbURI, { namespace: 'users' });
-const ytdl = require("ytdl-core");
-const queue = new Map();
 const commands = fs.readdirSync("./commands");
 let cooldowns = fs.readFileSync("./storage/cooldowns.txt").toString().split("\n");
 bot.login(process.env.BOT_TOKEN);
@@ -38,14 +36,6 @@ bot.once("ready", async() =>
 	bot.user.setActivity(`for ${config.prefix}help`, {"type": "WATCHING"})
 })
 
-bot.once("reconnecting", () => {
-  console.log("Reconnecting!");
-});
-
-bot.once("disconnect", () => {
-  console.log("Disconnect!");
-});
-
 
 bot.on("message", async(message) =>
 {
@@ -66,7 +56,6 @@ bot.on("message", async(message) =>
     		await users.set(who, moremoni)
 		}
 	
-	const serverQueue = queue.get(message.guild.id);
 	
 	
 	if (commands.includes(`${cmd}.js`))
