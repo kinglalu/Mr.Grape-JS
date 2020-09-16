@@ -1,5 +1,4 @@
-
-
+//Usage: `shop`, purchase cool items to help gain more stars
 const shopEmbed =  Discord.MessageEmbed()
 	.setColor('dd2de0')
 	.setTitle('The Shop')
