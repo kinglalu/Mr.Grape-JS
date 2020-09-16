@@ -72,7 +72,7 @@ if (!cooldown) {
 
                         message.edit(gambleEmbed.addFields({
                             name: '--------------',
-                            value: 'Congrats, you get ' + `${parseInt(args[1])}` + " :stars:s"
+                            value: 'Congrats, you get ' + ask + " :stars:s"
                         }, ))
 			
                         message.channel.send(gambleEmbed);
