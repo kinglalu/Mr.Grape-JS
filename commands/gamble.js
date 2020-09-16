@@ -23,8 +23,7 @@ if (!cooldown) {
     if (!ask || ask < 1 || ask > check) {
         message.channel.send("thats not a valid number of stars to gamble");
     } else {
-        let roll = Math.round(Math.random() * 5) + 1
-        let starsWon = parseInt(args[1])
+        let roll = Math.floor(Math.random() * 5) + 1;
         const gambleEmbed = new Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s gambling table`)
@@ -69,7 +68,7 @@ if (!cooldown) {
                     })
                     .catch(console.error);
                 setTimeout(function() {
-                    if (roll / 2 === Math.floor(roll / 2)) {
+                    if (roll % 2 === 0) {
 
                         message.edit(gambleEmbed.addFields({
                             name: '--------------',
@@ -77,8 +76,8 @@ if (!cooldown) {
                         }, ))
 			
                         message.channel.send(gambleEmbed);
-                        let win = parseInt(args[1]);
-			    addMoni(message.author.id, win);
+                        
+			    addMoni(message.author.id, ask);
                     } else {
 
                         message.edit(gambleEmbed.addFields({
@@ -87,7 +86,7 @@ if (!cooldown) {
                         }, ))
                         message.channel.send(gambleEmbed);
 			let lose = parseInt(args[1]);
-			    let loss = -1 * lose;
+			    let loss = -1 * ask;
 			    addMoni(message.author.id, loss);
                         
                     }
