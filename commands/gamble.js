@@ -18,7 +18,7 @@ if (!cooldown) {
     cooldowns.push(cmd + message.author.id);
     cooldowns.push("c5");
 	async function gamble() {
-	let ask = parseInt(args[1]);
+	let ask = parseInt(args[0]);
 	let check = await users.get(message.author.id);
     if (!ask || ask < 1 || ask > check) {
         message.channel.send("thats not a valid number of stars to gamble");
