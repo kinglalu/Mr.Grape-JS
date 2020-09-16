@@ -20,14 +20,15 @@ if (!cooldown)
 {
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
+	
+	async function donate() {
 	let ask = parseInt(args[1]);
-	message.channel.send(ask);
-
+	let check = await users.get(message.author.id)
 	if (!targets)
 	{
 		message.channel.send("who u givin golden stars to");
 	}
-	else if (!ask || ask < 1 || check(ask))
+	else if (!ask || ask < 1 || ask > check)
 	{
 		message.channel.send("thats not a valid number of golden stars to give")
 		
@@ -58,5 +59,8 @@ if (!cooldown)
 
 				message.channel.send(balsoloEmbed);
 	}
+	}
+	
+	donate();
 
 }
