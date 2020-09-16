@@ -32,7 +32,24 @@ if (!cooldown)
 					.setColor('#dd2de0')
 					.setTitle('Help')
 					.addFields(
-						{ name: 'Commands', value:  commands },
+						{ name: 'Commands', value: commands[0] },
+						{ name: 'Commands', value: commands[1] },
+						{ name: 'Commands', value: commands[2] },
+						{ name: 'Commands', value: commands[3] },
+						{ name: 'Commands', value: commands[4] },
+						{ name: 'Commands', value: commands[5] },
+						{ name: 'Commands', value: commands[6] },
+						{ name: 'Commands', value: commands[7] },
+						{ name: 'Commands', value: commands[8] },
+						{ name: 'Commands', value: commands[9] },
+						{ name: 'Commands', value: commands[10] },
+						{ name: 'Commands', value: commands[11] },
+						{ name: 'Commands', value: commands[12] },
+						{ name: 'Commands', value: commands[13] },
+						{ name: 'Commands', value: commands[14] }
+						
+						
+						
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
