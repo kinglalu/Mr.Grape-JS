@@ -20,7 +20,7 @@ if (!cooldown)
 {
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
-	const balnoEmbed = new Discord.MessageEmbed()
+	const help = new Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle('Help')
 					.addFields(
@@ -31,6 +31,6 @@ if (!cooldown)
 					.setFooter('Grape Help')
 					
 
-				message.channel.send(balnoEmbed);
+				message.channel.send(help);
 	
 }
