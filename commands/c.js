@@ -19,7 +19,7 @@ setdis();
 
 async function try() {
 
-message.channel.send(`${item.get("item.sub.thing")}`);
+message.channel.send(`${item.get("item,"sub.thing")}`);
 }
 
 try();
