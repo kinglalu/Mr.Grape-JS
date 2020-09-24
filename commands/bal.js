@@ -27,7 +27,7 @@ else if (argu.includes("<@")) {
     person = targets;
     personName = targets.displayName;
 }
-else {message.channel.send('unknown error my guy');}
+else {message.channel.send('Use a valid mention!');}
 
   async function bal() {    
         if (await users.get(person.id) === undefined) {
