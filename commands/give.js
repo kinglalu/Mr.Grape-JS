@@ -20,7 +20,8 @@ if (!cooldown)
 {
 	cooldowns.push(cmd + message.author.id);
 	cooldowns.push("c5");
-	
+	async function check() {if (await users.get(targets.id) === undefined) {await users.set(targets.id,0)}}
+	check();
 	async function donate() {
 	let ask = parseInt(args[1]);
 	let check = await users.get(message.author.id)
