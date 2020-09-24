@@ -26,7 +26,7 @@ if (!cooldown)
 					.setColor('#dd2de0')
 					.setTitle('Help')
 					.addFields (
-						{name: 'Help' , value: 'For more help in a specific area, do help <category>, and for info, do '+`${config.prefix}`+' help'},
+						{name: 'Help' , value: 'For more help in a specific area, do help <category'},
 						{name: 'Moni' , value: 'Help for stuff that get you stars'},
 						{name: 'Fun' , value: 'Fun stuff you can do'},
 						{name: 'Utility' , value: 'Help for stuff that get you stars'}
