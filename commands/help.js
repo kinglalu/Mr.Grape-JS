@@ -29,7 +29,7 @@ if (!cooldown)
 						{name: 'Help' , value: 'For more help in a specific area, do help <category'},
 						{name: 'Moni' , value: 'Help for stuff that get you stars'},
 						{name: 'Fun' , value: 'Fun stuff you can do'},
-						{name: 'Utility' , value: 'Help for stuff that get you stars'}
+						{name: 'Utility' , value: 'Just some other, somewhat useful, commands.'}
 						)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
