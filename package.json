@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Horsey4",
+  "author":  " Orignally by Horsey4, edited by kinglalu and Daone.",
   "license": "ISC",
   "dependencies": {
     "@keyv/postgres": "^1.0.16",
