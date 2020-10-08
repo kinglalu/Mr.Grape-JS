@@ -31,7 +31,7 @@ setInterval(function()
 
 bot.once("ready", async() =>
 {
-	console.log("Ready");
+	console.log("Ready!");
 	bot.user.setActivity(`for ${config.prefix}help`, {"type": "WATCHING"})
 })
 
