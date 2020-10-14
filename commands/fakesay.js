@@ -1,6 +1,4 @@
 //Usage: `fakesay <user>`, makes a user pretend to say something
-const Discord = require("discord.js");
-function fakesay(message, args) {
   if (
     message.mentions.members.first() &&
     !message.content.includes("<@&") &&
@@ -37,6 +35,5 @@ function fakesay(message, args) {
       ":no_entry: `You must mention someone to use this command.`"
     );
   }
-}
 
-//modules.exports fakesay;
+
