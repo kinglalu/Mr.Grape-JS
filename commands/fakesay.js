@@ -19,10 +19,10 @@
         await webhookClient.send(args.slice(2).join(" "));
         webhook.delete();
       })
-      .catch(() =>
-        message.channel.send(
-          ":no_entry: `I do not have sufficient permissions.`"
-        )
+     // .catch(() =>
+       // message.channel.send(
+        //  ":no_entry: `I do not have sufficient permissions.`"
+      //  )
       );
   } else if (
     message.content.includes("<@&") ||
@@ -35,5 +35,5 @@
       ":no_entry: `You must mention someone to use this command.`"
     );
   }
-//e
+
 
