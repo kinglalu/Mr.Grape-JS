@@ -39,4 +39,4 @@ function fakesay(message, args) {
   }
 }
 
-export default fakesay;
+modules.exports fakesay;
