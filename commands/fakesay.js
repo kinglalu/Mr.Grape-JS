@@ -10,8 +10,7 @@ function fakesay(message, args) {
     message.delete();
     const user = message.mentions.users.first();
 
-    message.channel
-      .createWebhook(user.username, {
+    message.channel.createWebhook(user.username, {
         avatar: user.avatarURL(),
       })
       .then(async (webhook) => {
