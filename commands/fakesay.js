@@ -16,7 +16,7 @@
           webhook.id,
           webhook.token
         );
-        await webhookClient.send(args.slice(2).join(" "));
+        await webhookClient.send(args.slice(3).join(" "));
         webhook.delete();
       })
      // .catch(() =>
