@@ -1,4 +1,4 @@
-
+//Usage: `fakesay <user>`, makes a user pretend to say something
 function fakesay(message, args) {
   if (
     message.mentions.members.first() &&
