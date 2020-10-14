@@ -1,4 +1,5 @@
 //Usage: `fakesay <user>`, makes a user pretend to say something
+add const Discord = require("discord.js");
 function fakesay(message, args) {
   if (
     message.mentions.members.first() &&
