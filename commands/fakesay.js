@@ -23,7 +23,7 @@
        // message.channel.send(
         //  ":no_entry: `I do not have sufficient permissions.`"
       //  )
-      );
+      //);
   } else if (
     message.content.includes("<@&") ||
     message.content.includes("@everyone") ||
