@@ -30,7 +30,7 @@ else if (argu.includes("<@")) {
 else {message.channel.send('Use a valid mention!');}
 
   async function bal() {    
-        if (await users.get(person.id) === null) {
+        if (await users.get(person.id) === null || await users.get(person.id) === undefined) {
             users.set(person.id, 0);
             const balsolooEmbed = new Discord.MessageEmbed()
                 .setColor('#dd2de0')
