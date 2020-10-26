@@ -4,7 +4,8 @@ module.exports = {
     description: 'fortune telling is cool',
     cooldown: 0,
     execute(message, args, d) {
-        let target = message.mentions.members.first;
+        let rawTarget = message.mentions.members.first;
+        let target = message.guild.member(target);
         let boolean = message.member.hasPermission("KICK_MEMBERS");
         if (boolean) {
             if (target) {
