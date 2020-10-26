@@ -6,7 +6,7 @@ module.exports = {
     execute(message, args, d) {
         let rawTarget = message.mentions.members.first();
         let target = message.guild.member(rawTarget);
-        let boolean = message.member.hasPermission("KICK_MEMBERS");
+        let boolean = message.member.hasPermission("BAN_MEMBERS");
         if (boolean) {
             if (target) {
                 try {
