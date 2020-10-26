@@ -11,16 +11,16 @@ module.exports = {
             if (target) {
                 try {
                     target.ban();
-                    message.channel.send(":wave: " + target.displayName + " has been kicked, what a noob lol ");
+                    message.channel.send(":hammer: " + target.displayName + " has been banned with an iron fist!");
                 }
                 catch {
-                    message.channel.send("I don't got permissions (or high enough role) to kick ppl. How about ya give me it?")
+                    message.channel.send("I don't got permissions (or high enough role) to ban ppl. How about ya give me it?")
                 }
             }
         } else if (!boolean) {
-            message.reply("bruh you dont even have permission to kick people, stop trying smh ");
+            message.reply("bruh you dont even have permission to ban people, stop trying smh ");
         } else {
-            message.channel.send("Cannot kick " + target.displayName + " maybe use a valid mention?");
+            message.channel.send("Cannot ban " + target.displayName + " maybe use a valid mention?");
         }
 
     }
