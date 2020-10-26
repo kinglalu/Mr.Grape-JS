@@ -36,7 +36,7 @@ module.exports = {
                     value: 'Check your $$$. To check the balance of another user, do ' + `${d.config.prefix}` + 'bal <usermention>.'
                 }, {
                     name: 'Buy',
-                    value: "Do " + `${d.config.prefix}` + "buy, and then the item's name to buy that item!"
+                    value: "Do " + `${d.config.prefix}` + "buy, and the item's name and quantity (that you want) to buy!"
                 }, {
                     name: 'Daily',
                     value: 'Get a daily amount of stars.'
@@ -55,6 +55,9 @@ module.exports = {
                 }, {
                     name: 'Shop',
                     value: 'Display the shop!'
+                }, {
+                    name: 'Sell',
+                    value: 'Sell your items (half the cost you bought them for), item name and how many you want to sell.'
                 }, {
                     name: 'Steal',
                     value: 'Steal from the big grape himself! There is a chance of losing some of your stars.'
