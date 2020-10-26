@@ -1,11 +1,9 @@
 {
-	"token": "lol no token 4 u",
 	"prefix": "+",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"todo":
 		[
 			"Prestiging!",
 			"Random events for more stars",
-			"A shop and items/powerups to buy"
 		]
 }

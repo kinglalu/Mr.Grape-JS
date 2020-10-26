@@ -1,7 +1,10 @@
-//Usage: `server`, Returns some basic info about the server
-//message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
-
-const serversoloEmbed = new Discord.MessageEmbed()
+module.exports = {
+	name: 'server',
+	aliases: ['serverinfo'],
+	description: 'get some basic info about your server',
+	cooldown: 2,
+	execute(message, args, d) {
+	const serversoloEmbed = new d.Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle('Server Info')
 					.addFields(
@@ -13,3 +16,5 @@ const serversoloEmbed = new Discord.MessageEmbed()
 					.setFooter('Grape Databases');
 
 				message.channel.send(serversoloEmbed);
+	}
+};
