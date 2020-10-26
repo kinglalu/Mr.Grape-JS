@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 module.exports = {
-    name: 'kick noobs from your server',
+    name: 'kick',
     description: 'fortune telling is cool',
     cooldown: 0,
     execute(message, args, d) {
