@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 module.exports = {
-    name: 'kick',
-    description: 'kick ppl',
+    name: 'ban',
+    description: 'ban ppl',
     cooldown: 0,
     execute(message, args, d) {
         let rawTarget = message.mentions.members.first();
