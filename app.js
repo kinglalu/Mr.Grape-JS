@@ -6,9 +6,6 @@ client.commands = new Discord.Collection();
 const Keyv = require('keyv');
 const users = new Keyv(process.env.DATABASE_URL, {namespace: 'users'});
 const items = new Keyv(process.env.DATABASE_URL, {namespace: 'items'});
-const commandFilesEconomy = fs.readdirSync('./commands/economy').filter(file => file.endsWith('.js'));
-const commandFilesFun = fs.readdirSync('./commands/fun').filter(file => file.endsWith('.js'));
-const commandFilesUtility = fs.readdirSync('./commands/utility').filter(file => file.endsWith('.js'));
 const addMoni = async function (who, howmuch) {
     let rightnow = await users.get(who);
     if (rightnow === undefined) {
@@ -35,20 +32,12 @@ const d = {
 	"itemShop":itemShop
 }
 
-for (const file of commandFilesEconomy) {
-	const command = require(`./commands/economy/${file}`);
-	client.commands.set(command.name, command);
-}
-
-for (const file of commandFilesFun) {
-	const command = require(`./commands/fun/${file}`);
-	client.commands.set(command.name, command);
-}
-
-for (const file of commandFilesUtility) {
-	const command = require(`./commands/utility/${file}`);
-	client.commands.set(command.name, command);
-}
+fs.readdirSync('./commands').forEach(folder => {
+  fs.readdirSync(`./commands/${folder}`).forEach(file => {
+    const command = require(`./commands/${folder}/${file}`);
+    client.commands.set(command.name, command);
+  });
+});
 
 const cooldowns = new Discord.Collection();
 
@@ -61,8 +50,7 @@ client.once('ready', () => {
 	client.user.setPresence({ activity: { name: `with ${config.prefix}help` }, status: 'idle' })
 });
 
-client.on('message', message => {
-	async function onMessage() {
+client.on('message', async message => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot || message.channel.type === 'dm') return;
 
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/);
@@ -115,9 +103,7 @@ client.on('message', message => {
 	} catch (error) {
 		console.error(error);
 		message.channel.send('made an oopsie tryna do that command');
-	}
-}
-onMessage();	
+	}	
 });
 
 client.login(process.env.BOT_TOKEN);
