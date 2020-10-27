@@ -10,7 +10,7 @@ module.exports = {
 					.setColor('#dd2de0')
 					.setTitle('Ping')
 					.addFields(
-					{ name: 'Your ping is:', value: `${{ping}`}
+					{ name: 'Your ping is:', value: `${ping}`}
 					)
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
