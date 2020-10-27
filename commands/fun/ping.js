@@ -1,4 +1,4 @@
-module.exports = {
+/* module.exports = {
 	name: 'ping',
 	aliases: ['pinginfo'],
 	description: 'basic ping pong command, see the ping',
@@ -18,4 +18,4 @@ module.exports = {
 
 				m.edit(pingsoloEmbed);
 	}
-};
+}; */
