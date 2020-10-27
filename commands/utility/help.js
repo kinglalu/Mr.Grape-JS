@@ -110,6 +110,9 @@ module.exports = {
                     name: 'coinflip',
                     value: 'Flip a coin!'
                 }, {
+                    name: 'ping',
+                    value: 'basic ping pong command, see the ping'
+                }, {
                     name: 'dice',
                     value: 'Roll a six-sided die!'
                 }, )
