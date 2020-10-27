@@ -8,7 +8,7 @@ module.exports = {
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s dice`)
             .addFields({
-                name: 'Roll:',
+                name: 'Roll',
                 value: roll
             })
             .setTimestamp()
