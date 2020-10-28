@@ -1,4 +1,6 @@
 const fs = require('fs');
+const querystring = require('querystring');
+const r2 = require('r2');
 const Discord = require('discord.js');
 const config  = require('./config.json');
 const client = new Discord.Client();
@@ -27,9 +29,10 @@ const d = {
 	"client":client,
 	"users":users,
 	"addMoni":addMoni,
-	"Keyv": Keyv,
 	"items":items,
-	"itemShop":itemShop
+	"itemShop":itemShop,
+	"querystring": querystring,
+	"r2":r2
 }
 
 fs.readdirSync('./commands').forEach(folder => {

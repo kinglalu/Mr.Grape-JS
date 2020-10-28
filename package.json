@@ -12,6 +12,8 @@
     "@keyv/postgres": "^1.0.16",
     "discord.js": "^12.3.1",
     "fs": "0.0.1-security",
-    "keyv": "^4.0.1"
+    "keyv": "^4.0.1",
+    "querystring": "^0.2.0",
+    "r2": "^2.0.1"
   }
 }
