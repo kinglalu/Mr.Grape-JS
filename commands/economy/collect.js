@@ -1,8 +1,7 @@
-  
 module.exports = {
     name: 'collect',
     aliases: ['col'],
-    cooldown: ,
+    cooldown: 600,
     description: 'collect stars if you have a starmill',
     async execute(message, args, d) {
         let starmill = d.items.get(message.author.id);
