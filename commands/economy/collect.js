@@ -5,8 +5,7 @@ module.exports = {
     description: 'collect stars if you have a starmill',
     async execute(message, args, d) {
         let inv = await d.items.get(message.author.id);
-        message.channel.send(inv.starmill);
-        if (!inv.hasOwnProperty('starmill')) {return message.channel.send('You don\'t have a starmill! ~~broke man~~');}
+        if (!inv.hasOwnProperty('starmill') || inv.starmill === 0) {return message.channel.send('You don\'t have a starmill! ~~broke man~~');}
         else {
         d.addMoni(message.author.id, inv.starmill);
         const colEmbed = new d.Discord.MessageEmbed()
