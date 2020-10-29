@@ -6,7 +6,7 @@ module.exports = {
     async execute(message, args, d) {
         let inv = d.items.get(message.author.id);
         message.channel.send(inv);
-        if (inv.starmill === undefined) {return message.channel.send('You don\'t have a starmill! ~~broke man~~');}
+        if (!inv.hasOwnProperty('starmill')) {return message.channel.send('You don\'t have a starmill! ~~broke man~~');}
         else {
         d.addMoni(message.author.id, inv.starmill);
         const colEmbed = new d.Discord.MessageEmbed()
