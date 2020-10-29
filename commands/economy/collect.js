@@ -13,7 +13,7 @@ module.exports = {
             .setTitle(message.author.username + `'s collection of stars`)
             .addFields({
                 name: 'Collected',
-                value: starmill + " :star:s"
+                value: starmill.starmill + " :star:s"
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
