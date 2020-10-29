@@ -4,17 +4,17 @@ module.exports = {
     cooldown: 0,
     description: 'collect stars if you have a starmill',
     async execute(message, args, d) {
-        let starmill = d.items.get(message.author.id);
-        message.channel.send(starmill);
-        if (starmill.starmill === undefined) {return message.channel.send('You don\'t have a starmill! ~~broke man~~');}
+        let inv = d.items.get(message.author.id);
+        message.channel.send(inv);
+        if (inv.starmill === undefined) {return message.channel.send('You don\'t have a starmill! ~~broke man~~');}
         else {
-        d.addMoni(message.author.id, starmill.starmill);
+        d.addMoni(message.author.id, inv.starmill);
         const colEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s collection of stars`)
             .addFields({
                 name: 'Collected',
-                value: starmill.starmill + " :star:s"
+                value: inv.starmill + " :star:s"
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
