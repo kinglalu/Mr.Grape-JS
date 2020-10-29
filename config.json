@@ -2,7 +2,10 @@
 	"prefix": "+",
 	"version": "2.0.0",
 	"todo":
-		[
+		[	"help command improvements",
+		 	"starmill",
+		 	"More Items",
+		 	"Auction House",
 			"Prestiging!",
 			"Random events for more stars"
 		]
