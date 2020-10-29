@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'bal',
+    name: 'asdfasdfasdf',
     aliases: ['balance', 'wallet'],
     description: 'check ur balance',
     async execute(message, args, d) {
