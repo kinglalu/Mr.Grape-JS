@@ -5,10 +5,9 @@ module.exports = {
     description: 'collect stars if you have a starmill',
     async execute(message, args, d) {
         let starmill = d.items.get(message.author.id);
-        let balance = d.users.get(message.author.id);
-        if (starmill === undefined) {return message.channel.send('You don\'t have a starmill ~~broke man~~');}
+        if (starmill.starmill === undefined) {return message.channel.send('You don\'t have a starmill ~~broke man~~');}
         else {
-        d.addMoni(message.author.id, starmill);
+        d.addMoni(message.author.id, starmill.starmill);
         const colEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s collection of stars`)
