@@ -4,7 +4,7 @@ module.exports = {
     cooldown: 0,
     description: 'collect stars if you have a starmill',
     async execute(message, args, d) {
-        let inv = d.items.get(message.author.id);
+        let inv = await d.items.get(message.author.id);
         message.channel.send(inv);
         if (!inv.hasOwnProperty('starmill')) {return message.channel.send('You don\'t have a starmill! ~~broke man~~');}
         else {
