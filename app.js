@@ -21,7 +21,8 @@ const itemShop = {
     mangodetector: 50,
     carrotdetector: 50,
     starmagnet: 100,
-    shovel: 100
+    shovel: 100,
+    starmill: 400
 }
 const d = {
 	"Discord":Discord, 
