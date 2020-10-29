@@ -1,7 +1,8 @@
 module.exports = {
     name: 'collect',
     aliases: ['col'],
-    cooldown: 0,
+    description: 'collect the stars from your starmill!\nbe quick, or the stars will expire (10m)',
+    cooldown: 600,
     description: 'collect stars if you have a starmill',
     async execute(message, args, d) {
         let inv = await d.items.get(message.author.id);
