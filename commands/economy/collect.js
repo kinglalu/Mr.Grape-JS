@@ -8,7 +8,7 @@ module.exports = {
         let balance = d.users.get(message.author.id);
         if (starmill === undefined) {return message.channel.send('You don\'t have a starmill ~~broke man~~');}
         else {
-        addMoni(message.author.id, starmill);
+        d.addMoni(message.author.id, starmill);
         const colEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s collection of stars`)
