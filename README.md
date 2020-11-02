@@ -1,2 +1,4 @@
 # Mr.Grape
-a fun discord bot made using discord.js
+A fun discord bot made using discord.js!
+
+It includes an economy (powered by keyv), a few utility commands and API commands!
