@@ -11,7 +11,7 @@ const items = new Keyv(process.env.DATABASE_URL, {namespace: 'items'});
 const addMoni = async function (who, howmuch) {
     let rightnow = await users.get(who);
     if (rightnow === undefined) {
-        await users.set(who, 0)
+        await users.set(who, howmuch)
     }
     await users.set(who, (rightnow + howmuch))
 }
@@ -74,8 +74,7 @@ client.on('message', async message => {
 	const commandFanException = ['daily']
 	let inv = await items.get(message.author.id);
 	let haveFan;
-	const blankObj = {};
-	if (inv === undefined || inv === null) {await items.set(message.author.id, blankObj); inv = blankObj}
+	if (inv === undefined || inv === null) {inv = {};}
 	if (inv.fan === undefined || inv.fan === null) {haveFan = 0}
 	else {haveFan = inv.fan}
 	let cooldownAmount;
