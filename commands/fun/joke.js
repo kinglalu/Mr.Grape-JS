@@ -8,7 +8,7 @@ module.exports = {
      let joke = await d.r2.get(jokeURL).text;
       const jk = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
-            .setTitle('Joke')
+            .setTitle('Joke :kek:')
             .addFields({
                 name: joke,
                 value: '_'
