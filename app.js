@@ -74,9 +74,8 @@ client.on('message', async message => {
 	const commandFanException = ['daily']
 	let inv = await items.get(message.author.id);
 	let haveFan;
-	const blankObj = {};
-	if (inv === undefined || inv === null) {await items.set(message.author.id, blankObj); inv = blankObj}
-	if (inv.fan === undefined || inv.fan === null) {haveFan = 0}
+	if (inv === undefined || inv === null) {haveFan = 0}
+	else if (inv.fan === undefined || inv.fan === null) {haveFan = 0}
 	else {haveFan = inv.fan}
 	let cooldownAmount;
 	if (commandFanException.includes(command.name)) {cooldownAmount = command.cooldown * 1000}
