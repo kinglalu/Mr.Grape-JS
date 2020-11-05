@@ -44,7 +44,7 @@ fs.readdirSync('./commands').forEach(folder => {
 });
 
 const cooldowns = new Discord.Collection();
-
+client.queue = new Map();
 
 users.on('error', err => console.error('Keyv connection error:', err));
 items.on('error', err => console.error('Keyv connection error:', err));
