@@ -17,7 +17,8 @@ function formatDuration(durationObj) {
 module.exports = {
 	name: 'play',
 	description: 'play music',
-	cooldown: 0,
+	aliases: ['p'],
+	cooldown: 2,
 	async execute(message, args, d) {
 		const { channel } = message.member.voice;
 		if (!channel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
