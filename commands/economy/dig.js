@@ -10,7 +10,7 @@ module.exports = {
         if (inv === undefined || inv.shovel === undefined || inv.shovel === 0) {
             earn = Math.round(Math.random() * 6) + 1;
         } else {
-            earn = Math.round(Math.random() * 15) + 1;
+            earn = Math.round(Math.random() * 15) + 5;
         }
         const mine = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
