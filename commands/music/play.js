@@ -16,7 +16,7 @@ function formatDuration(durationObj) {
   }
 module.exports = {
 	name: 'play',
-	description: 'play music',
+	description: 'play music, either do play <search> or play <youtube_url>',
 	aliases: ['p'],
 	cooldown: 2,
 	async execute(message, args, d) {
