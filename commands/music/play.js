@@ -21,10 +21,10 @@ module.exports = {
 	cooldown: 2,
 	async execute(message, args, d) {
 		const { channel } = message.member.voice;
-		if (!channel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
+		if (!channel) return message.channel.send('Get in a voice channel if you wanna play music!');
 		const permissions = channel.permissionsFor(message.client.user);
-		if (!permissions.has('CONNECT')) return message.channel.send('I cannot connect to your voice channel, make sure I have the proper permissions!');
-		if (!permissions.has('SPEAK')) return message.channel.send('I cannot speak in this voice channel, make sure I have the proper permissions!');
+		if (!permissions.has('CONNECT')) return message.channel.send('Bruh I don\'t have perms to connect');
+		if (!permissions.has('SPEAK')) return message.channel.send('Bruh I don\'t have perms to speak');
 		
 		const ytRegex = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
 		const serverQueue = message.client.queue.get(message.guild.id);
