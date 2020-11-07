@@ -1,7 +1,7 @@
 module.exports = {
     name: 'loop',
     description: 'get see what song is currently playin',
-    cooldown: 2,
+    cooldown: 1,
     aliases: ['repeat'],
     execute(message, args, d) {
         const serverQueue = message.client.queue.get(message.guild.id);;
