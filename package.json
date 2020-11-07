@@ -1,13 +1,14 @@
 {
   "name": "mr.-grape",
-  "version": "1.0.0",
+  "version": "2.3.0",
   "description": "help the man find his orange",
-  "main": "bot.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author":  " Orignally by Horsey4, edited by kinglalu and Daone.",
+  "main": "app.js",
+  "repository":"https://github.com/kinglalu/Mr.Grape",
+  "author":"Kinglalu & DAONE | Originally by Horsey4",
   "license": "ISC",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
     "@keyv/postgres": "^1.0.16",
