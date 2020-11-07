@@ -69,7 +69,8 @@ module.exports = {
 			connection: null,
 			songs: [],
 			volume: 2,
-			playing: true
+			playing: true,
+			repeatMode: 0
 		};
 		
 		message.client.queue.set(message.guild.id, queueConstruct);
@@ -88,7 +89,9 @@ module.exports = {
 								    quality: "highestaudio"
 								}))
 				.on('finish', () => {
-					queue.songs.shift();
+					if (queue.repeatMode === 0) {queue.songs.shift();}
+					else if (queue.repeatMode === 2) {queue.songs.push(queue.songs.shift());					}
+					else {null;}
 					play(queue.songs[0]);
 				})
 				.on('error', error => console.error(error));
