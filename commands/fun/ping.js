@@ -8,7 +8,7 @@ module.exports = {
   	var ping = m.createdTimestamp - message.createdTimestamp;
 	const pingsoloEmbed = new d.Discord.MessageEmbed()
 					.setColor('#dd2de0')
-					.setTitle('Ping')
+					.setTitle('Pong!')
 					.addFields(
 					{ name: 'Your ping is:', value: `${ping}`}
 					)
