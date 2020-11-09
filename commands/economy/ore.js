@@ -13,10 +13,10 @@ module.exports = {
                 value: 'Copper, Tin , Iron, Lead, Silver, Bronze'
             }, {
                 name: 'Tier 2',
-                value: 'Gold, Platinum, Titanium, Obsidian, Cobalt'
+                value: 'Gold, Platinum, Titanium, Obsidian, Cobalt, Goshine, Faslalt, Maclantite'
             }, {
                 name: 'Tier 3',
-                value: 'Starium, Lumionite, Hellinite, Grapium'
+                value: 'Starium, Lumionite, Hellinite, Grapium, Heaveninite, Erdon, Shakerium, Kelite, Limeinite'
             }, )
             .setTimestamp()
             .setFooter('Grape Mining Corp');
