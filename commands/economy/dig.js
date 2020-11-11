@@ -4,7 +4,7 @@ module.exports = {
     aliases: ['mine'],
     cooldown: 30,
     async execute(message, args, d) {
-        let shovelBreak = Math.floor(Math.random() * 35) + 1;
+        let shovelBreak = Math.floor(Math.random() * 45) + 1;
         let inv = await d.items.get(message.author.id);
         let earn;
         if (inv === undefined || inv.shovel === undefined || inv.shovel === 0) {
