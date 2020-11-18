@@ -20,7 +20,7 @@ module.exports = {
             d.addMoni(target.id, donation);
             const give = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(message.author.username + ` donation to ` + target.displayName)
+                .setTitle(message.author.username + "'s donation to " + target.displayName)
                 .addFields({
                     name: 'Donation',
                     value: 'you gave ' + `${target.displayName} ` + donation + ' :star:s'
