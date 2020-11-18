@@ -52,7 +52,7 @@ module.exports = {
         else if (inv.tieronepick) {
             if (randNum(4) === 1) { pick(randArray(d.ores.tier1), randNum(3)); }
             if (randNum(25) === 1) { pick(randArray(d.ores.tier2), 1); }
-            if (randNum(15) === 1) { mine.addField('Uh oh!', 'Your pickaxe broke, buy a new one from the shop!'); inv.tieronepick -= 1; }
+            if (randNum(25) === 1) { mine.addField('Uh oh!', 'Your pickaxe broke, buy a new one from the shop!'); inv.tieronepick -= 1; }
             await d.items.set(message.author.id, inv);
         }
 
