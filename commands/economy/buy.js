@@ -8,12 +8,11 @@ module.exports = {
         let regex = /\d+/g;
         let numberOfItemsRaw = args.join(' ').match(regex);
         let numberOfItems = parseInt(numberOfItemsRaw);
-        let item = args.join(' ').replace(numberOfItems, '').replace(' ', '');
-        if (have === undefined || have === null) {
+        let item = args.join('').replace(numberOfItems, '');
+        if (!have || have === null) {
             have = {};
-            await d.items.set(message.author.id, have)
         }
-        if (numberOfItemsRaw === NaN || numberOfItemsRaw === null || numberOfItemsRaw === undefined) {
+        if (isNaN(numberOfItems) || !numberOfItemsRaw) {
             numberOfItems = 1;
         }
         if (numberOfItems === 0) {
@@ -52,7 +51,7 @@ module.exports = {
             return;
         }
         d.addMoni(message.author.id, -total)
-        if (have[item] === undefined || have[item] === null) {
+        if (!have[item] || have[item] === null) {
             have[item] = 0;
         }
         have[item] += numberOfItems

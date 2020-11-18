@@ -3,7 +3,7 @@ module.exports = {
     description: 'basic info about the bot',
     cooldown: 5,
     execute(message, args, d) {
-        let uptime = d.client.uptime / 1000;
+        let uptime = message.client.uptime / 1000;
         let unit = "second(s)";
         if (uptime > 59 && unit === "second(s)") {
             uptime /= 60;
@@ -31,10 +31,10 @@ module.exports = {
                 value: `${d.config.todo.join("\n")}`
             }, {
                 name: 'Credits:',
-                value: 'Originally by Horsey4, Remade by Kinglalu and DAONE'
+                value: 'Kinglalu & DAONE | Goobermeister: graphics/emojis | Originally by Horsey4'
             }, {
                 name: '# of Servers Mr.Grape is in:',
-                value: `${d.client.guilds.cache.size}`
+                value: `${message.client.guilds.cache.size}`
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()

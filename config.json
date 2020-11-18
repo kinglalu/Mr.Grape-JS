@@ -1,9 +1,8 @@
 {
 	"prefix": "+",
-	"version": "2.4.0",
+	"version": "2.6.0",
 	"todo":
 		[	
-		 	"More Items",
 		 	"Auction House",
 			"Prestiging!",
 			"Random events for more stars"

@@ -8,15 +8,15 @@ module.exports = {
         let initialEarn = Math.round(Math.random() * 7) + 1;
         let chooseWork = Math.round(Math.random() * 2);
         const ifEarn = [1, 2, 2, 2];
-        if (chooseWork === 0 && inv !== undefined && inv.hasOwnProperty('orangedetector')) {
+        if (chooseWork === 0 && inv && inv.hasOwnProperty('orangedetector')) {
             for (let i = 0; i < inv.orangedetector; i++) {
                 ifEarn.push(1);
             }
-        } else if (chooseWork === 1 && inv !== undefined && inv.hasOwnProperty('mangodetector')) {
+        } else if (chooseWork === 1 && inv && inv.hasOwnProperty('mangodetector')) {
             for (let i = 0; i < inv.mangodetector; i++) {
                 ifEarn.push(1);
             }
-        } else if (chooseWork === 2 && inv !== undefined && inv.hasOwnProperty('carrotdetector')) {
+        } else if (chooseWork === 2 && inv && inv.hasOwnProperty('carrotdetector')) {
             for (let i = 0; i < inv.carrotdetector; i++) {
                 ifEarn.push(1);
             }
@@ -24,7 +24,7 @@ module.exports = {
         let earnJob = Math.floor(Math.random() * ifEarn.length);
         let earn;
 
-        if (inv !== undefined && inv.hasOwnProperty('starmagnet') && inv.starmagnet > 0) {
+        if (inv && inv.hasOwnProperty('starmagnet') && inv.starmagnet > 0) {
             earn = Math.round(initialEarn * (1 + (0.02 * inv.starmagnet)));
         } else {
             earn = initialEarn;
@@ -52,7 +52,7 @@ module.exports = {
             }, {
                 name: outcome,
                 value: "_"
-            }, )
+            })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Enterprises');

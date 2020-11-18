@@ -7,21 +7,9 @@ module.exports = {
         const coin = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s coinflip`)
+            .addField('It landed on',`${(flip === 1) ? 'Heads!' : 'Tails!'}`)
             .setTimestamp()
             .setFooter('Grape Coin Flipper Club');
-        switch (flip) {
-            case 1:
-                coin.addFields({
-                    name: 'It landed on:',
-                    value: 'Heads!'
-                });
-                break;
-            default:
-                coin.addFields({
-                    name: 'It landed on:',
-                    value: 'Tails!'
-                });
-        }
         message.channel.send(coin);
     }
 };

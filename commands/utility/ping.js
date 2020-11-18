@@ -5,7 +5,7 @@ module.exports = {
 	cooldown: 2,
 	execute(message, args, d) {
 	message.channel.send("Pinging...").then(m => {
-  	var ping = m.createdTimestamp - message.createdTimestamp;
+  	let ping = m.createdTimestamp - message.createdTimestamp;
 	const pingsoloEmbed = new d.Discord.MessageEmbed()
 					.setColor('#dd2de0')
 					.setTitle('Pong!')

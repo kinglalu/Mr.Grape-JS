@@ -6,7 +6,6 @@ module.exports = {
     async execute(message, args, d) {
         let target = message.mentions.members.first();
         let donation = parseInt(args.find(arg => !/<@!?\d+>/g.test(arg)));
-
         let check = await d.users.get(message.author.id)
         if (!target) {
             message.channel.send("who u givin golden stars to");
@@ -17,9 +16,6 @@ module.exports = {
         } else if (target.user.bot) {
             message.channel.send("bruh you cant give golden stars to a bot smh")
         } else {
-            if (await d.users.get(target.id) === undefined) {
-                await d.users.set(target.id, 0)
-            }
             d.addMoni(message.author.id, -donation);
             d.addMoni(target.id, donation);
             const give = new d.Discord.MessageEmbed()
