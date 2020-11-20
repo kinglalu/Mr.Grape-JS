@@ -28,7 +28,6 @@ module.exports = {
 		const serverQueue = message.client.queue.get(message.guild.id);
 		const argument = args.join(' ');
 		let songInfo;
-		let duration;
 		if (ytRegex.test(argument)) {
 			songInfo = await youtube.getVideo(argument, 1);
 			songInfo.url = argument;
@@ -68,7 +67,7 @@ module.exports = {
 			songs: [],
 			volume: 2,
 			playing: true,
-			repeatMode: 0
+			repeatMode: 0,
 		};
 
 		message.client.queue.set(message.guild.id, queueConstruct);
@@ -82,11 +81,12 @@ module.exports = {
 				return;
 			}
 
-			const dispatcher = queue.connection.play(
-				ytdl(song.url, {
-					filter: "audioonly",
-					quality: "highestaudio",
-				}))
+			let stream = ytdl(song.url, {
+				filter: "audioonly",
+				quality: "highestaudio"
+			});
+
+			const dispatcher = queue.connection.play(stream)
 				.on('finish', () => {
 					if (queue.repeatMode === 0) { queue.songs.shift(); }
 					else if (queue.repeatMode === 2) { queue.songs.push(queue.songs.shift()); }

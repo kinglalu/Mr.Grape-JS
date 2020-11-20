@@ -2,7 +2,7 @@ module.exports = {
     name: 'gamble',
     description: 'gamble your stars 50/50 chance of losing or gaining your stars',
     cooldown: 5,
-    execute(message, args, d) {
+    async execute(message, args, d) {
         async function actualGamble(param) {
             let roll = Math.floor(Math.random() * 5) + 1;
             const gambleEmbed = new d.Discord.MessageEmbed()
@@ -44,7 +44,7 @@ module.exports = {
 
                     message.channel.send(gambleEmbed).then(msg => {
                         msg.delete({
-                            timeout: 1000
+                            timeout: 0
                         })
                     })
                         .catch(console.error);
@@ -57,7 +57,6 @@ module.exports = {
                             }))
 
                             message.channel.send(gambleEmbed);
-
                             d.addMoni(message.author.id, param);
                         } else {
 
@@ -77,8 +76,30 @@ module.exports = {
             let ask;
             let check = await d.users.get(message.author.id);
             if (args[0] === 'all') {
-                ask = await d.users.get(message.author.id);
-                actualGamble(ask);
+                message.channel.send('Are you sure about that?');
+                let filter = m => m.author.id === message.author.id
+                message.channel.awaitMessages(filter, {
+                    max: 1,
+                    time: 7000,
+                    errors: ['time']
+                })
+                    .then(message => {
+                        message = message.first()
+                        if (message.content.toLowerCase() == 'yes' || message.content.toLowerCase() == 'y') {
+                            async function gambleAll() {
+                                ask = await d.users.get(message.author.id);
+                                actualGamble(ask);
+                            }
+                            gambleAll();
+                        } else if (message.content.toLowerCase() == 'no' || message.content.toLowerCase() == 'n') {
+                            message.channel.send('kk')
+                        } else {
+                            message.channel.send('bruh its yes or no')
+                        }
+                    })
+                    .catch(collected => {
+                        message.channel.send('ur slow');
+                    });
             } else if (!parseInt(args[0]) || parseInt(args[0]) < 1 || parseInt(args[0]) > check) {
                 message.channel.send("thats not a valid number of stars to gamble");
             } else {
@@ -87,9 +108,6 @@ module.exports = {
             }
 
         }
-
         gamble();
-
-
     }
 };
