@@ -23,7 +23,7 @@ module.exports = {
                         { name: 'Success', value: `Heist Successful! You got ${earned} :star:s!` }
                     )
                     .setTimestamp()
-                    .setFooter('Grape Marketplaces');
+                    .setFooter('Shady Grape Org');
 
                 message.channel.send(nice);
             }
@@ -37,7 +37,7 @@ module.exports = {
                         { name: 'Fail', value: `rip, despite ur effort, you got caught and lost ${loss} :star:s.` }
                     )
                     .setTimestamp()
-                    .setFooter('Grape Marketplaces');
+                    .setFooter('Shady Grape Org');
 
                 message.channel.send(rip);
             }
