@@ -12,7 +12,7 @@ module.exports = {
         function robbery() {
             const successVar = Math.floor(Math.random() * 99) + 1;
             const e = "0.0" + (Math.floor(Math.random() * 6) + 1).toString();
-            if (successVar >= 70) {
+            if (successVar >= 60) {
                 let earned = Math.floor(+e * targetBal);
                 d.addMoni(message.author.id, earned)
                 d.addMoni(target.id, -earned)
