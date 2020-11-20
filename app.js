@@ -42,7 +42,7 @@ client.on('message', async message => {
 
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.name);
-	const commandFanException = ['daily', 'steal', 'starmill']
+	const commandFanException = ['daily', 'steal', 'collect']
 	let inv = await items.get(message.author.id);
 	let haveFan;
 	if (inv === undefined || inv === null) { inv = {}; }
