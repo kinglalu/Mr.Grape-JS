@@ -50,7 +50,7 @@ client.on('message', async message => {
 	else { haveFan = inv.fan }
 	let cooldownAmount;
 	if (commandFanException.includes(command.name)) { cooldownAmount = command.cooldown * 1000 }
-	else { cooldownAmount = (1 - (0.1 * haveFan)) * (command.cooldown * 1000) };
+	else { cooldownAmount = (1 - (0.05 * haveFan)) * (command.cooldown * 1000) };
 	if (timestamps.has(message.author.id)) {
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 		if (now < expirationTime) {
