@@ -33,7 +33,7 @@ module.exports = {
             .addFields({
                 name: 'Balance',
                 value: displayBal + " :star:s"
-            }, )
+            })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Bank Inc.');

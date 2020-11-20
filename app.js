@@ -17,7 +17,6 @@ fs.readdirSync('./commands').forEach(folder => {
 	});
 });
 
-
 users.on('error', err => console.error('Keyv (users) connection error:', err));
 items.on('error', err => console.error('Keyv (items) connection error:', err));
 

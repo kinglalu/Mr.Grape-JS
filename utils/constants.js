@@ -27,7 +27,6 @@ const ores = {
     tier2: ['gold', 'platinum', 'titanium', 'obsidian', 'cobalt', 'goshine', 'fasalt', 'maclantite'],
     tier3: ['magmanite', 'rainbonite', 'starium', 'lumionite', 'hellinite', 'grapium', 'heaveninite', 'erdon', 'shakerium', 'kelite', 'limeinite']
 }
-
 const oreSell = {
     tier1: 9,
     tier2: 19,
