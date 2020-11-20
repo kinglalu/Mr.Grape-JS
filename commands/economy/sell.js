@@ -14,7 +14,7 @@ module.exports = {
                     let profit = 0;
                     if (!inv) { return message.channel.send('You got nothin!') }
                     for (key in inv) {
-                        if (key === "ore") { break; }
+                        if (key === "ore") { continue; }
                         profit += (d.itemShop[key] / 2) * inv[key];
                         delete inv[key];
                     }
