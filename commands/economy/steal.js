@@ -51,7 +51,7 @@ module.exports = {
                 { name: 'Fail', value: 'Pick a number from 1 - 3, if you pick the right number the safe will be cracked, if not then rip\nYou have 7.1 seconds, go!' }
             )
             .setTimestamp()
-            .setFooter('Grape Marketplaces');
+            .setFooter('Shady Grape Org');
         message.channel.send(go);
         message.channel.awaitMessages(filter, {
             max: 1,
@@ -72,7 +72,7 @@ module.exports = {
                             { name: 'Fail', value: `you guessed wrong rip, you lost ${loss} :star:s` }
                         )
                         .setTimestamp()
-                        .setFooter('Grape Marketplaces');
+                        .setFooter('Shady Grape Org');
 
                     message.channel.send(rip);
                 }
@@ -87,7 +87,7 @@ module.exports = {
                         { name: 'Fail', value: `Bruh ur trash, you couldn't crack it in time, also you lost ${lossTime} :star:s` }
                     )
                     .setTimestamp()
-                    .setFooter('Grape Marketplaces');
+                    .setFooter('Shady Grape Org');
 
                 message.channel.send(rip);
             });
