@@ -48,7 +48,7 @@ const emoji = {
     lead: "<:lead:776579886637776908>",
     iron: "<:iron:776582852065230858>",
     magmanite: "<a:magamanite:776607429034770494>",
-    heaveninite: "<:heaveninite:778736725794619393",
+    heaveninite: "<:heaveninite:778736725794619393>",
     grapium: "<a:grapium:776612094929010688>",
     goshine: "<:goshine:776592415209029643>",
     gold: "<:gold:776585426689327105>",
