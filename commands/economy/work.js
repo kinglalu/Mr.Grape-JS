@@ -7,7 +7,7 @@ module.exports = {
         let inv = await d.items.get(message.author.id);
         let initialEarn = Math.round(Math.random() * 7) + 1;
         let chooseWork = Math.round(Math.random() * 2);
-        const ifEarn = [1, 2, 2, 2];
+        const ifEarn = [1, 2, 2];
         if (chooseWork === 0 && inv && inv.hasOwnProperty('orangedetector')) {
             for (let i = 0; i < inv.orangedetector; i++) {
                 ifEarn.push(1);

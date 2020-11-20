@@ -83,14 +83,11 @@ module.exports = {
                     time: 7000,
                     errors: ['time']
                 })
-                    .then(message => {
+                    .then(async message => {
                         message = message.first()
                         if (message.content.toLowerCase() == 'yes' || message.content.toLowerCase() == 'y') {
-                            async function gambleAll() {
-                                ask = await d.users.get(message.author.id);
-                                actualGamble(ask);
-                            }
-                            gambleAll();
+                            ask = await d.users.get(message.author.id);
+                            actualGamble(ask);
                         } else if (message.content.toLowerCase() == 'no' || message.content.toLowerCase() == 'n') {
                             message.channel.send('kk')
                         } else {
