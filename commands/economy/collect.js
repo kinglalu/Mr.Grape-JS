@@ -2,7 +2,7 @@ module.exports = {
     name: 'collect',
     aliases: ['col'],
     description: 'collect the stars from your starmill!',
-    cooldown: 0,
+    cooldown: 600,
     async execute(message, args, d) {
         let inv = await d.items.get(message.author.id);
         let collectedStars;
@@ -17,7 +17,7 @@ module.exports = {
         else {
             let elapsedTime = Math.floor((rn - inv.time.starmill) / 60000);
             inv.time.starmill = rn;
-            collectedStars = inv.starmill * (elapsedTime / 1);
+            collectedStars = inv.starmill * (elapsedTime / 10);
         }
         d.addMoni(message.author.id, collectedStars);
         await d.items.set(message.author.id, inv)
