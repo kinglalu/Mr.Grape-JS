@@ -9,7 +9,7 @@ module.exports = {
         const numberRegex = /\d+/g;
         let item;
         if (Object.keys(d.itemShop).some(e => argument.includes(e)) || argument.includes('item' || 'items')) {
-            if (argument.includes('item' || 'items' && 'all')) {
+            if (argument.includes('item' && 'all') || argument.includes('items' && 'all')) {
                 async function sellTools() {
                     let profit = 0;
                     if (!inv) { return message.channel.send('You got nothin!') }
