@@ -14,7 +14,7 @@ module.exports = {
                     let profit = 0;
                     if (!inv) { return message.channel.send('You got nothin!') }
                     for (key in inv) {
-                        if (key === "ore") { continue; }
+                        if (key === "ore" || key === "time") { continue; }
                         profit += (d.itemShop[key] / 2) * inv[key];
                         delete inv[key];
                     }
@@ -72,7 +72,7 @@ module.exports = {
             }
             else {
                 let numItems = parseInt(argument.match(numberRegex))
-                item = Object.keys(d.itemShop).filter(v => argument.includes(v)).pop()
+                item = Object.keys(d.itemShop).filter(v => argument.includes(v)).pop();
                 if (!inv[item]) { return message.channel.send('You dont\'t have that item!') }
                 if (isNaN(numItems) || numItems < 0) { numItems = 1; }
                 if (numItems === 0) { return message.channel.send('ok boomer'); }
@@ -95,6 +95,7 @@ module.exports = {
 
                 message.channel.send(sale);
             }
+            if (!inv.starmill || inv.starmill === 0 && inv.time.starmill) { delete inv.time.starmill; }
             await d.items.set(message.author.id, inv);
         }
         else if (oreConcat.some(e => argument.includes(e)) || argument.includes('ores' || 'ore')) {

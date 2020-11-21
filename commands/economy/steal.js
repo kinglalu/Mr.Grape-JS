@@ -48,7 +48,7 @@ module.exports = {
             .setColor('#dd2de0')
             .setTitle(message.author.username + '\'s heist')
             .addFields(
-                { name: 'Fail', value: 'Pick a number from 1 - 3, if you pick the right number the safe will be cracked, if not then rip\nYou have 7.1 seconds, go!' }
+                { name: 'Fail', value: 'Pick a number from 1 - 3, if you pick the right number the safe will be cracked, if not then rip\nYou have 7 seconds, go!' }
             )
             .setTimestamp()
             .setFooter('Shady Grape Org');
