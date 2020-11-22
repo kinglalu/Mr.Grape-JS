@@ -3,6 +3,7 @@ module.exports = {
     description: 'set prefix',
     cooldown: 2,
     async execute(message, args, d) {
+        if (!message.member.hasPermission("MANAGE_SERVER")) {return message.channel.send('You don\'t have perms, git good.');}
         let guilds = await d.guilds.get(message.guild.id);
         if (!guilds) { guilds = {}; }
         if (!args[0]) { return message.channel.send('Whaddya want me to set the prefix to?') }
