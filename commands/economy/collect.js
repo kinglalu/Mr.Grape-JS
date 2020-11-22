@@ -17,7 +17,7 @@ module.exports = {
         else {
             let elapsedTime = Math.floor((rn - inv.time.starmill) / 60000);
             inv.time.starmill = rn;
-            collectedStars = inv.starmill * (elapsedTime / 10);
+            collectedStars = Math.round(inv.starmill * (elapsedTime / 10));
         }
         d.addMoni(message.author.id, collectedStars);
         await d.items.set(message.author.id, inv)
