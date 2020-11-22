@@ -5,6 +5,7 @@ const client = new Discord.Client();
 const Keyv = require('keyv');
 const users = new Keyv(process.env.DATABASE_URL, { namespace: 'users' });
 const items = new Keyv(process.env.DATABASE_URL, { namespace: 'items' });
+const guilds = new Keyv(process.env.DATABASE_URL, { namespace: 'guilds' });
 const cooldowns = new Discord.Collection();
 const d = require('./utils/constants');
 client.commands = new Discord.Collection();
@@ -19,6 +20,7 @@ fs.readdirSync('./commands').forEach(folder => {
 
 users.on('error', err => console.error('Keyv (users) connection error:', err));
 items.on('error', err => console.error('Keyv (items) connection error:', err));
+guilds.on('error', err => console.error('Keyv (guilds) connection error:', err));
 
 client.once('ready', () => {
 	console.log('Ready!');
@@ -26,9 +28,15 @@ client.once('ready', () => {
 });
 
 client.on('message', async message => {
-	if (!message.content.startsWith(config.prefix) || message.author.bot || message.channel.type === 'dm') return;
 
-	const args = message.content.toLowerCase().slice(config.prefix.length).trim().split(/ +/);
+	let prefix;
+	let guild = await guilds.get(message.guild.id);
+	if (!guild || !guild.prefix) { prefix = config.prefix }
+	else { prefix = guild.prefix; }
+
+	if (!message.content.startsWith(prefix) || message.author.bot || message.channel.type === 'dm') return;
+
+	const args = message.content.toLowerCase().slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
 
 	const command = client.commands.get(commandName)
@@ -45,8 +53,8 @@ client.on('message', async message => {
 	const commandFanException = ['daily', 'steal', 'collect']
 	let inv = await items.get(message.author.id);
 	let haveFan;
-	if (inv === undefined || inv === null) { inv = {}; }
-	if (inv.fan === undefined || inv.fan === null) { haveFan = 0 }
+	if (!inv) { inv = {}; }
+	if (!inv.fan) { haveFan = 0 }
 	else { haveFan = inv.fan }
 	let cooldownAmount;
 	if (commandFanException.includes(command.name)) { cooldownAmount = command.cooldown * 1000 }

@@ -20,7 +20,7 @@ module.exports = {
             collectedStars = Math.round(inv.starmill * (elapsedTime / 10));
         }
         d.addMoni(message.author.id, collectedStars);
-        await d.items.set(message.author.id, inv)
+		await d.items.set(message.author.id, inv);
         const colEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s collection of stars`)

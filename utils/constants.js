@@ -5,6 +5,7 @@ const config = require('../config.json');
 const Keyv = require('keyv');
 const users = new Keyv(process.env.DATABASE_URL, { namespace: 'users' });
 const items = new Keyv(process.env.DATABASE_URL, { namespace: 'items' });
+const guilds = new Keyv(process.env.DATABASE_URL, { namespace: 'guilds' });
 const addMoni = async function (who, add) {
     let current = await users.get(who);
     if (current === undefined) { await users.set(who, add); }
@@ -70,5 +71,6 @@ module.exports = {
     "r2": r2,
     "ores": ores,
     "oreSell": oreSell,
-    "emoji": emoji
+    "emoji": emoji,
+    "guilds": guilds
 };
