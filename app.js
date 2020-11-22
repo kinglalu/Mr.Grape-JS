@@ -32,6 +32,11 @@ client.on('message', async message => {
 	let prefix;
 	let guild = await guilds.get(message.guild.id);
 	if (!guild || !guild.prefix) { prefix = config.prefix }
+	else if (config.prefix === guild.prefix) {
+		prefix = config.prefix;
+		delete guild.prefix;
+		await guilds.set(message.guild.id, guild);
+	}
 	else { prefix = guild.prefix; }
 
 	if (!message.content.startsWith(prefix) || message.author.bot || message.channel.type === 'dm') return;
