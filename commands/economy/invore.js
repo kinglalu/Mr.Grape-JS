@@ -31,7 +31,7 @@ module.exports = {
                     continue;
                 }
                 let orePic = d.emoji[d.ores.tier1.concat(d.ores.tier2, d.ores.tier3).filter(v => key.includes(v)).pop()];
-                invEmbed.addFields(orePic + " - " + key.charAt(0).toUpperCase() + key.slice(1) + "(s) ", inv.ore[key]);
+                invEmbed.addField(orePic + " - " + key.charAt(0).toUpperCase() + key.slice(1) + "(s) ", inv.ore[key]);
             }
         }
         message.channel.send(invEmbed);
