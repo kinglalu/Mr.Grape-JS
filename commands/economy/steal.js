@@ -19,9 +19,7 @@ module.exports = {
                 const nice = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s heist')
-                    .addFields(
-                        { name: 'Success', value: `Heist Successful! You got ${earned} :star:s!` }
-                    )
+                    .addField('Success', `Heist Successful! You got ${earned} :star:s!`)
                     .setTimestamp()
                     .setFooter('Shady Grape Org');
 
@@ -33,9 +31,7 @@ module.exports = {
                 const rip = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s heist')
-                    .addFields(
-                        { name: 'Fail', value: `rip, despite ur effort, you got caught and lost ${loss} :star:s.` }
-                    )
+                    .addField('Fail', `rip, despite ur effort, you got caught and lost ${loss} :star:s.`)
                     .setTimestamp()
                     .setFooter('Shady Grape Org');
 
@@ -47,9 +43,7 @@ module.exports = {
         const go = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + '\'s heist')
-            .addFields(
-                { name: 'Fail', value: 'Pick a number from 1 - 3, if you pick the right number the safe will be cracked, if not then rip\nYou have 7 seconds, go!' }
-            )
+            .addField('Fail', 'Pick a number from 1 - 3, if you pick the right number the safe will be cracked, if not then rip\nYou have 7 seconds, go!')
             .setTimestamp()
             .setFooter('Shady Grape Org');
         message.channel.send(go);
@@ -68,9 +62,7 @@ module.exports = {
                     const rip = new d.Discord.MessageEmbed()
                         .setColor('#dd2de0')
                         .setTitle(message.author.username + '\'s heist')
-                        .addFields(
-                            { name: 'Fail', value: `you guessed wrong rip, you lost ${loss} :star:s` }
-                        )
+                        .addField('Fail', `you guessed wrong rip, you lost ${loss} :star:s`)
                         .setTimestamp()
                         .setFooter('Shady Grape Org');
 
@@ -83,9 +75,7 @@ module.exports = {
                 const rip = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s heist')
-                    .addFields(
-                        { name: 'Fail', value: `Bruh ur trash, you couldn't crack it in time, also you lost ${lossTime} :star:s` }
-                    )
+                    .addField('Fail', `Bruh ur trash, you couldn't crack it in time, also you lost ${lossTime} :star:s`)
                     .setTimestamp()
                     .setFooter('Shady Grape Org');
 

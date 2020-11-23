@@ -1,6 +1,6 @@
 {
   "name": "mr.-grape",
-  "version": "2.6.8",
+  "version": "2.6.9",
   "description": "help the man find his orange",
   "main": "app.js",
   "repository": "https://github.com/kinglalu/Mr.Grape",

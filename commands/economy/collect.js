@@ -17,17 +17,14 @@ module.exports = {
         else {
             let elapsedTime = Math.floor((rn - inv.time.starmill) / 60000);
             inv.time.starmill = rn;
-            collectedStars = Math.round(inv.starmill * (elapsedTime / 10));
+            collectedStars = inv.starmill * (~~(elapsedTime / 10));
         }
         d.addMoni(message.author.id, collectedStars);
-		await d.items.set(message.author.id, inv);
+        await d.items.set(message.author.id, inv);
         const colEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s collection of stars`)
-            .addFields({
-                name: 'Collected',
-                value: collectedStars + " :star:s"
-            })
+            .addField('Collected', collectedStars + " :star:s")
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Bank Inc.');

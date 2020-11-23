@@ -1,3 +1,5 @@
+const inv = require("./inv");
+
 module.exports = {
     name: 'buy',
     aliases: ['purchase'],
@@ -41,6 +43,10 @@ module.exports = {
         else { have[item] += numberOfItems }
         d.items.set(message.author.id, have);
         let receipt;
+        if (item === 'starmill') {
+            if (!inv.time) { inv.time = {}; }
+            if (!inv.time.starmill) { inv.time.starmill = Date.now() }
+        }
         if (numberOfItems === 1) {
             receipt = "You successfully purchased a " + item + "!";
         } else {
@@ -49,10 +55,7 @@ module.exports = {
         const buy = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + "'s purchase")
-            .addFields({
-                name: 'Receipt',
-                value: receipt
-            })
+            .addField('Receipt', receipt)
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Marketplaces');

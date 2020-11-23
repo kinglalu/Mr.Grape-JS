@@ -7,10 +7,7 @@ module.exports = {
         const dailystarEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s daily reward`)
-            .addFields({
-                name: 'Daily Reward',
-                value: 'here is ' + ` ${random} ` + ' :star:s'
-            }, )
+            .addField('Daily Reward','here is ' + ` ${random} ` + ' :star:s')
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Bank Inc.');

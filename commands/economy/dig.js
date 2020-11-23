@@ -14,10 +14,7 @@ module.exports = {
         const mine = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s mine`)
-            .addFields({
-                name: 'You dug up ' + earn + ' :star:s',
-                value: '_'
-            })
+            .addField( 'You dug up ' + earn + ' :star:s!', '_')
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Mining Guild');

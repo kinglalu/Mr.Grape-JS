@@ -30,16 +30,10 @@ module.exports = {
         const balEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(personName + `'s balance`)
-            .addFields({
-                name: 'Balance',
-                value: displayBal + " :star:s"
-            })
+            .addField('Balance', displayBal + " :star:s")
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Bank Inc.');
         message.channel.send(balEmbed);
-
-
-
     }
 };

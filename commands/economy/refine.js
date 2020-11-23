@@ -30,10 +30,7 @@ module.exports = {
             const refine = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
                 .setTitle(message.author.username + '\'s refinement')
-                .addFields({
-                    name: 'Refined',
-                    value: `Successfully refined all of your ores for ${cost} :star:s!`
-                })
+                .addField('Refined', `Successfully refined all of your ores for ${cost} :star:s!`)
                 .setTimestamp()
                 .setFooter('Grape Refinery');
 
@@ -46,10 +43,7 @@ module.exports = {
                     const e = new d.Discord.MessageEmbed()
                         .setColor('#dd2de0')
                         .setTitle(message.author.username + '\'s refinement')
-                        .addFields({
-                            name: 'Cannot Refine',
-                            value: 'That ore doesn\'t exist bruh'
-                        })
+                        .addField('Cannot Refine', 'That ore doesn\'t exist bruh')
                         .setTimestamp()
                         .setFooter('Grape Refinery');
                     return message.channel.send(e);
@@ -58,10 +52,7 @@ module.exports = {
                     const e = new d.Discord.MessageEmbed()
                         .setColor('#dd2de0')
                         .setTitle(message.author.username + '\'s refinement')
-                        .addFields({
-                            name: 'Cannot Refine',
-                            value: 'You don\'t have that ore, git good.'
-                        })
+                        .addField('Cannot Refine', 'You don\'t have that ore, git good.')
                         .setTimestamp()
                         .setFooter('Grape Refinery');
                     return message.channel.send(e);
@@ -82,10 +73,7 @@ module.exports = {
                 const r = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s refinement')
-                    .addFields({
-                        name: 'Refined',
-                        value: `You refined your ${item} ore(s) for ${cost} :star:s`
-                    })
+                    .addField('Refined', `You refined your ${item} ore(s) for ${cost} :star:s`)
                     .setTimestamp()
                     .setFooter('Grape Refinery');
                 return message.channel.send(r);
@@ -100,10 +88,7 @@ module.exports = {
                     const e = new d.Discord.MessageEmbed()
                         .setColor('#dd2de0')
                         .setTitle(message.author.username + '\'s refinement')
-                        .addFields({
-                            name: 'Cannot Refine',
-                            value: 'That ore doesn\'t exist bruh'
-                        })
+                        .addField('Cannot Refine', 'That ore doesn\'t exist bruh')
                         .setTimestamp()
                         .setFooter('Grape Refinery');
                     return message.channel.send(e);
@@ -112,10 +97,7 @@ module.exports = {
                     const e = new d.Discord.MessageEmbed()
                         .setColor('#dd2de0')
                         .setTitle(message.author.username + '\'s refinement')
-                        .addFields({
-                            name: 'Cannot Refine',
-                            value: 'You don\'t have that ore, git good.'
-                        })
+                        .addField('Cannot Refine', 'You don\'t have that ore, git good.')
                         .setTimestamp()
                         .setFooter('Grape Refinery');
                     return message.channel.send(e);
@@ -136,10 +118,7 @@ module.exports = {
                 const r = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s refinement')
-                    .addFields({
-                        name: 'Refined',
-                        value: `You refined your ${numberOfItems} ${item} ore(s) for ${cost} :star:s`
-                    })
+                    .addField('Refined', `You refined your ${numberOfItems} ${item} ore(s) for ${cost} :star:s`)
                     .setTimestamp()
                     .setFooter('Grape Refinery');
                 return message.channel.send(r);
