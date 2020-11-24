@@ -72,39 +72,35 @@ module.exports = {
                 }, 3100)
             }, 2100)
         }
-        async function gamble() {
-            let ask;
-            let check = await d.users.get(message.author.id);
-            if (args[0] === 'all') {
-                message.channel.send('Are you sure about that?');
-                let filter = m => m.author.id === message.author.id
-                message.channel.awaitMessages(filter, {
-                    max: 1,
-                    time: 7000,
-                    errors: ['time']
+        let ask;
+        let check = await d.users.get(message.author.id);
+        if (args[0] === 'all') {
+            message.channel.send('Are you sure about that?');
+            let filter = m => m.author.id === message.author.id
+            message.channel.awaitMessages(filter, {
+                max: 1,
+                time: 7000,
+                errors: ['time']
+            })
+                .then(async message => {
+                    message = message.first()
+                    if (message.content.toLowerCase() == 'yes' || message.content.toLowerCase() == 'y') {
+                        ask = await d.users.get(message.author.id);
+                        actualGamble(ask);
+                    } else if (message.content.toLowerCase() == 'no' || message.content.toLowerCase() == 'n') {
+                        message.channel.send('kk')
+                    } else {
+                        message.channel.send('bruh its yes or no')
+                    }
                 })
-                    .then(async message => {
-                        message = message.first()
-                        if (message.content.toLowerCase() == 'yes' || message.content.toLowerCase() == 'y') {
-                            ask = await d.users.get(message.author.id);
-                            actualGamble(ask);
-                        } else if (message.content.toLowerCase() == 'no' || message.content.toLowerCase() == 'n') {
-                            message.channel.send('kk')
-                        } else {
-                            message.channel.send('bruh its yes or no')
-                        }
-                    })
-                    .catch(collected => {
-                        message.channel.send('ur slow');
-                    });
-            } else if (!parseInt(args[0]) || parseInt(args[0]) < 1 || parseInt(args[0]) > check) {
-                message.channel.send("thats not a valid number of stars to gamble");
-            } else {
-                ask = parseInt(args[0])
-                actualGamble(ask);
-            }
-
+                .catch(collected => {
+                    message.channel.send('ur slow');
+                });
+        } else if (!parseInt(args[0]) || parseInt(args[0]) < 1 || parseInt(args[0]) > check) {
+            message.channel.send("thats not a valid number of stars to gamble");
+        } else {
+            ask = parseInt(args[0])
+            actualGamble(ask);
         }
-        gamble();
     }
 };

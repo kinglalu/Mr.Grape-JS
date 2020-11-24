@@ -5,18 +5,18 @@ module.exports = {
     cooldown: 30,
     async execute(message, args, d) {
         let inv = await d.items.get(message.author.id);
-        let initialEarn = Math.round(Math.random() * 7) + 1;
+        let earn = Math.round(Math.random() * 7) + 1;
         let chooseWork = Math.round(Math.random() * 2);
         const ifEarn = [1, 2, 2];
-        if (chooseWork === 0 && inv && inv.hasOwnProperty('orangedetector')) {
+        if (chooseWork === 0 && inv && inv.orangedetector) {
             for (let i = 0; i < inv.orangedetector; i++) {
                 ifEarn.push(1);
             }
-        } else if (chooseWork === 1 && inv && inv.hasOwnProperty('mangodetector')) {
+        } else if (chooseWork === 1 && inv && inv.mangodetector) {
             for (let i = 0; i < inv.mangodetector; i++) {
                 ifEarn.push(1);
             }
-        } else if (chooseWork === 2 && inv && inv.hasOwnProperty('carrotdetector')) {
+        } else if (chooseWork === 2 && inv && inv.carrotdetector) {
             for (let i = 0; i < inv.carrotdetector; i++) {
                 ifEarn.push(1);
             }
@@ -24,10 +24,10 @@ module.exports = {
         let earnJob = Math.floor(Math.random() * ifEarn.length);
         let earn;
 
-        if (inv && inv.hasOwnProperty('starmagnet') && inv.starmagnet > 0) {
-            earn = Math.round(initialEarn * (1 + (0.02 * inv.starmagnet)));
+        if (inv && inv.starmagnet && inv.starmagnet > 0) {
+            earn = Math.round(earn * (1 + (0.02 * inv.starmagnet)));
         } else {
-            earn = initialEarn;
+            null;
         }
         const situation = [
             ['Help Mr.Grape find his orange!', 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange.', 'Yay, you found my orange! Here, take ' + earn + ' :star:s!', "That's not my orange, that's a banana! Try again later."],
