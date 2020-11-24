@@ -10,5 +10,6 @@ module.exports = {
 		if (!serverQueue) return message.channel.send("There ain't any music!");
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end("Music stopped.");
+		message.channel.send('Done');
 	}
 };
