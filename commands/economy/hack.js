@@ -10,7 +10,7 @@ module.exports = {
                   return message.channel.send('ok ok noice');
             }
 
-            else { return message.channel.send('back off!'); }
+            else { return message.channel.send('back off! Only developers or Mr Grape can use this!'); }
       }
 };
       
