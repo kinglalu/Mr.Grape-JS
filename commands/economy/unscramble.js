@@ -40,15 +40,31 @@ module.exports = {
                         e = Math.round(e * (1 + (0.02 * inv.starmagnet)));
                     }
                     d.addMoni(e)
-                    message.channel.send(`Yay! You guessed the word correctly! You get ${e} :star:s`)
+                    const yay = new d.Discord.MessageEmbed()
+                        .setColor('#dd2de0')
+                        .setTitle(message.author.username + `'s task`)
+                        .addField('Unscramble Results', `Yay! You guessed the word correctly! You get ${e} :star:s`)
+                        .setTimestamp()
+                        .setFooter('Grape Enterprises');
+                    message.channel.send(yay)
                 } else {
-                    message.channel.send(`bruh ur bad, the word was ${word} duh`)
+                    const oof = new d.Discord.MessageEmbed()
+                        .setColor('#dd2de0')
+                        .setTitle(message.author.username + `'s task`)
+                        .addField('Unscramble Results', `bruh ur bad, the word was ${word} duh`)
+                        .setTimestamp()
+                        .setFooter('Grape Enterprises');
+                    message.channel.send(oof)
                 }
             })
             .catch(collected => {
-                message.channel.send(`cmon slowpoke, its not that hard, it was ${word}`);
+                const oof = new d.Discord.MessageEmbed()
+                    .setColor('#dd2de0')
+                    .setTitle(message.author.username + `'s task`)
+                    .addField('Unscramble Results', `cmon slowpoke, its not that hard, it was ${word}`)
+                    .setTimestamp()
+                    .setFooter('Grape Enterprises');
+                message.channel.send(oof)
             });
-
-
     }
 };

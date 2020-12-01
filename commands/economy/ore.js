@@ -28,7 +28,7 @@ module.exports = {
                 name: 'Pickaxes',
                 value: '**Tier 1**: Allows you to get Tier 1 ores, small chance of getting Tier 2 ores.\n500:star:s\n**Tier 2**: Increases chance of getting Tier 2 ores, small chance of getting Tier 3 ores.\n650:star:s\n**Tier 3**: Increases chance of getting Tier 3 ores.\n750:star:s'
             }, {
-                name: `To buy a pick, type ${d.config.prefix}buy tieronepick, tiertwopick, or tierthreepick`,
+                name: `To buy a pick, type ${d.prefix}buy tieronepick, tiertwopick, or tierthreepick`,
                 value: '_'
             })
             .setTimestamp()

@@ -9,8 +9,10 @@ module.exports = {
         let check = await d.users.get(message.author.id)
         if (!target) {
             message.channel.send("who u givin golden stars to");
-        } else if (!donation || donation < 1 || donation > check || isNaN(donation)) {
+        } else if (!donation || donation > check || isNaN(donation)) {
             message.channel.send("thats not a valid number of golden stars to give")
+        } else if (donation === 0) {
+            message.channel.send('ok scrooge');
         } else if (target.id === message.author.id) {
             message.channel.send("bruh you cant give golden stars to yourself smh")
         } else if (target.user.bot) {

@@ -31,7 +31,7 @@ module.exports = {
                 value: `${d.config.todo.join("\n")}`
             }, {
                 name: 'Credits:',
-                value: 'Kinglalu & DAONE | Goobermeister: graphics/emojis | Originally by Horsey4 and Airplane Bong'
+                value: 'Kinglalu & DAONE | Goobermeister: graphics/emojis | Originally by Horsey4 and Airplany Bong.'
             }, {
                 name: '# of Servers Mr.Grape is in:',
                 value: `${message.client.guilds.cache.size}`

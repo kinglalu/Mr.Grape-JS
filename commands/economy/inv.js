@@ -18,7 +18,7 @@ module.exports = {
         let inv = await d.items.get(person.id);
         const invEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
-            .setDescription(`To check your ores, do ${d.config.prefix}io`)
+            .setDescription(`To check your ores, do ${d.prefix}io`)
             .setTitle(personName + "'s inventory")
             .setTimestamp()
             .setFooter('Grape Storages Org.');

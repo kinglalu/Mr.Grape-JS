@@ -1,4 +1,4 @@
-const fileh = require('filehound')
+const fileReader = require('filehound')
 module.exports = {
     name: 'help',
     description: 'help command bro',
@@ -12,10 +12,8 @@ module.exports = {
                     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                     .join('\n');
             };
-            const {
-                commands
-            } = message.client;
-            const subdirectories = fileh.create()
+            const { commands } = message.client;
+            const subdirectories = fileReader.create()
                 .path("./commands")
                 .directory()
                 .findSync();
@@ -29,8 +27,8 @@ module.exports = {
                         value: toTitleCase(sub)
                     }, {
                         name: 'Help',
-                        value: `For help on a specific command or category, do ${d.config.prefix}help [category/command]`
-                    }, )
+                        value: `For help on a specific command or category, do ${d.prefix}help [category/command]`
+                    })
                     .setTimestamp()
                     .setFooter('Grape Databases');
                 message.channel.send(helpEmbed);
@@ -41,7 +39,7 @@ module.exports = {
             const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
             if (sub.includes(name)) {
-                const file = fileh.create()
+                const file = fileReader.create()
                     .paths(`./commands/${name}`)
                     .ext('js')
                     .findSync();
@@ -53,7 +51,7 @@ module.exports = {
                     [name]: ''
                 }
                 let re = new RegExp(Object.keys(map).join("|"), "g");
-                let files = file.toString().replace(re, function(matched) {
+                let files = file.toString().replace(re, function (matched) {
                     return map[matched]
                 });
                 const helpCommandEmbed = new d.Discord.MessageEmbed()
@@ -64,8 +62,8 @@ module.exports = {
                         value: files
                     }, {
                         name: 'Help',
-                        value: `For more help on a specific command, do ${d.config.prefix}help [command]`
-                    }, )
+                        value: `For more help on a specific command, do ${d.prefix}help [command]`
+                    })
                     .setTimestamp()
                     .setFooter('Grape Databases');
                 message.channel.send(helpCommandEmbed);
@@ -84,7 +82,7 @@ module.exports = {
                     }, {
                         name: 'Aliases',
                         value: alias
-                    }, )
+                    })
                     .setTimestamp()
                     .setFooter('Grape Databases');
                 message.channel.send(helpCommandEmbed);

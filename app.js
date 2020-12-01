@@ -39,9 +39,11 @@ client.on('message', async message => {
 	}
 	else { prefix = guild.prefix; }
 
+	d.prefix = prefix;
+
 	if (!message.content.startsWith(prefix) || message.author.bot || message.channel.type === 'dm') return;
 
-	const args = message.content.toLowerCase().slice(prefix.length).trim().split(/ +/);
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
 
 	const command = client.commands.get(commandName)
@@ -55,7 +57,7 @@ client.on('message', async message => {
 
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.name);
-	const commandFanException = ['daily', 'steal', 'collect']
+	const commandFanException = ['daily', 'collect']
 	let inv = await items.get(message.author.id);
 	let haveFan;
 	if (!inv) { inv = {}; }

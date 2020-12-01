@@ -27,16 +27,16 @@ module.exports = {
             .setTimestamp()
             .setFooter('Grape Marketplaces');
         let have = await d.items.get(message.author.id);
-        let argument = args.join(' ');
+        let argument = args.join(' ').toLowerCase();
         let regex = /\d+/g;
         let numberOfItemsRaw = parseInt(argument.match(regex));
         let numberOfItems = parseInt(numberOfItemsRaw);
-        let item = Object.keys(d.itemShop).filter(v => argument.includes(v)).pop();
+        let item = Object.keys(d.buyableItems).filter(v => argument.includes(v)).pop();
         if (!have) { have = {}; }
         if (isNaN(numberOfItems) || numberOfItems < 0) { numberOfItems = 1; }
         if (numberOfItems === 0) { return message.channel.send('ok karen'); }
         if (!item) { return message.channel.send(notitem); }
-        let total = d.itemShop[item] * numberOfItems;
+        let total = d.buyableItems[item] * numberOfItems;
         if (total > await d.users.get(message.author.id)) { return message.channel.send(broke); }
         d.addMoni(message.author.id, -total)
         if (!have[item]) { have[item] = numberOfItems; }
@@ -56,7 +56,6 @@ module.exports = {
             .setColor('#dd2de0')
             .setTitle(message.author.username + "'s purchase")
             .addField('Receipt', receipt)
-            .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Marketplaces');
         message.channel.send(buy);

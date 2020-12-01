@@ -4,18 +4,18 @@ module.exports = {
     cooldown: 5,
     async execute(message, args, d) {
         let inv = await d.items.get(message.author.id);
-        let argument = args.join(' ');
+        let argument = args.join(' ').toLowerCase();
         let oreConcat = d.ores.tier1.concat(d.ores.tier2, d.ores.tier3);
         const numberRegex = /\d+/g;
         let item;
-        if (Object.keys(d.itemShop).some(e => argument.includes(e)) || argument.includes('item' || 'items')) {
-            if (argument.includes('item' && 'all') || argument.includes('items' && 'all')) {
+        if (Object.keys(d.sellableItems).some(e => argument.includes(e)) || argument.includes('item' || 'items')) {
+            if (argument.includes('item') && argument.includes('all') || argument.includes('items') && argument.includes('all')) {
                 async function sellTools() {
                     let profit = 0;
                     if (!inv) { return message.channel.send('You got nothin!') }
                     for (key in inv) {
                         if (key === "ore" || key === "time") { continue; }
-                        profit += (d.itemShop[key] / 2) * inv[key];
+                        profit += (d.sellableItems[key]) * inv[key];
                         delete inv[key];
                     }
                     d.addMoni(message.author.id, profit);
@@ -55,14 +55,14 @@ module.exports = {
             else if (argument.includes('all')) {
                 item = argument.replace('all', '').replace(' ', '');
                 if (!inv[item]) { return message.channel.send('You dont\'t have that item!') }
-                let profit = (d.itemShop[item] / 2) * inv[item];
+                let profit = (d.sellableItems[item]) * inv[item];
                 d.addMoni(message.author.id, profit);
                 delete inv[item];
                 const saleAll = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s sale')
                     .addFields(
-                        { name: 'Transaction', value: `You sold all of your ${item}s for ${d.itemShop[item] / 2} :star:s each!` },
+                        { name: 'Transaction', value: `You sold all of your ${item}s for ${d.sellableItems[item]} :star:s each!` },
                         { name: 'Profit', value: `${profit} :star:s` }
                     )
                     .setTimestamp()
@@ -72,17 +72,17 @@ module.exports = {
             }
             else {
                 let numItems = parseInt(argument.match(numberRegex))
-                item = Object.keys(d.itemShop).filter(v => argument.includes(v)).pop();
+                item = Object.keys(d.sellableItems).filter(v => argument.includes(v)).pop();
                 if (!inv[item]) { return message.channel.send('You dont\'t have that item!') }
                 if (isNaN(numItems) || numItems < 0) { numItems = 1; }
                 if (numItems === 0) { return message.channel.send('ok boomer'); }
                 if (numItems > inv[item]) { return message.channel.send(`You don't have that many ${item}(s)`); }
                 inv[item] -= numItems;
-                let profit = (d.itemShop[item] / 2) * numItems;
+                let profit = (d.sellableItems[item]) * numItems;
                 d.addMoni(message.author.id, profit);
                 let receipt;
-                if (numItems === 1) { receipt = `You sold a ${item} for ${d.itemShop[item] / 2} :star:s each!` }
-                else { receipt = `You sold ${numItems} ${item}s for ${d.itemShop[item] / 2} :star:s each!` }
+                if (numItems === 1) { receipt = `You sold a ${item} for ${d.sellableItems[item]} :star:s each!` }
+                else { receipt = `You sold ${numItems} ${item}s for ${d.sellableItems[item]} :star:s each!` }
                 const sale = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s sale')
@@ -95,7 +95,7 @@ module.exports = {
 
                 message.channel.send(sale);
             }
-            if (!inv.starmill || inv.starmill === 0 && inv.time.starmill) { delete inv.time.starmill; }
+            if (inv.time) { if (!inv.starmill || inv.starmill === 0 && inv.time.starmill) { delete inv.time.starmill; } }
             await d.items.set(message.author.id, inv);
         }
         else if (oreConcat.some(e => argument.includes(e)) || argument.includes('ores' || 'ore')) {

@@ -6,7 +6,7 @@ module.exports = {
         const shop = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle('The Shop')
-            .setDescription('To buy an item, do ' + `${d.config.prefix}` + "buy <itemname>")
+            .setDescription('To buy an item, do ' + `${d.prefix}` + "buy <itemname>")
             .addFields({
                 name: 'fan:',
                 value: 'reduces cooldowns of some commands\ncost: 100:star:s'
@@ -27,10 +27,10 @@ module.exports = {
                 value: 'gives you more stars for digging job\ncost: 100:star:s'
             }, {
                 name: 'starmill',
-                value: `generates you 1 star every 10 minutes, use ${d.config.prefix}collect to collect it\ncost: 400:star:s\n__`
+                value: `generates you 1 star every 10 minutes, use ${d.prefix}collect to collect it\ncost: 400:star:s\n__`
             }, {
                 name: 'Mine Shop',
-                value: `do ${d.config.prefix}ore for more info`
+                value: `do ${d.prefix}ore for more info`
             },)
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
