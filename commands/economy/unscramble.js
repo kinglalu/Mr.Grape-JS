@@ -28,7 +28,7 @@ module.exports = {
         let filter = m => m.author.id === message.author.id
         message.channel.awaitMessages(filter, {
             max: 1,
-            time: 9000,
+            time: 9500,
             errors: ['time']
         })
             .then(async message => {

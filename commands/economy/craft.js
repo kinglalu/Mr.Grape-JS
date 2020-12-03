@@ -15,14 +15,14 @@ module.exports = {
             if (numItems === 0) { return message.channel.send('ur not funny kid'); }
             if (isNaN(numItems) || numItems < 1) { numItems = 1; }
             for (const key in recipe[craft]) {
-                if (key === 'createditem' || key === 'description') { continue; }
-                if (!inv.ore[key] || inv.ore[key] < recipe[craft][key] * numItems) {
+                if (typeof recipe[craft][key] === 'string') { continue; }
+                if (!inv.ore[key] || inv.ore[key] < (recipe[craft][key] * numItems)) {
                     const e = new d.Discord.MessageEmbed()
                         .setColor('#dd2de0')
                         .setTitle(message.author.username + `'s craftin`)
                         .addField('Failed', `You don\'t have all the things you need to make ${craft}(s)!`)
                         .setTimestamp()
-                        .setFooter(' The Grape Blacksmith');
+                        .setFooter('The Grape Blacksmith');
                     return message.channel.send(e);
                 }
                 inv.ore[key] -= recipe[craft][key] * numItems;
