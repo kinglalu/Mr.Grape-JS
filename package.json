@@ -21,7 +21,7 @@
     "querystring": "^0.2.0",
     "r2": "^2.0.1",
     "youtube-sr": "^2.0.4",
-    "ytdl-core": "^4.1.1",
+    "ytdl-core": "^4.1.2",
     "ytpl": "^1.0.1"
   }
 }
