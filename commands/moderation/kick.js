@@ -9,6 +9,7 @@ module.exports = {
         let boolean = message.member.hasPermission("KICK_MEMBERS");
         if (boolean) {
             if (target) {
+                if (message.author.id === rawTarget.id) {return message.channel.send('Bruh imagine kicking yourself');}
                 try {
                     target.kick();
                     message.channel.send(":wave: " + target.displayName + " has been kicked, what a noob lol ");
