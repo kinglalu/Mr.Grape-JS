@@ -27,12 +27,15 @@ module.exports = {
             for (const key in inv) {
                 if (inv[key] === 0) {
                     delete inv[key];
-                    await d.items.set(message.author.id, inv);
                     continue;
                 }
-                if (key === 'ore' || key === 'time') {
-                    if (inv.time && Object.keys(inv.time).length === 0) { delete inv.time; }
-                    if (inv.ore && Object.keys(inv.ore).length === 0) { delete inv.ore; }
+                if (typeof inv[key] === 'object') {
+                    if (inv.time && Object.keys(inv.time).length === 0) {
+                        delete inv.time; await d.items.set(message.author.id, inv);
+                    }
+                    if (inv.ore && Object.keys(inv.ore).length === 0) {
+                        delete inv.ore; await d.items.set(message.author.id, inv);
+                    }
                     continue;
                 }
                 invEmbed.addField(key.charAt(0).toUpperCase() + key.slice(1) + "(s)", inv[key]);
