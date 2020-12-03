@@ -9,19 +9,22 @@ module.exports = {
         let boolean = message.member.hasPermission("BAN_MEMBERS");
         if (boolean) {
             if (target) {
-                if (message.author.id === rawTarget.id) {return message.channel.send('Bruh imagine banning yourself');}
-                try {
-                    target.ban();
-                    message.channel.send(":hammer: " + target.displayName + " has been banned with an iron fist!");
+                if (message.author.id === rawTarget.id) {
+                    return message.channel.send('Bruh imagine kicking yourself');
                 }
-                catch {
-                    message.channel.send("I don't got permissions (or high enough role) to ban ppl. How about ya give me it?")
+                try {
+                    target.kick();
+                    message.channel.send(":wave: " + target.displayName + " has been kicked, what a noob lol ");
+                } catch {
+                    message.channel.send("I don't got permissions (or high enough role) to kick ppl. How about ya give me it?")
                 }
             }
+        } else if (!target) {
+            message.channel.send('who you gonna hammer?');
         } else if (!boolean) {
-            message.reply("bruh you dont even have permission to ban people, stop trying smh ");
+            message.reply("bruh you dont even have permission to kick people, stop trying smh ");
         } else {
-            message.channel.send("Cannot ban " + target.displayName + " maybe use a valid mention?");
+            message.channel.send("Cannot kick " + target.displayName + " maybe use a valid mention?");
         }
 
     }
