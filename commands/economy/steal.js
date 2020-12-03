@@ -57,7 +57,7 @@ module.exports = {
             message.channel.send(go);
             message.channel.awaitMessages(filter, {
                 max: 1,
-                time: 7100,
+                time: 9500,
                 errors: ['time']
             })
                 .then(message => {
