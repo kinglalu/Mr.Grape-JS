@@ -9,6 +9,7 @@ module.exports = {
         let boolean = message.member.hasPermission("BAN_MEMBERS");
         if (boolean) {
             if (target) {
+                if (message.author.id === rawTarget.id) {return message.channel.send('Bruh imagine banning yourself');}
                 try {
                     target.ban();
                     message.channel.send(":hammer: " + target.displayName + " has been banned with an iron fist!");
