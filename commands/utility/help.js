@@ -5,6 +5,7 @@ module.exports = {
     execute(message, args, d) {
         try {
             let alias;
+            if (message.content.toLowerCase().includes('nsfw')) { return message.channel.send('Begone thot \:cross:'); }
             const toTitleCase = (thingy) => {
                 return thingy
                     .toLowerCase()

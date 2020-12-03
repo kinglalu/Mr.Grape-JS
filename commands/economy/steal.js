@@ -18,12 +18,13 @@ module.exports = {
             if (inv && inv.lockpick) { percentage = Math.floor(Math.random() * 3) + 1; }
             else { percentage = Math.floor(Math.random() * 4) + 1; }
             if (percentage === 1) {
-                let earned = Math.floor(+e * targetBal);
+                let earned = Math.floor(+e * targetBal) + 2;
                 d.addMoni(message.author.id, earned)
                 d.addMoni(target.id, -earned)
                 const nice = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s heist')
+                    .setDescription(`Stealing from: ${target.displayName}`)
                     .addField('Success', `Heist Successful! You got ${earned} :star:s!`)
                     .setTimestamp()
                     .setFooter('Shady Grape Org');
@@ -34,7 +35,8 @@ module.exports = {
                 d.addMoni(message.author.id, -loss)
                 const rip = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
-                    .setTitle(message.author.username + '\'s heist')
+                    .setTitle(message.author.username + `\'s heist`)
+                    .setDescription(`Stealing from: ${target.displayName}`)
                     .addField('Fail', `rip, despite ur effort, you got caught and lost ${loss} :star:s.`)
                     .setTimestamp()
                     .setFooter('Shady Grape Org');
@@ -48,6 +50,7 @@ module.exports = {
             const go = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
                 .setTitle(message.author.username + '\'s heist')
+                .setDescription(`Stealing from: ${target.displayName}`)
                 .addField('Task', 'Pick a number from 1 - 3, if you pick the right number the safe will be cracked, if not then rip\nYou have 7 seconds, go!')
                 .setTimestamp()
                 .setFooter('Shady Grape Org');
@@ -67,6 +70,7 @@ module.exports = {
                         const rip = new d.Discord.MessageEmbed()
                             .setColor('#dd2de0')
                             .setTitle(message.author.username + '\'s heist')
+                            .setDescription(`Stealing from: ${target.displayName}`)
                             .addField('Fail', `you guessed wrong rip, you lost ${loss} :star:s`)
                             .setTimestamp()
                             .setFooter('Shady Grape Org');
@@ -80,6 +84,7 @@ module.exports = {
                     const rip = new d.Discord.MessageEmbed()
                         .setColor('#dd2de0')
                         .setTitle(message.author.username + '\'s heist')
+                        .setDescription(`Stealing from: ${target.displayName}`)
                         .addField('Fail', `Bruh ur trash, you couldn't crack it in time, also you lost ${lossTime} :star:s`)
                         .setTimestamp()
                         .setFooter('Shady Grape Org');
