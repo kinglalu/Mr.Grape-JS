@@ -3,7 +3,7 @@ module.exports = {
     description: 'purge messages from a channel',
     cooldown: 0,
     execute(message, args, d) {
-        if (!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send('You don\'t have perms!')
+        if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('You don\'t have perms!')
         if (!args[0]) return message.channel.send('Bruh how many messages should I purge?');
         let number = parseInt(args[0]);
         let iteration = ~~(number / 100);
