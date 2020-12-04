@@ -10,11 +10,14 @@ module.exports = {
         if (boolean) {
             if (target) {
                 if (message.author.id === rawTarget.id) {
-                    return message.channel.send('Bruh imagine kicking yourself');
+                    return message.channel.send('Bruh imagine banning yourself');
+                }
+                if (message.client.user.id === rawTarget.id) {
+                    return message.channel.send('Woah there, im too cool to ban')
                 }
                 try {
-                    target.kick();
-                    message.channel.send(":wave: " + target.displayName + " has been kicked, what a noob lol ");
+                    target.ban();
+                    message.channel.send("\:hammer: " + target.displayName + " has been banned, with an iron fist");
                 } catch {
                     message.channel.send("I don't got permissions (or high enough role) to kick ppl. How about ya give me it?")
                 }

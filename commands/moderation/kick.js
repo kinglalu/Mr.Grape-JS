@@ -12,6 +12,9 @@ module.exports = {
                 if (message.author.id === rawTarget.id) {
                     return message.channel.send('Bruh imagine kicking yourself');
                 }
+                if (message.client.user.id === rawTarget.id) {
+                    return message.channel.send('Woah there, im too cool to get the boot')
+                }
                 try {
                     target.kick();
                     message.channel.send(":wave: " + target.displayName + " has been kicked, what a noob lol ");
