@@ -3,6 +3,8 @@ module.exports = {
     aliases: ['bet'],
     description: 'gamble your stars, 50/50 chance of losing your stars or winning double the amount you bet',
     cooldown: 5,
+    cd: "If you know someone with a gambling addiction, call 1-800-522-4700",
+    fan: true,
     async execute(message, args, d) {
         let inv = await d.items.get(message.author.id);
         async function busted(bet) {
@@ -50,10 +52,10 @@ module.exports = {
                     }, 1700)
                 })
         }
-        async function decideFate(bet) {
+        function decideFate(bet) {
             let finalNumber;
             if (inv && inv["rigged dice"]) {
-                const riggedArray = [2, 4, 6, 2, 4, 1, 3, 5]
+                const riggedArray = [2, 4, 6, 2, 4, 1, 3, 6]
                 finalNumber = riggedArray[Math.floor(Math.random() * riggedArray.length)];
             }
             else { finalNumber = Math.floor(Math.random() * 6) + 1; }

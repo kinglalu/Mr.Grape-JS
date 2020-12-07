@@ -3,6 +3,8 @@ module.exports = {
     description: 'check your inventory',
     aliases: ['inventory'],
     cooldown: 3,
+    cd: "Yo chill ur inventory is fine",
+    fan: true,
     async execute(message, args, d) {
         let target = message.mentions.members.first();
         let person;

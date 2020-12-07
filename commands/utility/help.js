@@ -2,6 +2,8 @@ const fileReader = require('filehound')
 module.exports = {
     name: 'help',
     description: 'help command bro',
+    cooldown: 1,
+    cd: "Don't spam help cmd",
     execute(message, args, d) {
         try {
             let alias;

@@ -1,13 +1,12 @@
 const { Util } = require('discord.js');
 const ytdl = require('ytdl-core');
 const youtube = require('youtube-sr');
-const ytpl = require('ytpl');
-const stop = require('./stop')
 module.exports = {
 	name: 'play',
 	description: 'play music, either do play <search> or play <youtube_url>',
 	aliases: ['p'],
 	cooldown: 2,
+	cd: "Wait a bit, enjoy the tunes!",
 	async execute(message, args, d) {
 		const { channel } = message.member.voice;
 		if (!channel) return message.channel.send('Get in a voice channel if you wanna play music!');
@@ -19,6 +18,15 @@ module.exports = {
 		const plRegex = /[&?]list=([^&]+)/i;
 		const serverQueue = message.client.queue.get(message.guild.id);
 		const argument = args.join(' ');
+		const queueConstruct = {
+			textChannel: message.channel,
+			voiceChannel: channel,
+			connection: null,
+			songs: [],
+			volume: 42,
+			playing: true,
+			repeatMode: 0,
+		};
 
 		function createSong(title, url, duration, thumbnail) {
 			const song = {
@@ -48,6 +56,7 @@ module.exports = {
 		}
 
 		if (ytRegex.test(argument) && plRegex.test(argument)) {
+			if (!serverQueue) { message.client.queue.set(message.guild.id, queueConstruct); }
 			const playlist = await youtube.getPlaylist(argument);
 			for (video in playlist.videos) {
 				let plSong = playlist.videos[video];
@@ -64,31 +73,21 @@ module.exports = {
 		}
 		else {
 			let songInfo = await youtube.searchOne(argument);
+			if (songInfo === null) { return message.channel.send("No results found!"); }
 			let song = createSong(Util.escapeMarkdown(songInfo.title), songInfo.url, songInfo.durationFormatted, songInfo.thumbnail.url)
 			playSong(song, message, channel, serverQueue, false)
 		}
 
 		async function playSong(song, message, vc, queue, ifPlaylist) {
 			if (queue) {
-				if (queue.dispatcher === null || typeof queue.dispatcher === undefined) {
-					stop.execute(message, args, d)
-				}
 				queue.songs.push(song);
 				if (!ifPlaylist) { message.channel.send(announce(song, false, false)); }
 				return;
 			}
-			const queueConstruct = {
-				textChannel: message.channel,
-				voiceChannel: channel,
-				connection: null,
-				songs: [],
-				volume: 2,
-				playing: true,
-				repeatMode: 0,
-			};
 
 			message.client.queue.set(message.guild.id, queueConstruct);
 			queueConstruct.songs.push(song);
+
 
 			const play = async song => {
 				const queue = message.client.queue.get(message.guild.id);
@@ -106,8 +105,8 @@ module.exports = {
 						play(queue.songs[0]);
 					})
 					.on('error', error => console.error(error));
-				dispatcher.setVolumeLogarithmic(queue.volume / 5);
-				queue.textChannel.send(announce(song, true, false));
+				dispatcher.setVolumeLogarithmic(queue.volume / 100);
+				if (!ifPlaylist) { queue.textChannel.send(announce(song, true, false)); }
 			};
 
 			try {

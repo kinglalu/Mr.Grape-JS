@@ -1,6 +1,8 @@
 module.exports = {
     name: "refine",
-    cooldown: 0,
+    cooldown: 20,
+    cd: "Let your refinery rest",
+    fan: true,
     async execute(message, args, d) {
         let argument = args.join(' ').toLowerCase();
         let inv = await d.items.get(message.author.id)

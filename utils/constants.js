@@ -1,4 +1,3 @@
-const querystring = require('querystring');
 const r2 = require('r2');
 const Discord = require('discord.js');
 const config = require('../config.json');
@@ -10,6 +9,22 @@ const addMoni = async function (who, add) {
     let current = await users.get(who);
     if (current === undefined) { await users.set(who, add); }
     else { await users.set(who, (current + add)) }
+}
+const formatCooldown = function (time) {
+    let final;
+    if (time > 3600) {
+        let hours = ~~(time / 3600);
+        let minutes = ~~((time - (3600 * hours)) / 60);
+        let seconds = time - (3600 * hours) - (minutes * 60);
+        final = `${hours} hours, ${minutes} minutes and ${seconds.toFixed(1)} seconds left`
+    }
+    else if (time > 60) {
+        let minutes = ~~(time / 60);
+        let seconds = time - (minutes * 60);
+        final = `${minutes} minutes and ${seconds.toFixed(1)} seconds left`
+    }
+    else { final = `${time.toFixed(1)} seconds left` }
+    return final;
 }
 const buyableItems = {
     fan: 100,
@@ -83,11 +98,11 @@ module.exports = {
     "addMoni": addMoni,
     "items": items,
     "buyableItems": buyableItems,
-    "querystring": querystring,
     "r2": r2,
     "ores": ores,
     "oreSell": oreSell,
     "emoji": emoji,
     "guilds": guilds,
-    "sellableItems": sellableItems
+    "sellableItems": sellableItems,
+    "formatCooldown": formatCooldown,
 };

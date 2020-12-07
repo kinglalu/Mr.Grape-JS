@@ -4,6 +4,7 @@ module.exports = {
 	description: 'get your server\'s music queue',
 	cooldown: 2,
 	aliases: ['q'],
+	cd: "I just showed you the queue!",
 	execute(message, args, d) {
 		const serverQueue = message.client.queue.get(message.guild.id);
 		if (!serverQueue) return message.channel.send("There isn't a song playin");

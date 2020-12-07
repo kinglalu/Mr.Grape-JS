@@ -2,6 +2,7 @@ module.exports = {
     name: 'info',
     description: 'basic info about the bot',
     cooldown: 5,
+    cd: "Its not like the info is interesting anyway",
     execute(message, args, d) {
         let uptime = message.client.uptime / 1000;
         let unit = "second(s)";

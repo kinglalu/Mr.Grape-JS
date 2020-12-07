@@ -3,6 +3,7 @@ module.exports = {
     aliases: ['rob'],
     description: "steal stars from other ppl",
     cooldown: 60,
+    cd: "You're gonna look sus if you keep doing that",
     async execute(message, args, d) {
         let target = message.mentions.members.first();
         if (!target || target.id === message.author.id || target.user.bot) { return message.channel.send('That\'s aint a valid person to ~~steal~~ forcefully borrow from!'); }

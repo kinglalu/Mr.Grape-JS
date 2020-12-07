@@ -3,6 +3,8 @@ module.exports = {
     description: 'dig to earn stars',
     aliases: ['mine'],
     cooldown: 30,
+    cd: "Mines are gonna go bare if you don't chill",
+    fan: true,
     async execute(message, args, d) {
         let inv = await d.items.get(message.author.id);
         let earn;

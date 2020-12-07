@@ -8,6 +8,7 @@ const items = new Keyv(process.env.DATABASE_URL, { namespace: 'items' });
 const guilds = new Keyv(process.env.DATABASE_URL, { namespace: 'guilds' });
 const cooldowns = new Discord.Collection();
 const d = require('./utils/constants');
+const { formatCooldown } = require('./utils/constants');
 client.commands = new Discord.Collection();
 client.queue = new Discord.Collection();
 
@@ -25,6 +26,11 @@ guilds.on('error', err => console.error('Keyv (guilds) connection error:', err))
 client.once('ready', () => {
 	console.log('Ready!');
 	client.user.setPresence({ activity: { name: `with ${config.prefix}help` }, status: 'idle' })
+});
+
+client.on('voiceStateUpdate', (old, New) => {
+	if (old.id !== client.user.id) return;
+	if (old.channelID && !New.channelID) client.queue.delete(old.guild.id)
 });
 
 client.on('message', async message => {
@@ -57,15 +63,14 @@ client.on('message', async message => {
 
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.name);
-	const commandFanException = ['daily', 'steal', 'collect']
 	let inv = await items.get(message.author.id);
 	let haveFan;
 	if (!inv) { inv = {}; }
 	if (!inv.fan) { haveFan = 0 }
 	else { haveFan = inv.fan }
 	let cooldownAmount;
-	if (commandFanException.includes(command.name)) { cooldownAmount = command.cooldown * 1000 }
-	else { cooldownAmount = (1 - (0.05 * haveFan)) * (command.cooldown * 1000) };
+	if (command.fan) { cooldownAmount = (1 - (0.03 * haveFan)) * (command.cooldown * 1000); }
+	else { cooldownAmount = command.cooldown * 1000; };
 	if (timestamps.has(message.author.id)) {
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 		if (now < expirationTime) {
@@ -75,7 +80,7 @@ client.on('message', async message => {
 				.setTitle('ayo chill man')
 				.addFields({
 					name: `${command.name.charAt(0).toUpperCase() + command.name.slice(1)}`,
-					value: `${timeLeft.toFixed(1)}` + " second(s) left"
+					value: `${command.cd}\n_\n${d.formatCooldown(timeLeft)}`
 				})
 				.setTimestamp()
 				.setFooter('Grape Enterprises');

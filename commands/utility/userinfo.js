@@ -3,6 +3,7 @@ module.exports = {
     aliases: ['user'],
     description: 'return basic info about the user',
     cooldown: 2,
+    cd: "Stop stalking",
     execute(message, args, d) {
         let user;
         let id;

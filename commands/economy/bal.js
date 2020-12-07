@@ -2,6 +2,9 @@ module.exports = {
     name: 'bal',
     aliases: ['balance', 'wallet'],
     description: 'check ur balance',
+    cooldown: 1,
+    cd: 'Bruh its just ur balance, chill',
+    fan: true,
     async execute(message, args, d) {
         let target = message.mentions.members.first();
         let person;

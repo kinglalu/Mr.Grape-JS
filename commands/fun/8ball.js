@@ -2,6 +2,7 @@ module.exports = {
     name: '8ball',
     description: 'fortune telling is cool',
     cooldown: 5,
+    cd: "Even a fortune-teller can tell you to chill",
     execute(message, args, d) {
         let output;
         let val;

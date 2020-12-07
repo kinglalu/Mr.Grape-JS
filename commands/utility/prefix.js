@@ -2,6 +2,7 @@ module.exports = {
     name: 'prefix',
     description: 'set prefix',
     cooldown: 2,
+    cd: "Don't set prefix too often",
     async execute(message, args, d) {
         if (!message.member.hasPermission("MANAGE_GUILD")) { return message.channel.send('You don\'t have perms, git good.'); }
         let guilds = await d.guilds.get(message.guild.id);

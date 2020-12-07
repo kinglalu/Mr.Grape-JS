@@ -3,6 +3,7 @@ module.exports = {
     description: 'get many questions answered using wolfram alpha',
     aliases: ['ask'],
     cooldown: 3,
+    cd: "Just google it urself, nerd",
     async execute(message, args, d) {
         let finalAnswer;
         if (!args[0]) { return message.channel.send('whaddya want me to look up?'); }
@@ -15,14 +16,14 @@ module.exports = {
             if (!ans.queryresult.pods[0].subpods[0].plaintext || ans.queryresult.pods[0].subpods[0].plaintext === '(data not available)') { ans = "Can't find that." }
             finalAnswer = ans.queryresult.pods[0].subpods[0].plaintext;
         }
-        else {finalAnswer = answer}
+        else { finalAnswer = answer }
         const answerEmbed = new d.Discord.MessageEmbed()
-				.setColor('#dd2de0')
-				.setTitle('Answer')
-				.setDescription('Powered by Wolfram-Alpha')
-				.addField(finalAnswer.charAt(0).toUpperCase() + finalAnswer.slice(1), '_')
-				.setTimestamp()
-				.setFooter('DJ Grape');
-		message.channel.send(answerEmbed)
+            .setColor('#dd2de0')
+            .setTitle('Answer')
+            .setDescription('Powered by Wolfram-Alpha')
+            .addField(finalAnswer.charAt(0).toUpperCase() + finalAnswer.slice(1), '_')
+            .setTimestamp()
+            .setFooter('DJ Grape');
+        message.channel.send(answerEmbed)
     }
 };

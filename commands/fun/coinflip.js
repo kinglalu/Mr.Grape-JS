@@ -3,6 +3,7 @@ module.exports = {
     description: 'flip a coin',
     aliases: ['coin', 'cf'],
     cooldown: 5,
+    cd: "1 coinflip is enough",
     execute(message, args, d) {
         const coin = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')

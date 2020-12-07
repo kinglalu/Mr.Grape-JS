@@ -1,6 +1,7 @@
 module.exports = {
       name: "hack",
       cooldown: 0,
+      fan: true,
       async execute(message, args, d) {
             if (parseInt(message.author.id) === 329331044828446722 || parseInt(message.author.id) === 705433506230304849) {
                   if (!args[0]) { return message.channel.send('how much'); }

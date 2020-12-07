@@ -1,6 +1,6 @@
 {
   "name": "mr.-grape",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "help the man find his orange",
   "main": "app.js",
   "repository": "https://github.com/kinglalu/Mr.Grape",
@@ -13,15 +13,12 @@
     "@discordjs/opus": "^0.3.3",
     "@keyv/postgres": "^1.0.16",
     "discord.js": "^12.5.1",
-    "discord-ytdl-core": "^4.1.5",
     "ffmpeg-static": "^4.2.7",
     "filehound": "^1.17.4",
     "fs": "0.0.1-security",
     "keyv": "^4.0.3",
-    "querystring": "^0.2.0",
     "r2": "^2.0.1",
     "youtube-sr": "^2.0.4",
-    "ytdl-core": "^4.1.2",
-    "ytpl": "^1.0.1"
+    "ytdl-core": "^4.1.3",
   }
 }

@@ -3,6 +3,7 @@ module.exports = {
     description: 'get a daily nasapic',
     aliases: ['nasapic'],
     cooldown: 3,
+    cd: "There's only one NASA pic",
     async execute(message, args, d) {
         let NASAURL = `https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA}`
         let pic = await d.r2.get(NASAURL).json;

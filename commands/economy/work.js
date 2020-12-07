@@ -3,6 +3,8 @@ module.exports = {
     aliases: ['job'],
     description: 'do honest work to get stars',
     cooldown: 30,
+    cd: "Don't be a workaholic",
+    fan: true,
     async execute(message, args, d) {
         let inv = await d.items.get(message.author.id);
         let earn = Math.round(Math.random() * 7) + 1;
@@ -25,7 +27,7 @@ module.exports = {
         let earnJob = Math.floor(Math.random() * ifEarn.length);
 
         if (inv && inv.starmagnet && inv.starmagnet > 0) {
-            earn = Math.round(earn * (1 + (0.02 * inv.starmagnet)));
+            earn = Math.round(earn * (1 + (0.06 * inv.starmagnet)));
         } else {
             null;
         }

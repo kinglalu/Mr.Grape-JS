@@ -3,6 +3,8 @@ module.exports = {
     description: 'check your ore inventory',
     aliases: ['io'],
     cooldown: 3,
+    cd: "Chill, ur ores are ok",
+    fan: true,
     async execute(message, args, d) {
         let target = message.mentions.members.first();
         let person;
@@ -22,7 +24,7 @@ module.exports = {
             .setTitle(personName + "'s inventory")
             .setTimestamp()
             .setFooter('Grape Storages Org.');
-        if (!inv.ore || Object.keys(inv.ore).length === 0) {invEmbed.addField('nothing but cobwebs and pebbles m8', '_');}
+        if (!inv.ore || Object.keys(inv.ore).length === 0) { invEmbed.addField('nothing but cobwebs and pebbles m8', '_'); }
         else {
             for (const key in inv.ore) {
                 if (inv.ore[key] === 0) {

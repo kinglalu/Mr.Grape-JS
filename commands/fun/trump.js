@@ -2,10 +2,11 @@ module.exports = {
     name: 'trump',
     description: 'get donald trump quote',
     cooldown: 3,
+    cd: "Donald Trump bad",
     async execute(message, args, d) {
         let trump = "https://api.tronalddump.io/random/quote";
         let quote = await d.r2.get(trump).json;
-         const t = new d.Discord.MessageEmbed()
+        const t = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle('Donald Trump')
             .addFields({
