@@ -44,8 +44,8 @@ module.exports = {
         d.items.set(message.author.id, have);
         let receipt;
         if (item === 'starmill') {
-            if (!have.time) { inv.time = {}; }
-            if (!have.time.starmill) { inv.time.starmill = Date.now() }
+            if (!have.time) { have.time = {}; }
+            if (!have.time.starmill) { have.time.starmill = Date.now() }
         }
         if (numberOfItems === 1) {
             receipt = "You successfully purchased a " + item + "!";
