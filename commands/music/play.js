@@ -57,7 +57,9 @@ module.exports = {
 
 		if (ytRegex.test(argument) && plRegex.test(argument)) {
 			if (!serverQueue) { message.client.queue.set(message.guild.id, queueConstruct); }
+			try {
 			const playlist = await youtube.getPlaylist(argument);
+			console.log(playlist);
 			for (video in playlist.videos) {
 				let plSong = playlist.videos[video];
 				let song = createSong(Util.escapeMarkdown(plSong.title), `https://www.youtube.com/watch?v=${plSong.id}`, plSong.durationFormatted, plSong.thumbnail.url)
@@ -70,6 +72,8 @@ module.exports = {
 				duration: 'It\'s a playlist bro'
 			}
 			message.channel.send(announce(playlistInfo, false, true));
+			}
+			catch {message.channel.send("Invalid playlist url, or technical difficulties");}
 		}
 		else {
 			let songInfo = await youtube.searchOne(argument);
