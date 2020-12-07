@@ -43,7 +43,7 @@ module.exports = {
         else { have[item] += numberOfItems }
         d.items.set(message.author.id, have);
         let receipt;
-        if (item === 'starmill') {
+        if (inv && item === 'starmill') {
             if (!inv.time) { inv.time = {}; }
             if (!inv.time.starmill) { inv.time.starmill = Date.now() }
         }
