@@ -8,7 +8,6 @@ const items = new Keyv(process.env.DATABASE_URL, { namespace: 'items' });
 const guilds = new Keyv(process.env.DATABASE_URL, { namespace: 'guilds' });
 const cooldowns = new Discord.Collection();
 const d = require('./utils/constants');
-const { formatCooldown } = require('./utils/constants');
 client.commands = new Discord.Collection();
 client.queue = new Discord.Collection();
 
@@ -69,7 +68,7 @@ client.on('message', async message => {
 	if (!inv.fan) { haveFan = 0 }
 	else { haveFan = inv.fan }
 	let cooldownAmount;
-	if (command.fan) { cooldownAmount = (1 - (0.03 * haveFan)) * (command.cooldown * 1000); }
+	if (command.fan) { cooldownAmount = ((1 - (0.03 * haveFan)) * (command.cooldown * 1000)) + 2; }
 	else { cooldownAmount = command.cooldown * 1000; };
 	if (timestamps.has(message.author.id)) {
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
