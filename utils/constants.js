@@ -104,5 +104,5 @@ module.exports = {
     "emoji": emoji,
     "guilds": guilds,
     "sellableItems": sellableItems,
-    "formatCooldown": formatCooldown,
+    "formatCooldown": formatCooldown
 };
