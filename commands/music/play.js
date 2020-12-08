@@ -14,7 +14,7 @@ module.exports = {
 		if (!permissions.has('CONNECT')) return message.channel.send('Bruh I don\'t have perms to connect');
 		if (!permissions.has('SPEAK')) return message.channel.send('Bruh I don\'t have perms to speak');
 
-		const ytRegex = /(?:http(?:s)?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'<> #]+)/gmi;
+		const ytRegex = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
 		const plRegex = /[?&]list=([^#\&\?]+)/;
 		const serverQueue = message.client.queue.get(message.guild.id);
 		const argument = args.join(' ');
@@ -72,8 +72,8 @@ module.exports = {
 				}
 				message.channel.send(announce(playlistInfo, false, true));
 			}
-			catch (e) { 
-				message.channel.send("Invalid playlist url, or technical difficulties"); 
+			catch (e) {
+				message.channel.send("Invalid playlist url, or technical difficulties");
 				console.log(e);
 			}
 		}
