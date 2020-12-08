@@ -13,6 +13,7 @@ Mr. Grape contains a wide variety of Music Commands using `ytdl-core`, and has a
 * The bots prefix is `+`, however this can be changed during operation with the command `+prefix <new prefix`.
 * Many of the APIs used in Mr. Grape require Private Keys to be issued and added before those services will work.
 
+
 ## APIs Used
 You will need to go to each of these websites and aquire an API key for each of their associated services.
 * https://api.ksoft.si/
@@ -22,6 +23,21 @@ You will need to go to each of these websites and aquire an API key for each of 
 * https://products.wolframalpha.com/api/
 
 ## Setup
+=======
+# Notes
+* The bots prefix is `+`, however this can be changed during operation with the command `+prefix <new prefix`.
+* Many of the APIs used in Mr. Grape require Private Keys to be issued and added before those services will work.
+
+# API's
+You will need to go to each of these websites and aquire an API key for each of their associated services.
+* https://api.ksoft.si/
+* https://thecatapi.com/
+* https://thedogapi.com/
+* https://api.nasa.gov/
+* https://products.wolframalpha.com/api/
+
+# Setup
+
  Press the deploy to Heroku Button, give the app a name.
 Make sure you have a application made in https://discord.com/developers/applications, create a bot under that application, and get the BOT TOKEN from there.
 Once the heroku app is deployed, go to Configure dynos and make sure web dyno is off and worker dyno is on like so:

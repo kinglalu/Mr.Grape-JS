@@ -8,6 +8,12 @@ module.exports = {
         let key = process.env.DOGAPI;
         let submitURL = catapi + `/v1/images/search?mime_types=jpg,png&limit=1&size=small`;
         let pic = await d.r2.get(submitURL, { key }).json;
-        message.channel.send({ files: [pic[0].url] });
+        const dog = new d.Discord.MessageEmbed()
+            .setColor('#dd2de0')
+            .setTitle('Dog!')
+            .setImage(pic[0].url)
+            .setTimestamp()
+            .setFooter('Dog');
+        message.channel.send(dog);
     }
 };
