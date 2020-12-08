@@ -35,8 +35,8 @@ Once that is done, you will wanna go to Settings and under config vars, you wann
 <div align="center">
 	<img src="images/keys.jpg" alt="KEY config" />
 </div>
-Finally, you will need a database to store the data of the players using the economy commands. We use keyv, but it can be easily edited to use a diffrent db such as MongoDB. Go to Resources tab, and where you see Add-ons, Search "Heroku Postgres", and attach it as a database, like so:
+Finally, you will need a database to store the data of the players using the economy commands. We use keyv, but it can be easily edited to use a diffrent db such as MongoDB, Redis, etc. Go to Resources tab, and where you see Add-ons, Search "Heroku Postgres" or "Heroku Redis", and attach it as a database, like so:
 <div align="center">
 	<img src="images/database.JPG" alt="Database config" />
 </div>
- Make sure in setting and under config vars, that there is a key called DATABASE_URL and the value is the url of the database in Add-ons. You should be all set and the bot should be online. For any questions or inquires, feel free to join the discord and ask! https://discord.gg/bYFkqsdmqQ
+If you used the onboard add-on databases provided by Heroku, you are good to go! If you used an external db outside of heroku, then make a config var called "DATABASE_URL" and put the database's connection url in it. You should be all set and the bot should be online. For any questions or inquires, feel free to join the discord and ask! https://discord.gg/bYFkqsdmqQ
