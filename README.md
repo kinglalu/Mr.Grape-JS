@@ -17,7 +17,7 @@ Many of the API's used here have private keys, and thus you will have to get you
 
 # API's
 The links for the apis to where you get your own api key for usage.
-https://api.ksoft.si/
+https://api.ksoft.si/ <br>
 https://thecatapi.com/
 https://thedogapi.com/
 https://api.nasa.gov/
