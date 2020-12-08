@@ -1,16 +1,29 @@
-# Mr.Grape
 <div align="center">
-	<img src="images/mrgrape.png" title="Mr Grape" alt="Mr grape" />
+	<img src="images/mrgrape.png" title="Mr. Grape" alt="Mr. Grape" />
+	<h1>Mr. Grape</h1>
+	<p>Mr. Grape is an Open Source Discord Bot made using Discord.js that includes Music features, an Economy and more!</p>
+	<img src="https://www.herokucdn.com/deploy/button.svg" href="https://heroku.com/deploy?template=https://github.com/kinglalu/Mr.Grape" title="Deploy to Heroku" alt="Deploy to Heroku">
 </div>
-A fun open source discord bot made using discord.js
-music, economy and more!
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kinglalu/Mr.Grape)
+## About
 
-#### Basic info
+Mr. Grape contains a wide variety of Music Commands using `ytdl-core`, and has a well-developed economy system with features such as User Shops and Inventory. In addition, Mr. Grape has moderation commands for Kicking and Banning members and puring messages. This just scratches the surface of what Mr. Grape can do, as there are an extensive list of fun commands that add flavor to any server it's in.
 
-Contains a wide variety of music commands using ytdl-core, and has a very expansive economy systen with many features such as a shop and inventory. This also has many other commands such as kick and banning, purging, and as well as many fun commands.
+## Notes
+* The bots prefix is `+`, however this can be changed during operation with the command `+prefix <new prefix`.
+* Many of the APIs used in Mr. Grape require Private Keys to be issued and added before those services will work.
 
+
+## APIs Used
+You will need to go to each of these websites and aquire an API key for each of their associated services.
+* https://api.ksoft.si/
+* https://thecatapi.com/
+* https://thedogapi.com/
+* https://api.nasa.gov/
+* https://products.wolframalpha.com/api/
+
+## Setup
+=======
 # Notes
 * The bots prefix is `+`, however this can be changed during operation with the command `+prefix <new prefix`.
 * Many of the APIs used in Mr. Grape require Private Keys to be issued and added before those services will work.
@@ -24,6 +37,7 @@ You will need to go to each of these websites and aquire an API key for each of 
 * https://products.wolframalpha.com/api/
 
 # Setup
+
  Press the deploy to Heroku Button, give the app a name.
 Make sure you have a application made in https://discord.com/developers/applications, create a bot under that application, and get the BOT TOKEN from there.
 Once the heroku app is deployed, go to Configure dynos and make sure web dyno is off and worker dyno is on like so:
