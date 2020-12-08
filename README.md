@@ -7,7 +7,7 @@
 
 ## About
 
-Mr. Grape contains a wide variety of Music Commands using `ytdl-core`, and has a well-developed economy system with features such as User Shops and Inventory. In addition, Mr. Grape has moderation commands for Kicking and Banning members and puring messages. This just scratches the surface of what Mr. Grape can do, as there are an extensive list of fun commands that add flavor to any server it's in.
+Mr. Grape contains a wide variety of Music Commands using `ytdl-core`, and has a well-developed economy system with features such as User Shops and Inventory. In addition, Mr. Grape has moderation commands for Kicking and Banning members and purging messages. This just scratches the surface of what Mr. Grape can do, as there are an extensive list of fun commands that add flavor to any server it's in.
 
 ## Notes
 * The bots prefix is `+`, however this can be changed during operation with the command `+prefix <new prefix`.
@@ -15,7 +15,7 @@ Mr. Grape contains a wide variety of Music Commands using `ytdl-core`, and has a
 
 
 ## APIs Used
-You will need to go to each of these websites and aquire an API key for each of their associated services.
+You will need to go to each of these websites and acquire an API key for each of their associated services.
 * https://api.ksoft.si/
 * https://thecatapi.com/
 * https://thedogapi.com/
