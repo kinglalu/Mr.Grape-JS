@@ -12,13 +12,15 @@ module.exports = {
         let argument = args.join(' ')
         if (!argument) { argument = q.songs[0].title; }
         let res = await ksoft.lyrics.get(argument);
+        console.log(res);
         const lyricEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2ed0')
             .setTitle(res.name.charAt(0).toUpperCase() + res.name.slice(1))
             .setDescription('\u200b **Lyrics**')
             .setThumbnail(res.artwork)
             .setFooter('DJ Grape | Provided by KSoft.Si')
-        if (res.lyrics.length > 1024) {
+        if (res.name.length + res.lyrics.length > 6000) { lyricEmbed.addField('The lyrics are too long, here is the URL!', res.url); }
+        else if (res.lyrics.length > 1024) {
             let arr = res.lyrics.match(/(.|[\r\n]){1,1024}/g);
             for (part in arr) { lyricEmbed.addField('\u200b', arr[part]); }
         }
