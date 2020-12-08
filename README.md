@@ -1,6 +1,6 @@
-# Mr.Grape
 <div align="center">
 	<img src="images/mrgrape.png" title="Mr. Grape" alt="Mr. Grape" />
+	<h1>Mr. Grape</h1>
 	<p>Mr. Grape is an Open Source Discord Bot made using Discord.js that includes Music features, an Economy and more!</p>
 	<img src="https://www.herokucdn.com/deploy/button.svg" href="https://heroku.com/deploy?template=https://github.com/kinglalu/Mr.Grape" title="Deploy to Heroku" alt="Deploy to Heroku">
 </div>
