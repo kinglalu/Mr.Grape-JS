@@ -8,5 +8,7 @@ music, economy and more!
 
 Contains a wide variety of music commands using ytdl-core, and has a very expansive economy systen with many features such as a shop and inventory. This also has many other commands such as kick and banning, purging, and as well as many fun commands.
 
-# NOTE
+# Note
 Many of the API's used here have private keys, and thus you will have to get your own api keys from the apis.
+
+# Setup
