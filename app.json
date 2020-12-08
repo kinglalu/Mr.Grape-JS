@@ -1,0 +1,7 @@
+{
+  "name": "Mr Grape",
+  "description": "A fun economy discord bot made using discord.js ",
+  "repository": "https://github.com/kinglalu/Mr.Grape",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["discord-js", "discord", "discord bot"]
+}
