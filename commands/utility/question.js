@@ -12,7 +12,7 @@ module.exports = {
         let answer = await d.r2(wolfapi).text;
         if (answer === 'No short answer available') {
             let simpleWolf = `https://api.wolframalpha.com/v2/query?input=${encodeURIComponent(args.join(' '))}&format=plaintext&output=JSON&appid=${key}&podindex=2`
-            let ans = await d.r2(simpleWolf).json;
+            let ans = await d.r2.get(simpleWolf).json;
             if (!ans.queryresult.pods[0].subpods[0].plaintext || ans.queryresult.pods[0].subpods[0].plaintext === '(data not available)') { ans = "Can't find that." }
             finalAnswer = ans.queryresult.pods[0].subpods[0].plaintext;
         }
