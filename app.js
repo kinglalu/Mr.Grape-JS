@@ -79,7 +79,7 @@ client.on('message', async message => {
 				.setTitle('ayo chill man')
 				.addFields({
 					name: `${command.name.charAt(0).toUpperCase() + command.name.slice(1)}`,
-					value: `${command.cd}\n_\n${d.formatCooldown(timeLeft)}`
+					value: `${command.cd}\n-\n${d.formatCooldown(timeLeft)}`
 				})
 				.setTimestamp()
 				.setFooter('Grape Enterprises');

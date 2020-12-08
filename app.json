@@ -1,0 +1,7 @@
+{
+  "name": "Mr.Grape",
+  "description": "A cool discord bot!",
+  "repository": "https://github.com/kinglalu/Mr.Grape",
+  "logo": "https://cdn.discordapp.com/attachments/756356493623820309/756356579196010547/6EAE9553-564E-4705-B6BB-C66F25BE7777.png",
+  "keywords": ["discord", "discord.js", "bot"]
+}
