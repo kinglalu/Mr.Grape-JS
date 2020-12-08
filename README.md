@@ -28,5 +28,5 @@ https://products.wolframalpha.com/api/
 Make sure you have a application made in https://discord.com/developers/applications, create a bot under that application, and get the BOT TOKEN from there.
 Once the heroku app is deployed, go to Configure dynos and make sure web dyno is off and worker dyno is on like so:
 <div align="center">
-	<img src="images/dynos.jpg" alt="Dyno config" />
+	<img src="images/dynos.JPG" alt="Dyno config" />
 </div>
