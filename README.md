@@ -2,7 +2,7 @@
 <div align="center">
 	<img src="images/mrgrape.png" title="Mr Grape" alt="Mr grape" />
 </div>
-a fun open source discord bot made using discord.js
+A fun open source discord bot made using discord.js
 music, economy and more!
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kinglalu/Mr.Grape)
