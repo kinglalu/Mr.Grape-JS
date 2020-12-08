@@ -15,4 +15,18 @@ Contains a wide variety of music commands using ytdl-core, and has a very expans
  The original Prefix is `+`, although you can change the prefix with `+prefix <prefix>`
 Many of the API's used here have private keys, and thus you will have to get your own api keys from the apis.
 
+# API's
+The links for the apis to where you get your own api key for usage.
+https://api.ksoft.si/
+https://thecatapi.com/
+https://thedogapi.com/
+https://api.nasa.gov/
+https://products.wolframalpha.com/api/
+
 # Setup
+ Press the deploy to Heroku Button, give the app a name.
+Make sure you have a application made in https://discord.com/developers/applications, create a bot under that application, and get the BOT TOKEN from there.
+Once the heroku app is deployed, go to Configure dynos and make sure web dyno is off and worker dyno is on like so:
+<div align="center">
+	<img src="images/dynos.jpg" alt="Dyno config" />
+</div>
