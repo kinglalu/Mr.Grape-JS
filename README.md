@@ -30,3 +30,7 @@ Once the heroku app is deployed, go to Configure dynos and make sure web dyno is
 <div align="center">
 	<img src="images/dynos.JPG" alt="Dyno config" />
 </div>
+Once that is done, you will wanna go to Settings and under config vars, you wanna name a key called BOT_TOKEN. Then as the value, you will wanna paste in the token in the bot under the application. Do not share this token with anyone, or that person will have access to your bot. Then once you have that, you will wanna get your own api keys for the apis listed above, and then put in the names of the apis and the keys in the value, like so:
+<div align="center">
+	<img src="images/keys.JPG" alt="KEY config" />
+</div>
