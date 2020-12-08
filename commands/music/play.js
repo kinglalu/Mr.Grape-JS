@@ -15,7 +15,7 @@ module.exports = {
 		if (!permissions.has('SPEAK')) return message.channel.send('Bruh I don\'t have perms to speak');
 
 		const ytRegex = /(?:http(?:s)?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'<> #]+)/gmi;
-		const plRegex = /^.*(youtu.be\/|list=)([^#\&\?]*).*/i;
+		const plRegex = /[?&]list=([^#\&\?]+)/;
 		const serverQueue = message.client.queue.get(message.guild.id);
 		const argument = args.join(' ');
 		const queueConstruct = {
