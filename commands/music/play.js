@@ -74,6 +74,7 @@ module.exports = {
 			}
 			catch (e) {
 				message.channel.send("Invalid playlist url, or technical difficulties");
+				message.client.queue.delete(message.guild.id);
 				console.log(e);
 			}
 		}
