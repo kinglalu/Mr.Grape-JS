@@ -1,7 +1,7 @@
+# Mr.Grape
 <div align="center">
 	<img src="images/mrgrape.png" title="Mr Grape" alt="Mr grape" />
 </div>
-# Mr.Grape
 a fun open source discord bot made using discord.js
 music, economy and more!
 
