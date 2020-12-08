@@ -5,21 +5,21 @@
 	<img src="https://www.herokucdn.com/deploy/button.svg" href="https://heroku.com/deploy?template=https://github.com/kinglalu/Mr.Grape" title="Deploy to Heroku" alt="Deploy to Heroku">
 </div>
 
-## Basic info
+## About
 
-Contains a wide variety of music commands using ytdl-core, and has a very expansive economy systen with many features such as a shop and inventory. This also has many other commands such as kick and banning, purging, and as well as many fun commands.
+Mr. Grape contains a wide variety of Music Commands using `ytdl-core`, and has a well-developed economy system with features such as User Shops and Inventory. In addition, Mr. Grape has moderation commands for Kicking and Banning members and puring messages. This just scratches the surface of what Mr. Grape can do, as there are an extensive list of fun commands that add flavor to any server it's in.
 
-# Note
- The original Prefix is `+`, although you can change the prefix with `+prefix <prefix>`
-Many of the API's used here have private keys, and thus you will have to get your own api keys from the apis.
+## Notes
+* The bots prefix is `+`, however this can be changed during operation with the command `+prefix <new prefix`.
+* Many of the APIs used in Mr. Grape require Private Keys to be issued and added before those services will work.
 
-# API's
-The links for the apis to where you get your own api key for usage.
-https://api.ksoft.si/
-https://thecatapi.com/
-https://thedogapi.com/
-https://api.nasa.gov/
-https://products.wolframalpha.com/api/
+## APIs Used
+You will need to go to each of these websites and aquire an API key for each of their associated services.
+* https://api.ksoft.si/
+* https://thecatapi.com/
+* https://thedogapi.com/
+* https://api.nasa.gov/
+* https://products.wolframalpha.com/api/
 
 # Setup
  Press the deploy to Heroku Button, give the app a name.
