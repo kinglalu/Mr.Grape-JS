@@ -99,11 +99,9 @@ module.exports = {
 			const play = async song => {
 				const queue = message.client.queue.get(message.guild.id);
 				if (!song) {
-					setTimeout(function () {
 						message.guild.me.voice.channel.leave();
 						message.client.queue.delete(message.guild.id);
 						return;
-					}, 60000)
 				}
 				let stream = ytdl(song.url, {
 					filter: "audioonly",

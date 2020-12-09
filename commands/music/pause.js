@@ -16,6 +16,6 @@ module.exports = {
 				.setFooter('DJ Grape');
 			return message.channel.send(p);
 		}
-		return message.channel.send("Can't pause if its playing or if there\'s no music bruh");
+		return message.channel.send("Can't if there\'s no music bruh");
 	}
 };

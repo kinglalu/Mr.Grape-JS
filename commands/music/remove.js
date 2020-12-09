@@ -16,7 +16,6 @@ module.exports = {
             const rm = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
                 .setTitle('Song Queue')
-                .setDescription('Removal')
                 .addField(`Removed **${arr[remove].title}**`, '_')
                 .setTimestamp()
                 .setFooter('DJ Grape');

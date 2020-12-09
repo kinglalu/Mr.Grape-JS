@@ -16,6 +16,7 @@ module.exports = {
 				.setFooter('DJ Grape');
 			return message.channel.send(p);
 		}
-		return message.channel.send('There is nothing playin');
+		else if (serverQueue.playing) return message.channel.send("Can't resume if its already playing smh")
+		else { return message.channel.send('There is nothing playin'); }
 	}
 };
