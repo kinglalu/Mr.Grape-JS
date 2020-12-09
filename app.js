@@ -24,7 +24,7 @@ guilds.on('error', err => console.error('Keyv (guilds) connection error:', err))
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setPresence({ activity: { name: `with ${config.prefix}help` }, status: 'idle' })
+	client.user.setPresence({ activity: { name: `${config.prefix}help in ${client.guilds.cache.size} servers` }, status: 'idle' })
 });
 
 client.on('voiceStateUpdate', (old, New) => {
