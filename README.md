@@ -3,7 +3,7 @@
 	<h1>Mr. Grape</h1>
 	<p>By kinglalu#2780 and DAONE#7538<p>
 	<p>Mr. Grape is an Open Source Discord Bot made using Discord.js that includes Music features, an Economy and more!</p>
-	<img src="https://www.herokucdn.com/deploy/button.svg" href="https://heroku.com/deploy?template=https://github.com/kinglalu/Mr.Grape" title="Deploy to Heroku" alt="Deploy to Heroku">
+	<a href="https://heroku.com/deploy?template=https://github.com/kinglalu/Mr.Grape"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku"></a>
 </div>
 
 ## About
@@ -11,7 +11,7 @@
 Mr. Grape contains a wide variety of Music Commands using `ytdl-core`, and has a well-developed economy system with features such as User Shops and Inventory. In addition, Mr. Grape has moderation commands for Kicking and Banning members and purging messages. This just scratches the surface of what Mr. Grape can do, as there are an extensive list of fun commands that add flavor to any server it's in.
 
 ## Notes
-* The bots prefix is `+`, however this can be changed during operation with the command `+prefix <new prefix`.
+* The bots prefix is `+`, however this can be changed during operation with the command `+prefix <new prefix>`.
 * Many of the APIs used in Mr. Grape require Private Keys to be issued and added before those services will work.
 
 
