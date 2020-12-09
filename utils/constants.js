@@ -54,6 +54,21 @@ const sellableItems = {
     lockpick: 70,
     "rigged dice": 100
 }
+const itemAliases = {
+    od: 'orangedetector',
+    md: 'mangodetector',
+    cd: 'carrotdetector',
+    sm: 'starmagnet',
+    sml: 'starmill',
+    sh: 'shovel',
+    tonep: 'tieronepick',
+    ttwop: 'tiertwopick',
+    tthreep: 'tierthreepick',
+    rd: 'rigged dice',
+    lp: 'lockpick',
+    rp: 'rainbonite pick',
+    pr: 'personal refinery'
+}
 const ores = {
     tier1: ['copper', 'tin', 'iron', 'lead', 'silver', 'bronze'],
     tier2: ['gold', 'platinum', 'titanium', 'obsidian', 'cobalt', 'goshine', 'fasalt', 'maclantite'],
@@ -104,5 +119,6 @@ module.exports = {
     "emoji": emoji,
     "guilds": guilds,
     "sellableItems": sellableItems,
-    "formatCooldown": formatCooldown
+    "formatCooldown": formatCooldown,
+    "itemAliases": itemAliases
 };

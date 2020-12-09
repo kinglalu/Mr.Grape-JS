@@ -5,12 +5,14 @@ module.exports = {
     cd: "Buddy this ain't a bazaar",
     fan: true,
     async execute(message, args, d) {
+        const regex = /\d+/g;
+        const oreConcat = d.ores.tier1.concat(d.ores.tier2, d.ores.tier3);
+        let argument = args.join('').toLowerCase().replace(/,/g, '');
+        let numItems = parseInt(argument.match(regex));
+        let item = argument.replace(numItems, '').replace('all', '');
         let inv = await d.items.get(message.author.id);
-        let argument = args.join(' ').toLowerCase();
-        let oreConcat = d.ores.tier1.concat(d.ores.tier2, d.ores.tier3);
-        const numberRegex = /\d+/g;
-        let item;
-        if (Object.keys(d.sellableItems).some(e => argument.includes(e)) || argument.includes('item' || 'items')) {
+        if (Object.keys(d.itemAliases).includes(item)) { item = d.itemAliases[item]; }
+        if (Object.keys(d.sellableItems).includes(item) || argument.includes('item' || 'items')) {
             if (argument.includes('item') && argument.includes('all') || argument.includes('items') && argument.includes('all')) {
                 async function sellTools() {
                     let profit = 0;
@@ -55,8 +57,7 @@ module.exports = {
                     });
             }
             else if (argument.includes('all')) {
-                item = argument.replace('all', '').replace(' ', '');
-                if (!inv[item]) { return message.channel.send('You dont\'t have that item!') }
+                if (!inv[item]) { return message.channel.send('You don\'t have that item!') }
                 let profit = (d.sellableItems[item]) * inv[item];
                 d.addMoni(message.author.id, profit);
                 delete inv[item];
@@ -73,8 +74,6 @@ module.exports = {
                 message.channel.send(saleAll);
             }
             else {
-                let numItems = parseInt(argument.match(numberRegex))
-                item = Object.keys(d.sellableItems).filter(v => argument.includes(v)).pop();
                 if (!inv[item]) { return message.channel.send('You dont\'t have that item!') }
                 if (isNaN(numItems) || numItems < 0) { numItems = 1; }
                 if (numItems === 0) { return message.channel.send('ok boomer'); }
@@ -187,7 +186,6 @@ module.exports = {
             }
             else if (argument.includes('all')) {
                 if (argument.includes('refined')) { item = "refined " + oreFromArray }
-                else { item = oreFromArray }
                 if (!inv.ore[item]) { return message.channel.send('Bruh you don\'t have that ore'); }
                 const soldItem = getOreCost(item, inv.ore[item])
                 d.addMoni(message.author.id, soldItem[1]);
@@ -206,8 +204,6 @@ module.exports = {
             }
             else {
                 if (argument.includes('refined')) { item = "refined " + oreFromArray; }
-                else { item = oreFromArray }
-                let numItems = parseInt(argument.match(numberRegex))
                 if (isNaN(numItems) || numItems < 0) { numItems = 1; }
                 if (numItems === 0) { return message.channel.send('ok boomer'); }
                 if (numItems > inv.ore[item]) { return message.channel.send(`You don't have that many ${item}(s)`); }
@@ -232,5 +228,6 @@ module.exports = {
             await d.items.set(message.author.id, inv);
         }
         else { return message.channel.send('Bro that\'s not even a valid item, get good'); }
+
     }
 };

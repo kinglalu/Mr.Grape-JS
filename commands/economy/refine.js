@@ -78,7 +78,7 @@ module.exports = {
                 await d.items.set(message.author.id, inv);
                 let oreRefine;
                 if (inv["personal refinery"]) { oreRefine = `You refined your ${item} ore(s) for free, cus you have a personal refiner (flexx)` }
-                else { `You refined your ${item} ore(s) for ${cost} :star:s` }
+                else {oreRefine = `You refined your ${item} ore(s) for ${cost} :star:s` }
                 const r = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s refinement')
@@ -127,7 +127,7 @@ module.exports = {
                 await d.items.set(message.author.id, inv);
                 let oreRefiner;
                 if (inv["personal refinery"]) { oreRefiner = `You refined your ${numberOfItems} ${item} ore(s) for free, cus personal refinery (ez)` }
-                else { `You refined your ${numberOfItems} ${item} ore(s) for ${cost} :star:s` }
+                else { oreRefiner = `You refined your ${numberOfItems} ${item} ore(s) for ${cost} :star:s` }
                 const r = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + '\'s refinement')

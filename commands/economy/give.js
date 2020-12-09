@@ -6,8 +6,10 @@ module.exports = {
     cd: "Love the generosity, but maybe chill a bit?",
     fan: true,
     async execute(message, args, d) {
+        const regex = /<@!?\d+>/g;        
+        let argument = args.join(' ').replace(/,/g, '');
+        let donation = parseInt(argument.replace(argument.match(regex), ''));
         let target = message.mentions.members.first();
-        let donation = parseInt(args.find(arg => !/<@!?\d+>/g.test(arg)));
         let check = await d.users.get(message.author.id)
         if (!target) {
             message.channel.send("who u givin golden stars to");
