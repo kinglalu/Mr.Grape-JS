@@ -68,7 +68,7 @@ client.on('message', async message => {
 	if (!inv.fan) { haveFan = 0 }
 	else { haveFan = inv.fan }
 	let cooldownAmount;
-	if (command.fan) { cooldownAmount = ((1 - (0.03 * haveFan)) * (command.cooldown * 1000)) + 2; }
+	if (command.fan) { cooldownAmount = ((1 - (0.03 * haveFan)) * (command.cooldown * 1000)) + 10; }
 	else { cooldownAmount = command.cooldown * 1000; };
 	if (timestamps.has(message.author.id)) {
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
