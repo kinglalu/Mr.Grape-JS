@@ -16,14 +16,14 @@ const formatCooldown = function (time) {
         let hours = ~~(time / 3600);
         let minutes = ~~((time - (3600 * hours)) / 60);
         let seconds = time - (3600 * hours) - (minutes * 60);
-        final = `${hours} hours, ${minutes} minutes and ${seconds.toFixed(1)} seconds left`
+        final = `${hours} hours, ${minutes} minutes and ${seconds.toFixed(1)} seconds`
     }
     else if (time > 60) {
         let minutes = ~~(time / 60);
         let seconds = time - (minutes * 60);
-        final = `${minutes} minutes and ${seconds.toFixed(1)} seconds left`
+        final = `${minutes} minutes and ${seconds.toFixed(1)} seconds`
     }
-    else { final = `${time.toFixed(1)} seconds left` }
+    else { final = `${time.toFixed(1)} seconds` }
     return final;
 }
 const buyableItems = {

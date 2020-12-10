@@ -40,7 +40,8 @@ client.on('message', async message => {
 	else if (config.prefix === guild.prefix) {
 		prefix = config.prefix;
 		delete guild.prefix;
-		await guilds.set(message.guild.id, guild);
+		if (Object.keys(guild).length === 0) await guilds.delete(message.guild.id);
+		else { await guilds.set(message.guild.id, guild); }
 	}
 	else { prefix = guild.prefix; }
 
@@ -68,7 +69,7 @@ client.on('message', async message => {
 	if (!inv.fan) { haveFan = 0 }
 	else { haveFan = inv.fan }
 	let cooldownAmount;
-	if (command.fan) { cooldownAmount = ((1 - (0.03 * haveFan)) * (command.cooldown * 1000)) + 10; }
+	if (command.fan) { cooldownAmount = ((1 - (0.03 * haveFan)) * (command.cooldown * 1000)) + 2; }
 	else { cooldownAmount = command.cooldown * 1000; };
 	if (timestamps.has(message.author.id)) {
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
@@ -77,12 +78,9 @@ client.on('message', async message => {
 			const cool = new Discord.MessageEmbed()
 				.setColor('#dd2de0')
 				.setTitle('ayo chill man')
-				.addFields({
-					name: `${command.name.charAt(0).toUpperCase() + command.name.slice(1)}`,
-					value: `${command.cd}\n-\n${d.formatCooldown(timeLeft)}`
-				})
+				.setDescription(`${command.cd}\nWait for ${d.formatCooldown(timeLeft)}`)
 				.setTimestamp()
-				.setFooter('Grape Enterprises');
+				.setFooter('Grape Cooldowns');
 			return message.channel.send(cool);
 		}
 	}

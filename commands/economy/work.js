@@ -9,7 +9,8 @@ module.exports = {
         let inv = await d.items.get(message.author.id);
         let earn = Math.round(Math.random() * 7) + 1;
         let chooseWork = Math.round(Math.random() * 2);
-        const ifEarn = [1, 2, 2];
+        const ifEarn = [1, 1, 2];
+
         if (chooseWork === 0 && inv && inv.orangedetector) {
             for (let i = 0; i < inv.orangedetector; i++) {
                 ifEarn.push(1);
@@ -23,7 +24,7 @@ module.exports = {
                 ifEarn.push(1);
             }
         }
-		
+
         let earnJob = Math.floor(Math.random() * ifEarn.length);
 
         if (inv && inv.starmagnet && inv.starmagnet > 0) {
@@ -31,20 +32,24 @@ module.exports = {
         } else {
             null;
         }
+
         const situation = [
             ['Help Mr.Grape find his orange!', 'will you help me find my orange?\nit fell in a bush full of bananas over there, but i could not find it.\nPlease go there and find my orange.', 'Yay, you found my orange! Here, take ' + earn + ' :star:s!', "That's not my orange, that's a banana! Try again later."],
             ['Help Mr.Grape catch his mango!', 'I am trying to catch a flying mango, but it keeps disappearing.\nSo will you catch it and bring it to me?', 'Yay, you found my mango! Here, take ' + earn + ' :star:s!', "You didn't catch my mango? Too bad, try again next time"],
             ['Help Mr.Grape find his rabbit.', 'my pet rabbit has escaped!\nhe really like carrots\ncan you help lure him home?', 'Yay, you found my rabbit! Here, take ' + earn + ' :star:s!', "Sorry, I was asking for a carrot, not a lime."]
         ];
 
-        description = situation[chooseWork][0];
-        background = situation[chooseWork][1];
+        const chosen = situation[chooseWork];
+        description = chosen[0];
+        background = chosen[1];
+
         if (ifEarn[earnJob] === 1) {
-            outcome = situation[chooseWork][2];
+            outcome = chosen[2];
             d.addMoni(message.author.id, earn);
         } else {
-            outcome = situation[chooseWork][3];
+            outcome = chosen[3];
         }
+
         const job = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s job`)
@@ -60,7 +65,5 @@ module.exports = {
             .setFooter('Grape Enterprises');
 
         message.channel.send(job);
-
-
     }
 };

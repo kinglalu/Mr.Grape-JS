@@ -1,6 +1,7 @@
 const { Util } = require('discord.js');
 const ytdl = require('ytdl-core');
 const youtube = require('youtube-sr');
+const ytpl = require('@distube/ytpl');
 module.exports = {
 	name: 'play',
 	description: 'play music, either do play <search> or play <youtube_url>',
@@ -15,7 +16,7 @@ module.exports = {
 		if (!permissions.has('SPEAK')) return message.channel.send('Bruh I don\'t have perms to speak');
 
 		const ytRegex = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
-		const plRegex = /[?&]list=([^#\&\?]+)/;
+		const plRegex = /^.*(list=)([^#\&\?]*).*/gi;
 		const serverQueue = message.client.queue.get(message.guild.id);
 		const argument = args.join(' ');
 		const queueConstruct = {
@@ -56,32 +57,46 @@ module.exports = {
 		}
 
 		if (ytRegex.test(argument) && plRegex.test(argument)) {
-			if (!serverQueue) { message.client.queue.set(message.guild.id, queueConstruct); }
-			try {
-				const playlist = await youtube.getPlaylist(argument);
-				for (video in playlist.videos) {
-					let plSong = playlist.videos[video];
-					let song = createSong(Util.escapeMarkdown(plSong.title), `https://www.youtube.com/watch?v=${plSong.id}`, plSong.durationFormatted, plSong.thumbnail.url)
-					playSong(song, message, channel, serverQueue, true)
+			message.channel.send("Be patient, its loading").then(async message => {
+				if (!serverQueue) { message.client.queue.set(message.guild.id, queueConstruct); }
+				try {
+					const playlist = await ytpl(argument);
+					for (video in playlist.items) {
+						let plSong = playlist.items[video];
+						let song = createSong(Util.escapeMarkdown(plSong.title), plSong.url, plSong.duration, plSong.thumbnail)
+						playSong(song, message, channel, serverQueue, true)
+					}
+					const playlistInfo = {
+						title: playlist.title.charAt(0).toUpperCase() + playlist.title.slice(1),
+						url: playlist.url,
+						thumbnail: playlist.items[0].thumbnail,
+						duration: 'It\'s a playlist bro'
+					}
+					message.channel.send(announce(playlistInfo, false, true));
+					return message.delete();
 				}
-				const playlistInfo = {
-					title: playlist.title.charAt(0).toUpperCase() + playlist.title.slice(1),
-					url: playlist.url,
-					thumbnail: playlist.thumbnail,
-					duration: 'It\'s a playlist bro'
+				catch (e) {
+					message.channel.send("Invalid playlist url, or technical difficulties");
+					message.client.queue.delete(message.guild.id);
+					console.log(e);
+					return message.delete();
 				}
-				message.channel.send(announce(playlistInfo, false, true));
-			}
-			catch (e) {
-				message.channel.send("Invalid playlist url, or technical difficulties");
-				message.client.queue.delete(message.guild.id);
-				console.log(e);
-			}
+			})
 		}
 		else {
-			let songInfo = await youtube.searchOne(argument);
-			if (songInfo === null) { return message.channel.send("No results found!"); }
-			let song = createSong(Util.escapeMarkdown(songInfo.title), songInfo.url, songInfo.durationFormatted, songInfo.thumbnail.url)
+			let song;
+			if (ytdl.validateURL(argument)) {
+				let e = await ytdl.getBasicInfo(argument);
+				let songInfo = e.videoDetails;
+				let duration = new Date(songInfo.lengthSeconds * 1000).toISOString().substr(11, 8);
+				if (duration.startsWith('00:')) { duration = duration.replace('00:', ''); }
+				song = createSong(Util.escapeMarkdown(songInfo.title), songInfo.video_url, duration, songInfo.thumbnail.thumbnails[0].url)
+			}
+			else {
+				let songInfo = await youtube.searchOne(argument);
+				if (songInfo === null) { return message.channel.send("No results found!"); }
+				song = createSong(Util.escapeMarkdown(songInfo.title), songInfo.url, songInfo.durationFormatted, songInfo.thumbnail.url)
+			}
 			playSong(song, message, channel, serverQueue, false)
 		}
 
@@ -99,9 +114,9 @@ module.exports = {
 			const play = async song => {
 				const queue = message.client.queue.get(message.guild.id);
 				if (!song) {
-						message.guild.me.voice.channel.leave();
-						message.client.queue.delete(message.guild.id);
-						return;
+					message.guild.me.voice.channel.leave();
+					message.client.queue.delete(message.guild.id);
+					return;
 				}
 				let stream = ytdl(song.url, {
 					filter: "audioonly",
