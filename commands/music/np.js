@@ -6,8 +6,9 @@ module.exports = {
     cd: "I just showed you what was playing!",
     execute(message, args, d) {
         const serverQueue = message.client.queue.get(message.guild.id);
+        if (!serverQueue) return message.channel.send("Bruh wdym there is nothing playin");
         const q = serverQueue.songs[0];
-        if (!serverQueue || !q) return message.channel.send("Bruh wdym there is nothing playin");
+        if (!q) return message.channel.send("Bruh wdym there is nothing playin");
         const duration = q.duration.split(':').reverse().reduce((prev, curr, i) => prev + curr * Math.pow(60, i), 0)
         const actualSeek = Math.floor((serverQueue.connection.dispatcher.streamTime - serverQueue.connection.dispatcher.pausedTime) / 1000) + 1;
         const seek = new Date(actualSeek * 1000).toISOString().substr(11, 8);
