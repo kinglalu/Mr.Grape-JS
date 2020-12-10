@@ -15,7 +15,7 @@ module.exports = {
             user = target.displayName;
             id = target.id
         } else {
-            message.channel.send('Use a valid mention!');
+            return message.channel.send('Use a valid mention!');
         }
         const usersoloEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
