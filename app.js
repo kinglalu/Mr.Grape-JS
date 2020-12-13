@@ -38,7 +38,7 @@ client.on('voiceStateUpdate', (old, New) => {
 	if (old.channelID && !New.channelID) client.queue.delete(old.guild.id)
 });
 
-client.on("guildCreate", guild => {
+client.on("guildCreate", async guild => {
 	client.user.setPresence({
 		activity: {
 			name: `${config.prefix}help in ${client.guilds.cache.size} servers`,
