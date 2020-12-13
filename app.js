@@ -24,13 +24,40 @@ guilds.on('error', err => console.error('Keyv (guilds) connection error:', err))
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setPresence({ activity: { name: `${config.prefix}help in ${client.guilds.cache.size} servers` }, status: 'idle' })
+	client.user.setPresence({
+		activity: {
+			name: `${config.prefix}help in ${client.guilds.cache.size} servers`,
+			type: "STREAMING",
+			url: "https://twitch.tv/MrGrapeTwitch"
+		},
+	})
 });
 
 client.on('voiceStateUpdate', (old, New) => {
 	if (old.id !== client.user.id) return;
 	if (old.channelID && !New.channelID) client.queue.delete(old.guild.id)
 });
+
+client.on("guildCreate", guild => {
+	client.user.setPresence({
+		activity: {
+			name: `${config.prefix}help in ${client.guilds.cache.size} servers`,
+			type: "STREAMING",
+			url: "https://twitch.tv/MrGrapeTwitch"
+		},
+	})
+})
+
+client.on("guildDelete", guild => {
+	client.user.setPresence({
+		activity: {
+			name: `${config.prefix}help in ${client.guilds.cache.size} servers`,
+			type: "STREAMING",
+			url: "https://www.twitch.tv/MrGrapeTwitch"
+		},
+	})
+	await guilds.delete(guild.id);
+})
 
 client.on('message', async message => {
 
