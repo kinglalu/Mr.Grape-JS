@@ -6,8 +6,9 @@ const Keyv = require('keyv');
 const users = new Keyv(process.env.DATABASE_URL, { namespace: 'users' });
 const items = new Keyv(process.env.DATABASE_URL, { namespace: 'items' });
 const guilds = new Keyv(process.env.DATABASE_URL, { namespace: 'guilds' });
-const cooldowns = new Discord.Collection();
 const d = require('./utils/constants');
+const cooldowns = new Discord.Collection();
+const twitchURL = "https://twitch.tv/MrGrapeTwitch";
 client.commands = new Discord.Collection();
 client.queue = new Discord.Collection();
 
@@ -28,7 +29,7 @@ client.once('ready', () => {
 		activity: {
 			name: `${config.prefix}help in ${client.guilds.cache.size} servers`,
 			type: "STREAMING",
-			url: "https://twitch.tv/MrGrapeTwitch"
+			url: twitchURL
 		},
 	})
 });
@@ -38,17 +39,17 @@ client.on('voiceStateUpdate', (old, New) => {
 	if (old.channelID && !New.channelID) client.queue.delete(old.guild.id)
 });
 
-client.on("guildCreate", async guild => {
+client.on("guildCreate", guild => {
 	client.user.setPresence({
 		activity: {
 			name: `${config.prefix}help in ${client.guilds.cache.size} servers`,
 			type: "STREAMING",
-			url: "https://twitch.tv/MrGrapeTwitch"
+			url: twitchURL
 		},
 	})
 })
 
-client.on("guildDelete", guild => {
+client.on("guildDelete", async guild => {
 	client.user.setPresence({
 		activity: {
 			name: `${config.prefix}help in ${client.guilds.cache.size} servers`,
