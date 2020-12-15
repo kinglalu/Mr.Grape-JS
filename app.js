@@ -61,7 +61,9 @@ client.on("guildDelete", async guild => {
 })
 
 client.on('message', async message => {
-
+	
+	if (message.guild.id == 419123358698045453 && message.author.id == 329331044828446722) message.react('<:donglalu:788445986917187645>')
+	
 	let prefix;
 	let guild = await guilds.get(message.guild.id);
 	if (!guild || !guild.prefix) { prefix = config.prefix }
