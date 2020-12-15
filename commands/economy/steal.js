@@ -16,7 +16,7 @@ module.exports = {
             const successVar = Math.floor(Math.random() * 99) + 1;
             const e = "0.0" + (Math.floor(Math.random() * 6) + 1).toString();
             let percentage;
-            if (inv && inv.lockpick) { percentage = Math.floor(Math.random() * 3) + 1; }
+            if (inv && inv.lockpick) { percentage = Math.floor(Math.random() * 2) + 1; }
             else { percentage = Math.floor(Math.random() * 4) + 1; }
             if (percentage === 1) {
                 let earned = Math.floor(+e * targetBal) + 2;
