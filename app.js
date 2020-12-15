@@ -76,8 +76,6 @@ client.on('message', async message => {
 
 	d.prefix = prefix;
 
-	if (guild && guild.bl && guild.bl.includes(message.author.id)) return;
-
 	if (!message.content.startsWith(prefix) || message.author.bot || message.channel.type === 'dm') return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
