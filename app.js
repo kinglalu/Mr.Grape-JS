@@ -61,7 +61,8 @@ client.on("guildDelete", async guild => {
 })
 
 client.on('message', async message => {
-	
+
+
 	let prefix;
 	let guild = await guilds.get(message.guild.id);
 	if (!guild || !guild.prefix) { prefix = config.prefix }
@@ -74,6 +75,8 @@ client.on('message', async message => {
 	else { prefix = guild.prefix; }
 
 	d.prefix = prefix;
+
+	if (guild.bl && guild.bl.includes(message.author.id)) return;
 
 	if (!message.content.startsWith(prefix) || message.author.bot || message.channel.type === 'dm') return;
 
