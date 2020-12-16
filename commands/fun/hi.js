@@ -2,7 +2,7 @@ module.exports = {
     name: "hi",
     aliases: ['hello'],
     description: "have good manners and greet mr grape",
-    cooldown: 30,
+    cooldown: 2,
     cd: "who says hello that much dang",
     fan: false,
     async execute(message, args, d) {
