@@ -6,7 +6,7 @@ module.exports = {
     cd: "who says hello that much dang",
     fan: false,
     async execute(message, args, d) {
-        const fruitArray = [
+        const helloArray = [
             'hi', 'hello', 'yo', 'whats poppin', 'was upp', 'greetings', 'hey'
         ]
         function shuffle(array) {
@@ -18,7 +18,7 @@ module.exports = {
             if (OGarray.join('') === array.join('')) { return shuffle(array); }
             else { return array.join(''); }
         }
-        let word = fruitArray[Math.floor(Math.random() * fruitArray.length)];
+        let word = helloArray[Math.floor(Math.random() * helloArray.length)];
 message.channel.send(word)
     }
 };
