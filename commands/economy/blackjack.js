@@ -100,10 +100,10 @@ module.exports = {
 
         async function bet(outcome) {
             if (outcome === "win") {
-                await d.users.set(message.author.id, userBal + betAmount);
+                d.addMoni(message.author.id, betAmount)
             }
             if (outcome === "lose") {
-                await d.users.set(message.author.id, userBal - betAmount);
+                d.addMoni(message.author.id, -betAmount)
             }
         }
 
