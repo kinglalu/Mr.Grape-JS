@@ -22,7 +22,6 @@ module.exports = {
         }
 
         if (!userBal) {
-            await d.users.set(message.author.id, 0);
             message.channel.send("you are an idiot. You have $0")
             return
         }
