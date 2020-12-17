@@ -543,9 +543,7 @@ module.exports = {
         }
 
         // Eh. Async timeout I'm not that good at JS
-        function timeout(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
+
         // Begin animation & show result :-)
         msg = await endMsg(fruitsMsg(0), "Spinning...", "Good luck!", false)
         for (var i = 0; i < r - 1; i++) {
