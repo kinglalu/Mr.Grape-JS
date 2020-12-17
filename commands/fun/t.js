@@ -1,9 +1,9 @@
 module.exports = {
-    name: 'gift',
-    description: 'gift',
-    aliases: ['gift'],
+    name: 't',
+    description: 'tttt',
+    aliases: ['t'],
     cooldown: 2,
-    cd: "gifttt",
+    cd: "slow down on the t's",
     fan: false,
     execute(message, args, d) {
         const toTitleCase = (thingy) => {
@@ -14,7 +14,7 @@ module.exports = {
                 .join('\n');
         };
 
-        message.channel.send('pls use giftbox');
+        message.channel.send('t');
 
     }
 };
