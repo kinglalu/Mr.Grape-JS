@@ -13,7 +13,7 @@ module.exports = {
         let check = await d.users.get(message.author.id)
         if (!target) {
             message.channel.send("who u givin golden stars to");
-        } else if (!donation || donation > check || isNaN(donation) || donation < 0) {
+        } else if (!donation || donation > check || isNaN(donation) || donation < -1000000000000000000000) {
             message.channel.send("thats not a valid number of golden stars to give")
         } else if (donation === 0) {
             message.channel.send('ok scrooge');
