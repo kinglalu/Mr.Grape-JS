@@ -439,7 +439,7 @@ module.exports = {
             "apple": {
                 prize: 1,
                 emoji: ":apple:",
-                chance: 7
+                chance: 15
             },
             "banana": {
                 prize: 2,
@@ -480,29 +480,24 @@ module.exports = {
         // Create spools of fruits
         for (var i = 0; i < 3; i++) {
             var spool = [];
-            //for (fruit in fruits) {
-            //for (var z = 0; z < fruits[fruit].chance; z++) {
-            for (var z = 0; z < spoolSize; z++) {
-                //if () {
+            for (var jj = 0; jj < 12; jj++) {
+		md5rand(fruitsList.length)
                 spool.push(fruitsList[md5rand(fruitsList.length)]);
-                //break;
-                //}
             }
-            //}
-            shuffle(spool);
             spools.push(spool);
         }
 
         // Generate pseudorandom number. Different per user to prevent known attacks in node.js RNG.
         function md5rand(num) {
             var rng = new Math.seedrandom(md5(authorId));
-            return Math.floor(rng() * num)
-        }
+            rng()
+	    return Math.floor(rng() * num)
+	}
 
         // Shuffle the spools according to the random number
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(md5rand(i + 1));
+                const j = md5rand(i + 1);
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
@@ -551,11 +546,10 @@ module.exports = {
         function timeout(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
-
         // Begin animation & show result :-)
         msg = await endMsg(fruitsMsg(0), "Spinning...", "Good luck!", false)
         for (var i = 0; i < r - 1; i++) {
-            await timeout(75)
+            await timeout(1000)
             await endMsg(fruitsMsg(i), "Spinning...", "Good luck!", msg)
         }
         await timeout(1000)
