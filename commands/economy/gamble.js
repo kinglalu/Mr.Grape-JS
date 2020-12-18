@@ -58,7 +58,7 @@ module.exports = {
                 const riggedArray = [2, 4, 6, 2, 4, 1, 3, 6]
                 finalNumber = riggedArray[Math.floor(Math.random() * riggedArray.length)];
             }
-            else { finalNumber = Math.floor(Math.random() * 2) + 1; }
+            else { finalNumber = Math.floor(Math.random() * 6) + 1; }
             animateEmbed(finalNumber, bet)
         }
         let userBal = await d.users.get(message.author.id);
