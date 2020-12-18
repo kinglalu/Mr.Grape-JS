@@ -1,7 +1,7 @@
 module.exports = {
-    name: 'give',
-    aliases: ['donate'],
-    description: 'give stars to people',
+    name: 'devgive',
+    aliases: ['devdonate'],
+    description: 'for developers of mr grape to reset peps bals and stuff',
     cooldown: 5,
     cd: "Love the generosity, but maybe chill a bit?",
     fan: true,
