@@ -9,7 +9,7 @@ module.exports = {
         let inv = await d.items.get(message.author.id);
         async function busted(bet) {
             let bal = await d.users.get(message.author.id);
-            let owe = Math.ceil(bal * 0.05);
+            let owe = Math.ceil(bal * 0.01);
             message.channel.send('---');
             const busted = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
@@ -42,7 +42,7 @@ module.exports = {
                                             msg.edit(gambleEmbed.addField(`Rip, you lost your ${bet} :star:s.`, '_'));
                                             d.addMoni(message.author.id, -bet);
                                         }
-                                        if (inv && inv["rigged dice"] && Math.floor(Math.random() * 25) + 1 === 1) {
+                                        if (inv && inv["rigged dice"] && Math.floor(Math.random() * 50) + 1 === 1) {
                                             setTimeout(function () { busted(bet); }, 1700)
                                         }
                                     }, 1700)
@@ -58,7 +58,7 @@ module.exports = {
                 const riggedArray = [2, 4, 6, 2, 4, 1, 3, 6]
                 finalNumber = riggedArray[Math.floor(Math.random() * riggedArray.length)];
             }
-            else { finalNumber = Math.floor(Math.random() * 6) + 1; }
+            else { finalNumber = Math.floor(Math.random() * 2) + 1; }
             animateEmbed(finalNumber, bet)
         }
         let userBal = await d.users.get(message.author.id);
