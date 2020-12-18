@@ -1,4 +1,4 @@
-/* module.exports = {
+ module.exports = {
     name: 'devgive',
     aliases: ['devdonate'],
     description: 'for developers of mr grape to reset peps bals and stuff',
@@ -36,6 +36,7 @@
             message.channel.send(give);
             }
               else { return message.channel.send('back off! only grape devs or Mr Grape can use this!'); }
+            }
         }
     }
-}; */
+}; 
