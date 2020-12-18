@@ -1,4 +1,4 @@
- module.exports = {
+/* module.exports = {
     name: 'devgive',
     aliases: ['devdonate'],
     description: 'for developers of mr grape to reset peps bals and stuff',
@@ -39,4 +39,4 @@
             }
         }
     }
-}; 
+}; */
