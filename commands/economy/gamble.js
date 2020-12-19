@@ -9,7 +9,7 @@ module.exports = {
         let inv = await d.items.get(message.author.id);
         async function busted(bet) {
             let bal = await d.users.get(message.author.id);
-            let owe = Math.ceil(bal * 0.01);
+            let owe = Math.ceil(bal * 0.005);
             message.channel.send('---');
             const busted = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
