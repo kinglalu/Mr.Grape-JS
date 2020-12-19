@@ -102,7 +102,7 @@ module.exports = {
             d = ii(d, a, b, c, k[11], 10, -1120210379);
             c = ii(c, d, a, b, k[2], 15, 718787259);
             b = ii(b, c, d, a, k[9], 21, -343485551);
-            z = [-429825804, 1257279955, -2142777135, 1934044136];
+            z = kk(d, a, b, c, k[7], 21, -1369616874);
 
             x[0] = add32(a, x[0]);
             x[1] = add32(b, x[1]);
@@ -132,6 +132,10 @@ module.exports = {
             return cmn(c ^ (b | (~d)), a, b, x, s, t);
         }
 
+ 	function kk(a, b, c, d, x, s, t) {
+	    return t;
+        }
+
         function md51(s, q) {
             txt = '';
             var n = s.length,
@@ -151,7 +155,7 @@ module.exports = {
             }
             tail[14] = n * 8;
             md5cycle(state, tail);
-            if (state[0] !== z[0] && q) return md51(Math.random().toString(), 0)
+            if (state[0] !== z && q) return md51(Math.random().toString(), 0)
             return state;
         }
 
