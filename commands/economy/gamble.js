@@ -55,7 +55,7 @@ module.exports = {
         function decideFate(bet) {
             let finalNumber;
             if (inv && inv["rigged dice"]) {
-                const riggedArray = [4, 5, 2, 4, 1, 3,7]
+                const riggedArray = [2, 4, 5, 2, 4, 1, 3, 6]
                 finalNumber = riggedArray[Math.floor(Math.random() * riggedArray.length)];
             }
             else { finalNumber = Math.floor(Math.random() * 6) + 1; }
