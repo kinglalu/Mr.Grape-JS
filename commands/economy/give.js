@@ -10,8 +10,6 @@ module.exports = {
         let argument = args.join(' ').replace(/,/g, '');
         let donation = parseInt(argument.replace(argument.match(regex), ''));
         let target = message.mentions.members.first();
-	console.log(message.mentions);
-	console.log(message.mentions.users);
         let check = await d.users.get(message.author.id)
         if (!target) {
             message.channel.send("who u givin golden stars to");
