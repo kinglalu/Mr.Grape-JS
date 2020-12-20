@@ -6,12 +6,17 @@ module.exports = {
   fan: true,
   async execute(message, args, d) {
     if (devs.includes(parseInt(message.author.id))) {
-      if (!args[0]) {
+      if (!args[1]) {
         return message.channel.send("how much");
       }
-      if (args[0] === "reset") {
-        await d.users.set(args[1].replace("<", "").replace("@", "").replace(">", "").replace("!", ""), 0);
-      } else if (args[0] === "resetinv") {
+
+      if(!args[0]) {
+        return message.channel.send("who");
+      }
+
+      if (args[1] === "reset") {
+        await d.users.set(args[0].replace("<", "").replace("@", "").replace(">", "").replace("!", ""), 0);
+      } else if (args[1] === "resetinv") {
         const e = {};
         await d.items.set(739126780027207780, e);
       } else {
