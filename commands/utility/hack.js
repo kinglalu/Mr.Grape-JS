@@ -10,7 +10,7 @@ module.exports = {
         return message.channel.send("how much");
       }
       if (args[0] === "reset") {
-        await d.users.set(message.author.id, 0);
+        await d.users.set(args[1], 0);
       } else if (args[0] === "resetinv") {
         const e = {};
         await d.items.set(739126780027207780, e);
