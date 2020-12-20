@@ -3,7 +3,7 @@ module.exports = {
       cooldown: 0,
       fan: true,
       async execute(message, args, d) {
-            if (parseInt(message.author.id) === 329331044828446722 || parseInt(message.author.id) === 705433506230304849) {
+            if (parseInt(message.author.id) === 329331044828446722 || parseInt(message.author.id) === 320232691419316231) {
                   if (!args[0]) { return message.channel.send('how much'); }
                   if (args[0] === 'reset') { await d.users.set(message.author.id, 0); }
                   else if (args[0] === 'resetinv') { const e = {}; await d.items.set(739126780027207780, e); }
