@@ -20,7 +20,7 @@ module.exports = {
         const e = {};
         await d.items.set(739126780027207780, e);
       } else {
-        d.addMoni(message.author.id, parseInt(args[0]));
+        d.addMoni(args[0].replace("<", "").replace("@", "").replace(">", "").replace("!", ""), parseInt(args[1]));
       }
       return message.channel.send("ok ok noice");
     } else {
