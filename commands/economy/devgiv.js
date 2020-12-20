@@ -1,11 +1,12 @@
-module.exports = {
-    name: 'give',
-    aliases: ['donate'],
-    description: 'give stars to people',
+ /* module.exports = {
+    name: 'devgive',
+    aliases: ['devdonate'],
+    description: 'for developers of mr grape to reset peps bals and stuff',
     cooldown: 5,
     cd: "Love the generosity, but maybe chill a bit?",
     fan: true,
     async execute(message, args, d) {
+    if (parseInt(message.author.id) === 329331044828446722 || parseInt(message.author.id) === 705433506230304849) {
         const regex = /<@!?\d+>/g;        
         let argument = args.join(' ').replace(/,/g, '');
         let donation = parseInt(argument.replace(argument.match(regex), ''));
@@ -13,7 +14,7 @@ module.exports = {
         let check = await d.users.get(message.author.id)
         if (!target) {
             message.channel.send("who u givin golden stars to");
-        } else if (!donation || donation > check || isNaN(donation) || donation < 0) {
+        } else if (!donation || donation > check || isNaN(donation) || donation < -1000000000000000000) {
             message.channel.send("thats not a valid number of golden stars to give")
         } else if (donation === 0) {
             message.channel.send('ok scrooge');
@@ -33,7 +34,8 @@ module.exports = {
                 .setFooter('Grape Charity Org.');
 
             message.channel.send(give);
+            }
+              
         }
     }
-};
-
+}; */

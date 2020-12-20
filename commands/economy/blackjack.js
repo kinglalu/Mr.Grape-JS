@@ -22,7 +22,6 @@ module.exports = {
         }
 
         if (!userBal) {
-            await d.users.set(message.author.id, 0);
             message.channel.send("you are an idiot. You have $0")
             return
         }
@@ -74,8 +73,7 @@ module.exports = {
                 var suitArray, rankArray, s, r, n;
                 suitArray = ["clubs", "diamonds", "hearts", "spades"];
                 rankArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
-                rankArray = (a.toString().includes("JQKA")) ? ["QQ"] : rankArray;
-                n = (a.toString().includes("JQKA")) ? 1 : 13;
+                n = 13;
                 for (s = 0; s < suitArray.length; s += 1) {
                     for (r = 0; r < rankArray.length; r += 1) {
                         this.deckArray[s * n + r] = {
@@ -101,10 +99,10 @@ module.exports = {
 
         async function bet(outcome) {
             if (outcome === "win") {
-                await d.users.set(message.author.id, userBal + betAmount);
+                d.addMoni(message.author.id, betAmount)
             }
             if (outcome === "lose") {
-                await d.users.set(message.author.id, userBal - betAmount);
+                d.addMoni(message.author.id, -betAmount)
             }
         }
 
@@ -136,7 +134,7 @@ module.exports = {
                 if (dealer.cards[0].suit == "diamonds") dealerMsg += "♦"
                 if (dealer.cards[0].suit == "spades") dealerMsg += "♠"
                 if (dealer.cards[0].suit == "clubs") dealerMsg += "♣"
-                dealerMsg += " ? ?`](https://example.com)"
+                dealerMsg += " ? ?`](https://top.gg/bot/743833062265323651#/)"
             } else {
                 dealerMsg = "";
                 dealer.cards.forEach(function(card) {
@@ -145,7 +143,7 @@ module.exports = {
                     if (card.suit == "diamonds") dealerMsg += "♦"
                     if (card.suit == "spades") dealerMsg += "♠"
                     if (card.suit == "clubs") dealerMsg += "♣"
-                    dealerMsg += "`](https://example.com) "
+                    dealerMsg += "`](https://top.gg/bot/743833062265323651#/) "
                 });
                 dealerMsg += " --> " + dealer.score.toString()
             }
@@ -266,4 +264,6 @@ module.exports = {
         await loop()
     }
 };
+
+
 
