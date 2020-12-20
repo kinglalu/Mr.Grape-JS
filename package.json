@@ -4,7 +4,7 @@
   "description": "help the man find his orange",
   "main": "app.js",
   "repository": "https://github.com/kinglalu/Mr.Grape",
-  "author": "Kinglalu & DAONE: coding | Goobermeister: graphics/emojis | Originally by Horsey4 and Airplane Bong.",
+  "author": "Kinglalu and DAONE | Goobermeister: graphics/emojis | Originally by Horsey4 and Airplane Bong.",
   "license": "ISC",
   "scripts": {
     "start": "node app.js"
