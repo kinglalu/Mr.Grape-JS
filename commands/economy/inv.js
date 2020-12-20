@@ -5,8 +5,9 @@ module.exports = {
     cooldown: 3,
     cd: "Yo chill ur inventory is fine",
     fan: true,
-    async execute(message, args, d) {
-        let target = message.mentions.members.first();
+    async execute(message, args, d, client) {
+        let target;
+        if(args[0]) target = message.mentions.members.first() || await message.guild.members.fetch(await client.users.fetch(args[0]));
         let person;
         let personName;
         if (!target) {

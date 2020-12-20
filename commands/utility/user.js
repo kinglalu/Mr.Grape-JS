@@ -4,12 +4,15 @@ module.exports = {
     description: 'return basic info about the user',
     cooldown: 2,
     cd: "Stop stalking",
-    execute(message, args, d) {
+    async execute(message, args, d, client) {
         let user;
         let name;
-        let target = message.mentions.members.first();
+        let target;
+
+        if (args[0]) target = await message.mentions.users.first() || await client.users.fetch(args[0]); 
+        
         if (!target) {
-            user = message.guild.member(message.author);
+            user = message.author;
             name = message.author.username;
         } else if (target) {
             user = target
@@ -17,18 +20,22 @@ module.exports = {
         } else {
             return message.channel.send('Use a valid mention!');
         }
+
+        const guild = await message.guild;
+        const member = await guild.members.fetch(user)        
+
         const usersoloEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
-            .setAuthor(user.user.tag, user.user.displayAvatarURL())
+            .setAuthor(`${user.username}#${user.discriminator}`, member.user.displayAvatarURL())
             .addFields({
                 name: 'User ID',
                 value: user.id
             }, {
                 name: 'Joined Server',
-                value: user.joinedAt.toString().split(' ').slice(1, 4).join(' ')
+                value: member.joinedAt
             }, {
                 name: 'Joined Discord',
-                value: user.user.createdAt.toString().split(' ').slice(1, 4).join(' ')
+                value: user.createdAt
             })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
