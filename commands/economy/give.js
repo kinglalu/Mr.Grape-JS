@@ -8,7 +8,7 @@ module.exports = {
     async execute(message, args, d, client) {
         const regex = /<@!?\d+>/g;        
         let argument = args.join(' ').replace(/,/g, '');
-        let donation = args[1];
+        let donation = parseInt(args[1]);
         let target
         if(args[0]) target = message.mentions.members.first() || await message.guild.members.fetch(await client.users.fetch(args[0]));
         let check = await d.users.get(message.author.id)
