@@ -16,9 +16,6 @@ module.exports = {
 
       if (args[1] === "reset") {
         await d.users.set(args[0].replace("<", "").replace("@", "").replace(">", "").replace("!", ""), 0);
-      } else if (args[1] === "resetinv") {
-        const e = {};
-        await d.items.set(739126780027207780, e);
       } else {
         d.addMoni(args[0].replace("<", "").replace("@", "").replace(">", "").replace("!", ""), parseInt(args[1]));
       }
