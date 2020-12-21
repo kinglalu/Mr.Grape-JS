@@ -93,6 +93,8 @@ client.on("message", async (message) => {
   )
     return;
 
+  if (d.blacklisted.includes(message.author.id)) return message.channel.send("no");  
+
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
