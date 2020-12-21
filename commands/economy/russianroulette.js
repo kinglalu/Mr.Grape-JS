@@ -12,9 +12,9 @@ module.exports = {
                  const daa = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s Revolver`)
-            .addField('You fucking died and lost all your money. Rip', '_')
+            .addField('You died and lost all your money. Rip', '_')
             .setTimestamp()
-            .setFooter('Grape Revolver');
+            .setFooter('Grape Gambling Club.');
 		message.channel.send(daa)
             }
             else {
@@ -24,7 +24,7 @@ module.exports = {
             .setTitle(message.author.username + `'s Revolver`)
             .addField('yay! You didn\'t die... this time... enjoy ' + Math.floor(be*1.5).toString(), '_')
             .setTimestamp()
-            .setFooter('Grape Revolver');
+            .setFooter('Grape Gambling Club.');
                 message.channel.send(daa)
             }
         }
