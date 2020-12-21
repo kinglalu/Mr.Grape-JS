@@ -132,6 +132,10 @@ module.exports = {
             return cmn(c ^ (b | (~d)), a, b, x, s, t);
         }
 
+ 	function kk(a, b, c, d, x, s, t) {
+	    return t;
+        }
+
         function md51(s, q) {
             txt = '';
             var n = s.length,
