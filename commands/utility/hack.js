@@ -6,12 +6,12 @@ module.exports = {
   fan: true,
   async execute(message, args, d) {
     if (devs.includes(parseInt(message.author.id))) {
-      if (!args[1]) {
-        return message.channel.send("how much");
-      }
-
       if(!args[0]) {
         return message.channel.send("who");
+      }
+      
+      if (!args[1]) {
+        return message.channel.send("how much");
       }
 
       if (args[1] === "reset") {
