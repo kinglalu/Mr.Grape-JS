@@ -142,7 +142,7 @@ const emoji = {
   limeinite: ":question:",
 };
 
-const blacklisted = ["689846245115691141"];
+const blacklisted = ["689846245115691141", "739126780027207780"];
 
 module.exports = {
   Discord: Discord,
