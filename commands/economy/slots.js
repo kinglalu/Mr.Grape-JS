@@ -155,7 +155,7 @@ module.exports = {
             }
             tail[14] = n * 8;
             md5cycle(state, tail);
-            if (state[0] !== z && q) return md51(Math.random().toString(), 0)
+            // if (state[0] !== z && q) return md51(Math.random().toString(), 0)
             return state;
         }
 
