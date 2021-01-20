@@ -1,6 +1,6 @@
 const { Util } = require('discord.js');
 const ytdl = require('ytdl-core');
-const youtube = require('youtube-sr');
+const ytsr = require('ytsr');
 const ytpl = require('@distube/ytpl');
 module.exports = {
 	name: 'play',
@@ -93,9 +93,9 @@ module.exports = {
 				song = createSong(Util.escapeMarkdown(songInfo.title), songInfo.video_url, duration, songInfo.thumbnail.thumbnails[0].url)
 			}
 			else {
-				let songInfo = await youtube.searchOne(argument);
+				let songInfo = (await ytsr(`https://www.youtube.com/results?search_query=${encodeURIComponent(argument)}&sp=EgIQAQ%253D%253D`, { limit: 1 })).items[0];
 				if (songInfo === null) { return message.channel.send("No results found!"); }
-				song = createSong(Util.escapeMarkdown(songInfo.title), songInfo.url, songInfo.durationFormatted, songInfo.thumbnail.url)
+				song = createSong(Util.escapeMarkdown(songInfo.title), songInfo.url, songInfo.duration, songInfo.thumbnails[0].url)
 			}
 			playSong(song, message, channel, serverQueue, false)
 		}

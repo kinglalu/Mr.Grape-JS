@@ -17,10 +17,9 @@
     "discord.js": "^12.5.1",
     "ffmpeg-static": "^4.2.7",
     "filehound": "^1.17.4",
-    "fs": "0.0.1-security",
     "keyv": "^4.0.3",
     "r2": "^2.0.1",
-    "youtube-sr": "^2.0.4",
-    "ytdl-core": "^4.1.4"
+    "ytsr": "3.2.1",
+    "ytdl-core": "^4.4.2"
   }
 }
