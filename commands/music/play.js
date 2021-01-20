@@ -1,7 +1,7 @@
 const { Util } = require('discord.js');
 const ytdl = require('ytdl-core');
 const ytsr = require('ytsr');
-const ytpl = require('@distube/ytpl');
+const ytpl = require('ytpl');
 module.exports = {
 	name: 'play',
 	description: 'play music, either do play <search> or play <youtube_url>',
@@ -57,23 +57,21 @@ module.exports = {
 		}
 
 		if (ytRegex.test(argument) && plRegex.test(argument)) {
-			message.channel.send("Be patient, its loading").then(async message => {
 				if (!serverQueue) { message.client.queue.set(message.guild.id, queueConstruct); }
 				try {
 					const playlist = await ytpl(argument);
 					for (video in playlist.items) {
 						let plSong = playlist.items[video];
-						let song = createSong(Util.escapeMarkdown(plSong.title), plSong.url, plSong.duration, plSong.thumbnail)
+						let song = createSong(Util.escapeMarkdown(plSong.title), plSong.shortUrl, plSong.duration, plSong.thumbnails[0].url)
 						playSong(song, message, channel, serverQueue, true)
 					}
 					const playlistInfo = {
 						title: playlist.title.charAt(0).toUpperCase() + playlist.title.slice(1),
 						url: playlist.url,
-						thumbnail: playlist.items[0].thumbnail,
+						thumbnail: playlist.thumbnails[0].url,
 						duration: 'It\'s a playlist bro'
 					}
 					message.channel.send(announce(playlistInfo, false, true));
-					return message.delete();
 				}
 				catch (e) {
 					message.channel.send("Invalid playlist url, or technical difficulties");
@@ -81,7 +79,7 @@ module.exports = {
 					console.log(e);
 					return message.delete();
 				}
-			})
+		
 		}
 		else {
 			let song;
