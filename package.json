@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
-    "@distube/ytpl": "1.0.2",
     "@keyv/postgres": "^1.0.16",
     "@ksoft/api": "3.1.9",
     "discord.js": "^12.5.1",
@@ -19,7 +18,8 @@
     "filehound": "^1.17.4",
     "keyv": "^4.0.3",
     "r2": "^2.0.1",
-    "ytsr": "3.2.1",
-    "ytdl-core": "^4.4.2"
+    "ytdl-core": "^4.4.4",
+    "ytpl": "^2.0.4",
+    "ytsr": "3.2.1"
   }
 }
