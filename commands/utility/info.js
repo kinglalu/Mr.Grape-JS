@@ -32,7 +32,7 @@ module.exports = {
                 value: `${d.config.todo.join("\n")}`
             }, {
                 name: 'Credits:',
-                value: 'Kinglalu and DAONE | Goobermeister: graphics/emojis | Originally by Horsey4 and Airplane Bong.'
+                value: 'Kinglalu and DAONE | Goobermeister: graphics/emojis | Mikelime: Bugfixes/minor improvements |Originally by Horsey4 and Airplane Bong.'
             }, {
                 name: '# of Servers Mr.Grape is in:',
                 value: `${message.client.guilds.cache.size}`
