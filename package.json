@@ -5,7 +5,7 @@
   "main": "app.js",
   "repository": "https://github.com/kinglalu/Mr.Grape",
   "author": "Kinglalu and DAONE | Goobermeister: graphics/emojis | Originally by Horsey4 and Airplane Bong.",
-  "license": "ISC",
+  "license": "GNU GPLv3",
   "scripts": {
     "start": "node app.js"
   },
