@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
     name: 'collect',
     aliases: ['col'],
     description: 'collect the stars from your starmill!',
@@ -33,3 +33,4 @@ module.exports = {
 
     }
 };
+*/
