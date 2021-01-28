@@ -28,9 +28,6 @@ module.exports = {
                 name: 'shovel',
                 value: 'gives you more stars for digging job\ncost: 100:star:s'
             }, {
-                name: 'starmill',
-                value: `generates you 1 star every 10 minutes, use ${d.prefix}collect to collect it\ncost: 400:star:s\n__`
-            }, {
                 name: 'Mine Shop',
                 value: `do ${d.prefix}ore for more info`
             },)
