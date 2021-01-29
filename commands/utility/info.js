@@ -35,7 +35,7 @@ module.exports = {
                 value: 'Removed starmills for being too OP, may come back in future nerfed.'
             }, {
                 name: 'Credits:',
-                value: 'Kinglalu and DAONE | Goobermeister: graphics/emojis | Mikelime: Bugfixes/minor improvements | Originally by Horsey4 and Airplane Bong.'
+                value: 'Kinglalu, DAONE, and LinuxTerm | Goobermeister: graphics/emojis | MikeLime: Bugfixes/minor improvements | Originally by Horsey4 and Airplane Bong.'
             }, {
                 name: '# of Servers Mr.Grape is in:',
                 value: `${message.client.guilds.cache.size}`
