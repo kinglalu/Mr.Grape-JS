@@ -30,6 +30,9 @@ module.exports = {
             }, {
                 name: 'To-do list:',
                 value: `${d.config.todo.join("\n")}`
+                }, {
+                name: 'Recent Update:',
+                value: 'Removed starmills for being too OP, may come back in future nerfed.'
             }, {
                 name: 'Credits:',
                 value: 'Kinglalu and DAONE | Goobermeister: graphics/emojis | Mikelime: Bugfixes/minor improvements | Originally by Horsey4 and Airplane Bong.'
