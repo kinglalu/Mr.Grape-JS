@@ -36,7 +36,7 @@ module.exports = {
             .then(async message => {
                 message = message.first()
                 if (message.content.toLowerCase() === word) {
-                    let e = Math.floor(Math.random() * 10) + 1;
+                    let e = Math.floor(Math.random() * 3) + 1;
                     let inv = await d.items.get(message.author.id);
                     if (inv.starmagnet) {
                         e = Math.round(e * (1 + (0.02 * inv.starmagnet)));
