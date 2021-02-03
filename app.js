@@ -100,6 +100,8 @@ client.on("message", async (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
+  console.log(commandName);
+
   const command =
     client.commands.get(commandName) ||
     client.commands.find(
