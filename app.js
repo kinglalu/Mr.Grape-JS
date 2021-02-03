@@ -69,20 +69,20 @@ client.on("guildDelete", async (guild) => {
 });
 
 client.on("message", async (message) => {
-  let prefix;
-  let guild = await guilds.get(message.guild.id);
-  if (!guild || !guild.prefix) {
-    prefix = config.prefix;
-  } else if (config.prefix === guild.prefix) {
-    prefix = config.prefix;
-    delete guild.prefix;
-    if (Object.keys(guild).length === 0) await guilds.delete(message.guild.id);
-    else {
-      await guilds.set(message.guild.id, guild);
-    }
-  } else {
-    prefix = guild.prefix;
-  }
+  let prefix = "+";
+  // let guild = await guilds.get(message.guild.id);
+  // if (!guild || !guild.prefix) {
+  //   prefix = config.prefix;
+  // } else if (config.prefix === guild.prefix) {
+  //   prefix = config.prefix;
+  //   delete guild.prefix;
+  //   if (Object.keys(guild).length === 0) await guilds.delete(message.guild.id);
+  //   else {
+  //     await guilds.set(message.guild.id, guild);
+  //   }
+  // } else {
+  //   prefix = guild.prefix;
+  // }
 
   d.prefix = prefix;
 
