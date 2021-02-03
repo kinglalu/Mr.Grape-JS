@@ -86,8 +86,6 @@ client.on("message", async (message) => {
 
   d.prefix = prefix;
 
-  if(message.content == "sex") message.channel.send("sex");
-
   if (
     !message.content.startsWith(prefix) ||
     message.author.bot ||
