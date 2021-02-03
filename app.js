@@ -68,8 +68,7 @@ client.on("guildDelete", async (guild) => {
   await guilds.delete(guild.id);
 });
 
-client.on("message", async (message) => {
-  console.log("sex");
+client.on("message", async (message) => {  
   let prefix = "+";
   // let guild = await guilds.get(message.guild.id);
   // if (!guild || !guild.prefix) {
@@ -91,10 +90,12 @@ client.on("message", async (message) => {
     !message.content.startsWith(prefix) ||
     message.author.bot ||
     message.channel.type === "dm"
-  )
+  ) {
+    console.log("sex");
     return;
-
-  if (d.blacklisted.includes(message.author.id)) return message.channel.send("no");  
+  }
+  if (d.blacklisted.includes(message.author.id))
+    return message.channel.send("no");
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
