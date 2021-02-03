@@ -69,6 +69,7 @@ client.on("guildDelete", async (guild) => {
 });
 
 client.on("message", async (message) => {
+  console.log("sex");
   let prefix = "+";
   // let guild = await guilds.get(message.guild.id);
   // if (!guild || !guild.prefix) {
