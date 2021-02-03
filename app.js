@@ -90,10 +90,10 @@ client.on("message", async (message) => {
     !message.content.startsWith(prefix) ||
     message.author.bot ||
     message.channel.type === "dm"
-  ) {
-    console.log("sex");
+  ) {    
     return;
-  }
+  } else console.log("sex");
+  
   if (d.blacklisted.includes(message.author.id))
     return message.channel.send("no");
 
