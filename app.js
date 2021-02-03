@@ -86,14 +86,16 @@ client.on("message", async (message) => {
 
   d.prefix = prefix;
 
+  if(message.content == "sex") message.channel.send("sex");
+
   if (
     !message.content.startsWith(prefix) ||
     message.author.bot ||
     message.channel.type === "dm"
   ) {    
     return;
-  } else console.log("sex");
-  
+  }
+
   if (d.blacklisted.includes(message.author.id))
     return message.channel.send("no");
 
