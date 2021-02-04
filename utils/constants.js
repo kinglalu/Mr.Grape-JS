@@ -3,9 +3,9 @@ const Discord = require("discord.js");
 const config = require("../config.json");
 const Keyv = require("keyv");
 
-const users = new Keyv(process.env.DATABASE_URL_TEMP, { namespace: "users" });
-const items = new Keyv(process.env.DATABASE_URL_TEMP, { namespace: "items" });
-const guilds = new Keyv(process.env.DATABASE_URL_TEMP, { namespace: "guilds" });
+const users = new Keyv(process.env.DATABASE_URL, { namespace: "users" });
+const items = new Keyv(process.env.DATABASE_URL, { namespace: "items" });
+const guilds = new Keyv(process.env.DATABASE_URL, { namespace: "guilds" });
 
 const addMoni = async function (who, add) {
   let current = await users.get(who);
