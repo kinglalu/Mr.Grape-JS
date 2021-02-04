@@ -5,9 +5,9 @@ const Keyv = require("keyv");
 const d = require("./utils/constants");
 
 const client = new Discord.Client();
-const users = new Keyv(process.env.DATABASE_URL, { namespace: "users" });
-const items = new Keyv(process.env.DATABASE_URL, { namespace: "items" });
-const guilds = new Keyv(process.env.DATABASE_URL, { namespace: "guilds" });
+const users = new Keyv(process.env.DATABASE, { namespace: "users" });
+const items = new Keyv(process.env.DATABASE, { namespace: "items" });
+const guilds = new Keyv(process.env.DATABASE, { namespace: "guilds" });
 const cooldowns = new Discord.Collection();
 const twitchURL = "https://twitch.tv/MrGrapeTwitch";
 
