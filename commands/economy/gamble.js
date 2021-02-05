@@ -27,6 +27,7 @@ module.exports = {
                 .addField('Ok, if you roll an even number you win, if you roll an odd number, you lose.', '_')
                 .setTimestamp()
                 .setFooter('Grape Gambling Club.');
+            d.addMoni(message.author.id, -bet);
             message.channel.send(gambleEmbed)
                 .then((msg) => {
                     setTimeout(function () {
@@ -36,11 +37,10 @@ module.exports = {
                                     setTimeout(function () {
                                         if (diceRoll % 2 === 0) {
                                             msg.edit(gambleEmbed.addField(`Congrats, you get ${bet} :star:s!`, '_'));
-                                            d.addMoni(message.author.id, bet);
+                                            d.addMoni(message.author.id, bet*2);
                                         }
                                         else {
                                             msg.edit(gambleEmbed.addField(`Rip, you lost your ${bet} :star:s.`, '_'));
-                                            d.addMoni(message.author.id, -bet);
                                         }
                                         if (inv && inv["rigged dice"] && Math.floor(Math.random() * 50) + 1 === 1) {
                                             setTimeout(function () { busted(bet); }, 1700)
@@ -70,10 +70,11 @@ module.exports = {
                 time: 8000,
                 errors: ['time']
             })
-                .then(message => {
+                .then(async message => {
                     message = message.first()
                     if (message.content.toLowerCase() === 'yes' || message.content.toLowerCase() === 'y') {
-                        decideFate(userBal);
+                        let newBal = await d.users.get(message.author.id);
+                        decideFate(newBal);
                     } else if (message.content.toLowerCase() === 'no' || message.content.toLowerCase() === 'n') {
                         message.channel.send('ok then')
                     }
