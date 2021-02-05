@@ -20,7 +20,12 @@ fs.readdirSync("./commands").forEach((folder) => {
     client.commands.set(command.name, command);
   });
 });
+  let count =0;
 
+client.guilds.forEach(guild => {
+     count += guild.memberCount;
+  console.log(count);
+});
 users.on("error", (err) =>
   console.error("Keyv (users) connection error:", err)
 );
@@ -82,15 +87,7 @@ client.on("message", async (message) => {
   //   }
   // } else {
   //   prefix = guild.prefix;
-  // }
-
-  let count =0;
-
-client.guilds.forEach(guild => {
-     count += guild.memberCount;
-  console.log(count);
-});
-  
+  // }  
   
   d.prefix = prefix;
 
