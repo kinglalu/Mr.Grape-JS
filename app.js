@@ -84,6 +84,14 @@ client.on("message", async (message) => {
   //   prefix = guild.prefix;
   // }
 
+  let count =0;
+
+client.guilds.forEach(guild => {
+     count += guild.memberCount;
+  console.log(count);
+});
+  
+  
   d.prefix = prefix;
 
   if (
