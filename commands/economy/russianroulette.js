@@ -1,4 +1,4 @@
- /* module.exports = {
+  module.exports = {
     name: "russianroulette",
     aliases: ['rr'],
     description: '1/6 chance you lose all your money. 5/6 chance you multiply your bet by 2x.',
@@ -51,7 +51,7 @@
                     message.channel.send('ig not')
                 });
         }
-        else if (!isNaN(parseInt(args[0])) && parseInt(args[0]) > 1 && ((parseInt(args[0]) <= userBal+l && parseInt(args[0]) %17==0) || parseInt(args[0]) <= userBal)) { decideFate(parseInt(args[0])) }
+        else if (!isNaN(parseInt(args[0])) && parseInt(args[0]) > 1 && ((parseInt(args[0]) <= userBal+l) || parseInt(args[0]) <= userBal)) { decideFate(parseInt(args[0])) }
         else { message.channel.send('Bruh that\'s not a valid number of stars to bet') }
     }
-}; */
+}; 
