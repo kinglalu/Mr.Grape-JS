@@ -57,6 +57,16 @@ client.on("guildCreate", (guild) => {
   });
 });
 
+let count =0;
+
+client.guilds.forEach(guild => {
+     count += guild.memberCount;
+  console.log(count);
+});
+
+
+
+
 client.on("guildDelete", async (guild) => {
   client.user.setPresence({
     activity: {
