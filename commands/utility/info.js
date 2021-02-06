@@ -32,7 +32,7 @@ module.exports = {
                 value: `${d.config.todo.join("\n")}`
                 }, {
                 name: 'Recent Update:',
-                value: 'Removed starmills for being too OP, may come back in future nerfed.'
+                value: 'Database corruption lead to data wipe, actively working on solution to fix data, +meme command added.'
             }, {
                 name: 'Credits:',
                 value: 'Kinglalu, DAONE, and LinuxTerm | Goobermeister: graphics/emojis | MikeLime: Bugfixes/minor improvements | Originally by Horsey4 and Airplane Bong.'
