@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const url = 'https://www.reddit.com/r/meme/hot/.json?limit=100'
 module.exports = {
     name: 'meme',
+    aliases: ['memes'],
     description: 'sends meme',
     cooldown: 1.5,
     cd: "i cant post memes that fast man!",
