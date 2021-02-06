@@ -30,7 +30,7 @@ module.exports = {
                     message.channel.send(textembed)
                 }
 
-                var image = index.preview.images[0].source.url
+                var image = index.preview.images[0].source.url.replace('&amp;', '&')
                 var title = index.title
                 var link = 'https://reddit.com' + index.permalink
                 var subRedditName = index.subreddit_name_prefixed
