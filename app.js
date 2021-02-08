@@ -85,7 +85,12 @@ client.on("message", async (message) => {
   // }  
   
   d.prefix = prefix;
-
+  
+    
+  if (message.content === `<@!${client.user.id}>`) {
+   message.channel.send(`My prefix is ${d.prefix}\nType ${d.prefix}help to get started!`); 
+  }
+  
   if (
     !message.content.startsWith(prefix) ||
     message.author.bot ||
@@ -94,8 +99,7 @@ client.on("message", async (message) => {
     return;
   }
 
-  if (d.blacklisted.includes(message.author.id))
-    return message.channel.send("no");
+
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
