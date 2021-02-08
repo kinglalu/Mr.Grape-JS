@@ -83,7 +83,11 @@ client.on("message", async (message) => {
   // } else {
   //   prefix = guild.prefix;
   // }  
-  
+  if (
+     !message.content.startsWith(prefix) ||
+     message.author.bot ||
+  ){ return;
+    }    
   d.prefix = prefix;
      if (d.blacklisted.includes(message.author.id)) {
     return message.channel.send("no");
