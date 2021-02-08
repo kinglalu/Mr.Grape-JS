@@ -85,12 +85,12 @@ client.on("message", async (message) => {
   // }  
   
   d.prefix = prefix;
-  
+     if (d.blacklisted.includes(message.author.id))
+    return message.channel.send("no");
     
   if (message.content === `<@!${client.user.id}>`) {
    message.channel.send(`My prefix is ${d.prefix}\nType ${d.prefix}help to get started!`); 
-  }
-  
+  }  
   if (
     !message.content.startsWith(prefix) ||
     message.author.bot ||
