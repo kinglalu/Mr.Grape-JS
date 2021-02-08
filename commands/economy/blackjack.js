@@ -28,6 +28,8 @@ module.exports = {
 
         // ** BEGIN Javascript blackjack game from echohatch1. Modified for Grape.
 
+        d.addMoni(message.author.id, -betAmount)
+
         var numCardsPulled = 0;
         var gameOver = false;
 
@@ -99,10 +101,7 @@ module.exports = {
 
         async function bet(outcome) {
             if (outcome === "win") {
-                d.addMoni(message.author.id, betAmount)
-            }
-            if (outcome === "lose") {
-                d.addMoni(message.author.id, -betAmount)
+                d.addMoni(message.author.id, (betAmount*2))
             }
         }
 
@@ -264,6 +263,3 @@ module.exports = {
         await loop()
     }
 };
-
-
-
