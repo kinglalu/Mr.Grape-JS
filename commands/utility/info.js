@@ -35,7 +35,7 @@ module.exports = {
                 value: 'Database corruption lead to data wipe, actively working on solution to fix data, +meme command added.'
             }, {
                 name: 'Credits:',
-                value: 'Kinglalu, DAONE, and LinuxTerm | Goobermeister: graphics/emojis | MikeLime: Bugfixes/minor improvements | Originally by Horsey4 and Airplane Bong.'
+                value: 'Kinglalu, DAONE, and LinuxTerm | Goobermeister: graphics/emojis | MikeLime and CompactCow: Bugfixes/minor improvements | Originally by Horsey4 and Airplane Bong.'
             }, {
                 name: '# of Servers Mr.Grape is in:',
                 value: `${message.client.guilds.cache.size}`
