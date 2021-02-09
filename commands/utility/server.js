@@ -10,8 +10,11 @@ module.exports = {
 			.setAuthor(message.guild.name, message.guild.iconURL())
 			.addFields(
 				{ name: 'Server ID', value: message.guild.id },
-				{ name: 'Members', value: message.guild.memberCount },
+				{ name: 'Owner', value: message.guild.owner },
 				{ name: 'Created', value: message.guild.createdAt.toString().split(' ').slice(1, 4).join(' ') }
+				{ name: 'Members', value: message.guild.memberCount },
+				{ name: 'Emoji Count', value: message.guild.emojis.cache.size },
+				{ name: 'Region', value: message.guild.region },
 			)
 			.setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 			.setTimestamp()
