@@ -11,10 +11,10 @@ module.exports = {
 			.addFields(
 				{ name: 'Server ID', value: message.guild.id },
 				{ name: 'Owner', value: message.guild.owner },
-				{ name: 'Created', value: message.guild.createdAt.toString().split(' ').slice(1, 4).join(' ') }
+				{ name: 'Created', value: message.guild.createdAt.toString().split(' ').slice(1, 4).join(' ') },
 				{ name: 'Members', value: message.guild.memberCount },
 				{ name: 'Emoji Count', value: message.guild.emojis.cache.size },
-				{ name: 'Region', value: message.guild.region },
+				{ name: 'Region', value: message.guild.region }
 			)
 			.setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 			.setTimestamp()
