@@ -39,6 +39,9 @@ module.exports = {
             }, {
                 name: '# of Servers Mr.Grape is in:',
                 value: `${message.client.guilds.cache.size}`
+            }, {
+                name: 'Total Users with Mr Grape:',
+                value: `${message.client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}}`
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
