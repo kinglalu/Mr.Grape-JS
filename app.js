@@ -155,7 +155,7 @@ client.on("message", async (message) => {
   setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   try {
-    command.execute(message, args, d, client);
+    command.execute(message, args, d);
   } catch (error) {
     console.error(error);
     message.channel.send("made an oopsie tryna do that command");
