@@ -1,4 +1,4 @@
-module.exports = {
+/* module.exports = {
     name: "suggestion",
     aliases: ['sug', 'suggest'],
     description: 'Suggest any ideas for Mr Grape! Any troll submits will be deleted and may face blacklist.',
@@ -25,3 +25,4 @@ module.exports = {
         message.channel.send("**Suggestion has been sent!**")
     }
 };
+*/
