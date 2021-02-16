@@ -4,13 +4,13 @@ module.exports = {
     description: 'let users report bugs',
     cooldown: 60,
     cd: 'damn we really have that many bugs?',
-     async execute(message, args, d, client){
+     async execute(message, args, d){
         
-        const channel = client.channels.cache.get('811284407134322700')
+        const channel = message.client.channels.cache.get('811284407134322700')
         
         const query = args.join(' ');
-        if(!query) return message.reply('Please specify the bug dude')
-        
+         
+        if (!query) return message.reply('Please specify the bug dude')
         
         const reportEmbed = new d.Discord.MessageEmbed()
         .setColor('#dd2de0')
