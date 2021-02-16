@@ -1,4 +1,4 @@
-module.exports = {
+/* module.exports = {
     name: "bugreport",
     aliases: ['bug', 'reportbug'],
     description: 'Report an bugs for Mr Grape! Any troll submits will be deleted and may face blacklist.',
@@ -25,3 +25,4 @@ module.exports = {
         message.channel.send("**Bug report has been sent!**")
     }
 };
+*/
