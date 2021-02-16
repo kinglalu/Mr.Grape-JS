@@ -24,3 +24,4 @@ module.exports = {
         channel.send(suggestEmbed);
         message.channel.send("**Suggestion has been sent!**")
     }
+};
