@@ -1,7 +1,7 @@
 module.exports = {
     name: "bugreport",
     aliases: ['bug', 'reportbug'],
-    description: 'let users report bugs',
+    description: 'Report an bugs for Mr Grape! Any troll submits will be deleted and may face blacklist.',
     cooldown: 120,
     cd: 'damn we really have that many bugs?',
      async execute(message, args, d){
