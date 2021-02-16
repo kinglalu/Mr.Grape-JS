@@ -6,7 +6,7 @@ module.exports = {
     cd: 'we appriciate the ideas, but wait a bit dude',
      async execute(message, args, d){
         
-        const channel = message.client.channels.cache.get('811284407134322700')
+        const channel = message.client.channels.cache.get('758005843127173221')
         
         const query = args.join(' ');
          
