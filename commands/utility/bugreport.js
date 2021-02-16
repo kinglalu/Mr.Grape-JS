@@ -12,7 +12,7 @@ module.exports = {
         if(!query) return message.reply('Please specify the bug dude')
         
         
-        const reportEmbed = new Discord.MessageEmbed()
+        const reportEmbed = new d.Discord.MessageEmbed()
         .setColor('#dd2de0')
         .setTitle('New Bug!')
         .addField('Author', message.author.toString(), true)
