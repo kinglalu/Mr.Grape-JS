@@ -4,7 +4,7 @@ module.exports = {
     description: 'let users report bugs',
     cooldown: 2,
     cd: 'damn we really have that many bugs?',
-     async execute(message, args, d){
+     async execute(message, args, d, client){
         
         const channel = client.guilds.get('743208211460653177').channels.get('811284407134322700')
         
