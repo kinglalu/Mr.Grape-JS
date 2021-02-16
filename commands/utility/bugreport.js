@@ -4,7 +4,7 @@ module.exports = {
     description: 'let users report bugs',
     cooldown: 2,
     cd: 'damn we really have that many bugs?',
-    execute(message, args, d){
+     async execute(message, args, d){
         
         const channel = client.channels.cache.get('811284407134322700')
 
