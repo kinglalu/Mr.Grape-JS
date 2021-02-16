@@ -6,8 +6,7 @@ module.exports = {
     cd: 'damn we really have that many bugs?',
      async execute(message, args, d){
         
-        const channel = client.channels.cache.get('811284407134322700')
-
+        const channel = client.guilds.get('743208211460653177').channels.get('811284407134322700')
         
         const query = args.join(' ');
         if(!query) return message.reply('Please specify the bug dude')
