@@ -25,4 +25,4 @@ module.exports = {
         channel.send(reportEmbed);
         message.channel.send("**Bug report has been sent!**")
     }
-}
+};
