@@ -32,7 +32,7 @@ module.exports = {
                         )
                         .setTimestamp()
                         .setFooter('Grape Marketplaces')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .addField('⠀', 'Sponsered by Nodeclusters');
                     message.channel.send(saleAllTools);
                     await d.items.set(message.author.id, inv);
                 }
@@ -71,7 +71,7 @@ module.exports = {
                     )
                     .setTimestamp()
                     .setFooter('Grape Marketplaces')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
 
                 message.channel.send(saleAll);
             }
@@ -95,7 +95,7 @@ module.exports = {
                     )
                     .setTimestamp()
                     .setFooter('Grape Marketplaces')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
 
                 message.channel.send(sale);
             }
@@ -202,7 +202,7 @@ module.exports = {
                     )
                     .setTimestamp()
                     .setFooter('Grape Marketplaces but for ores')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
 
                 message.channel.send(sale);
             }
@@ -226,7 +226,7 @@ module.exports = {
                     )
                     .setTimestamp()
                     .setFooter('Grape Marketplaces')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
 
                 message.channel.send(sale);
             }

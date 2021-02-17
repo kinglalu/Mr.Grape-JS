@@ -25,7 +25,7 @@ module.exports = {
             .setColor('#dd2de0')
             .setTitle(title)
             .setDescription(number)
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(volumeEmbed);
     }
 };

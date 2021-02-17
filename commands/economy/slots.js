@@ -529,8 +529,8 @@ module.exports = {
                 .setTitle(message.author.username + `'s slot machine` + '\n___')
                 .addField('Fruitz', fruits)
                 .addField(title, msg)
-                .setFooter('Grape Gambling Club.')
-                .addField('_', 'Sponsered by nodeclusters');
+                .setFooter('Grape Gambling Club')
+                .addField('⠀', 'Sponsered by Nodeclusters');
             if (edit) {
                 edit.edit(gambleEmbed)
             } else {

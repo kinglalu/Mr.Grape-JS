@@ -13,7 +13,7 @@ module.exports = {
             .setImage(pic.hdurl)
             .setTimestamp()
             .setFooter('Grape Space and Astronomy')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(nasa);
     }
 };

@@ -28,8 +28,8 @@ module.exports = {
                     .setDescription(`Stealing from: ${target.displayName}`)
                     .addField('Success', `Heist Successful! You got ${earned} :star:s!`)
                     .setTimestamp()
-                    .setFooter('Shady Grape Org')
-                    .addField('_', 'Sponsered by nodeclusters')
+                    .setFooter('Shady Grape Org.')
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 message.channel.send(nice);
             }
             else {
@@ -41,8 +41,8 @@ module.exports = {
                     .setDescription(`Stealing from: ${target.displayName}`)
                     .addField('Fail', `rip, despite ur effort, you got caught and lost ${loss} :star:s.`)
                     .setTimestamp()
-                    .setFooter('Shady Grape Org')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .setFooter('Shady Grape Org.')
+                    .addField('⠀', 'Sponsered by Nodeclusters');
 
                 message.channel.send(rip);
             }
@@ -56,8 +56,8 @@ module.exports = {
                 .setDescription(`Stealing from: ${target.displayName}`)
                 .addField('Task', 'Pick a number from 1 - 3, if you pick the right number the safe will be cracked, if not then rip\nYou have 7 seconds, go!')
                 .setTimestamp()
-                .setFooter('Shady Grape Org')
-                .addField('_', 'Sponsered by nodeclusters');
+                .setFooter('Shady Grape Org.')
+                .addField('⠀', 'Sponsered by Nodeclusters');
             message.channel.send(go);
             message.channel.awaitMessages(filter, {
                 max: 1,
@@ -77,8 +77,8 @@ module.exports = {
                             .setDescription(`Stealing from: ${target.displayName}`)
                             .addField('Fail', `you guessed wrong rip, you lost ${loss} :star:s`)
                             .setTimestamp()
-                            .setFooter('Shady Grape Org')
-                            .addField('_', 'Sponsered by nodeclusters');
+                            .setFooter('Shady Grape Org.')
+                            .addField('⠀', 'Sponsered by Nodeclusters');
 
                         message.channel.send(rip);
                     }
@@ -92,8 +92,8 @@ module.exports = {
                         .setDescription(`Stealing from: ${target.displayName}`)
                         .addField('Fail', `Bruh ur trash, you couldn't crack it in time, also you lost ${lossTime} :star:s`)
                         .setTimestamp()
-                        .setFooter('Shady Grape Org')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .setFooter('Shady Grape Org.')
+                        .addField('⠀', 'Sponsered by Nodeclusters');
 
                     message.channel.send(rip);
                 });

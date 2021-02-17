@@ -16,7 +16,7 @@ module.exports = {
             })
             .setTimestamp()
             .setFooter('Grape Jokes')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(jk);
     }
 };

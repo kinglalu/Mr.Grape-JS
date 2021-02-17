@@ -34,7 +34,7 @@ module.exports = {
                     })
                     .setTimestamp()
                     .setFooter('Grape Databases')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 message.channel.send(helpEmbed);
                 return;
             }
@@ -70,7 +70,7 @@ module.exports = {
                     })
                     .setTimestamp()
                     .setFooter('Grape Databases')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 message.channel.send(helpCommandEmbed);
             } else if (command) {
                 if (!command.aliases) {
@@ -90,7 +90,7 @@ module.exports = {
                     })
                     .setTimestamp()
                     .setFooter('Grape Databases')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 message.channel.send(helpCommandEmbed);
             } else {
                 message.channel.send('That category or command aint here')

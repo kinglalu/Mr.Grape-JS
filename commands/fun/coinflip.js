@@ -11,7 +11,7 @@ module.exports = {
             .addField('It landed on', `${Math.round(Math.random()) ? 'Heads!' : 'Tails!'}`)
             .setTimestamp()
             .setFooter('Grape Coin Flipper Club')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(coin);
     }
 };

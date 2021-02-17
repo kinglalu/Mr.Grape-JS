@@ -53,7 +53,7 @@ module.exports = {
 				.addField(e, '_')
 				.setTimestamp()
 				.setFooter('DJ Grape')
-				.addField('_', 'Sponsered by nodeclusters');
+				.addField('⠀', 'Sponsered by Nodeclusters');
 			return announceEmbed;
 		}
 

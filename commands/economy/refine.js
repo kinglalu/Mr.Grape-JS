@@ -39,7 +39,7 @@ module.exports = {
                 .addField('Refined', refinementRecipt)
                 .setTimestamp()
                 .setFooter('Grape Refinery')
-                .addField('_', 'Sponsered by nodeclusters');
+                .addField('⠀', 'Sponsered by Nodeclusters');
             return message.channel.send(refine);
         }
         else {
@@ -52,7 +52,7 @@ module.exports = {
                         .addField('Cannot Refine', 'That ore doesn\'t exist bruh')
                         .setTimestamp()
                         .setFooter('Grape Refinery')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .addField('⠀', 'Sponsered by Nodeclusters');
                     return message.channel.send(e);
                 }
                 if (!inv.ore[item]) {
@@ -62,7 +62,7 @@ module.exports = {
                         .addField('Cannot Refine', 'You don\'t have that ore, git good.')
                         .setTimestamp()
                         .setFooter('Grape Refinery')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .addField('⠀', 'Sponsered by Nodeclusters');
                     return message.channel.send(e);
                 }
                 function getCostAll() {
@@ -88,7 +88,7 @@ module.exports = {
                     .addField('Refined', oreRefine)
                     .setTimestamp()
                     .setFooter('Grape Refinery')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 return message.channel.send(r);
             }
             else {
@@ -104,7 +104,7 @@ module.exports = {
                         .addField('Cannot Refine', 'That ore doesn\'t exist bruh')
                         .setTimestamp()
                         .setFooter('Grape Refinery')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .addField('⠀', 'Sponsered by Nodeclusters');
                     return message.channel.send(e);
                 }
                 if (!inv.ore[item]) {
@@ -139,7 +139,7 @@ module.exports = {
                     .addField('Refined', oreRefiner)
                     .setTimestamp()
                     .setFooter('Grape Refinery')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 return message.channel.send(r);
             }
         }

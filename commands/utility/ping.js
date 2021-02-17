@@ -16,7 +16,7 @@ module.exports = {
 			                .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
 					.setTimestamp()
 					.setFooter('Grape Databases')
-					.addField('_', 'Sponsered by nodeclusters');
+					.addField('⠀', 'Sponsered by Nodeclusters');
 				m.delete();
 				m.channel.send(pingsoloEmbed);
 		})

@@ -14,8 +14,8 @@ module.exports = {
                     .setTitle(message.author.username + `'s Revolver`)
                     .addField('You died and lost all your money. Rip', '_')
                     .setTimestamp()
-                    .setFooter('Grape Gambling Club.')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .setFooter('Grape Gambling Club')
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 message.channel.send(daa)
             } else {
                 d.addMoni(message.author.id, Math.floor(be))
@@ -24,8 +24,8 @@ module.exports = {
                     .setTitle(message.author.username + `'s Revolver`)
                     .addField('yay! You didn\'t die... this time... enjoy ' + Math.floor(be).toString(), '_')
                     .setTimestamp()
-                    .setFooter('Grape Gambling Club.')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .setFooter('Grape Gambling Club')
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 message.channel.send(daa)
             }
         }

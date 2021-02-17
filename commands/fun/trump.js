@@ -15,7 +15,7 @@ module.exports = {
             })
             .setTimestamp()
             .setFooter('Official Donald Trump League')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(t);
     }
 };

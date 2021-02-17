@@ -30,7 +30,7 @@ module.exports = {
             )
             .setTimestamp()
             .setFooter('DJ Grape')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(np);
     }
 };

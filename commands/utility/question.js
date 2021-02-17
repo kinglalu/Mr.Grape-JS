@@ -24,7 +24,7 @@ module.exports = {
             .addField(finalAnswer.charAt(0).toUpperCase() + finalAnswer.slice(1), '_')
             .setTimestamp()
             .setFooter('DJ Grape')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(answerEmbed)
     }
 };
