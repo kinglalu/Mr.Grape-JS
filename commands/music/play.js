@@ -52,7 +52,8 @@ module.exports = {
 				.setThumbnail(song.thumbnail)
 				.addField(e, '_')
 				.setTimestamp()
-				.setFooter('DJ Grape');
+				.setFooter('DJ Grape')
+				.addField('_', 'Sponsered by nodeclusters');
 			return announceEmbed;
 		}
 

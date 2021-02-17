@@ -19,7 +19,8 @@ module.exports = {
             .addField('You dug up ' + earn + ' :star:s!', '_')
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
-            .setFooter('Grape Mining Guild');
+            .setFooter('Grape Mining Guild')
+            .addField('_', 'Sponsered by nodeclusters');
 
         if (inv) {
             if (!inv.ore) { inv.ore = {}; }

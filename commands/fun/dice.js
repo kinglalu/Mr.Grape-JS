@@ -13,7 +13,8 @@ module.exports = {
                 value: roll
             })
             .setTimestamp()
-            .setFooter('Grape Dice Club');
+            .setFooter('Grape Dice Club')
+            .addField('_', 'Sponsered by nodeclusters');
         message.channel.send(dice);
     }
 };

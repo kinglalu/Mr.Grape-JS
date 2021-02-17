@@ -10,7 +10,8 @@ module.exports = {
             .setTitle(message.author.username + `'s coinflip`)
             .addField('It landed on', `${Math.round(Math.random()) ? 'Heads!' : 'Tails!'}`)
             .setTimestamp()
-            .setFooter('Grape Coin Flipper Club');
+            .setFooter('Grape Coin Flipper Club')
+            .addField('_', 'Sponsered by nodeclusters');
         message.channel.send(coin);
     }
 };

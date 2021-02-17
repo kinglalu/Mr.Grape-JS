@@ -39,7 +39,8 @@ module.exports = {
             })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
-            .setFooter('Grape Databases');
+            .setFooter('Grape Databases')
+            .addField('_', 'Sponsered by nodeclusters');
 
         message.channel.send(usersoloEmbed);
     }

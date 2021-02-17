@@ -25,7 +25,8 @@ module.exports = {
                 value: val
             })
             .setTimestamp()
-            .setFooter('Grape Fortune-Telling');
+            .setFooter('Grape Fortune-Telling')
+            .addField('_', 'Sponsered by nodeclusters');
         message.channel.send(ballEmbed);
     }
 };

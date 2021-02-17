@@ -153,7 +153,8 @@ module.exports = {
                 .addField('Your Cards', cardsMsg)
                 .addField('Dealer\'s Cards', dealerMsg)
                 .addField(title, msg)
-                .setFooter('Grape Gambling Club.');
+                .setFooter('Grape Gambling Club.')
+                .addField('_', 'Sponsered by nodeclusters');
 
             message.channel.send(gambleEmbed);
         }

@@ -13,7 +13,8 @@ module.exports = {
 				.setTitle('Song')
 				.addField(`Paused.`, '_')
 				.setTimestamp()
-				.setFooter('DJ Grape');
+				.setFooter('DJ Grape')
+				.addField('_', 'Sponsered by nodeclusters');
 			return message.channel.send(p);
 		}
 		return message.channel.send("Can't if there\'s no music bruh");
