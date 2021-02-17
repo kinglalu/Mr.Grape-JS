@@ -31,7 +31,8 @@ module.exports = {
                 .addField('Donation', 'you gave ' + `${target.displayName} ` + donation + ' :star:s')
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
-                .setFooter('Grape Charity Org.');
+                .setFooter('Grape Charity Org.')
+                .addField('_', 'Sponsered by nodeclusters');
 
             message.channel.send(give);
         }

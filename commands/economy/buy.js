@@ -30,7 +30,8 @@ module.exports = {
                     .setTitle(message.author.username + "'s purchase")
                     .addField('Receipt', receipt)
                     .setTimestamp()
-                    .setFooter('Grape Marketplaces');
+                    .setFooter('Grape Marketplaces')
+                    .addField('_', 'Sponsered by nodeclusters');
                 message.channel.send(buy);
         }
         const notitem = new d.Discord.MessageEmbed()
@@ -42,7 +43,8 @@ module.exports = {
             })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
-            .setFooter('Grape Marketplaces');
+            .setFooter('Grape Marketplaces')
+            .addField('_', 'Sponsered by nodeclusters');
         const broke = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + "'s purchase")
@@ -52,7 +54,8 @@ module.exports = {
             })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
-            .setFooter('Grape Marketplaces');
+            .setFooter('Grape Marketplaces')
+            .addField('_', 'Sponsered by nodeclusters');
         let have = await d.items.get(message.author.id);
         let argument = args.join('').toLowerCase().replace(/,/g,'');
         const regex = /\d+/g;

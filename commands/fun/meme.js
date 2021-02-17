@@ -27,7 +27,8 @@ module.exports = {
                         .setColor('#dd2de0')
                         .setDescription(`[${title}](${link})\n\n${text}`)
                         .setURL(`https://reddit.com/${subRedditName}`)
-                        .setFooter('Grape Memes');
+                        .setFooter('Grape Memes')
+                        .addField('_', 'Sponsered by nodeclusters');
                     message.channel.send(textembed)
                 }
 
@@ -42,7 +43,8 @@ module.exports = {
                         .setColor('#dd2de0')
                         .setDescription(`[${title}](${link})\n\n${text}`)
                         .setURL(`https://reddit.com/${subRedditName}`)
-                        .setFooter('Grape Memes');
+                        .setFooter('Grape Memes')
+                        .addField('_', 'Sponsered by nodeclusters');
                     message.channel.send(textembed)
                 }
                 console.log(image);
@@ -52,7 +54,8 @@ module.exports = {
                     .setColor('#dd2de0')
                     .setDescription(`[${title}](${link})`)
                     .setURL(`https://reddit.com/${subRedditName}`)
-                    .setFooter('Grape Memes');
+                    .setFooter('Grape Memes')
+                    .addField('_', 'Sponsered by nodeclusters');
                 message.channel.send(imageembed)
             }).on('error', function (e) {
                 console.log('Got an error: ', e)

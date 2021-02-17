@@ -45,7 +45,8 @@ module.exports = {
             }, )
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
-            .setFooter('Grape Enterprises');
+            .setFooter('Grape Enterprises')
+            .addField('_', 'Sponsered by nodeclusters');
 
         message.channel.send(info);
 

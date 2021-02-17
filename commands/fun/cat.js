@@ -13,7 +13,8 @@ module.exports = {
             .setTitle('Cat!')
             .setImage(pic[0].url)
             .setTimestamp()
-            .setFooter('Cat');
+            .setFooter('Cat')
+            .addField('_', 'Sponsered by nodeclusters');
         message.channel.send(cat);
     }
 };

@@ -9,6 +9,7 @@ module.exports = {
 			.setColor('#dd2de0')
 			.setTitle('Invite')
 			.setURL(invite)
+			.addField('_', 'Sponsered by nodeclusters');
 		message.channel.send(inviteEmbed);
 	}
 };

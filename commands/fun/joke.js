@@ -15,7 +15,8 @@ module.exports = {
                 value: '_'
             })
             .setTimestamp()
-            .setFooter('Grape Jokes');
+            .setFooter('Grape Jokes')
+            .addField('_', 'Sponsered by nodeclusters');
         message.channel.send(jk);
     }
 };

@@ -24,7 +24,8 @@ module.exports = {
             .setDescription(`To check your ores, do ${d.prefix}io`)
             .setTitle(personName + "'s inventory")
             .setTimestamp()
-            .setFooter('Grape Storages Org.');
+            .setFooter('Grape Storages Org.')
+            .addField('_', 'Sponsered by nodeclusters');
         if (!inv || Object.keys(inv).length === 0 || inv.ore && Object.keys(inv).length === 1) { invEmbed.addField('nothing but cobwebs and dust m8', '_'); }
         else {
             for (const key in inv) {

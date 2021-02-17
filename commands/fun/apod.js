@@ -12,7 +12,8 @@ module.exports = {
             .setTitle('NASA Picture of the Day!')
             .setImage(pic.hdurl)
             .setTimestamp()
-            .setFooter('Grape Space and Astronomy');
+            .setFooter('Grape Space and Astronomy')
+            .addField('_', 'Sponsered by nodeclusters');
         message.channel.send(nasa);
     }
 };

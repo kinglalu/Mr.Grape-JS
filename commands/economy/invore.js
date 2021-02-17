@@ -23,7 +23,8 @@ module.exports = {
             .setDescription('Ore Inventory')
             .setTitle(personName + "'s inventory")
             .setTimestamp()
-            .setFooter('Grape Storages Org.');
+            .setFooter('Grape Storages Org.')
+            .addField('_', 'Sponsered by nodeclusters');
         if (!inv.ore || Object.keys(inv.ore).length === 0) { invEmbed.addField('nothing but cobwebs and pebbles m8', '_'); }
         else {
             for (const key in inv.ore) {

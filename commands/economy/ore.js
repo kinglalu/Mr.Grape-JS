@@ -34,7 +34,8 @@ module.exports = {
                 value: '_'
             })
             .setTimestamp()
-            .setFooter('Grape Mining Corp');
+            .setFooter('Grape Mining Corp')
+            .addField('_', 'Sponsered by nodeclusters');
 
         message.channel.send(ore);
 

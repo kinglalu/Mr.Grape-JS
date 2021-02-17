@@ -24,7 +24,8 @@ module.exports = {
                         .setTitle(message.author.username + `'s craftin`)
                         .addField('Failed', `You don\'t have all the things you need to make ${craft}(s)!`)
                         .setTimestamp()
-                        .setFooter('The Grape Blacksmith');
+                        .setFooter('The Grape Blacksmith')
+                        .addField('_', 'Sponsered by nodeclusters');
                     return message.channel.send(e);
                 }
                 inv.ore[key] -= recipe[craft][key] * numItems;
@@ -37,7 +38,8 @@ module.exports = {
                 .setTitle(message.author.username + `'s craftin`)
                 .addField('Success!', `You made ${numItems} ${craft}(s)!`)
                 .setTimestamp()
-                .setFooter('The Grape Blacksmith');
+                .setFooter('The Grape Blacksmith')
+                .addField('_', 'Sponsered by nodeclusters');
             return message.channel.send(done);
         }
         else {
@@ -46,7 +48,8 @@ module.exports = {
                 .setTitle(message.author.username + `'s craftin`)
                 .addField('Failed', 'That item doesn\'t exist!')
                 .setTimestamp()
-                .setFooter('The Grape Blacksmith');
+                .setFooter('The Grape Blacksmith')
+                .addField('_', 'Sponsered by nodeclusters');
             return message.channel.send(e);
         }
     }

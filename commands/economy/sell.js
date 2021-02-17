@@ -31,7 +31,8 @@ module.exports = {
                             { name: 'Profit', value: `${profit} :star:s` }
                         )
                         .setTimestamp()
-                        .setFooter('Grape Marketplaces');
+                        .setFooter('Grape Marketplaces')
+                        .addField('_', 'Sponsered by nodeclusters');
                     message.channel.send(saleAllTools);
                     await d.items.set(message.author.id, inv);
                 }
@@ -69,7 +70,8 @@ module.exports = {
                         { name: 'Profit', value: `${profit} :star:s` }
                     )
                     .setTimestamp()
-                    .setFooter('Grape Marketplaces');
+                    .setFooter('Grape Marketplaces')
+                    .addField('_', 'Sponsered by nodeclusters');
 
                 message.channel.send(saleAll);
             }
@@ -92,7 +94,8 @@ module.exports = {
                         { name: 'Profit', value: `${profit} :star:s` }
                     )
                     .setTimestamp()
-                    .setFooter('Grape Marketplaces');
+                    .setFooter('Grape Marketplaces')
+                    .addField('_', 'Sponsered by nodeclusters');
 
                 message.channel.send(sale);
             }
@@ -198,7 +201,8 @@ module.exports = {
                         { name: 'Profit', value: `${soldItem[1]} :star:s` }
                     )
                     .setTimestamp()
-                    .setFooter('Grape Marketplaces but for ores');
+                    .setFooter('Grape Marketplaces but for ores')
+                    .addField('_', 'Sponsered by nodeclusters');
 
                 message.channel.send(sale);
             }
@@ -221,7 +225,8 @@ module.exports = {
                         { name: 'Profit', value: `${soldItem[1]} :star:s` }
                     )
                     .setTimestamp()
-                    .setFooter('Grape Marketplaces');
+                    .setFooter('Grape Marketplaces')
+                    .addField('_', 'Sponsered by nodeclusters');
 
                 message.channel.send(sale);
             }

@@ -43,7 +43,8 @@ module.exports = {
       .addField("Balance", displayBal + " :star:s")
       .setThumbnail("https://i.imgur.com/JXfpgdXh.jpg")
       .setTimestamp()
-      .setFooter("Grape Bank Inc.");
+      .setFooter("Grape Bank Inc.")
+      .addField('_', 'Sponsered by nodeclusters');
     message.channel.send(balEmbed);
   },
 };

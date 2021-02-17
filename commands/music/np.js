@@ -29,7 +29,8 @@ module.exports = {
 
             )
             .setTimestamp()
-            .setFooter('DJ Grape');
+            .setFooter('DJ Grape')
+            .addField('_', 'Sponsered by nodeclusters');
         message.channel.send(np);
     }
 };
