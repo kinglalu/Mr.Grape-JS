@@ -12,7 +12,7 @@ module.exports = {
                 const daa = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + `'s Revolver`)
-                    .addField('You died and lost all your money. Rip', '_')
+                    .addField('You died and lost all your money. Rip', '⠀')
                     .setTimestamp()
                     .setFooter('Grape Gambling Club')
                     .addField('⠀', 'Sponsered by Nodeclusters');
@@ -22,7 +22,7 @@ module.exports = {
                 const daa = new d.Discord.MessageEmbed()
                     .setColor('#dd2de0')
                     .setTitle(message.author.username + `'s Revolver`)
-                    .addField('yay! You didn\'t die... this time... enjoy ' + Math.floor(be).toString(), '_')
+                    .addField('yay! You didn\'t die... this time... enjoy ' + Math.floor(be).toString(), '⠀')
                     .setTimestamp()
                     .setFooter('Grape Gambling Club')
                     .addField('⠀', 'Sponsered by Nodeclusters');

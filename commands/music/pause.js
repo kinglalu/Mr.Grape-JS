@@ -11,7 +11,7 @@ module.exports = {
 			const p = new d.Discord.MessageEmbed()
 				.setColor('#dd2de0')
 				.setTitle('Song')
-				.addField(`Paused.`, '_')
+				.addField(`Paused.`, '⠀')
 				.setTimestamp()
 				.setFooter('DJ Grape')
 				.addField('⠀', 'Sponsered by Nodeclusters');

@@ -12,7 +12,7 @@ module.exports = {
             .setTitle(`Joke`)
             .addFields({
                 name: joke,
-                value: '_'
+                value: '⠀'
             })
             .setTimestamp()
             .setFooter('Grape Jokes')

@@ -50,7 +50,7 @@ module.exports = {
 				.setURL(song.url)
 				.setDescription(`Duration: ${song.duration}`)
 				.setThumbnail(song.thumbnail)
-				.addField(e, '_')
+				.addField(e, '⠀')
 				.setTimestamp()
 				.setFooter('DJ Grape')
 				.addField('⠀', 'Sponsered by Nodeclusters');

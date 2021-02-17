@@ -22,7 +22,7 @@ module.exports = {
             .setURL(q.url)
             .setThumbnail(q.thumbnail)
             .addFields(
-                { name: `${q.title}`, value: '_' },
+                { name: `${q.title}`, value: '⠀' },
                 { name: 'Time elapsed', value: seek },
                 { name: 'Time remaining', value: timeLeft },
                 { name: 'Total Duration', value: finalTotal },
