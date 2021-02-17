@@ -26,7 +26,7 @@ module.exports = {
             .setTimestamp()
             .setFooter('Grape Storages Org.')
             .addField('⠀', 'Sponsered by Nodeclusters');
-        if (!inv || Object.keys(inv).length === 0 || inv.ore && Object.keys(inv).length === 1) { invEmbed.addField('nothing but cobwebs and dust m8', '_'); }
+        if (!inv || Object.keys(inv).length === 0 || inv.ore && Object.keys(inv).length === 1) { invEmbed.addField('nothing but cobwebs and dust m8', '⠀'); }
         else {
             for (const key in inv) {
                 if (inv[key] === 0) {

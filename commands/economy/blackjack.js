@@ -149,7 +149,7 @@ module.exports = {
 
             const gambleEmbed = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(message.author.username + `'s gambling table` + '\n___')
+                .setTitle(message.author.username + `'s gambling table` + '\n⠀')
                 .addField('Your Cards', cardsMsg)
                 .addField('Dealer\'s Cards', dealerMsg)
                 .addField(title, msg)

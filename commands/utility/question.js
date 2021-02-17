@@ -21,7 +21,7 @@ module.exports = {
             .setColor('#dd2de0')
             .setTitle('Answer')
             .setDescription('Powered by Wolfram-Alpha')
-            .addField(finalAnswer.charAt(0).toUpperCase() + finalAnswer.slice(1), '_')
+            .addField(finalAnswer.charAt(0).toUpperCase() + finalAnswer.slice(1), '⠀')
             .setTimestamp()
             .setFooter('DJ Grape')
             .addField('⠀', 'Sponsered by Nodeclusters');

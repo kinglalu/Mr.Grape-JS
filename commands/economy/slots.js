@@ -526,7 +526,7 @@ module.exports = {
         async function endMsg(fruits, title, msg, edit) {
             const gambleEmbed = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(message.author.username + `'s slot machine` + '\n___')
+                .setTitle(message.author.username + `'s slot machine` + '\n⠀')
                 .addField('Fruitz', fruits)
                 .addField(title, msg)
                 .setFooter('Grape Gambling Club')

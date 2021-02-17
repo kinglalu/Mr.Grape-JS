@@ -15,7 +15,7 @@ module.exports = {
             val = 'Give me a question to foretell!'
         } else {
             output = wordsOfWisdom[randomWise];
-            val = '_'
+            val = '⠀'
         }
         const ballEmbed = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')

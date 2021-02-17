@@ -16,7 +16,7 @@ module.exports = {
         const mine = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + `'s mine`)
-            .addField('You dug up ' + earn + ' :star:s!', '_')
+            .addField('You dug up ' + earn + ' :star:s!', '⠀')
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Mining Guild')
@@ -28,7 +28,7 @@ module.exports = {
             function pick(ore, amount) {
                 if (!inv.ore[ore]) { inv.ore[ore] = amount; }
                 else { inv.ore[ore] += amount }
-                mine.addField(`You got ${amount} ${ore}(s)! ${d.emoji[ore]}`, '_')
+                mine.addField(`You got ${amount} ${ore}(s)! ${d.emoji[ore]}`, '⠀')
             }
 
             function randNum(e) { return Math.floor(Math.random() * e) + 1; }

@@ -58,7 +58,7 @@ module.exports = {
                 value: background
             }, {
                 name: outcome,
-                value: "_"
+                value: "⠀"
             })
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()

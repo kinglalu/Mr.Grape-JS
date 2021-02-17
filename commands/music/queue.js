@@ -23,11 +23,11 @@ module.exports = {
 		const queue = new d.Discord.MessageEmbed()
 			.setColor('#dd2de0')
 			.setTitle('Song Queue')
-			.setDescription(loop + '\n_')
+			.setDescription(loop + '\n⠀')
 			.setTimestamp()
 			.setFooter('DJ Grape')
 			.addField('⠀', 'Sponsered by Nodeclusters');
-		for (var key in q) { queue.addFields({ name: '\u200b' + `${parseInt(key) + 1}` + '. ' + q[key].title, value: '_' }) }
+		for (var key in q) { queue.addFields({ name: '\u200b' + `${parseInt(key) + 1}` + '. ' + q[key].title, value: '⠀' }) }
 		message.channel.send(queue);
 	}
 };

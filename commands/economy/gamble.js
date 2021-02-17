@@ -14,7 +14,7 @@ module.exports = {
             const busted = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
                 .setTitle('Busted!')
-                .addField(`You were lookin kinda sus, so you lost your dice, and ${((2 * bet) + owe)} :star:s!`, '_')
+                .addField(`You were lookin kinda sus, so you lost your dice, and ${((2 * bet) + owe)} :star:s!`, '⠀')
                 .setTimestamp()
                 .setFooter('Grape Gambling Club')
                 .addField('⠀', 'Sponsered by Nodeclusters');
@@ -24,8 +24,8 @@ module.exports = {
         function animateEmbed(diceRoll, bet) {
             const gambleEmbed = new d.Discord.MessageEmbed()
                 .setColor('#dd2de0')
-                .setTitle(message.author.username + `'s gambling table` + '\n___')
-                .addField('Ok, if you roll an even number you win, if you roll an odd number, you lose.', '_')
+                .setTitle(message.author.username + `'s gambling table` + '\n⠀')
+                .addField('Ok, if you roll an even number you win, if you roll an odd number, you lose.', '⠀')
                 .setTimestamp()
                 .setFooter('Grape Gambling Club')
                 .addField('⠀', 'Sponsered by Nodeclusters');
@@ -33,16 +33,16 @@ module.exports = {
             message.channel.send(gambleEmbed)
                 .then((msg) => {
                     setTimeout(function () {
-                        msg.edit(gambleEmbed.addField('You rolled a . . .', '_')).then((msg) => {
+                        msg.edit(gambleEmbed.addField('You rolled a . . .', '⠀')).then((msg) => {
                             setTimeout(function () {
-                                msg.edit(gambleEmbed.addField(diceRoll, '_')).then((msg) => {
+                                msg.edit(gambleEmbed.addField(diceRoll, '⠀')).then((msg) => {
                                     setTimeout(function () {
                                         if (diceRoll % 2 === 0) {
-                                            msg.edit(gambleEmbed.addField(`Congrats, you get ${bet} :star:s!`, '_'));
+                                            msg.edit(gambleEmbed.addField(`Congrats, you get ${bet} :star:s!`, '⠀'));
                                             d.addMoni(message.author.id, bet*2);
                                         }
                                         else {
-                                            msg.edit(gambleEmbed.addField(`Rip, you lost your ${bet} :star:s.`, '_'));
+                                            msg.edit(gambleEmbed.addField(`Rip, you lost your ${bet} :star:s.`, '⠀'));
                                         }
                                         if (inv && inv["rigged dice"] && Math.floor(Math.random() * 50) + 1 === 1) {
                                             setTimeout(function () { busted(bet); }, 1700)
