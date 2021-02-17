@@ -20,7 +20,7 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Mining Guild')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
 
         if (inv) {
             if (!inv.ore) { inv.ore = {}; }

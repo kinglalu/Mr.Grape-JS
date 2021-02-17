@@ -14,7 +14,7 @@ module.exports = {
             })
             .setTimestamp()
             .setFooter('Grape Dice Club')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(dice);
     }
 };

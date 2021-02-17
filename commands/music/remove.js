@@ -19,7 +19,7 @@ module.exports = {
                 .addField(`Removed **${arr[remove].title}**`, '_')
                 .setTimestamp()
                 .setFooter('DJ Grape')
-                .addField('_', 'Sponsered by nodeclusters');
+                .addField('⠀', 'Sponsered by Nodeclusters');
             message.channel.send(rm)
             if (remove === 0) { skip.execute(message, args, d); }
             else { arr.splice(remove, 1); }

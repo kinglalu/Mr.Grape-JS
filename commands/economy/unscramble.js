@@ -26,7 +26,7 @@ module.exports = {
             .addField('Unscramble the fruit!', `${scrambledWord}`)
             .setTimestamp()
             .setFooter('Grape Enterprises')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(scrambleEmbed);
         let filter = m => m.author.id === message.author.id
         message.channel.awaitMessages(filter, {
@@ -49,7 +49,7 @@ module.exports = {
                         .addField('Unscramble Results', `Yay! You guessed the word correctly! You get ${e} :star:s`)
                         .setTimestamp()
                         .setFooter('Grape Enterprises')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .addField('⠀', 'Sponsered by Nodeclusters');
                     message.channel.send(yay)
                 } else {
                     const oof = new d.Discord.MessageEmbed()
@@ -58,7 +58,7 @@ module.exports = {
                         .addField('Unscramble Results', `bruh ur bad, the word was ${word} duh`)
                         .setTimestamp()
                         .setFooter('Grape Enterprises')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .addField('⠀', 'Sponsered by Nodeclusters');
                     message.channel.send(oof)
                 }
             })
@@ -69,7 +69,7 @@ module.exports = {
                     .addField('Unscramble Results', `cmon slowpoke, its not that hard, it was ${word}`)
                     .setTimestamp()
                     .setFooter('Grape Enterprises')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 message.channel.send(oof)
             });
     }

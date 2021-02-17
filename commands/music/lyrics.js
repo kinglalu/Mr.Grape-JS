@@ -17,7 +17,7 @@ module.exports = {
             .setTitle(name.charAt(0).toUpperCase() + name.slice(1))
             .setThumbnail(artwork)
             .setFooter('DJ Grape | Provided by KSoft.Si')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         if (name.length + lyrics.length > 6000) { lyricEmbed.addField('The lyrics are too long, here is the URL!', url); }
         else if (lyrics.length > 1024) {
             let arr = lyrics.split('\n\n');

@@ -26,7 +26,7 @@ module.exports = {
 			.setDescription(loop + '\n_')
 			.setTimestamp()
 			.setFooter('DJ Grape')
-			.addField('_', 'Sponsered by nodeclusters');
+			.addField('⠀', 'Sponsered by Nodeclusters');
 		for (var key in q) { queue.addFields({ name: '\u200b' + `${parseInt(key) + 1}` + '. ' + q[key].title, value: '_' }) }
 		message.channel.send(queue);
 	}

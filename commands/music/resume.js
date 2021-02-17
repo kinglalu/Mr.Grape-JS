@@ -14,7 +14,7 @@ module.exports = {
 				.addField(`Resumin Tunes!`, '_')
 				.setTimestamp()
 				.setFooter('DJ Grape')
-				.addField('_', 'Sponsered by nodeclusters');
+				.addField('⠀', 'Sponsered by Nodeclusters');
 			return message.channel.send(p);
 		}
 		else if (serverQueue.playing) return message.channel.send("Can't resume if its already playing smh")

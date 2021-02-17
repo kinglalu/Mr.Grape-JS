@@ -14,7 +14,7 @@ module.exports = {
             .setImage(pic[0].url)
             .setTimestamp()
             .setFooter('Cat')
-            .addField('_', 'Sponsered by nodeclusters');
+            .addField('⠀', 'Sponsered by Nodeclusters');
         message.channel.send(cat);
     }
 };

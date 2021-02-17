@@ -44,7 +44,7 @@ module.exports = {
       .setThumbnail("https://i.imgur.com/JXfpgdXh.jpg")
       .setTimestamp()
       .setFooter("Grape Bank Inc.")
-      .addField('_', 'Sponsered by nodeclusters');
+      .addField('⠀', 'Sponsered by Nodeclusters');
     message.channel.send(balEmbed);
   },
 };

@@ -28,7 +28,7 @@ module.exports = {
                         .setDescription(`[${title}](${link})\n\n${text}`)
                         .setURL(`https://reddit.com/${subRedditName}`)
                         .setFooter('Grape Memes')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .addField('⠀', 'Sponsered by Nodeclusters');
                     message.channel.send(textembed)
                 }
 
@@ -44,7 +44,7 @@ module.exports = {
                         .setDescription(`[${title}](${link})\n\n${text}`)
                         .setURL(`https://reddit.com/${subRedditName}`)
                         .setFooter('Grape Memes')
-                        .addField('_', 'Sponsered by nodeclusters');
+                        .addField('⠀', 'Sponsered by Nodeclusters');
                     message.channel.send(textembed)
                 }
                 console.log(image);
@@ -55,7 +55,7 @@ module.exports = {
                     .setDescription(`[${title}](${link})`)
                     .setURL(`https://reddit.com/${subRedditName}`)
                     .setFooter('Grape Memes')
-                    .addField('_', 'Sponsered by nodeclusters');
+                    .addField('⠀', 'Sponsered by Nodeclusters');
                 message.channel.send(imageembed)
             }).on('error', function (e) {
                 console.log('Got an error: ', e)
