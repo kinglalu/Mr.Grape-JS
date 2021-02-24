@@ -24,7 +24,7 @@ module.exports = {
             .setTitle(personName + "'s inventory")
             .setTimestamp()
             .setFooter('Grape Storages Org.')
-            .addField('⠀', 'Sponsered by Nodeclusters');
+            .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
         if (!inv.ore || Object.keys(inv.ore).length === 0) { invEmbed.addField('nothing but cobwebs and pebbles m8', '⠀'); }
         else {
             for (const key in inv.ore) {

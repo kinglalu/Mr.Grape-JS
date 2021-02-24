@@ -5,6 +5,7 @@ const Keyv = require("keyv");
 const d = require("./utils/constants");
 
 const client = new Discord.Client();
+require('dotenv').config();
 const users = new Keyv(process.env.DATABASE, { namespace: "users" });
 const items = new Keyv(process.env.DATABASE, { namespace: "items" });
 const guilds = new Keyv(process.env.DATABASE, { namespace: "guilds" });
@@ -162,4 +163,5 @@ client.on("message", async (message) => {
   }
 });
 
+console.log(process.env.BOT_TOKEN);
 client.login(process.env.BOT_TOKEN);

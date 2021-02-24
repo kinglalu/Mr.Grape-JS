@@ -15,7 +15,7 @@ module.exports = {
                     .addField('You died and lost all your money. Rip', '⠀')
                     .setTimestamp()
                     .setFooter('Grape Gambling Club')
-                    .addField('⠀', 'Sponsered by Nodeclusters');
+                    .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
                 message.channel.send(daa)
             } else {
                 d.addMoni(message.author.id, Math.floor(be))
@@ -25,7 +25,7 @@ module.exports = {
                     .addField('yay! You didn\'t die... this time... enjoy ' + Math.floor(be).toString(), '⠀')
                     .setTimestamp()
                     .setFooter('Grape Gambling Club')
-                    .addField('⠀', 'Sponsered by Nodeclusters');
+                    .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
                 message.channel.send(daa)
             }
         }

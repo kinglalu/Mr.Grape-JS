@@ -12,9 +12,12 @@ module.exports = {
 		const { channel } = message.member.voice;
 		if (!channel) return message.channel.send('Get in a voice channel if you wanna play music!');
 		const permissions = channel.permissionsFor(message.client.user);
+		/*
+		Doesn't work if the bot is moved
 		if (!permissions.has('CONNECT')) return message.channel.send('Bruh I don\'t have perms to connect');
 		if (!permissions.has('SPEAK')) return message.channel.send('Bruh I don\'t have perms to speak');
-
+		*/
+		
 		const ytRegex = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
 		const plRegex = /^.*(list=)([^#\&\?]*).*/gi;
 		const serverQueue = message.client.queue.get(message.guild.id);
@@ -48,12 +51,12 @@ module.exports = {
 				.setColor('#dd2de0')
 				.setTitle(song.title)
 				.setURL(song.url)
-				.setDescription(`Duration: ${song.duration}`)
+				.setDescription(`Duration: ${song.duration}\n` + e)
 				.setThumbnail(song.thumbnail)
-				.addField(e, '⠀')
+				.addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)')
 				.setTimestamp()
-				.setFooter('DJ Grape')
-				.addField('⠀', 'Sponsered by Nodeclusters');
+				.setFooter('DJ Grape');
+				//.addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
 			return announceEmbed;
 		}
 

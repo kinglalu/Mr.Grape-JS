@@ -14,7 +14,7 @@ module.exports = {
 				.addField(`Paused.`, '⠀')
 				.setTimestamp()
 				.setFooter('DJ Grape')
-				.addField('⠀', 'Sponsered by Nodeclusters');
+				.addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8');
 			return message.channel.send(p);
 		}
 		return message.channel.send("Can't if there\'s no music bruh");

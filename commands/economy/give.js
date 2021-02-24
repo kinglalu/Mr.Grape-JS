@@ -32,7 +32,7 @@ module.exports = {
                 .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
                 .setTimestamp()
                 .setFooter('Grape Charity Org.')
-                .addField('⠀', 'Sponsered by Nodeclusters');
+                .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
 
             message.channel.send(give);
         }

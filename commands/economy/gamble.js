@@ -17,7 +17,7 @@ module.exports = {
                 .addField(`You were lookin kinda sus, so you lost your dice, and ${((2 * bet) + owe)} :star:s!`, '⠀')
                 .setTimestamp()
                 .setFooter('Grape Gambling Club')
-                .addField('⠀', 'Sponsered by Nodeclusters');
+                .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
             d.addMoni(message.author.id, -((2 * bet) + owe))
             message.channel.send(busted);
         }
@@ -28,7 +28,7 @@ module.exports = {
                 .addField('Ok, if you roll an even number you win, if you roll an odd number, you lose.', '⠀')
                 .setTimestamp()
                 .setFooter('Grape Gambling Club')
-                .addField('⠀', 'Sponsered by Nodeclusters');
+                .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
             d.addMoni(message.author.id, -bet);
             message.channel.send(gambleEmbed)
                 .then((msg) => {

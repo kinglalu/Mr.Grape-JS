@@ -25,7 +25,7 @@ module.exports = {
                         .addField('Failed', `You don\'t have all the things you need to make ${craft}(s)!`)
                         .setTimestamp()
                         .setFooter('The Grape Blacksmith')
-                        .addField('⠀', 'Sponsered by Nodeclusters');
+                        .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
                     return message.channel.send(e);
                 }
                 inv.ore[key] -= recipe[craft][key] * numItems;
@@ -39,7 +39,7 @@ module.exports = {
                 .addField('Success!', `You made ${numItems} ${craft}(s)!`)
                 .setTimestamp()
                 .setFooter('The Grape Blacksmith')
-                .addField('⠀', 'Sponsered by Nodeclusters');
+                .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
             return message.channel.send(done);
         }
         else {
@@ -49,7 +49,7 @@ module.exports = {
                 .addField('Failed', 'That item doesn\'t exist!')
                 .setTimestamp()
                 .setFooter('The Grape Blacksmith')
-                .addField('⠀', 'Sponsered by Nodeclusters');
+                .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
             return message.channel.send(e);
         }
     }

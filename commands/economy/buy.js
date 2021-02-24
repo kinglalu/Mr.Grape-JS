@@ -31,7 +31,7 @@ module.exports = {
                     .addField('Receipt', receipt)
                     .setTimestamp()
                     .setFooter('Grape Marketplaces')
-                    .addField('⠀', 'Sponsered by Nodeclusters');
+                    .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
                 message.channel.send(buy);
         }
         const notitem = new d.Discord.MessageEmbed()
@@ -44,7 +44,7 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Marketplaces')
-            .addField('⠀', 'Sponsered by Nodeclusters');
+            .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
         const broke = new d.Discord.MessageEmbed()
             .setColor('#dd2de0')
             .setTitle(message.author.username + "'s purchase")
@@ -55,7 +55,7 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
             .setTimestamp()
             .setFooter('Grape Marketplaces')
-            .addField('⠀', 'Sponsered by Nodeclusters');
+            .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
         let have = await d.items.get(message.author.id);
         let argument = args.join('').toLowerCase().replace(/,/g,'');
         const regex = /\d+/g;

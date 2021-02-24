@@ -29,7 +29,7 @@ module.exports = {
                     .addField('Success', `Heist Successful! You got ${earned} :star:s!`)
                     .setTimestamp()
                     .setFooter('Shady Grape Org.')
-                    .addField('⠀', 'Sponsered by Nodeclusters');
+                    .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
                 message.channel.send(nice);
             }
             else {
@@ -42,7 +42,7 @@ module.exports = {
                     .addField('Fail', `rip, despite ur effort, you got caught and lost ${loss} :star:s.`)
                     .setTimestamp()
                     .setFooter('Shady Grape Org.')
-                    .addField('⠀', 'Sponsered by Nodeclusters');
+                    .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
 
                 message.channel.send(rip);
             }
@@ -57,7 +57,7 @@ module.exports = {
                 .addField('Task', 'Pick a number from 1 - 3, if you pick the right number the safe will be cracked, if not then rip\nYou have 7 seconds, go!')
                 .setTimestamp()
                 .setFooter('Shady Grape Org.')
-                .addField('⠀', 'Sponsered by Nodeclusters');
+                .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
             message.channel.send(go);
             message.channel.awaitMessages(filter, {
                 max: 1,
@@ -78,7 +78,7 @@ module.exports = {
                             .addField('Fail', `you guessed wrong rip, you lost ${loss} :star:s`)
                             .setTimestamp()
                             .setFooter('Shady Grape Org.')
-                            .addField('⠀', 'Sponsered by Nodeclusters');
+                            .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
 
                         message.channel.send(rip);
                     }
@@ -93,7 +93,7 @@ module.exports = {
                         .addField('Fail', `Bruh ur trash, you couldn't crack it in time, also you lost ${lossTime} :star:s`)
                         .setTimestamp()
                         .setFooter('Shady Grape Org.')
-                        .addField('⠀', 'Sponsered by Nodeclusters');
+                        .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
 
                     message.channel.send(rip);
                 });

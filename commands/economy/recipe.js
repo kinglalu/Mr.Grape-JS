@@ -13,7 +13,7 @@ module.exports = {
                 .addField('Recipes', `${Object.keys(recipe).join(', ')}`)
                 .setTimestamp()
                 .setFooter('Grape Maker Thingy')
-                .addField('⠀', 'Sponsered by Nodeclusters');
+                .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
             return message.channel.send(recipeHelp)
         }
         if (!Object.keys(recipe).some(e => argument.includes(e))) { return message.channel.send('That\'s not a valid recipe') }
@@ -24,7 +24,7 @@ module.exports = {
             .setDescription(recipe[item].description)
             .setTimestamp()
             .setFooter('Grape Maker Thingy')
-            .addField('⠀', 'Sponsered by Nodeclusters');
+            .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
         for (const key in recipe[item]) {
             if (typeof recipe[item][key] === 'string') { continue; }
             let orePic = d.emoji[d.ores.tier1.concat(d.ores.tier2, d.ores.tier3).find(v => key.replace("refined ").includes(v))];

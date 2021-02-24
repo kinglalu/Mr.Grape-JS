@@ -34,7 +34,7 @@ module.exports = {
                     })
                     .setTimestamp()
                     .setFooter('Grape Databases')
-                    .addField('⠀', 'Sponsered by Nodeclusters');
+                   .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
                 message.channel.send(helpEmbed);
                 return;
             }
@@ -70,7 +70,7 @@ module.exports = {
                     })
                     .setTimestamp()
                     .setFooter('Grape Databases')
-                    .addField('⠀', 'Sponsered by Nodeclusters');
+                    .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
                 message.channel.send(helpCommandEmbed);
             } else if (command) {
                 if (!command.aliases) {
@@ -90,7 +90,7 @@ module.exports = {
                     })
                     .setTimestamp()
                     .setFooter('Grape Databases')
-                    .addField('⠀', 'Sponsered by Nodeclusters');
+                    .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
                 message.channel.send(helpCommandEmbed);
             } else {
                 message.channel.send('That category or command aint here')
@@ -100,3 +100,4 @@ module.exports = {
         }
     }
 };
+
