@@ -6,6 +6,10 @@
 	<p> Help support Mr Grape by voting for it here on top.gg; https://top.gg/bot/743833062265323651/vote </p>
 	<p><a href="https://discord.com/oauth2/authorize?client_id=743833062265323651&scope=bot&permissions=0"><img src="/images/invite.png"width="147" height="32" alt="Invite to your server!"></a><p>
 	<a href="https://heroku.com/deploy?template=https://github.com/kinglalu/Mr.Grape"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku"></a>
+	<a href="https://discord.gg/2RKPmDg2A6" align="center">
+<img src="https://img.shields.io/discord/743208211460653177?style=for-the-badge?" />
+</a>
+
 </div>
 
 ## About
