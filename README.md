@@ -45,4 +45,4 @@ Finally, you will need a database to store the data of the players using the eco
 <div align="center">
 	<img src="images/database.JPG" alt="Database config" />
 </div>
-If you used the onboard add-on databases provided by Heroku, you are good to go! If you used an external db outside of Heroku, then make a config var called `DATABASE_URL` and put the database's connection url in it. You should be all set and the bot should be online. For any questions or inquires, feel free to join the discord and ask! https://discord.gg/bYFkqsdmqQ
+If you used the onboard add-on databases provided by Heroku, you are good to go! If you used an external db outside of Heroku, then make a config var called `DATABASE_URL` and put the database's connection url in it. You should be all set and the bot should be online. For any questions or inquires, feel free to join the discord and ask! https://discord.gg/2RKPmDg2A6
