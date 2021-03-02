@@ -11,14 +11,18 @@
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
+    "@keyv/mongo": "^1.1.0",
     "@keyv/postgres": "^1.0.16",
     "@ksoft/api": "3.1.9",
+    "@mapbox/node-pre-gyp": "^1.0.0",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.7",
     "filehound": "^1.17.4",
     "keyv": "^4.0.3",
     "r2": "^2.0.1",
+    "sqlite": "^4.0.16",
+    "sqlite3": "^5.0.0",
     "ytdl-core": "^4.4.3",
     "ytpl": "^2.0.4",
     "ytsr": "3.2.1"

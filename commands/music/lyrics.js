@@ -7,6 +7,7 @@ module.exports = {
     aliases: ['lyr'],
     cd: "Chill on the karaoke kid",
     async execute(message, args, d) {
+try {
         const q = message.client.queue.get(message.guild.id);
         if (!args.length && !q) { return message.channel.send('Give me something to search up bruh') }
         let argument = args.join(' ')
@@ -17,7 +18,7 @@ module.exports = {
             .setTitle(name.charAt(0).toUpperCase() + name.slice(1))
             .setThumbnail(artwork)
             .setFooter('DJ Grape | Provided by KSoft.Si')
-            .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8');
+            .addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
         if (name.length + lyrics.length > 6000) { lyricEmbed.addField('The lyrics are too long, here is the URL!', url); }
         else if (lyrics.length > 1024) {
             let arr = lyrics.split('\n\n');
@@ -31,5 +32,11 @@ module.exports = {
             lyricEmbed.addField('\u200b', lyrics)
         }
         message.channel.send(lyricEmbed);
-    }
+   }
+
+	catch(err) {
+message.channel.send("Couldn't get song lyrics!");
+console.error(err)
+} 
+}
 };
