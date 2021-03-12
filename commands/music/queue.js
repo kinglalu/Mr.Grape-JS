@@ -26,7 +26,7 @@ module.exports = {
 			.setDescription(loop + '\n⠀')
 			.setTimestamp()
 			.setFooter('DJ Grape')
-			.addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8');
+			.addField('⠀', 'Sponsored by [NodeClusters](https://nodeclusters.com/billing/link.php?id=8)');
 		for (var key in q) { queue.addFields({ name: '\u200b' + `${parseInt(key) + 1}` + '. ' + q[key].title, value: '⠀' }) }
 		message.channel.send(queue);
 	}
