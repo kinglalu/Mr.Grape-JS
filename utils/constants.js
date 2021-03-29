@@ -135,11 +135,12 @@ const emoji = {
   copper: "<:copper:776577290506600489>",
   cobalt: "<:cobalt:776590825412624414>",
   bronze: "<:bronze:776581702318424134>",
+  starbait: "<:starbait:826145854313463828>",
   kelite: ":question:",
   limeinite: ":question:",
 };
 
-const blacklisted = [];
+const blacklisted = [804390777395478629];
 
 module.exports = {
   Discord: Discord,
