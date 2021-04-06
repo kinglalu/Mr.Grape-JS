@@ -38,7 +38,7 @@ module.exports = {
                 value: 'Kinglalu, DAONE, and LinuxTerm | Goobermeister: graphics/emojis | MikeLime and CompactCow: Bugfixes/minor improvements | Originally by Horsey4 and Airplane Bong.'
             }, {
                 name: 'Supporters (people that donate/boost in Mr Grape Server):',
-                value: 'Neon#3333, Zyphex✨#7464, Karlee Rae#7317 (more info, do +support)'
+                value: 'Neon#3333, Zyphex✨#7464, Karlee Rae#7317, Spritee#0420 (more info, do +support)'
             }, {
                 name: '# of Servers Mr.Grape is in:',
                 value: `${message.client.guilds.cache.size}`

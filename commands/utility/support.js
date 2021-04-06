@@ -16,7 +16,7 @@ module.exports = {
             value: 'Neon#3333, Zyphex✨#7464'
         }, {
             name: 'Boosters:',
-            value: 'Karlee Rae#7317'
+            value: 'Spritee#0420, Karlee Rae#7317'
             })
         .setThumbnail('https://i.imgur.com/JXfpgdXh.jpg')
         .setTimestamp()
