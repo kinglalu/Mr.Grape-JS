@@ -9,7 +9,7 @@ module.exports = {
             "https://api.adviceslip.com/advice"
           ).then((response) => response.json());
           const Embed = new d.Discord.MessageEmbed()
-            .setTitle("Yo momma joke")
+            .setTitle("Advice")
             .setURL("https://api.adviceslip.com/advice")
             .setColor("#dd2de0")
             .setDescription(advice)
