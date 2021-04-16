@@ -3,7 +3,7 @@ module.exports = {
     description: 'give someone a random yo momma joke',
     aliases: ['ym', 'yomama', 'yourmom', 'yomother','yomum'],
     cooldown: 2,
-    cd: "do you really need that that many yo momma jokes?",
+    cd: "do you really need that many yo momma jokes?",
     async execute(message, args, d) {
         const { joke } = await fetch(
             "https://api.yomomma.info/"
