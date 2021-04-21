@@ -41,7 +41,7 @@ class UserItems extends Model {
 
 UserItems.init({
     user_id: DataTypes.STRING,
-    item_id: DataTypes.STRING,
+    item_id: DataTypes.INTEGER,
     amount: {
         type: DataTypes.INTEGER,
         defaultValue: 0
