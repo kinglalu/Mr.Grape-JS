@@ -6,14 +6,11 @@
     "bot",
     "grape"
   ],
-  "repository": "https://github.com/kinglalu/Mr.Grape-Beta",
+  "repository": "https://github.com/kinglalu/Mr.Grape",
   "success_url": "/",
   "env": {
     "DISCORD_TOKEN": {
       "description": "The token for your discord bot"
-    },
-    "DATABASE_URL": {
-      "description": "URL to connect to database"
     },
     "NASA": {
       "description": "For NASA Picture of the Day"
