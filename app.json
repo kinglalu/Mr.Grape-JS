@@ -1,7 +1,31 @@
 {
   "name": "Mr.Grape",
-  "description": "A cool discord bot!",
-  "repository": "https://github.com/kinglalu/Mr.Grape",
-  "logo": "https://cdn.discordapp.com/attachments/756356493623820309/756356579196010547/6EAE9553-564E-4705-B6BB-C66F25BE7777.png",
-  "keywords": ["discord", "discord.js", "bot"]
+  "description": "A cool discord bot.",
+  "keywords": [
+    "discord",
+    "bot",
+    "grape"
+  ],
+  "repository": "https://github.com/kinglalu/Mr.Grape-Beta",
+  "success_url": "/",
+  "env": {
+    "DISCORD_TOKEN": {
+      "description": "The token for your discord bot"
+    },
+    "DATABASE_URL": {
+      "description": "URL to connect to database"
+    },
+    "NASA": {
+      "description": "For NASA Picture of the Day"
+    },
+    "WOLFRAM": {
+      "description": "For Wolfram command"
+    },
+    "KSOFT": {
+      "description": "For Lyrics command"
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ]
 }

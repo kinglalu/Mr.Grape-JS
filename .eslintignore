@@ -1,0 +1,11 @@
+save
+*.txt
+*.sqlite
+*.json
+*.db
+*.env
+*.lock
+node_modules
+Dockerfile
+Procfile
+README.md
