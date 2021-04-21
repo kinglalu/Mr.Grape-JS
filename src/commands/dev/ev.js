@@ -16,7 +16,7 @@ module.exports =
 
         async main(msg) {
             
-            if (!this.client.config.owners.has(msg.author.id) return msg.send("Back off! Devs only!"); 
+            if (!this.client.config.owners.has(msg.author.id)) return msg.send("Back off! Devs only!"); 
                 
             let raw;
 
