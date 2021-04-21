@@ -18,7 +18,7 @@ module.exports =
             const collection = [...msg.guild.members.cache.intersect(this.eco.users.cache).sort((a, b) => b.balance - a.balance).first(10).values()];
 
             const entries = collection
-                .filter(p => p > 0)
+                .filter(p => p.balance > 0)
                 .map((p, i) => [`${i + 1}) \`${msg.guild.members.cache.get(p.id).user.tag}\` | \`${p.balance}\` :star:s`, "\u200b"]);
 
             if (!entries.length) return msg.send("Y'all are poor.");
