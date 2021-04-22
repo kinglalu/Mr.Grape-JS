@@ -11,7 +11,8 @@ module.exports =
                 usage: "<item> <number>",
                 aliases: ["purchase"],
                 saying: "You have enough junk.",
-                cooldown: 5
+                cooldown: 2,
+                fan: true
             });
         }
 

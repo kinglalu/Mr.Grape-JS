@@ -9,7 +9,7 @@ module.exports =
                 aliases: ["unhammer"],
                 description: "Unban people.",
                 usage: "<userID|username>",
-                cooldown: 1,
+                cooldown: 2,
                 saying: "Don't spam this command.",
                 requiredPermissions: ["BAN_MEMBERS"]
             });

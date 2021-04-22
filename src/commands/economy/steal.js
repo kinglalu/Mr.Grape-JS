@@ -10,7 +10,7 @@ module.exports =
                 usage: "<user>",
                 aliases: ["rob", "mug"],
                 saying: "Your balance is fine.",
-                cooldown: 2
+                cooldown: 60
             });
         }
 

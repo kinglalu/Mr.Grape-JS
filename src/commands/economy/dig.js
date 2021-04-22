@@ -10,7 +10,8 @@ module.exports =
                 usage: "No arguments required",
                 aliases: ["mine"],
                 saying: "Mines will be bare. Chill.",
-                cooldown: 2
+                cooldown: 30,
+                fan: true
             });
         }
 

@@ -10,7 +10,8 @@ module.exports =
                 usage: "<number of :star:s>",
                 aliases: ["bj"],
                 saying: "\"It's not an addiction I swear.\"",
-                cooldown: 2
+                cooldown: 5,
+                fan: true
             });
         }
 

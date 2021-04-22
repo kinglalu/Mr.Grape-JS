@@ -11,7 +11,8 @@ module.exports =
                 usage: "<item> <amt>",
                 aliases: ["make", "create"],
                 saying: "Give yourself a rest.",
-                cooldown: 2
+                cooldown: 2,
+                fan: true
             });
         }
 

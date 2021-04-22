@@ -10,7 +10,8 @@ module.exports =
                 usage: "<ore> <amount>",
                 aliases: ["rf"],
                 saying: "Chill on the refining.",
-                cooldown: 2
+                cooldown: 20,
+                fan: true
             });
         }
 
@@ -22,7 +23,7 @@ module.exports =
             };
 
             if (msg.params[0] === "all" && msg.params.length === 1) {
-                const ores = await this.eco.ores.findAll({ 
+                const ores = await this.eco.ores.findAll({
                     where: { user_id: msg.author.id, refined: false },
                     include: "data"
                 });
@@ -30,7 +31,7 @@ module.exports =
                 if (!ores.length) return msg.send("There's nothing to refine!");
 
                 details.cost = ores.reduce((a, r) => a + r.amount * r.data.price, 0);
-            
+
                 if (details.cost > this.eco.users.getBalance(msg.author.id)) return msg.send("~~ur too broke to do that~~");
 
                 for (const ore of ores) {

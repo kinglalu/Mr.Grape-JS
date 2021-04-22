@@ -9,7 +9,7 @@ module.exports =
                 aliases: ["boot"],
                 description: "Kick people.",
                 usage: "<mention|userID>",
-                cooldown: 1,
+                cooldown: 2,
                 saying: "Don't spam this command.",
                 requiredPermissions: ["KICK_MEMBERS"]
             });

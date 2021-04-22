@@ -10,7 +10,8 @@ module.exports =
                 usage: "No arguments required.",
                 aliases: ["rr"],
                 saying: "Pew pew.",
-                cooldown: 2
+                cooldown: 2,
+                fan: true
             });
         }
 

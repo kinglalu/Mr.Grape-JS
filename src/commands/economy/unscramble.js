@@ -11,7 +11,8 @@ module.exports =
                 usage: "<correct word>",
                 aliases: ["unsc"],
                 saying: "Scramble your unscrambling.",
-                cooldown: 5
+                cooldown: 30,
+                fan: true
             });
         }
 

@@ -10,7 +10,7 @@ module.exports =
                 usage: "No arguments",
                 aliases: ["gb", "bigmikes"],
                 saying: "What a scrub.",
-                cooldown: 2
+                cooldown: 5
             });
         }
 

@@ -10,7 +10,7 @@ module.exports =
                 usage: "No arguments required.",
                 aliases: ["lb"],
                 saying: "Scrub.",
-                cooldown: 2
+                cooldown: 5
             });
         }
 

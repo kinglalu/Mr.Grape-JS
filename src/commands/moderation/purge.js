@@ -9,7 +9,7 @@ module.exports =
                 aliases: ["prune", "clean"],
                 description: "Purge messages from a channel.",
                 usage: "<number>",
-                cooldown: 1,
+                cooldown: 2,
                 saying: "Don't spam this command.",
                 requiredPermissions: ["MANAGE_MESSAGES"]
             });

@@ -10,7 +10,8 @@ module.exports =
                 usage: "<number of :star:s>",
                 aliases: ["bet"],
                 saying: "If you have a gambling problem, call 1-800-522-4700.",
-                cooldown: 2
+                cooldown: 5,
+                fan: true
             });
         }
 

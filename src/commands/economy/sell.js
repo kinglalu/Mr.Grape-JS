@@ -10,7 +10,8 @@ module.exports =
                 description: "Get a user's balance.",
                 usage: "<ore> <amount>",
                 saying: "This ain't a bazaar bud.",
-                cooldown: 2
+                cooldown: 5,
+                fan: true
             });
         }
 

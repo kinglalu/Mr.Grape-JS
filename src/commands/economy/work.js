@@ -15,7 +15,8 @@ module.exports =
                 usage: "No arguments required.",
                 aliases: ["job"],
                 saying: "Being a workaholic isn't healthy.",
-                cooldown: 2
+                cooldown: 30,
+                fan: true
             });
         }
 

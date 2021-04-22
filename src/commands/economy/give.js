@@ -10,7 +10,7 @@ module.exports =
                 usage: "<optional user>",
                 aliases: ["gift", "donate"],
                 saying: "Chill on the genorosity.",
-                cooldown: 2
+                cooldown: 5
             });
         }
 

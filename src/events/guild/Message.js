@@ -22,7 +22,7 @@ module.exports =
             if (message.author.bot || !message.command || !message.guild || this.client.config.blacklisted.has(message.author.id)) return;
 
             const command = message.command;
-            const cooldown = this.cooldownManager.main(command, { id: message.author.id, fans: 0 });
+            const cooldown = await this.cooldownManager.main(command, message.author.id);
 
             if (cooldown) {
                 const cooldownEmbed = new Embed()

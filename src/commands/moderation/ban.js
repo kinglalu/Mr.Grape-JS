@@ -9,7 +9,7 @@ module.exports =
                 aliases: ["hammer"],
                 description: "Ban people.",
                 usage: "<mention|userID> <reason>",
-                cooldown: 1,
+                cooldown: 2,
                 saying: "Don't spam this command.",
                 requiredPermissions: ["BAN_MEMBERS"]
             });
