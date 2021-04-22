@@ -20,7 +20,7 @@ module.exports =
 
             if (!collection.length) return msg.send("No people are rich.");
 
-            for (const person of collection) {
+            for (const person of collection.filter(p => p.balance > 0)) {
                 const { tag } = await this.client.users.fetch(person.id);
                 entries.push([`${collection.indexOf(person) + 1}) \`${tag}\` | \`${person.balance}\` :star:s`, "\u200b"]);
             }
