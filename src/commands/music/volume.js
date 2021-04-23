@@ -21,7 +21,7 @@ module.exports =
 
             if (!number) [title, info] = ["**Volume**", musicPlayer.settings.volume];
 
-            else if (isNaN(number) || number < 0 || number > 100) return msg.send(`Setting volume to ${args[0]}, not.`);
+            else if (isNaN(number) || number < 0 || number > 100) return msg.send(`Setting volume to ${msg.params[0]}, not.`);
             else if (number === 0) return msg.send("That's what the pause command is for!");
 
             else {
