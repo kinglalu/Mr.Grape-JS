@@ -21,7 +21,7 @@ module.exports =
         }
 
         async main(msg) {
-            const [jobName, background, failMsg] = situations[1];
+            const [jobName, background, failMsg] = situations[super.randomize(situations.length)];
 
             const chanceArr = [0, 0, 1];
 

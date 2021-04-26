@@ -26,8 +26,8 @@ module.exports =
                 .setAuthor(person.tag, person.displayAvatarURL())
                 .setThumbnail(person.displayAvatarURL())
                 .addFields(
-                    { name: "Joined", value: super.formatDate(personAsGuild.joinedAt), inline: true },
-                    { name: "Created", value: super.formatDate(person.createdAt), inline: true },
+                    { name: "Joined", value: this.formatDate(personAsGuild.joinedAt), inline: true },
+                    { name: "Created", value: this.formatDate(person.createdAt), inline: true },
                     { name: "Highest Role", value: personAsGuild.roles.highest },
                     { name: "ID", value: person.id }
                 );

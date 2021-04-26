@@ -15,13 +15,13 @@ module.exports =
         }
 
         async main(msg) {
-            const { text } = await this.request({
-                url: "https://uselessfacts.jsph.pl/random.json?language=en",
+            const { data } = await this.request({
+                url: "https://useless-facts.sameerkumar.website/api",
             });
 
             const factEmbed = new Embed()
                 .setTitle("Fact")
-                .setDescription(`**${text}**`);
+                .setDescription(`**${data}**`);
             msg.send(factEmbed);
         }
     };

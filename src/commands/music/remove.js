@@ -24,7 +24,7 @@ module.exports =
             const removedSong = queue.remove(index);
 
             const removeEmbed = new Embed()
-                .setDescription(`Removed [${removedSong.title}] from the queue!`);
+                .setDescription(`Removed **[${removedSong.title}]** from the queue!`);
             msg.send(removeEmbed);
         }
     };

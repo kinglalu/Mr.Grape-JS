@@ -18,30 +18,20 @@ module.exports =
             const musicPlayer = this.musicQueues.get(msg.guild.id);
             const mode = ["Off", "Song", "Queue"];
             /* eslint-disable no-case-declarations */
-            switch (msg.params[0]) {
-            case undefined:
-                const loopEmbed = new Embed()
-                    .setTitle(`**Current loop mode: ${mode[musicPlayer.settings.repeatMode]}**`);
-                return msg.send(loopEmbed);
-            case "o":
-            case "off":
-                musicPlayer.settings.repeatMode = 0;
-                break;
-            case "s":
-            case "song":
-                musicPlayer.settings.repeatMode = 1;
-                break;
-            case "q":
-            case "queue":
-                musicPlayer.settings.repeatMode = 2;
-                break;
-            default:
-                const settingsEmbed = new Embed()
-                    .setTitle(`**Valid settings are: ${mode.join(", ")}**`);
-                return msg.send(settingsEmbed);
+            switch (musicPlayer.settings.repeatMode) {
+                case 0:
+                    musicPlayer.settings.repeatMode = 1;
+		    break;
+                case 1:
+                    musicPlayer.settings.repeatMode = 2;
+		    break;
+                case 2:
+                    musicPlayer.settings.repeatMode = 0;
+		    break;
             }
             const settingsEmbed = new Embed()
                 .setTitle(`**Looping set to: ${mode[musicPlayer.settings.repeatMode]}**`);
             return msg.send(settingsEmbed);
         }
     };
+

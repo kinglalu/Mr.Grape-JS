@@ -17,7 +17,7 @@ module.exports =
 
         randomize(rigged) {
             const riggedArr = [1, 2, 3, 4, 4, 6];
-            return rigged ? riggedArr[super.randomize(riggedArr.length)] : super.randomize(7);
+            return rigged ? riggedArr[super.randomize(riggedArr.length)] : super.randomize(6) + 1;
         }
 
         wait(seconds) {
