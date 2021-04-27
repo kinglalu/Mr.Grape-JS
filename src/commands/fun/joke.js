@@ -21,7 +21,7 @@ module.exports =
                     blacklistFlags: "nsfw,religious,political,racist,sexist",
                     format: "json",
                 }
-            });
+            }).json();
 
             const jokeEmbed = new Embed()
                 .setTitle("Meow!")

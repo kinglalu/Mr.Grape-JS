@@ -15,7 +15,7 @@ module.exports =
         }
 
         async main(msg) {
-            const { slip } = await this.request({ url: "https://api.adviceslip.com/advice" });
+            const { slip } = await this.request({ url: "https://api.adviceslip.com/advice" }).json();
 
             const embed = new Embed()
                 .setTitle("Advice")

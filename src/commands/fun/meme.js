@@ -24,7 +24,7 @@ module.exports =
                 params: {
                     limit: 100
                 }
-            });
+            }).json();
 
             for (const { data } of res.data.children) {
                 if (!data.url.substr(8).startsWith("i")) continue;

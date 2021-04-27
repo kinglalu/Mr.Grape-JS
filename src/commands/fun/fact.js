@@ -17,7 +17,7 @@ module.exports =
         async main(msg) {
             const { data } = await this.request({
                 url: "https://useless-facts.sameerkumar.website/api",
-            });
+            }).json();
 
             const factEmbed = new Embed()
                 .setTitle("Fact")

@@ -22,7 +22,7 @@ module.exports =
                     limit: 1,
                     size: "small"
                 }
-            });
+            }).json();
 
             const dogEmbed = new Embed()
                 .setTitle("Woof!")

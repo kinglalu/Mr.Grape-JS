@@ -20,7 +20,7 @@ module.exports =
                 params: {
                     api_key: process.env.NASA
                 }
-            });
+            }).json();
 
             const pictureEmbed = new Embed()
                 .setTitle("NASA Picture of the day!")

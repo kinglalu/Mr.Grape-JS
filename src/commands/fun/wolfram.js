@@ -26,7 +26,7 @@ module.exports =
                     output: "JSON",
                     format: "plaintext"
                 }
-            });
+            }).json();
 
             if (!queryresult.success) {
                 queryMsg.delete();

@@ -15,7 +15,7 @@ module.exports =
         }
 
         async main(msg) {
-            const { joke } = await this.request({ url: "https://api.yomomma.info" });
+            const { joke } = await this.request({ url: "https://api.yomomma.info" }).json();
 
             const embed = new Embed()
                 .setTitle("Yo Momma")

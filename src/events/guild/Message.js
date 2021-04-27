@@ -39,7 +39,6 @@ module.exports =
                     return message.send("I don't have permission to execute that command!");
                 }
             }
-
             else if (command.type === "music" && command.name !== "lyrics") {
                 const { channel } = message.member.voice;
                 const { channel: myChannel } = message.guild.me.voice;
