@@ -27,7 +27,8 @@ module.exports =
             if (!msg.params) return msg.send("What should I play?");
 
             const { channel } = msg.member.voice;
-
+            
+            if (!channel) return msg.send("Get in a voice channel!");
             if (!channel.permissionsFor(msg.guild.me).has(["CONNECT", "SPEAK"])) return msg.send("I can't play music in your VC, fix your perms.");
 
             await musicPlayer.play(msg, msg.params.join(" "));
