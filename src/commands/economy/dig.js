@@ -71,7 +71,7 @@ module.exports =
                     if (super.randomize(prob[entry]) + 1 === 1) await choose(+entry + 1, amts[entry]);
                 }
 
-                if (super.randomize(prob[3]) + 1 === 1) {
+                if (super.randomize(prob[4]) + 1 === 1) {
                     mineEmbed.addField("Uh oh!", "Your pickaxe broke, buy a new one from the shop!");
                     await this.eco.items.deleteItem(msg.author.id, pickaxe);
                 }
