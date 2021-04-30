@@ -1,5 +1,5 @@
 const { Command, Embed } = require("../../../lib");
-//Something kinglalu can copy and paste to make a command
+
 module.exports =
     class extends Command {
         constructor(...args) {

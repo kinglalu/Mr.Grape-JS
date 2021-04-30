@@ -1,3 +1,6 @@
+// FIXED COMMAND
+// TODO: Merge with inventory command
+
 const { EconomyCommand } = require("../../../lib");
 
 module.exports =
@@ -14,11 +17,8 @@ module.exports =
             });
         }
 
-
         async main(msg) {
             const target = msg.mentions.users.first() || msg.author;
-
-            if (target.bot) return msg.send("No other bots (except me, cus im cool)");
 
             const inventory = await this.eco.ores.findAll({
                 where: { user_id: target.id },

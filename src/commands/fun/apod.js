@@ -24,7 +24,9 @@ module.exports =
 
             const pictureEmbed = new Embed()
                 .setTitle("NASA Picture of the day!")
-                .setImage(response.picture);
+            
+            response.picture ? pictureEmbed.setImage(response.picture) : pictureEmbed.addField("NASA Video of the Day", `[${response.title}](${response.url})`);
+
             msg.send(pictureEmbed);
         }
     };

@@ -19,7 +19,6 @@ module.exports =
 
         async init() {
             const res = await this.request({
-               
                 url: "https://www.reddit.com/r/meme/hot/.json", 
                 params: {
                     limit: 100

@@ -22,6 +22,10 @@ module.exports =
             const robber = this.eco.users.getBalance(msg.author.id);
             const mugged = this.eco.users.getBalance(target.id);
 
+            if (robber < 10) return msg.send("Get at least 10 :star:s to rob some n00bs");
+            if (mugged < 10) return msg.send("Don't mug the poor guy.")
+
+
             const hasLockpick = await this.eco.items.getItem(msg.author.id, "lockpick");
 
             if (!hasLockpick) {

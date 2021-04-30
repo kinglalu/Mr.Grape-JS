@@ -39,13 +39,17 @@ module.exports =
                     return message.send("I don't have permission to execute that command!");
                 }
             }
+
+            // This is stupid
             else if (command.type === "music" && command.name !== "lyrics") {
                 const { channel } = message.member.voice;
                 const { channel: myChannel } = message.guild.me.voice;
+                /*
                 if (!command.musicQueues.has(message.guild.id) && command.name !== "play") {
                     return message.send("There is nothing playing!");
                 }
-                else if (!channel && myChannel && myChannel !== channel && !["np", "queue"].includes(command.name)) {
+                */
+                if (!channel && myChannel && myChannel !== channel && !["np", "queue"].includes(command.name)) {
                     return message.send("You have to be in my voice channel!");
                 }
             }

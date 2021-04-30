@@ -29,9 +29,10 @@ module.exports =
                 }
             });
 
-            if (!item) return msg.send("That's not a valid item bruh");
 
-            const cost = item.price * number;
+            if (!item) return msg.send`${item.name} isn't listed in the marketplace.`;
+
+            const cost = item.price * math.Abs(number);
 
             if (cost > this.eco.users.getBalance(msg.author.id)) return msg.send("Ur too broke to buy that");
 

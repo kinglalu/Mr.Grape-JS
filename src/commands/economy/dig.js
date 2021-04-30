@@ -31,7 +31,7 @@ module.exports =
         }
 
         async main(msg) {
-            const earn = Math.round(Math.random() * await this.eco.items.getItem(msg.author.id, "shovel") ? 15 : 6) + 1;
+            const earn = Math.floor(Math.round(Math.random() * await this.eco.items.getItem(msg.author.id, "shovel") ? 15 : 6) + 1);
 
             const mineEmbed = new Embed()
                 .setTitle(`${msg.author.username}'s mine`)

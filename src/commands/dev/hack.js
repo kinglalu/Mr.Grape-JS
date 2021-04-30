@@ -23,8 +23,6 @@ module.exports =
             }
             if (!+msg.params[0]) return msg.send("That's not a valid number!");
 
-            if (+msg.params[0] > 100000) return msg.send("That's more than enough");
-
             this.eco.users.add(msg.author.id, +msg.params[0]);
 
             msg.send("Done!");

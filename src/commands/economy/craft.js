@@ -29,16 +29,17 @@ module.exports =
                 }
             });
 
-            if (!craft) return msg.send("Can't craft what you can't spell");
+            if (!craft) return msg.send`${item} isn't listed in the marketplace.`;
 
             const itemDescription = super.format(craft.name, quantity);
 
             for (const [ingredient, amount] of Object.entries(craft.recipe)) {
                 const part = await this.eco.ores.getOre(msg.author.id, ingredient, true);
 
-                if (!part || part.amount < amount * quantity) return msg.send(`You don't have enough ${ingredient}s to make ${itemDescription}!`);
+                if (!part || part.amount <= amount * quantity) return msg.send(`You don't have enough ${ingredient}s to make ${itemDescription}.`);
 
-                await this.eco.ores.deleteOre(msg.author.id, ingredient, amount * quantity, true);
+                part.amount -= amount * quantity;
+                part.save();
             }
 
             await this.eco.items.addItem(msg.author.id, craft, quantity);

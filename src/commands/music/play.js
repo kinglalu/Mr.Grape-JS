@@ -28,8 +28,6 @@ module.exports =
 
             const { channel } = msg.member.voice;
 
-            if (!channel.permissionsFor(msg.guild.me).has(["CONNECT", "SPEAK"])) return msg.send("I can't play music in your VC, fix your perms.");
-
             await musicPlayer.play(msg, msg.params.join(" "));
 
             musicPlayer._connection.on("disconnect", () => this.musicQueues.delete(msg.guild.id));

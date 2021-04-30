@@ -1,4 +1,5 @@
 const { EconomyCommand, Embed } = require("../../../lib");
+module.exports = class extends EconomyCommand {};
 
 module.exports =
     class extends EconomyCommand {
@@ -71,6 +72,7 @@ module.exports =
                     const caught = super.randomize(25);
                     if (caught === 1) {
                         await this.wait(1.7);
+                        // This will overflow
                         gambleMsg.edit(gambleEmbed.addField(`Uh oh! You were looking sus, so you got busted and lost your ${number} :star:s!`, "\u200b"));
                         return this.eco.users.add(msg.author.id, -number);
                     }
@@ -79,6 +81,7 @@ module.exports =
             }
             else {
                 gambleMsg.edit(gambleEmbed.addField(`Rip, you lost your ${number} :star:s.`, "\u200b"));
+                // This will overflow
                 this.eco.users.add(msg.author.id, -number);
             }
         }

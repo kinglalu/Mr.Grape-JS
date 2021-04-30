@@ -16,6 +16,7 @@ module.exports =
 		
         main(msg) {
             if (!this.client.config.owners.has(msg.author.id)) return msg.send("Back off! Devs only!");
+            if (msg.params[0].toLowerCase() === 'reload') return msg.send("Invalid command!");
             const command = this.client.commands.delete(msg.params[0].toLowerCase());
             if (!command) return msg.send("Invalid command!");
             return msg.send("Command unloaded!");

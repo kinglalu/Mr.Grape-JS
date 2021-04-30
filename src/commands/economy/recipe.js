@@ -1,3 +1,5 @@
+// FIXED COMMAND
+
 const { Op } = require("sequelize");
 const { EconomyCommand } = require("../../../lib");
 
@@ -42,7 +44,7 @@ module.exports =
                     }
                 });
 
-                if (!recipe) return msg.send("That's not a valid recipe.");
+                if (!recipe) return msg.send`${recipe} can't be crafted`;
 
                 const ingredients = Object.entries(recipe.recipe).map(r => [this.format(r[0]), r[1]]);
 

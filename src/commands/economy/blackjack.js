@@ -19,8 +19,8 @@ module.exports =
             const balance = this.eco.users.getBalance(msg.author.id);
             const betAmount = msg.params[0] === "all" || msg.params[0] === "max" ? balance : +msg.params[0];
 
-            if (!balance) return msg.send("You are an idiot. You have 0 :star:s.");
-            if (!betAmount || betAmount < 0 || betAmount > balance) return msg.send("You are an idiot. Give a valid number.");
+            if (!balance || betAmount > balance) return msg.send("You don't have the necessary funds.");
+            if (!betAmount || betAmount < 0) return msg.send("You can't bet that amount.");
             // ** BEGIN Javascript blackjack game from echohatch1. Modified for Grape.
 
             this.eco.users.add(msg.author.id, -betAmount);

@@ -55,9 +55,9 @@ module.exports =
                 details.cost += amount * oreData.price;
 
                 if (amount > ore.amount) return msg.send("That's more ores than you have!");
-                if (details.cost > this.eco.users.getBalance(msg.author.id)) return msg.send(`You can't refine your ${amount} ${ore.name} ores!`);
+                if (details.cost > this.eco.users.getBalance(msg.author.id)) return msg.send(`You can't refine your ${amount} ${oreData.name} ores!`);
 
-                details.amount += ore.amount;
+                details.amount += amount;
                 details.data += oreData.name;
 
                 ore.refine(amount);

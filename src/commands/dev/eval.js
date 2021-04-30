@@ -8,7 +8,7 @@ module.exports =
                 type: "dev",
                 description: "Eval js.",
                 usage: "<command to reload>",
-                aliases: ["eval"],
+                aliases: ["eval", "e"],
                 saying: "N/A.",
                 cooldown: 0
             });
@@ -21,12 +21,12 @@ module.exports =
             let raw;
 
             try {
-                raw = eval(msg.params.join(" ").replace(/process\.env/g, ""));
+                raw = eval(msg.params.join(" "));
             } catch (err) {
                 raw = err;
             }
 
-            const output = require("util").inspect(raw).replace(this.client.token, "[redacted]");
+            const output = require("util").inspect(raw);
 
             msg.send(output, { code: "bash", split: true });
         }
