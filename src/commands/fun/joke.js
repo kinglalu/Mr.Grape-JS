@@ -24,7 +24,7 @@ module.exports =
             }).json();
 
             const jokeEmbed = new Embed()
-                .setTitle("Meow!")
+                .setTitle("Joke!")
                 .addField(setup, delivery);
             msg.send(jokeEmbed);
         }

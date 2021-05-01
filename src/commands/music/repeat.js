@@ -21,17 +21,16 @@ module.exports =
             switch (musicPlayer.settings.repeatMode) {
                 case 0:
                     musicPlayer.settings.repeatMode = 1;
-		    break;
+                    break;
                 case 1:
                     musicPlayer.settings.repeatMode = 2;
-		    break;
+                    break;
                 case 2:
                     musicPlayer.settings.repeatMode = 0;
-		    break;
+                    break;
             }
             const settingsEmbed = new Embed()
                 .setTitle(`**Looping set to: ${mode[musicPlayer.settings.repeatMode]}**`);
             return msg.send(settingsEmbed);
         }
     };
-

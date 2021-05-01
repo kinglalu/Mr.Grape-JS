@@ -22,6 +22,7 @@ module.exports =
             const dailyEmbed = new Embed()
                 .setTitle("Daily stars!")
                 .addField(`${msg.author.username} got`, `**${randStars} :star:s!**`);
+                
             msg.send(dailyEmbed);
         }
     };

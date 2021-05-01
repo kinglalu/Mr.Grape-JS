@@ -56,6 +56,7 @@ module.exports =
                 const unscEmbed = new Embed()
                     .setTitle(`${msg.author.username}'s unscrambling`)
                     .addField("Good job!", `You got ${reward} :star:s!`);
+                    
                 return msg.send(unscEmbed);
             }
 
@@ -63,6 +64,7 @@ module.exports =
                 const unscEmbed = new Embed()
                     .setTitle(`${msg.author.username}'s unscrambling`)
                     .addField("You're bad.", `It's ${fruit} not ${message}`);
+
                 return msg.send(unscEmbed);
             }
         }

@@ -26,8 +26,6 @@ module.exports =
             if (!msg.params && !musicPlayer.playing) musicPlayer.resume();
             if (!msg.params) return msg.send("What should I play?");
 
-            const { channel } = msg.member.voice;
-
             await musicPlayer.play(msg, msg.params.join(" "));
 
             musicPlayer._connection.on("disconnect", () => this.musicQueues.delete(msg.guild.id));

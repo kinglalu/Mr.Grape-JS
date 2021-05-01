@@ -15,7 +15,6 @@ module.exports =
         }
 
         main(msg) {
-
             let uptime = this.client.uptime / 1000;
             let unit = "second(s)";
             if (uptime > 59 && unit === "second(s)") {

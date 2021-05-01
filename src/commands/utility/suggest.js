@@ -16,7 +16,6 @@ module.exports =
 
         async main(msg) {
             const suggestion = msg.params.join(" ");
-
             if (suggestion.length < 15) return msg.send("Your suggestion is too short.");
             else if (suggestion.length > 1800) return msg.send("Your suggestion is wayyy too long. Tone it down.");
 

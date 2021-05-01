@@ -20,6 +20,7 @@ module.exports =
             const embed = new Embed()
                 .setTitle("Advice")
                 .setDescription(slip.advice);
+                
             msg.send(embed);
         }
     };

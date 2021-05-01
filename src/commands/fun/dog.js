@@ -15,7 +15,8 @@ module.exports =
         }
 
         async main(msg) {
-            const picture = await this.request({
+	
+		const picture = await this.request({
                 url: "https://api.thedogapi.com/v1/images/search",
                 params: {
                     mime_types: "jpg,png",

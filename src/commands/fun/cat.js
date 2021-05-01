@@ -27,6 +27,7 @@ module.exports =
             const pictureEmbed = new Embed()
                 .setTitle("Meow!")
                 .setImage(picture[0].url);
+                
             msg.send(pictureEmbed);
         }
     };

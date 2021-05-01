@@ -30,7 +30,7 @@ module.exports =
 
             if (!queryresult.success) {
                 queryMsg.delete();
-                return msg.send("Dunno about that one.");
+                return msg.send`Unable to process ${msg.params.join(" ")}`;
             }
 
             const answer = queryresult.pods[1].subpods[0].plaintext;

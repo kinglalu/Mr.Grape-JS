@@ -15,12 +15,12 @@ module.exports =
         }
 
         main(msg) {
-
             const { connection } = msg.guild.voice
 
             connection.disconnect();
             this.musicQueues.delete(msg.guild.id);
 
+            // TODO: Only run when actually left
             return msg.send("Cya!");
         }
     };

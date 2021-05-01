@@ -35,6 +35,7 @@ module.exports =
 
             const volEmbed = new Embed()
                 .setTitle(`${title}: **${info}**`);
+                
             return msg.send(volEmbed);
         }
     };

@@ -17,12 +17,11 @@ module.exports =
         main(msg) {
             const target = msg.mentions.users.first() || msg.author;
 
-            if (target.bot) return msg.send("No other bots (except me, cus im cool)");
-
             const balEmbed = new Embed()
                 .setTitle("Balance")
                 .addField(target.username, `${this.eco.users.getBalance(target.id)} :star:s`)
                 .setFooter("Grape Bank Inc.");
+
             msg.send(balEmbed);
         }
     };

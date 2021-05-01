@@ -47,6 +47,7 @@ module.exports =
             const craftEmbed = new Embed()
                 .setTitle("Crafting")
                 .addField("Success!", `You crafted ${itemDescription}!`);
+                
             msg.send(craftEmbed);
         }
     };

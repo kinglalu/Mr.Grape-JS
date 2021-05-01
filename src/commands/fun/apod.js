@@ -14,6 +14,7 @@ module.exports =
             });
         }
 
+
         async main(msg) {
             const response = await this.request({
                 url: "https://api.nasa.gov/planetary/apod",
@@ -24,7 +25,7 @@ module.exports =
 
             const pictureEmbed = new Embed()
                 .setTitle("NASA Picture of the day!")
-            
+
             response.picture ? pictureEmbed.setImage(response.picture) : pictureEmbed.addField("NASA Video of the Day", `[${response.title}](${response.url})`);
 
             msg.send(pictureEmbed);

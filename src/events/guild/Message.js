@@ -58,7 +58,7 @@ module.exports =
                 command.main(message);
                 this.client.emit("commandRun", command.name, message.author);
             } catch (err) {
-                message.send("Made an oopsie! If this persists, please let us know!");
+                message.send`Can't run ${command.name} due to an error.`;
                 this.client.emit("commandError", command.name, err);
             }
         }

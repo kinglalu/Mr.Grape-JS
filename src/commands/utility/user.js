@@ -8,7 +8,7 @@ module.exports =
                 type: "utility",
                 description: "Get basic user info.",
                 usage: "<optional user>",
-                aliases: ["usr"],
+                aliases: ["usr","userinfo"],
                 saying: "Stop stalking.",
                 cooldown: 2
             });
@@ -31,7 +31,7 @@ module.exports =
                     { name: "Highest Role", value: personAsGuild.roles.highest },
                     { name: "ID", value: person.id }
                 );
-            if (person.id === msg.client.user.id) personEmbed.setFooter("That's me!");
+                
             msg.send(personEmbed);
         }
     };

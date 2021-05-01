@@ -31,6 +31,7 @@ module.exports =
                     { name: "Time remaining", value: this.toISOTime(this.toSeconds(song.duration) - playTime), inline: true },
                     { name: "Total Duration", value: formattedDuration, inline: true }
                 );
+                
             msg.send(np);
         }
     };

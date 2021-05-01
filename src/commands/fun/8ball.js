@@ -52,6 +52,7 @@ module.exports =
             const embed = new Embed()
                 .setTitle(`${msg.author.username}'s crystal ball`)
                 .setDescription(this.getResponse(invalid));
+                
             msg.send(embed);
         }
     };
