@@ -56,10 +56,33 @@ module.exports =
 
             try {
                 command.main(message);
-                this.client.emit("commandRun", command.name, message.author);
             } catch (err) {
-                message.send`Can't run ${command.name} due to an error.`;
+                console.log(err);
+                
+                message.send`Can't run ${command.name} due to a bug.`;
+                message.send`Do you want to report this bug to the developers?`;
+
+                const verification = await msg.channel.awaitMessages(m => m.author.id === msg.author.id, { max: 1, time: 3500 });
+
+                const response = verification.first().content.toLowerCase();
+
+                if (response === "yes" || response === "y") {
+                    const channel = await this.client.channels.fetch(this.client.config.defaultChannels.bugs);
+
+                    const bugEmbed = new Embed()
+                        .setTitle("Bug Report")
+                        .setThumbnail(msg.author.displayAvatarURL({ dynamic: true }))
+                        .addFields(
+                            { name: "Author", value: `Username: ${msg.author.username}\nID: ${msg.author.id}`, inline: true },
+                            { name: "Guild", value: msg.guild.name, inline: true },
+                            { name: "Bug", value: `${command.name}` }
+                        );
+
+                    channel.send(bugEmbed);
+                }
+
                 this.client.emit("commandError", command.name, err);
             }
+            this.client.emit("commandRun", command.name, message.author);
         }
     };

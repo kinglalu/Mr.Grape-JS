@@ -35,11 +35,11 @@ module.exports =
 
             const mineEmbed = new Embed()
                 .setTitle(`${msg.author.username}'s mine`)
-                .addField(`You dug up ${earn} :star:s!`, "\u200b");
+                .addField(`You dug up ${earn} :star:s!`, "‎");
 
             const choose = async (tier, amt) => {
                 const [name, amount] = await this.randOre(msg.author.id, tier, amt);
-                mineEmbed.addField(`You got ${super.format(name, amount)}! ${msg.emojis[name]}`, "\u200b");
+                mineEmbed.addField(`You got ${super.format(name, amount)}! ${msg.emojis[name]}`, "‎");
             };
 
             const chances = {

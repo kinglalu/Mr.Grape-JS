@@ -19,11 +19,13 @@ module.exports =
         main(msg) {
             const target = msg.mentions.users.first();
             const balance = this.eco.users.getBalance(msg.author.id);
+            const limit = 1000;
 
             const number = msg.params.find(e => e === "all" || e === "max") ? balance : +msg.params.find(n => parseInt(n));
 
             if (!number || number < 0 || number > balance) return msg.send(`~~ur too broke to give that much away~~`);
-            if (!target || target.bot || target.id === msg.author.id) return msg.send("That's not a valid person to give :star:s to.")
+            if (target.id === msg.author.id) return msg.send("That's not a valid person to give :star:s to.")
+            if (number >= limit) return msg.send`You can't send more or equal to ${limit}`;
 
             this.eco.users.add(target.id, number);
 

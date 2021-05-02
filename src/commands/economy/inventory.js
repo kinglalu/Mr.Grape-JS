@@ -31,7 +31,7 @@ module.exports =
                 .sort((a, b) => a.data.name.localeCompare(b.data.name))
                 .map(item => [this.format(item.data.name, item.amount), item.amount]);
 
-            const entries = items.length ? items : [["nothing but cobwebs and dust m8", "\u200b"]];
+            const entries = items.length ? items : [["nothing but cobwebs and dust m8", "‎"]];
 
             msg.paginate({ title: `${target.username}'s inventory` }, entries, 5);
         }

@@ -11,7 +11,7 @@ module.exports =
                 usage: "<number of :star:s>",
                 aliases: ["bet"],
                 saying: "If you have a gambling problem, call 1-800-522-4700.",
-                cooldown: 5,
+                cooldown: 10000,
                 fan: true
             });
         }
@@ -38,15 +38,15 @@ module.exports =
             const balance = this.eco.users.getBalance(msg.author.id);
             const number = msg.params[0] === "all" || msg.params[0] === "max" ? balance : +msg.params[0];
 
-            if (!number || number < 0 || number > balance) return msg.send("That's not a valid number of stars to bet.");
-
             if (await this.eco.items.getItem(msg.author.id, "rigged die")) {
                 msg.send("Do you want to use your rigged die?");
 
                 const rig = await this.verify(msg);
-                if (rig) rigged = true;
+                if (rig) {
+                    rigged = true;
+                    if (!number || number*2 < 0 || number*2 > balance) return msg.send`You can't bet ${number}`;
+                } else if (!number || number < 0 || number > balance) return msg.send`You can't bet ${number}`;
             }
-
             if (number === balance) {
                 msg.send("Are you sure you wanna do that?");
 
@@ -57,30 +57,30 @@ module.exports =
             const dice = this.randomize(rigged);
             const gambleEmbed = new Embed()
                 .setTitle(`${msg.author.username}'s gambling table`)
-                .addField("Ok, if you roll an even number you win, if you roll an odd number, you lose.", "\u200b");
+                .addField("Ok, if you roll an even number you win, if you roll an odd number, you lose.", "‎");
 
             const gambleMsg = await msg.send(gambleEmbed);
             await this.wait(1.7);
-            gambleMsg.edit(gambleEmbed.addField("You rolled a . . .", "\u200b"));
+            gambleMsg.edit(gambleEmbed.addField("You rolled a . . .", "‎"));
             await this.wait(3.5);
-            gambleMsg.edit(gambleEmbed.addField(dice, "\u200b"));
+            gambleMsg.edit(gambleEmbed.addField(dice, "‎"));
             await this.wait(1.7);
 
             if (dice % 2 === 0) {
-                gambleMsg.edit(gambleEmbed.addField(`Congrats, you get ${number} :star:s!`, "\u200b"));
+                gambleMsg.edit(gambleEmbed.addField(`Congrats, you get ${number} :star:s!`, "‎"));
                 if (rigged) {
                     const caught = super.randomize(25);
                     if (caught === 1) {
                         await this.wait(1.7);
-                        // This will overflow
-                        gambleMsg.edit(gambleEmbed.addField(`Uh oh! You were looking sus, so you got busted and lost your ${number} :star:s!`, "\u200b"));
+
+                        gambleMsg.edit(gambleEmbed.addField(`Uh oh! You were looking sus, so you got busted and lost your ${number} :star:s!`, "‎"));
                         return this.eco.users.add(msg.author.id, -number);
                     }
                 }
                 this.eco.users.add(msg.author.id, number);
             }
             else {
-                gambleMsg.edit(gambleEmbed.addField(`Rip, you lost your ${number} :star:s.`, "\u200b"));
+                gambleMsg.edit(gambleEmbed.addField(`Rip, you lost your ${number} :star:s.`, "‎"));
                 // This will overflow
                 this.eco.users.add(msg.author.id, -number);
             }

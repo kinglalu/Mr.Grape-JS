@@ -25,9 +25,9 @@ module.exports =
             const avatarEmbed = new Embed()
                 .setTitle(`${avatar.username}'s avatar`)
                 .addFields(
-                    { name: "\u200b", value: `**[jpg](${this.getPic(avatar, "jpg")})**`, inline: true },
-                    { name: "\u200b", value: `**[png](${this.getPic(avatar, "png")})**`, inline: true },
-                    { name: "\u200b", value: `**[webp](${this.getPic(avatar, "webp")})**`, inline: true }
+                    { name: "‎", value: `**[jpg](${this.getPic(avatar, "jpg")})**`, inline: true },
+                    { name: "‎", value: `**[png](${this.getPic(avatar, "png")})**`, inline: true },
+                    { name: "‎", value: `**[webp](${this.getPic(avatar, "webp")})**`, inline: true }
                 )
                 .setImage(this.getPic(avatar));
             msg.send(avatarEmbed);

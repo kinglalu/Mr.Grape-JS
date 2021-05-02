@@ -16,7 +16,7 @@ module.exports =
         }
 
         createEntry(pos, { title, url, duration, author }) {
-            return ["\u200b", `**${pos}) [${escapeMarkdown(title)}](${url})\n\`${duration}\`| ${author}**`];
+            return ["‎", `**${pos}) [${escapeMarkdown(title)}](${url})\n\`${duration}\`| ${author}**`];
         }
 
         main(msg) {

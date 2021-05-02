@@ -35,6 +35,7 @@
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",
+    "js-interpreter": "^2.3.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2",

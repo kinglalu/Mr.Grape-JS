@@ -22,6 +22,5 @@ module.exports =
 
         main(msg) {
             msg.send(greetings[Math.floor(Math.random() * greetings.length)]);
-
-	}
+	    }
     };

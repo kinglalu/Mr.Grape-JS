@@ -29,7 +29,7 @@ module.exports =
                 .sort((a, b) => a.data.name.localeCompare(b.data.name))
                 .map(ore => [`${msg.emojis[ore.data.name]} - ${ore.refined ? "Refined" : ""} ${ore.data.name.charAt(0).toUpperCase()}${ore.data.name.slice(1)}`, ore.amount]);
 
-            const entries = items.length ? items : [["nothing but cobwebs and pebbles m8", "\u200b"]];
+            const entries = items.length ? items : [["nothing but cobwebs and pebbles m8", "‎"]];
 
             msg.paginate({ title: `${target.username}'s inventory` }, entries, 5);
         }

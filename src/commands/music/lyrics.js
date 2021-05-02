@@ -43,7 +43,7 @@ module.exports =
 
             if (name.length + lyrics.length > 6000) lyrEmbed.addField("Lyrics", `[Click here!](${url})`);
 
-            else for (const lyric of lyrics.split("\n\n")) lyrEmbed.addField("\u200b", lyric);
+            else for (const lyric of lyrics.split("\n\n")) lyrEmbed.addField("‎", lyric);
 
             msg.send(lyrEmbed);
         }

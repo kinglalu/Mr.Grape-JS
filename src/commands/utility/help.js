@@ -1,5 +1,4 @@
 const { Command, Embed } = require("../../../lib");
-const checkmark = "✅";
 
 module.exports =
     class extends Command {
@@ -20,9 +19,6 @@ module.exports =
         }
 
         async main(msg) {
-
-            await msg.react(checkmark);
-
             const aliases = {
                 "mod": "moderation",
                 "mus": "music",

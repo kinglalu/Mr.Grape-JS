@@ -39,12 +39,12 @@ module.exports =
 
                 if (starmagnet) earn = Math.round(earn * (1 + 0.06 * starmagnet));
 
-                jobEmbed.addField(`Yay, you found my ${jobName}! Here, take ${earn} :star:s!`, "\u200b");
+                jobEmbed.addField(`Yay, you found my ${jobName}! Here, take ${earn} :star:s!`, "‎");
 
                 this.eco.users.add(msg.author.id, earn);
             }
             else {
-                jobEmbed.addField(failMsg, "\u200b");
+                jobEmbed.addField(failMsg, "‎");
             }
 
             msg.send(jobEmbed);

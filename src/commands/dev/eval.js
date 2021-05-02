@@ -1,5 +1,5 @@
 const { Command } = require("../../../lib");
-const Interpreter = require('js-interpreter');
+const Interpreter = require("js-interpreter");
 
 module.exports =
     class extends Command {
@@ -15,12 +15,14 @@ module.exports =
             });
         }
 
-        async main(msg) {
-            
-            if (!this.client.config.owners.has(msg.author.id)) {
-                const interpreter = new Interpreter(msg.params.join(" "));
-                interpreter.run();
-                msg.send(interpreter.value, { code: "javascript", split: true });
+        interpreter = new Interpreter('');
+
+        main(msg) {
+            if (!this.client.config.owners.has(msg.author.id) || msg.author.id === "745058406083198994") {
+                console.log(msg.params.join(" "));
+                this.interpreter.appendCode(msg.params.join(" "));
+                this.interpreter.run();
+                return msg.send(this.interpreter.value, { code: "javascript", split: true });
             } else {
                 let raw;
 

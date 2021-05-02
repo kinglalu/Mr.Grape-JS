@@ -33,13 +33,24 @@ module.exports =
 
             if (!channel) return msg.send("Get in a voice channel!")
 
-            // Use filter for finding multiple
-            const selection = stations.find(station => station?.callsign === msg.params[0] || `${station?.frequency} ${station?.band}` === `${msg.params[0]} ${msg.params[1]}`);
+            let selections = stations.filter(station => station?.callsign === msg.params[0] || `${station?.frequency} ${station?.bband}` === `${msg.params[0]} ${msg.params[1]}` && station);
 
-            // TODO: Ask the user which station they want give them number choices
-            // if (selection.length >= 2) msg.send``
+            if (selections.length >= 2) {
+                const selectionEmbed = new Embed()
+                .setTitle("Selection")
+                .addFields(
+                    { name: "Which station do you want?", value: `${selections?.map(station => `${station?.callsign} *${station?.country}, ${station?.city}*`).join('\n')}`, inline: true },
+                );
 
-            const metadata = selection;
+                msg.send(selectionEmbed);
+
+                const collector = await msg.channel.awaitMessages(m => m.author.id === msg.author.id, { max: 1, time: 7000 });
+                const message = collector.first().content;
+                
+                selections = selections.find(station => station?.callsign === message);
+            }
+
+            const metadata = typeof selections[0] === "undefined" ? selections : selections[0];
 
             if (!metadata) return msg.send("No station found!");
 

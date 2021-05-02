@@ -19,7 +19,7 @@ module.exports =
 
             const entries = collection
                 .filter(p => p.balance > 0)
-                .map((p, i) => [`${i + 1}) \`${msg.guild.members.cache.get(p.id).user.tag}\` | \`${p.balance}\` :star:s`, "\u200b"]);
+                .map((p, i) => [`${i + 1}) \`${msg.guild.members.cache.get(p.id).user.tag}\` | \`${p.balance}\` :star:s`, "‎"]);
 
             if (!entries.length) return msg.send("Y'all are poor.");
 

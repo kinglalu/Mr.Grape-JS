@@ -22,7 +22,7 @@ module.exports =
 
             for (const person of collection.filter(p => p.balance > 0)) {
                 const { tag } = await this.client.users.fetch(person.id);
-                entries.push([`${collection.indexOf(person) + 1}) \`${tag}\` | \`${person.balance}\` :star:s`, "\u200b"]);
+                entries.push([`${collection.indexOf(person) + 1}) \`${tag}\` | \`${person.balance}\` :star:s`, "‎"]);
             }
 
             msg.paginate({ title: "Global Leaderboard" }, entries, 5);

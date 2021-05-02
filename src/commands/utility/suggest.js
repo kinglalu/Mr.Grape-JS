@@ -33,7 +33,7 @@ module.exports =
 
             const suggestedEmbed = new Embed()
                 .setTitle("Suggestion Sent!")
-                .addField("\u200b", `View your suggestion [here](${this.client.config.serverInvite})`);
+                .addField("‎", `View your suggestion [here](${this.client.config.serverInvite})`);
             msg.send(suggestedEmbed);
         }
     };
