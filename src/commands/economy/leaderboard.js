@@ -21,7 +21,7 @@ module.exports =
                 .filter(p => p.balance > 0)
                 .map((p, i) => [`${i + 1}) \`${msg.guild.members.cache.get(p.id).user.tag}\` | \`${p.balance}\` :star:s`, "‎"]);
 
-            if (!entries.length) return msg.send("Y'all are poor.");
+            if (!entries.length) return msg.send("Y'all are broke.");
 
             msg.paginate({ title: `${msg.guild.name}'s Leaderboard` }, entries, 5);
         }

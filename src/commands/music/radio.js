@@ -33,21 +33,24 @@ module.exports =
 
             if (!channel) return msg.send("Get in a voice channel!")
 
-            let selections = stations.filter(station => station?.callsign === msg.params[0] || `${station?.frequency} ${station?.bband}` === `${msg.params[0]} ${msg.params[1]}` && station);
+            let selections = stations.filter(station => station?.callsign?.toLowerCase() === msg.params[0]?.toLowerCase() || `${station?.frequency?.toLowerCase()} ${station?.bband?.toLowerCase()}` === `${msg.params[0]?.toLowerCase()} ${msg.params[1]?.toLowerCase()}` && station);
 
             if (selections.length >= 2) {
                 const selectionEmbed = new Embed()
                 .setTitle("Selection")
+                //.setFooter("Mr Grape Records")
                 .addFields(
-                    { name: "Which station do you want?", value: `${selections?.map(station => `${station?.callsign} *${station?.country}, ${station?.city}*`).join('\n')}`, inline: true },
+                    { name: "Which station do you want?", value: `${selections?.map(station => `${station?.callsign} *${station?.country}${station?.city != null ? `, ${station?.city}` : ''}*`).join('\n')}`, inline: true },
                 );
 
                 msg.send(selectionEmbed);
 
                 const collector = await msg.channel.awaitMessages(m => m.author.id === msg.author.id, { max: 1, time: 7000 });
-                const message = collector.first().content;
+                const message = collector.first().content.toLowerCase();
                 
-                selections = selections.find(station => station?.callsign === message);
+                selections = selections.find(station => station?.callsign?.toLowerCase() === message || `${station?.callsign?.toLowerCase()} ${station?.country?.toLowerCase()}, ${station?.city?.toLowerCase()}` === message ||  `${station?.country?.toLowerCase()}, ${station?.city?.toLowerCase()}` === message || station?.country?.toLowerCase() === message || station?.city?.toLowerCase() === message);
+
+                if (typeof selections === "undefined") return msg.send(`Can't find station with ${message}.`.toString())
             }
 
             const metadata = typeof selections[0] === "undefined" ? selections : selections[0];
@@ -61,6 +64,7 @@ module.exports =
                 .setTitle("Radio")
                 .setDescription(metadata.description)
                 .setThumbnail(metadata.square_logo_large)
+                //.setFooter("Mr Grape Records")
                 .addFields(
                     { name: "Live", value: `[Listen here](${metadata.listen_live_url})`, inline: true },
                     { name: "Website", value: `[View here](${metadata.website})`, inline: true }

@@ -34,7 +34,7 @@ module.exports =
 
             const bugSentEmbed = new Embed()
                 .setTitle("Bug Report Sent!")
-                .addField(`View your bug report [here](${this.client.config.serverInvite})`);
+                .addField("\u200b", `View your bug report [here](${this.client.config.serverInvite})`);
             msg.send(bugSentEmbed);
         }
     };

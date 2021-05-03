@@ -1,4 +1,4 @@
-const { Command } = require("../../../lib");
+const { Command, Embed } = require("../../../lib");
 const Interpreter = require("js-interpreter");
 
 module.exports =
@@ -9,7 +9,7 @@ module.exports =
                 type: "dev",
                 description: "Eval js.",
                 usage: "<command to reload>",
-                aliases: ["evaluation", "ev", "e"],
+                aliases: ["ev", "e"],
                 saying: "N/A.",
                 cooldown: 0
             });
@@ -17,12 +17,37 @@ module.exports =
 
         interpreter = new Interpreter('');
 
+        init() {
+            this.interpreter.setProperty(console, 'log', interpreter.createNativeFunction(null)));
+        }
+
         main(msg) {
             if (!this.client.config.owners.has(msg.author.id) || msg.author.id === "745058406083198994") {
-                console.log(msg.params.join(" "));
+                
+                
                 this.interpreter.appendCode(msg.params.join(" "));
-                this.interpreter.run();
-                return msg.send(this.interpreter.value, { code: "javascript", split: true });
+
+                try {
+                    this.interpreter.run();
+                } catch (e) {
+                    const evalEmbed = new Embed()
+                    .setTitle("Eval")
+                    .addFields(
+                        { name: "Input", value: `\`\`\`js\n${msg.params.join(" ")}\`\`\`` },
+                        { name: "Output", value: `\`\`\`sh\n${e}\`\`\`` }
+                    );
+                    
+                    return msg.send(evalEmbed)
+                }
+
+                const evalEmbed = new Embed()
+                    .setTitle("Eval")
+                    .addFields(
+                        { name: "Input", value: `\`\`\`js\n${msg.params.join(" ")}\`\`\`` },
+                        { name: "Output", value: `\`\`\`sh\n${this.interpreter.value}\`\`\`` }
+                    );
+
+                msg.send(evalEmbed);
             } else {
                 let raw;
 
@@ -34,7 +59,14 @@ module.exports =
 
                 const output = require("util").inspect(raw);
 
-                msg.send(output, { code: "javascript", split: true });
+                const evalEmbed = new Embed()
+                    .setTitle("Eval")
+                    .addFields(
+                        { name: "Input", value: `\`\`\`js\n${msg.params.join(" ")}\`\`\``.toString() },
+                        { name: "Output", value: `\`\`\`sh\n${output}\`\`\``, code: "bash"}
+                    );
+
+                msg.send(evalEmbed);
             }
         }
     };

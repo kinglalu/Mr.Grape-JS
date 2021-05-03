@@ -10,7 +10,7 @@ module.exports =
                 description: "Roll a die!",
                 usage: "No arguments required",
                 cooldown: 5,
-                saying: "Chill on the dice.",
+                saying: "Chill on the dice!",
             });
         }
 

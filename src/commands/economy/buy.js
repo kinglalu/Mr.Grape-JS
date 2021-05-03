@@ -32,7 +32,7 @@ module.exports =
 
             if (!item) return msg.send`${item.name} isn't listed in the marketplace.`;
 
-            const cost = item.price * math.Abs(number);
+            const cost = item.price * Math.abs(number);
 
             if (cost > this.eco.users.getBalance(msg.author.id)) return msg.send("Ur too broke to buy that");
 
@@ -41,8 +41,8 @@ module.exports =
 
             const receipt = new Embed()
                 .setTitle("Purchase")
-                .addField("Receipt", `You purchased ${super.format(item.name, number)}!`)
-                .setFooter("Grape Marketplaces");
+                .addField("Receipt", `You purchased ${super.format(item.name, number)}!`);
+                //.setFooter("Grape Marketplaces");
             msg.send(receipt);
         }
     };

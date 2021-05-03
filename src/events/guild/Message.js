@@ -59,7 +59,7 @@ module.exports =
             } catch (err) {
                 console.log(err);
                 
-                message.send`Can't run ${command.name} due to a bug.`;
+                message.send(`Can't run ${command.name} due to a bug.`.toString());
                 message.send`Do you want to report this bug to the developers?`;
 
                 const verification = await msg.channel.awaitMessages(m => m.author.id === msg.author.id, { max: 1, time: 3500 });

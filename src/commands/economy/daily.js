@@ -20,8 +20,8 @@ module.exports =
             this.eco.users.add(msg.author.id, randStars);
 
             const dailyEmbed = new Embed()
-                .setTitle("Daily stars!")
-                .addField(`${msg.author.username} got`, `**${randStars} :star:s!**`);
+                .setTitle("Daily stars")
+                .addField(`${msg.author.username} got`.toString(), `**${randStars} :star:s!**`.toString());
                 
             msg.send(dailyEmbed);
         }

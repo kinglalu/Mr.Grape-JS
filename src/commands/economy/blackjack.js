@@ -138,6 +138,7 @@ module.exports =
                     .addField("Your Cards", cardsMsg)
                     .addField("Dealer's Cards", dealerMsg)
                     .addField(title, message);
+                    
                 msg.send(gambleEmbed);
             };
 

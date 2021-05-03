@@ -15,7 +15,7 @@ module.exports =
         }
 
         main(msg) {
-            const { connection } = msg.guild.voice
+            const { connection } = msg.guild.voice;
 
             connection.disconnect();
             this.musicQueues.delete(msg.guild.id);

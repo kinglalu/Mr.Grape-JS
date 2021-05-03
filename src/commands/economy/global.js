@@ -18,7 +18,7 @@ module.exports =
             const collection = [...this.eco.users.cache.sort((a, b) => b.balance - a.balance).first(10).values()];
             const entries = [];
 
-            if (!collection.length) return msg.send("No people are rich.");
+            if (!collection.length) return msg.send("bro you are all broke");
 
             for (const person of collection.filter(p => p.balance > 0)) {
                 const { tag } = await this.client.users.fetch(person.id);

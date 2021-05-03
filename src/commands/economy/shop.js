@@ -9,7 +9,7 @@ module.exports =
                 description: "Display the shop.",
                 usage: "No arguments required.",
                 aliases: ["mall", "imadivaandiloveshopping"],
-                saying: "Your balance is fine.",
+                saying: "You dont need to buy that much.",
                 cooldown: 2
             });
         }

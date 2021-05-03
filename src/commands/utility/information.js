@@ -4,11 +4,11 @@ module.exports =
     class extends Command {
         constructor(...args) {
             super(...args, {
-                name: "info",
+                name: "information",
                 type: "utility",
                 description: "Basic info about the bot.",
                 usage: "No arguments required.",
-                aliases: ["i"],
+                aliases: ["i", "info"],
                 saying: "It's not like the info is interesting.",
                 cooldown: 2
             });

@@ -6,10 +6,10 @@ module.exports =
             super(...args, {
                 name: "steal",
                 type: "economy",
-                description: "Get a user's balance.",
+                description: "steal stars from someone.",
                 usage: "<user>",
                 aliases: ["rob", "mug"],
-                saying: "Your balance is fine.",
+                saying: "keep this up, and authorities might get you.",
                 cooldown: 60
             });
         }
@@ -69,8 +69,8 @@ module.exports =
                 const losses = Math.floor(percentage * robber) + 2;
 
                 const successEmbed = new Embed()
-                    .setTitle(`${msg.author.username}'s heist against ${target.username}`)
-                    .addField("Fail", `RIP, despite ur effort, you got caught and lost ${losses} :star:s.`);
+                    .setTitle(`${msg.author.username}'s heist against ${target.username}`.toString())
+                    .addField("Fail", `RIP, despite ur effort, you got caught and lost ${losses} :star:s.`.toString());
                 msg.send(successEmbed);
 
                 return this.eco.users.add(msg.author.id, -losses);

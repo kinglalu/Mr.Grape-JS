@@ -39,7 +39,7 @@ module.exports =
 
                 if (starmagnet) earn = Math.round(earn * (1 + 0.06 * starmagnet));
 
-                jobEmbed.addField(`Yay, you found my ${jobName}! Here, take ${earn} :star:s!`, "‎");
+                jobEmbed.addField(`Yay, you found my ${jobName}! Here, take ${earn} :star:s.`.toString(), "‎");
 
                 this.eco.users.add(msg.author.id, earn);
             }

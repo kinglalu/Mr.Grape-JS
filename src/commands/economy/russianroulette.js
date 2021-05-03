@@ -10,7 +10,7 @@ module.exports =
                 usage: "No arguments required.",
                 aliases: ["rr"],
                 saying: "Pew pew.",
-                cooldown: 86400,
+                cooldown: 30,
                 fan: true
             });
         }
@@ -27,7 +27,7 @@ module.exports =
             if (message === "yes" || message === "y") {
                 const balance = this.eco.users.getBalance(msg.author.id);
 
-                if (super.randomize(6) + 1 === 1) {
+                if (super.randomize(6) === 1) {
                     const survivedEmbed = new Embed()
                         .setTitle(`${msg.author.username}'s revolver`)
                         .addField(`yay! You didn't die... this time... enjoy your ${balance} :star:s!`, "‎");
@@ -43,9 +43,6 @@ module.exports =
                     this.eco.users.add(msg.author.id, -balance);
                     msg.send(lostEmbed);
                 }
-            }
-            else {
-                msg.send("Welp ok ig");
             }
         }
     };

@@ -1,7 +1,7 @@
 <div align="center">
 	<img src="https://i.ibb.co/RpBbyRP/mrgrape.png" title="Mr. Grape" alt="Mr. Grape" />
 	<h1>Mr. Grape</h1>
-	<p>By kinglalu#2780 and DAONE#7538<p>
+	<p>By kinglalu#2780, LinuxTerm#4547, and DAONE#7538<p>
 	<p>Mr. Grape is an Open Source Discord Bot made using Discord.js that includes Music features, an Economy and more!</p>
 	<p> Help support Mr Grape by voting for it here on top.gg; https://top.gg/bot/743833062265323651/vote </p>
 	<p><a href="https://discord.com/oauth2/authorize?client_id=743833062265323651&scope=bot&permissions=0">
