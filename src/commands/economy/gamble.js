@@ -53,9 +53,28 @@ module.exports =
 
                 const gamble = await this.verify(msg);
                 if (!gamble) return msg.send("I thought so.");
+                number**=number
             }
 
             const dice = this.randomize(rigged);
+            
+            let result, caught = false;
+            
+            if (dice % 2 === 0) {
+                 const caught = super.randomize(25);
+
+                 if (caught === 1) {
+                      this.eco.users.add(msg.author.id, -number);
+                      caught = true;
+                 } else {
+                      this.eco.users.add(msg.author.id, number);   
+                 }
+                
+                 result = true;
+            } else {
+                 this.eco.users.add(msg.author.id, -number);   
+            }
+            
             const gambleEmbed = new Embed()
                 .setTitle(`${msg.author.username}'s gambling table`)
                 .addField("Ok, if you roll an even number you win, if you roll an odd number, you lose.", "‎");
@@ -64,27 +83,21 @@ module.exports =
 
             gambleMsg.edit(gambleEmbed.addField(`You rolled a ${dice}!`, "‎"));
 
-            if (dice % 2 === 0) {
+            if (result) {
                 gambleMsg.edit(gambleEmbed.addField(`Congrats, you get ${number} :star:s!`, "‎"));
 
-                if (rigged) {
-                    const caught = super.randomize(25);
+                if (caught) {
 
-                    if (caught === 1) {
-                        await this.wait(1.7);
+                     await this.wait(1.7);
 
-                        gambleMsg.edit(gambleEmbed.addField(`You were caught and lost ${number} :star:s!`.toString(), "‎"));
+                     gambleMsg.edit(gambleEmbed.addField(`You were caught and lost ${number} :star:s!`.toString(), "‎"));
 
-                        return this.eco.users.add(msg.author.id, -number);
-                    }
+                     return;
+     
                 }
-                this.eco.users.add(msg.author.id, number);
             }
             else {
                 gambleMsg.edit(gambleEmbed.addField(`You lost ${number} :star:s!`.toString(), "‎"));
-                
-                // This will overflow
-                this.eco.users.add(msg.author.id, -number);
             }
         }
     };
