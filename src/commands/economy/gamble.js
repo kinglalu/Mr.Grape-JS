@@ -53,7 +53,6 @@ module.exports =
 
                 const gamble = await this.verify(msg);
                 if (!gamble) return msg.send("I thought so.");
-                number**=number
             }
 
             const dice = this.randomize(rigged);
