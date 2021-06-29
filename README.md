@@ -20,6 +20,10 @@
 Mr. Grape contains a wide variety of commands, ranging from music to economy, that can spice up and add excitment to any server.
 With an extensive list of fun commands, it will keep your server engaged.
 
+## Support Server
+If you have any suggestions for Mr Grape, or questions, feel free to join the support server!
+[Click Here](https://discord.gg/2RKPmDg2A6)
+
 ## Notes
 * The bot's prefix is `+` but it can be changed with the `+prefix` command
 * Many of the APIs used in Mr. Grape require private keys to be issued and added before those services will work.
