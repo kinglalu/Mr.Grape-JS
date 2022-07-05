@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@aero/centra": "^1.0.6",
-    "@discordjs/opus": "^0.5.0",
+    "@discordjs/opus": "^0.8.0",
     "centra": "^2.4.2",
     "chalk": "^4.1.0",
     "discord.js": "^12.5.3",
