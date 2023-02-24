@@ -38,7 +38,7 @@
     "js-interpreter": "^2.3.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.6.2",
+    "sequelize": "^6.29.0",
     "sqlite3": "^5.0.2",
     "ytdl-core": "^4.5.0",
     "ytpl": "^2.1.1",
